@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #350c0c;
+}
+
+.welcome-container {
+    text-align: center;
+    background: rgba(232, 196, 196, 0.7);
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.welcome-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.enter-button {
+    background-color: #008CBA;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.enter-button:hover {
+    background-color: #7ac6d5;
+}

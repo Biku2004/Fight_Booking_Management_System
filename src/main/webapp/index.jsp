@@ -1,13 +1,20 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>JSP - Hello World</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Flight Management System</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<h1><%= "Hello Passangers to our Flight Booking Management System" %>
-</h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
+<div class="welcome-container">
+    <div class="welcome-text">
+        <h1>Welcome to Our</h1>
+        <h2>Flight Management System</h2>
+        <p>Experience the future of flight management with us.</p>
+    </div>
+    <button class="enter-button">Enter</button>
+</div>
 </body>
 </html>
