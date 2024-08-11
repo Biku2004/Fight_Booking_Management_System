@@ -60,6 +60,7 @@
             <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth">
         </div>
         <button type="submit" class="btn btn-primary">Register</button>
+        <a href="login.jsp">Login</a>
     </form>
 </div>
 </body>
