@@ -1,7 +1,15 @@
 body {
-    background-color: #f4f7f9;
-    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    font-family: 'Roboto', sans-serif;
+    color: #495057;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
+
 .container {
     max-width: 500px;
     margin-top: 50px;
