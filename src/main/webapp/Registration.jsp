@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Atkum
-  Date: 08-08-2024
-  Time: 23:57
-  To change this template use File | Settings | File Templates.
---%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +14,8 @@
     <div class="registration-wrapper">
         <h2 class="text-center">Create Your Account</h2>
         <p class="text-center mb-4">Join us to explore the best flight experience</p>
-        <form action="register" method="post">
+
+        <form action="register" method="post"> <!-- 'register' should map to the registerServlet -->
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="firstName">First Name</label>
@@ -32,6 +26,7 @@
                     <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" required>
                 </div>
             </div>
+
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
@@ -69,6 +64,7 @@
                     </select>
                 </div>
             </div>
+
             <div class="form-group">
                 <label for="dateOfBirth">Date of Birth</label>
                 <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth">
@@ -79,4 +75,3 @@
 </div>
 </body>
 </html>
-

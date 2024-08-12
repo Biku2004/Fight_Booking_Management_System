@@ -1,5 +1,6 @@
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+@WebServlet("/register")  // This annotation replaces the need for web.xml mapping
 public class registerServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -30,7 +32,7 @@ public class registerServlet extends HttpServlet {
         // JDBC connection setup
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javadb", "root", "atul");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "12345");
 
             // Insert query
             String query = "INSERT INTO register (FirstName, LastName, Email, Password, Phone, PassportNumber, Nationality, Gender, DateOfBirth) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -50,7 +52,7 @@ public class registerServlet extends HttpServlet {
 
             // Checking if insertion was successful
             if (rowsAffected > 0) {
-                resp.sendRedirect("success.jsp"); // Redirect to a success page after registration
+                out.print("Register Successful");// Redirect to a success page after registration
             } else {
                 RequestDispatcher rd = req.getRequestDispatcher("/error.jsp");
                 rd.include(req, resp);
@@ -60,7 +62,7 @@ public class registerServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
             out.print("<h1 style='color:red'>Exception Occurred: " + e.getMessage() + "</h1>");
-            RequestDispatcher rd = req.getRequestDispatcher("/registration.jsp");
+            RequestDispatcher rd = req.getRequestDispatcher("/register.jsp");
             rd.include(req, resp);
         }
     }

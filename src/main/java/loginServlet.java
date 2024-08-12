@@ -21,7 +21,7 @@ public class loginServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JavaProject", "root", "rashmi");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JavaProject", "root", "12345");
 
             PreparedStatement ps = con.prepareStatement("SELECT * FROM register WHERE Email=? AND Password=?");
             ps.setString(1, email);
