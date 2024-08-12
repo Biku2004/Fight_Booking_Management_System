@@ -11,12 +11,12 @@
 <div class="welcome-container">
     <div class="welcome-text">
         <h1>Welcome to Our</h1>
-        <h2>Flight Management System</h2>
+        <h2><b>Flight Management System</b></h2>
         <p>Experience the future of flight management with us.</p>
     </div>
-    <button class="enter-button" ><a href="home.jsp">Home Page</a></button>
-
-    <button class="enter-button" ><a href="Registration.jsp">Registration</a></button>
+    <button class="enter-button" ><a href="login.jsp">Sign in</a></button>
+    <button class="enter-button" ><a href="Registration.jsp">Sign up</a></button>
+    <button class="enter-button" ><a href="home.jsp">Home</a></button>
 
 </div>
 </body>
