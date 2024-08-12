@@ -17,7 +17,7 @@
     <button class="enter-button" ><a href="home.jsp">Enter</a></button>
 
     <button class="enter-button" ><a href="Registration.jsp">Enter</a></button>
-
+    <h1>Hello</h1>
 </div>
 </body>
 </html>
