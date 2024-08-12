@@ -60,6 +60,7 @@
         </div>
         <div class="search">
           <button class="search-btn">Search</button>
+          <button class="search-btn">Search Another</button>
         </div>
       </div>
     </div>
