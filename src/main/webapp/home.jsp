@@ -64,6 +64,7 @@
           <button class="search-btn">Search</button>
           <button class="search-btn">Search Another</button>
           <button class="search-btn">Search Another 2</button>
+          <button class="search-btn">Search Another 4</button>
         </div>
       </div>
     </div>
