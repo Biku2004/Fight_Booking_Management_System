@@ -1,0 +1,185 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f7ff;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.header {
+    background-color: #f0f7ff;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.login-btn {
+    padding: 10px 20px;
+    background-color: #f0f7ff;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.booking {
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+}
+
+.booking h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.skyway {
+    color: #38b2ac;
+}
+
+.flight-hotel {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.flight-hotel button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.flight-btn {
+    background-color: #001f5f;
+    color: white;
+}
+
+.hotel-btn {
+    background-color: white;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.trip-type {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.trip-type input[type="radio"] {
+    margin-right: 15px;
+}
+
+.booking-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.form-group {
+    text-align: left;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #001f5f;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px 5px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="number"]:focus {
+    border-color: #001f5f;
+    box-shadow: 0 0 8px rgba(0, 31, 95, 0.3);
+    outline: none;
+}
+
+.promo-code {
+    grid-column: span 2;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.promo-code a {
+    font-size: 14px;
+    color: #001f5f;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.promo-code a:hover {
+    border-color: #001f5f;
+}
+
+.search {
+    grid-column: span 2;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.search-btn {
+    padding: 15px 30px;
+    background-color: #4b9f9b;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #346c69;
+    transform: translateY(-2px);
+}
+
+.search-btn:active {
+    transform: translateY(0);
+}
+
+.booking-form::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 5px;
+    background-color: #001f5f;
+    border-radius: 10px;
+}

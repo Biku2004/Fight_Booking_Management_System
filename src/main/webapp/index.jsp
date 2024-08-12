@@ -14,7 +14,10 @@
         <h2>Flight Management System</h2>
         <p>Experience the future of flight management with us.</p>
     </div>
+    <button class="enter-button" ><a href="home.jsp">Home Page</a></button>
+
     <button class="enter-button" ><a href="Registration.jsp">Enter</a></button>
+
 </div>
 </body>
 </html>
