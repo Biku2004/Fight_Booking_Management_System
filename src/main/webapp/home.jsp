@@ -20,6 +20,8 @@
     <div class="login">
       <button class="login-btn" ><a href="login.jsp">Login</a></button>
       <button class="login-btn" ><a href="Registration.jsp">Registration</a></button>
+      <button class="login-btn" ><a href="Registrationstyle.css">Registration</a></button>
+      
     </div>
   </nav>
 </header>
