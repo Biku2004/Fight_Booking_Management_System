@@ -1,62 +1,69 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flight Management Service</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Flight Booking</title>
+  <link rel="stylesheet" href="home.css">
 </head>
 <body>
-<!-- Header -->
-<header>
-  <div class="container">
-    <h1>Flight Management Service</h1>
-    <nav>
-      <ul>
-        <li><a href="index.jsp">Home</a></li>
-        <li><a href="about.jsp">About Us</a></li>
-        <li><a href="contact.jsp">Contact</a></li>
-        <li><a href="login.jsp">Login</a></li>
-      </ul>
-    </nav>
-  </div>
+<header class="header">
+  <nav class="navbar">
+    <div class="nav-links">
+      <a href="#">a</a>
+      <a href="#">b</a>
+      <a href="#">c</a>
+      <a href="#">d</a>
+      <a href="#">e</a>
+    </div>
+    <div class="login">
+      <button class="login-btn" ><a href="login.jsp">Login</a></button>
+      <button class="login-btn" ><a href="Registration.jsp">Registration</a></button>
+    </div>
+  </nav>
 </header>
 
-<!-- Main Content -->
 <main>
-  <div class="container">
-    <section class="search">
-      <h2>Find Your Flight</h2>
-      <form action="" method="get">
-        <label for="departure">Departure City:</label>
-        <input type="text" id="departure" name="departure" required>
-
-        <label for="arrival">Arrival City:</label>
-        <input type="text" id="arrival" name="arrival" required>
-
-        <label for="departureDate">Departure Date:</label>
-        <input type="date" id="departureDate" name="departureDate" required>
-
-        <label for="returnDate">Return Date:</label>
-        <input type="date" id="returnDate" name="returnDate">
-
-        <button type="submit">Search Flights</button>
-      </form>
-    </section>
-
-    <section class="about">
-      <h2>About Us</h2>
-      <p>Welcome to our Flight Management Service! We offer the best flight deals and booking options for your travel needs. Whether you are looking for domestic or international flights, we have you covered.</p>
-    </section>
-  </div>
+  <section class="booking">
+    <h1>Hi there, where would you like to <span class="skyway">SkyWay</span> today?</h1>
+    <div class="booking-options">
+      <div class="flight-hotel">
+        <button class="flight-btn active">✈️ Book a flight</button>
+      </div>
+      <div class="trip-type">
+        <input type="radio" id="oneway" name="trip" checked>
+        <label for="oneway">One Way</label>
+        <input type="radio" id="roundtrip" name="trip">
+        <label for="roundtrip">Round Trip</label>
+      </div>
+      <div class="booking-form">
+        <div class="form-group">
+          <label for="from">From</label>
+          <input type="text" id="from" placeholder="Search by place/airport" value="<%= request.getParameter("from") != null ? request.getParameter("from") : "Delhi, DEL" %>">
+        </div>
+        <div class="form-group">
+          <label for="to">To</label>
+          <input type="text" id="to" placeholder="Search by place/airport" value="<%= request.getParameter("to") != null ? request.getParameter("to") : "Kolkata, CCU" %>">
+        </div>
+        <div class="form-group">
+          <label for="departure">Departure</label>
+          <input type="date" id="departure" value="<%= request.getParameter("departure") != null ? request.getParameter("departure") : "" %>">
+        </div>
+        <div class="form-group">
+          <label for="return">Return</label>
+          <input type="date" id="return" value="<%= request.getParameter("return") != null ? request.getParameter("return") : "" %>">
+        </div>
+        <div class="form-group">
+          <label for="passengers">Passengers</label>
+          <input type="number" id="passengers" value="<%= request.getParameter("passengers") != null ? request.getParameter("passengers") : "1" %>">
+        </div>
+        <div class="search">
+          <button class="search-btn">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
-
-<!-- Footer -->
-<footer>
-  <div class="container">
-    <p>&copy; 2024 Flight Management Service. All rights reserved.</p>
-  </div>
-</footer>
 </body>
 </html>
