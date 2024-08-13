@@ -20,10 +20,6 @@
     <div class="login">
       <button class="login-btn" ><a href="login.jsp">Login</a></button>
       <button class="login-btn" ><a href="Registration.jsp">Registration</a></button>
-<<<<<<< HEAD
-=======
-
->>>>>>> 2dd6e29d3a277f95654e33c8f6f436a787d9f777
       
     </div>
   </nav>

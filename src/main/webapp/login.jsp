@@ -14,9 +14,11 @@
 <body>
 <div class="login-container">
     <h2>Login</h2>
-    Enter Your Registered Email : <input type="email" name="email1"/><br>
-    Enter Your Password : <input type="password" name="pass1"/><br>
-    <input type="submit" value="Login">
+    <form action="login" method="post">
+        Enter Your Registered Email : <input type="email" name="email1"/><br>
+        Enter Your Password : <input type="password" name="pass1"/><br>
+        <input type="submit" value="Login" action="loginServlet">
+    </form>
     <a href="Registration.jsp">Register Here</a>
 </div>
 </body>

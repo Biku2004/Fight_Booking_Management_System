@@ -52,7 +52,9 @@ public class registerServlet extends HttpServlet {
 
             // Checking if insertion was successful
             if (rowsAffected > 0) {
-                out.print("Register Successful");// Redirect to a success page after registration
+                out.print("Register Successful");
+                resp.sendRedirect("login.jsp");
+                // Redirect to a success page after registration
             } else {
                 RequestDispatcher rd = req.getRequestDispatcher("/error.jsp");
                 rd.include(req, resp);

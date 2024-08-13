@@ -1,5 +1,6 @@
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -12,6 +13,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+@WebServlet("/login")
 public class loginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
@@ -21,7 +23,7 @@ public class loginServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/JavaProject", "root", "12345");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "12345");
 
             PreparedStatement ps = con.prepareStatement("SELECT * FROM register WHERE Email=? AND Password=?");
             ps.setString(1, email);
@@ -30,8 +32,10 @@ public class loginServlet extends HttpServlet {
 
             if (rs.next()) {
                 HttpSession session = req.getSession();
-                session.setAttribute("session_name", rs.getString("name"));
-                resp.sendRedirect("profile.jsp"); // Redirect to profile page
+                session.setAttribute("session_name", rs.getString("Firstname"));
+//                // Redirect to profile page
+                resp.sendRedirect("truehome.jsp");
+
             } else {
                 RequestDispatcher rd = req.getRequestDispatcher("/error.jsp");
                 rd.include(req, resp);
