@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.Base64"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,7 +62,16 @@
 
         <!-- Profile section -->
         <div class="profile-dropdown">
-            <img src="profile.jpg" alt="Profile Photo" class="profile-photo">
+            <%
+                // No need to define session, it's already available
+                byte[] profilePhoto = (byte[]) session.getAttribute("profile_photo");
+                if (profilePhoto != null) {
+                    String base64Image = Base64.getEncoder().encodeToString(profilePhoto);
+                    out.print("<img src='data:image/png;base64," + base64Image + "' alt='Profile Photo' class='profile-photo'>");
+                } else {
+                    out.print("<img src='default-profile.png' alt='Profile Photo' class='profile-photo'>");
+                }
+            %>
             <div class="dropdown-content">
                 <a href="editProfile.jsp">Edit Profile</a>
             </div>
@@ -73,6 +83,7 @@
         </div>
     </nav>
 </header>
+
 
 <main>
     <section class="booking">
@@ -119,5 +130,6 @@
         </div>
     </section>
 </main>
+
 </body>
 </html>

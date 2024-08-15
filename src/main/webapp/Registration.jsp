@@ -15,7 +15,7 @@
         <h2 class="text-center">Create Your Account</h2>
         <p class="text-center mb-4">Join us to explore the best flight experience</p>
 
-        <form action="register" method="post"> <!-- 'register' should map to the registerServlet -->
+        <form action="register" method="post" enctype="multipart/form-data"> <!-- 'register' should map to the registerServlet -->
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="firstName">First Name</label>
@@ -65,12 +65,21 @@
                 </div>
             </div>
 
+<%--            Profile Photo--%>
+            <div class="form-group">
+                <label for="profilePhoto">Profile Photo</label>
+                <input type="file" class="form-control" id="profilePhoto" name="profilePhoto" accept="image/*" required>
+            </div>
+
             <div class="form-group">
                 <label for="dateOfBirth">Date of Birth</label>
                 <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth">
             </div>
             <button type="submit" class="btn btn-primary btn-block">Register</button>
         </form>
+
+
+
     </div>
 </div>
 </body>
