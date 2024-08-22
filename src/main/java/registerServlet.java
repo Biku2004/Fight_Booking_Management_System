@@ -42,10 +42,11 @@ public class registerServlet extends HttpServlet {
         // JDBC connection setup
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightregd", "Java-Project", "root@localhost");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "12345");
 
             // Insert query with BLOB for profile photo
-            String query ="INSERT INTO register (FirstName, LastName, Email, Password, Phone, PassportNumber, Nationality, Gender,DateOfBirth,ProfilePhoto)VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String query = "INSERT INTO register (FirstName, LastName, Email, Password, Phone, PassportNumber, Nationality, Gender, DateOfBirth, ProfilePhoto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
             PreparedStatement ps = con.prepareStatement(query);
             ps.setString(1, firstName);
             ps.setString(2, lastName);
@@ -57,14 +58,11 @@ public class registerServlet extends HttpServlet {
             ps.setString(8, gender);
             ps.setString(9, dateOfBirth);
 
-
             if (profilePhotoStream != null) {
                 ps.setBlob(10, profilePhotoStream); // Store the profile photo as a BLOB
             } else {
                 ps.setNull(10, java.sql.Types.BLOB); // Handle the case where no photo was uploaded
             }
-
-
 
             int rowsAffected = ps.executeUpdate();
 

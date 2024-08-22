@@ -27,6 +27,9 @@
         <button class="enter-button">
             <a href="home.jsp">Home</a>
         </button>
+        <button class="enter-button">
+            <a href="HomeAdmin.jsp">Admin Home</a>
+        </button>
     </div>
 </div>
 </body>
