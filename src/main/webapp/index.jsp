@@ -19,7 +19,7 @@
     </div>
     <div class="button-group">
         <button class="enter-button">
-            <a href="login.jsp">Sign in</a>
+            <a href="login.jsp">Log in</a>
         </button>
         <button class="enter-button">
             <a href="Registration.jsp">Sign up</a>
