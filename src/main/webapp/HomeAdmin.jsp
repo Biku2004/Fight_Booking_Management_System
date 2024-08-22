@@ -87,7 +87,7 @@
 <body>
 <div class="container">
     <div class="box">
-        <a href=""><h3>Add Admin</h3></a>
+        <a href="adminregd.jsp"><h3>Add Admin</h3></a>
     </div>
     <div class="box">
         <a href=""><h3>Delete Admin</h3></a>
@@ -96,7 +96,7 @@
         <a href=""><h3>View Admin</h3></a>
     </div>
     <div class="box">
-        <a href=""><h3>Add Flight</h3></a>
+        <a href="addFlight.jsp"><h3>Add Flight</h3></a>
     </div>
     <div class="box">
         <a href=""><h3>Modify Flight</h3></a>

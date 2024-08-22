@@ -69,7 +69,7 @@
   <h1>Success!</h1>
   <p>The flight has been added successfully.</p>
   <a href="addFlight.jsp" class="btn">Add Another Flight</a>
-  <a href="adminPanel.jsp" class="btn btn-secondary">Return to Admin Panel</a>
+  <a href="HomeAdmin.jsp" class="btn btn-secondary">Return to Admin Panel</a>
 </div>
 
 </body>
