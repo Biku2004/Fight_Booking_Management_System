@@ -1,4 +1,3 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,16 +7,27 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<video autoplay muted loop id="background-video">
+    <source src="flightvdo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 <div class="welcome-container">
     <div class="welcome-text">
         <h1>Welcome to Our</h1>
-        <h2><b>Flight Management System</b></h2>
+        <h2>Flight Management System</h2>
         <p>Experience the future of flight management with us.</p>
     </div>
-    <button class="enter-button" ><a href="login.jsp">Sign in</a></button>
-    <button class="enter-button" ><a href="Registration.jsp">Sign up</a></button>
-    <button class="enter-button" ><a href="home.jsp">Home</a></button>
-
+    <div class="button-group">
+        <button class="enter-button">
+            <a href="login.jsp">Sign in</a>
+        </button>
+        <button class="enter-button">
+            <a href="Registration.jsp">Sign up</a>
+        </button>
+        <button class="enter-button">
+            <a href="home.jsp">Home</a>
+        </button>
+    </div>
 </div>
 </body>
 </html>

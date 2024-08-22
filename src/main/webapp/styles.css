@@ -1,54 +1,104 @@
+/* Reset margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-size: cover;
-    background-position: center;
+    color: #333;
+    overflow: hidden;
+    position: relative; /* Make sure the container is above the video */
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #350c0c;
 }
 
+/* Background video styling */
+#background-video {
+    position: absolute; /* Position video absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure video covers the whole background */
+    z-index: -1; /* Place video behind the content */
+}
+
+/* Welcome container styling */
 .welcome-container {
     text-align: center;
-    background: rgba(232, 196, 196, 0.7);
-    padding: 30px 50px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
 }
 
-.welcome-text h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.welcome-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.welcome-text p {
-    font-size: 1.2rem;
+/* Welcome text styling */
+.welcome-text {
     margin-bottom: 30px;
 }
 
+.welcome-text h1 {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin: 0;
+    color: #2c3e50;
+}
+
+.welcome-text h2 {
+    font-size: 3.5em;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #34495e;
+}
+
+.welcome-text p {
+    font-size: 1.8em;
+    margin: 0;
+    line-height: 1.6;
+    color: #7f8c8d;
+}
+
+/* Button group styling */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Enter button styling */
 .enter-button {
-    background-color: #008CBA;
+    background-color: #3498db;
     color: white;
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    padding: 12px 28px;
+    font-size: 1.2em;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .enter-button:hover {
-    background-color: #7ac6d5;
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.enter-button:active {
+    background-color: #1c5980;
+}
+
+.enter-button a {
+    text-decoration: none;
+    color: inherit;
 }
