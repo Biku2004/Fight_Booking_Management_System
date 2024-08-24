@@ -8,7 +8,7 @@
 </head>
 <body>
 <video autoplay muted loop id="background-video">
-    <source src="flightvdo.mp4" type="video/mp4">
+    <source src="flightvdo2.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 <div class="welcome-container">
