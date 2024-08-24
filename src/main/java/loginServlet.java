@@ -22,7 +22,7 @@ public class loginServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flight-regd", "Java-Project", "root@localhost");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightregd", "Java-Project", "root@localhost");
 
             PreparedStatement ps = con.prepareStatement("SELECT * FROM register WHERE Email=? AND Password=?");
             ps.setString(1, email);
@@ -33,13 +33,10 @@ public class loginServlet extends HttpServlet {
                 HttpSession session = req.getSession();
                 session.setAttribute("session_name", rs.getString("FirstName"));
 
-                /*
                 // Retrieve the profile photo as a byte array
                 InputStream photoInputStream = rs.getBinaryStream("ProfilePhoto");
                 byte[] profilePhoto = photoInputStream.readAllBytes();
                 session.setAttribute("profile_photo", profilePhoto);
-
-                 */
 
                 resp.sendRedirect("truehome.jsp");
             } else {
