@@ -64,4 +64,20 @@ public class AddFlightDAO {
         }
         return false;
     }
+
+    // Method to delete a flight from the database
+    public boolean deleteFlight(DeleteFlight flight) {
+        String sql = "DELETE FROM flights WHERE flight_number = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, flight.getFlightNumber());
+
+            int rowsDeleted = preparedStatement.executeUpdate();
+            return rowsDeleted > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 }
