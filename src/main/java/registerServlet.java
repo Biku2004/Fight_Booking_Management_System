@@ -42,7 +42,7 @@ public class registerServlet extends HttpServlet {
         // JDBC connection setup
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/user", "root", "12345");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightregd", "Java-Project", "root@localhost");
 
             // Insert query with BLOB for profile photo
             String query = "INSERT INTO register (FirstName, LastName, Email, Password, Phone, PassportNumber, Nationality, Gender, DateOfBirth, ProfilePhoto) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
