@@ -110,7 +110,7 @@
             <input type="email" id="email" name="email1" placeholder="abcd@gmail.com"/><br>
             <label for="password">Enter password: </label><br>
             <input type="password" id="password" name="pass1" placeholder="********"/><br>
-            <input type="submit" value="Login" action="loginServlet">
+            <input type="submit" value="Login" action="com.flight.flight_booking_management_system.loginServlet">
             </form>
         </div>
     </div>

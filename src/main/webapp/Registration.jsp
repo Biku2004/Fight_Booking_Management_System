@@ -15,7 +15,7 @@
         <h2 class="text-center">Create Your Account</h2>
         <p class="text-center mb-4">Join us to explore the best flight experience</p>
 
-        <form action="register" method="post" enctype="multipart/form-data"> <!-- 'register' should map to the registerServlet -->
+        <form action="register" method="post" enctype="multipart/form-data"> <!-- 'register' should map to the com.flight.flight_booking_management_system.registerServlet -->
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="firstName">First Name</label>

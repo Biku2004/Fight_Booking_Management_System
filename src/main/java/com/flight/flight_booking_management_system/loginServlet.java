@@ -1,3 +1,5 @@
+package com.flight.flight_booking_management_system;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
