@@ -11,6 +11,7 @@ import java.sql.SQLException;
 
 @WebServlet("/deleteAdmin")
 public class deleteAdminServlet extends HttpServlet {
+    private static final long serialVersionUID = 1L;
     private AdminDAO adminDAO = new AdminDAO(); // Initialize your DAO class
 
     @Override
@@ -25,9 +26,9 @@ public class deleteAdminServlet extends HttpServlet {
             boolean isDeleted = adminDAO.deleteAdmin(admin); // Perform deletion
 
             if (isDeleted) {
-                message = "Data Deleted Successfully";
+                message = "Data Deleted Successfully.";
             } else {
-                message = "No Data Found to Delete";
+                message = "No Data Found to Delete.";
             }
 
         } catch (SQLException e) {
