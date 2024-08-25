@@ -90,7 +90,7 @@
         <a href="adminregd.jsp"><h3>Add Admin</h3></a>
     </div>
     <div class="box">
-        <a href=""><h3>Delete Admin</h3></a>
+        <a href="adminDelete.jsp"><h3>Delete Admin</h3></a>
     </div>
     <div class="box">
         <a href=""><h3>View Admin</h3></a>

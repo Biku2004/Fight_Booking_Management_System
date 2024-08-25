@@ -21,10 +21,10 @@ public class AdminDAO {
     protected Connection getConnection() throws SQLException {
         Connection connection = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+            Class.forName ( "com.mysql.cj.jdbc.Driver" );
+            connection = DriverManager.getConnection ( jdbcURL , jdbcUsername , jdbcPassword );
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
+            e.printStackTrace ( );
         }
         return connection;
     }
@@ -35,38 +35,55 @@ public class AdminDAO {
         PreparedStatement preparedStatement = null;
 
         try {
-            connection = getConnection();
-            preparedStatement = connection.prepareStatement(INSERT_ADMIN_SQL);
-            preparedStatement.setString(1, admin.getFirstName());
-            preparedStatement.setString(2, admin.getLastName());
-            preparedStatement.setString(3, admin.getEmail());
-            preparedStatement.setString(4, admin.getPassword());
-            preparedStatement.setString(5, admin.getPhoneNumber());
-            preparedStatement.setString(6, admin.getNationality());
-            preparedStatement.setString(7, admin.getGender());
-            preparedStatement.setString(8, admin.getProfilePhotoPath());
-            preparedStatement.setString(9, admin.getDateOfBirth());
+            connection = getConnection ( );
+            preparedStatement = connection.prepareStatement ( INSERT_ADMIN_SQL );
+            preparedStatement.setString ( 1 , admin.getFirstName ( ) );
+            preparedStatement.setString ( 2 , admin.getLastName ( ) );
+            preparedStatement.setString ( 3 , admin.getEmail ( ) );
+            preparedStatement.setString ( 4 , admin.getPassword ( ) );
+            preparedStatement.setString ( 5 , admin.getPhoneNumber ( ) );
+            preparedStatement.setString ( 6 , admin.getNationality ( ) );
+            preparedStatement.setString ( 7 , admin.getGender ( ) );
+            preparedStatement.setString ( 8 , admin.getProfilePhotoPath ( ) );
+            preparedStatement.setString ( 9 , admin.getDateOfBirth ( ) );
 
-            preparedStatement.executeUpdate();
+            preparedStatement.executeUpdate ( );
         } catch (SQLException e) {
-            e.printStackTrace();
-            throw e;
+            e.printStackTrace ( );
+
         } finally {
             try {
                 if (preparedStatement != null) {
-                    preparedStatement.close();
+                    preparedStatement.close ( );
                 }
                 if (connection != null) {
-                    connection.close();
+                    connection.close ( );
                 }
             } catch (SQLException e) {
-                e.printStackTrace();
+                e.printStackTrace ( );
             }
         }
     }
-    public void updateAdmin(Admin admin) throws SQLException {
-        Connection connection = null;
-        PreparedStatement preparedStatement = null;
-        
+
+    public boolean deleteAdmin(Admin admin) throws SQLException {
+        String query = "DELETE FROM admin WHERE Email = ?";
+        boolean rowDeleted = false;
+
+        try (Connection conn = getConnection();
+             PreparedStatement pstm = conn.prepareStatement(query)) {
+
+            pstm.setString(1, admin.getEmail()); // Set the email parameter
+
+            int rowsAffected = pstm.executeUpdate(); // Execute the update
+            rowDeleted = rowsAffected > 0;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        }
+
+        return rowDeleted;
     }
+
+
 }
