@@ -105,7 +105,7 @@
         <a href="modifyFlight.jsp"><h3>Modify Flight</h3></a>
     </div>
     <div class="box">
-        <a href=""><h3>Delete Flight</h3></a>
+        <a href="deleteFlight.jsp"><h3>Delete Flight</h3></a>
     </div>
     <div class="box">
         <a href=""><h3>Seat Info</h3></a>
