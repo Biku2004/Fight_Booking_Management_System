@@ -102,7 +102,7 @@
 <body>
 <div class="container">
     <h1>Add New Flight</h1>
-    <form action="AddFlightController" method="post">
+    <form action="AddFlightServlet" method="post">
         <div class="form-group">
             <label for="flightNumber">Flight Number</label>
             <input type="text" id="flightNumber" name="flightNumber" required>
