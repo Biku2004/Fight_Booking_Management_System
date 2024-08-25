@@ -64,25 +64,26 @@ public class AdminDAO {
         }
     }
 
+    // Method to delete an admin based on email
     public boolean deleteAdmin(Admin admin) throws SQLException {
-        String query = "DELETE FROM admin WHERE Email = ?";
+        String sql = "DELETE FROM admins WHERE email = ?";
         boolean rowDeleted = false;
 
-        try (Connection conn = getConnection();
-             PreparedStatement pstm = conn.prepareStatement(query)) {
+        DatabaseMetaData DatabaseUtil = null;
+        try (Connection connection = DatabaseUtil.getConnection(); // Make sure to manage your database connections correctly
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, admin.getEmail());
 
-            pstm.setString(1, admin.getEmail()); // Set the email parameter
-
-            int rowsAffected = pstm.executeUpdate(); // Execute the update
-            rowDeleted = rowsAffected > 0;
-
+            int affectedRows = preparedStatement.executeUpdate();
+            rowDeleted = affectedRows > 0;  // Check if any row was affected (deleted)
         } catch (SQLException e) {
             e.printStackTrace();
-
+            throw e;  // Re-throw exception to handle in the servlet
         }
 
         return rowDeleted;
     }
+
     public boolean updateAdmin(Admin admin) throws SQLException {
         String query = "UPDATE admin SET First_Name = ?, Last_Name = ?, Phone_Number = ?, Country = ?, Gender = ?, Profile_Photo_Path = ?, DOB = ? WHERE Email = ?";
         boolean rowUpdated = false;
