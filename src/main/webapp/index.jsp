@@ -13,9 +13,9 @@
 </video>
 <div class="welcome-container">
     <div class="welcome-text">
-        <h1>Welcome to Our</h1>
-        <h2>Flight Management System</h2>
-        <p>Experience the future of flight management with us.</p>
+        <h1>Welcome to <b>Sky<span>Way</span></b></h1>
+        <br>
+        <p>Experience the <i>future of flight management</i> with us.</p>
     </div>
     <div class="button-group">
         <button class="enter-button">
