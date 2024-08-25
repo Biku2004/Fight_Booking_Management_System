@@ -93,10 +93,10 @@
         <a href="adminDelete.jsp"><h3>Delete Admin</h3></a>
     </div>
     <div class="box">
-        <a href=""><h3>Update Admin</h3></a>
+        <a href="updateAdmin.jsp"><h3>Update Admin</h3></a>
     </div>
     <div class="box">
-        <a href=""><h3>View Admin</h3></a>
+        <a href="viewAllAdmins.jsp"><h3>View Admin</h3></a>
     </div>
     <div class="box">
         <a href="addFlight.jsp"><h3>Add Flight</h3></a>
