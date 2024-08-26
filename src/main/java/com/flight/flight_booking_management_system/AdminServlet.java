@@ -49,12 +49,11 @@ public class AdminServlet extends HttpServlet {
         // Save the file to the server
         filePart.write(filePath);
 
-        // Here, you might want to add validation, such as checking if password and confirmPassword match
-
+        // Check if passwords match
         if (!password.equals(confirmPassword)) {
-            // Handle password mismatch
-            request.setAttribute("message", "Passwords do not match.");
-            request.getRequestDispatcher("/registration.jsp").forward(request, response);
+            // Set error message and forward to registration page
+            request.setAttribute("errorMessage", "Passwords do not match.");
+            request.getRequestDispatcher("/aregdError.jsp").forward(request, response);
             return;
         }
 
@@ -84,6 +83,6 @@ public class AdminServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
         // Optionally handle GET requests
-        response.sendRedirect("registration.jsp");
+        response.sendRedirect("register.jsp");
     }
 }

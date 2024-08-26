@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/deleteAdmin")
-public class deleteAdminServlet extends HttpServlet {
+public class DeleteAdminServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private AdminDAO adminDAO = new AdminDAO(); // Initialize your DAO class
 
@@ -19,21 +19,23 @@ public class deleteAdminServlet extends HttpServlet {
         String email = req.getParameter("email1");
         String message;
 
-        try {
-            Admin admin = new Admin();
-            admin.setEmail(email);
+        // Validate the email input
+        if (email == null || email.trim().isEmpty()) {
+            message = "Email ID cannot be empty.";
+        } else {
+            try {
+                boolean isDeleted = adminDAO.deleteAdmin(email); // Perform deletion
 
-            boolean isDeleted = adminDAO.deleteAdmin(admin); // Perform deletion
+                if (isDeleted) {
+                    message = "Data Deleted Successfully.";
+                } else {
+                    message = "No Data Found to Delete.";
+                }
 
-            if (isDeleted) {
-                message = "Data Deleted Successfully.";
-            } else {
-                message = "No Data Found to Delete.";
+            } catch (Exception e) {
+                message = "Error occurred: " + e.getMessage();
+                e.printStackTrace();
             }
-
-        } catch (SQLException e) {
-            message = "Error occurred: " + e.getMessage();
-            e.printStackTrace();
         }
 
         // Set the message as a request attribute

@@ -1,13 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: rbstu
-  Date: 25-08-2024
-  Time: 20:31
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.flight.flight_booking_management_system.Admin" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-
 <html>
 <head>
     <title>View All Admins</title>
@@ -16,13 +9,11 @@
             width: 100%;
             border-collapse: collapse;
         }
-
         th, td {
             padding: 10px;
             text-align: left;
             border-bottom: 1px solid #ddd;
         }
-
         th {
             background-color: #f2f2f2;
         }
@@ -44,17 +35,30 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="admin" items="${admins}">
-        <tr>
-            <td>${admin.firstName}</td>
-            <td>${admin.lastName}</td>
-            <td>${admin.email}</td>
-            <td>${admin.phoneNumber}</td>
-            <td>${admin.nationality}</td>
-            <td>${admin.gender}</td>
-            <td>${admin.dateOfBirth}</td>
-        </tr>
-    </c:forEach>
+    <%
+        List<Admin> admins = (List<Admin>) request.getAttribute("admins");
+        if (admins != null && !admins.isEmpty()) {
+            for (Admin admin : admins) {
+    %>
+    <tr>
+        <td><%= admin.getFirstName() %></td>
+        <td><%= admin.getLastName() %></td>
+        <td><%= admin.getEmail() %></td>
+        <td><%= admin.getPhoneNumber() %></td>
+        <td><%= admin.getNationality() %></td>
+        <td><%= admin.getGender() %></td>
+        <td><%= admin.getDateOfBirth() %></td>
+    </tr>
+    <%
+        }
+    } else {
+    %>
+    <tr>
+        <td colspan="7">No admins found.</td>
+    </tr>
+    <%
+        }
+    %>
     </tbody>
 </table>
 

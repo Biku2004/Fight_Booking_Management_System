@@ -1,54 +1,62 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: rbstu
-  Date: 25-08-2024
-  Time: 19:49
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Result</title>
+    <title>Deletion Result</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .message-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            padding: 30px;
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .message-container h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        .message-container p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .message-container a {
+            display: inline-block;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 600;
+            border: 2px solid #007bff;
+            border-radius: 6px;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+        .message-container a:hover {
+            background-color: #007bff;
+            color: #ffffff;
+            border-color: #007bff;
+        }
+    </style>
 </head>
 <body>
-<style>
-    /* Reset some default styles */
-    body, h1 {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    /* Apply background and text styling */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        color: #333;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
-    }
-
-    /* Style the heading */
-    h1 {
-        font-size: 28px;
-        color: #ff4d4d;
-        background-color: #fff;
-        padding: 20px 40px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Responsive design for smaller screens */
-    @media (max-width: 480px) {
-        h1 {
-            font-size: 24px;
-            padding: 15px 30px;
-        }
-    }
-</style>
-<h1>Employee Deleted Successfully</h1>
+<div class="message-container">
+    <h1>Deletion Result</h1>
+    <p>${message}</p>
+    <a href="HomeAdmin.jsp">Back To Home 🏠</a>
+</div>
 </body>
 </html>

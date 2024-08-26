@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/updateAdmin")
-public class UpdateAdminServlet extends HttpServlet {
+public class UpdateAdminForm extends HttpServlet {
     private AdminDAO adminDAO = new AdminDAO();
 
     @Override
@@ -21,7 +21,6 @@ public class UpdateAdminServlet extends HttpServlet {
         String phoneNumber = req.getParameter("phoneNumber");
         String country = req.getParameter("country");
         String gender = req.getParameter("gender");
-        String profilePhotoPath = req.getParameter("profilePhotoPath");
         String dob = req.getParameter("dob");
         String message;
 
@@ -32,7 +31,6 @@ public class UpdateAdminServlet extends HttpServlet {
         admin.setPhoneNumber(phoneNumber);
         admin.setNationality(country);
         admin.setGender(gender);
-        admin.setProfilePhotoPath(profilePhotoPath);
         admin.setDateOfBirth(dob);
 
         try {
@@ -41,7 +39,7 @@ public class UpdateAdminServlet extends HttpServlet {
             if (isUpdated) {
                 message = "Admin details updated successfully.";
             } else {
-                message = "No admin found with the given email.";
+                message = "Failed to update admin details.";
             }
         } catch (SQLException e) {
             message = "Error occurred: " + e.getMessage();

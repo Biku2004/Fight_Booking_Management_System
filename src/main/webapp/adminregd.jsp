@@ -18,7 +18,7 @@
         <input type="text" id="lname1" name="lname1" placeholder="Last Name" required/><br>
 
         <label for="email1">Email</label>
-        <input type="email" id="email1" name="email1" placeholder="Email" required/><br>
+        <input type="email" id="email1" name="email1" placeholder="hello@example.com" required/><br>
 
         <label for="pass1">Password</label>
         <input type="password" id="pass1" name="pass1" placeholder="Password" required/><br>
@@ -33,7 +33,12 @@
         <input type="text" id="nationality" name="nationality" placeholder="Country"/><br>
 
         <label for="gender">Gender</label>
-        <input type="text" id="gender" name="gender" placeholder="Gender"/><br>
+        <select id="gender" name="gender" required>
+            <option value="Choose">Choose Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br>
 
         <label for="profilePhoto">Profile Photo</label>
         <input type="file" id="profilePhoto" name="profilePhoto" accept="image/*" required/><br>
@@ -42,6 +47,10 @@
         <input type="date" id="dateOfBirth" name="dateOfBirth"/><br>
 
         <input type="submit" value="Register"/>
+
+        <% if (request.getAttribute("errorMessage") != null) { %>
+        <p style="color: red;"><%= request.getAttribute("errorMessage") %></p>
+        <% } %>
     </form>
 </div>
 </body>

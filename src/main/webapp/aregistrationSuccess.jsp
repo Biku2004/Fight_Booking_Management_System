@@ -11,7 +11,7 @@
 <div class="container">
     <h1>Registration Successful!</h1>
     <p>Thank you for registering. Your account has been created successfully.</p>
-    <p><a href="login.jsp">Go to Login</a></p>
+    <p><a href="index.jsp">Go to Home 🏠</a></p>
 </div>
 </body>
 </html>
