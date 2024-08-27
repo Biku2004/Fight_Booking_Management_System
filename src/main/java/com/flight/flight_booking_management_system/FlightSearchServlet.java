@@ -23,12 +23,12 @@ public class FlightSearchServlet extends HttpServlet {
         String departure = request.getParameter("departure");
         String returnDate = request.getParameter("return");
 
-        // Construct the API URL
-        String apiUrl = "https://serpapi.com/search.json?engine=google_flights&departure_id=" + from
-                + "&arrival_id=" + to
-                + "&outbound_date=" + departure
-                + "&return_date=" + returnDate
-                + "&currency=USD&hl=en&api_key=2e6ff4c799c82804bf56ffd1e046a88d9727e21c78a087394d81c43e5cf7e36b";
+
+        String apiUrl = "https://serpapi.com/search.json?engine=google_flights&departure_id="+ from +
+        "&arrival_id=" + to +
+        "&outbound_date=" + departure +
+        "&return_date="+ returnDate +
+        "&currency=USD&hl=en&api_key=2e6ff4c799c82804bf56ffd1e046a88d9727e21c78a087394d81c43e5cf7e36b";
 
         // Fetch flight data from the API
         URL url = new URL(apiUrl);

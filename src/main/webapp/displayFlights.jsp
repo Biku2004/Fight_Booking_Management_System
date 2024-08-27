@@ -1,58 +1,63 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="org.json.JSONObject"%>
-<%@ page import="org.json.JSONArray"%>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Results</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+    <title>Flight Search Results</title>
 </head>
 <body>
-<section class="results">
-    <h2>Available Flights</h2>
-    <%
-        String flightData = request.getParameter("flightData");
+<h2>Flight Search Results</h2>
 
-        if (flightData != null && !flightData.isEmpty()) {
-            JSONObject jsonData = new JSONObject(flightData);
-            JSONArray bestFlights = jsonData.optJSONArray("best_flights");
-            if (bestFlights != null) {
-                for (int i = 0; i < bestFlights.length(); i++) {
-                    JSONObject flight = bestFlights.getJSONObject(i);
-                    out.println("<div class='flight'>");
-                    out.println("<p><strong>Airline:</strong> " + flight.getString("airline") + "</p>");
-                    out.println("<p><strong>From:</strong> " + flight.getJSONObject("departure_airport").getString("name") + " (" + flight.getJSONObject("departure_airport").getString("id") + ")</p>");
-                    out.println("<p><strong>To:</strong> " + flight.getJSONObject("arrival_airport").getString("name") + " (" + flight.getJSONObject("arrival_airport").getString("id") + ")</p>");
-                    out.println("<p><strong>Price:</strong> $" + flight.getInt("price") + "</p>");
-                    out.println("<p><strong>Duration:</strong> " + flight.getInt("total_duration") + " minutes</p>");
-                    out.println("<hr>");
-                    out.println("</div>");
-                }
-            } else {
-                out.println("<p>No best flights found. Checking other flights...</p>");
-                JSONArray otherFlights = jsonData.optJSONArray("other_flights");
-                if (otherFlights != null) {
-                    for (int i = 0; i < otherFlights.length(); i++) {
-                        JSONObject flight = otherFlights.getJSONObject(i);
-                        out.println("<div class='flight'>");
-                        out.println("<p><strong>Airline:</strong> " + flight.getString("airline") + "</p>");
-                        out.println("<p><strong>From:</strong> " + flight.getJSONObject("departure_airport").getString("name") + " (" + flight.getJSONObject("departure_airport").getString("id") + ")</p>");
-                        out.println("<p><strong>To:</strong> " + flight.getJSONObject("arrival_airport").getString("name") + " (" + flight.getJSONObject("arrival_airport").getString("id") + ")</p>");
-                        out.println("<p><strong>Price:</strong> $" + flight.getInt("price") + "</p>");
-                        out.println("<p><strong>Duration:</strong> " + flight.getInt("total_duration") + " minutes</p>");
-                        out.println("<hr>");
-                        out.println("</div>");
-                    }
-                } else {
-                    out.println("<p>No flights found.</p>");
-                }
-            }
-        } else {
-            out.println("<p>No flight data received.</p>");
-        }
-    %>
-</section>
+<div id="flight-results"></div>
+
+<script type="text/javascript">
+    var template = `
+        <style type="text/css">
+            .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}
+            .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}
+            .tftable tr {background-color:#ffffff;}
+            .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}
+            .tftable tr:hover {background-color:#e0ffff;}
+        </style>
+
+        <table class="tftable" border="1">
+            <tr>
+                <th>Departure Airport</th>
+                <th>Arrival Airport</th>
+                <th>Duration</th>
+                <th>Airplane</th>
+                <th>Airline</th>
+                <th>Travel Class</th>
+                <th>Flight Number</th>
+                <th>Layovers Duration</th>
+                <th>Carbon Emissions</th>
+            </tr>
+
+            {{#each response.other_flights}}
+                <tr>
+                    <td>{{flights.[0].departure_airport.name}}</td>
+                    <td>{{flights.[0].arrival_airport.name}}</td>
+                    <td>{{flights.[0].duration}}</td>
+                    <td>{{flights.[0].airplane}}</td>
+                    <td>{{flights.[0].airline}}</td>
+                    <td>{{flights.[0].travel_class}}</td>
+                    <td>{{flights.[0].flight_number}}</td>
+                    <td>{{layovers.[0].duration}}</td>
+                    <td>{{carbon_emissions.this_flight}}</td>
+                </tr>
+            {{/each}}
+        </table>
+        `;
+
+    // Parse the flight data JSON passed from the servlet
+    var flightData = JSON.parse('<%= request.getAttribute("flightData") %>');
+
+    function constructVisualizerPayload() {
+        return { response: flightData };
+    }
+
+    // Insert the visualization into the HTML
+    document.getElementById('flight-results').innerHTML = Handlebars.compile(template)(constructVisualizerPayload());
+</script>
 </body>
 </html>

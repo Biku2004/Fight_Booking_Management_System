@@ -3,10 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Booking</title>
     <link rel="stylesheet" href="home.css">
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
+
     <style>
         /* Profile dropdown styling */
         .profile-dropdown {
@@ -97,7 +100,7 @@
                 <button class="flight-btn active">✈️ Book a flight</button>
             </div>
 
-            <form id="flightSearchForm">
+            <form id="flightSearchForm" method="post" action="flightSearch">
                 <div class="trip-type">
                     <input type="radio" id="oneway" name="trip" checked onclick="toggleReturnDate()">
                     <label for="oneway">One Way</label>
@@ -108,7 +111,7 @@
                 <div class="booking-form">
                     <div class="form-group dropdown">
                         <label for="fromAirport">From</label>
-                        <input type="text" id="fromAirport" name="fromAirport" placeholder="Airport" contenteditable="true">
+                        <input type="text" id="fromAirport" name="from" placeholder="Airport" contenteditable="true">
                     </div>
 
                     <div class="form-group">
@@ -117,11 +120,11 @@
                     </div>
                     <div class="form-group">
                         <label for="departure">Departure</label>
-                        <input type="date" id="departure" name="departure" value="">
+                        <input type="date" id="departure" name="departure" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
                     </div>
                     <div class="form-group" id="returnField">
                         <label for="return">Return</label>
-                        <input type="date" id="return" name="return" value="">
+                        <input type="date" id="return" name="return" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">
                     </div>
                     <div class="form-group">
                         <label for="passengers">Passengers</label>
@@ -129,7 +132,7 @@
                     </div>
 
                     <div class="search">
-                        <button type="button" class="search-btn" onclick="fetchFlights()">Search</button>
+                        <button type="submit" class="search-btn">Search</button>
                     </div>
                 </div>
             </form>
