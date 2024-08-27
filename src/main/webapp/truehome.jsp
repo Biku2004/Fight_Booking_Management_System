@@ -47,35 +47,12 @@
         .profile-dropdown:hover .dropdown-content {
             display: block;
         }
+
+        /* Hide return date by default */
+        #returnField {
+            display: none;
+        }
     </style>
-    <script>
-        function fetchFlights() {
-            const from = document.getElementById('from').value;
-            const to = document.getElementById('to').value;
-            const departure = document.getElementById('departure').value;
-            const returnDate = document.getElementById('return').value;
-
-            const form = document.getElementById('flightSearchForm');
-            form.action = 'flightSearch'; // URL of the servlet handling the request
-            form.method = 'POST';
-
-            // Create hidden fields to store the parameters
-            form.appendChild(createHiddenInput('from', from));
-            form.appendChild(createHiddenInput('to', to));
-            form.appendChild(createHiddenInput('departure', departure));
-            form.appendChild(createHiddenInput('return', returnDate));
-
-            form.submit();
-        }
-
-        function createHiddenInput(name, value) {
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = name;
-            input.value = value;
-            return input;
-        }
-    </script>
 </head>
 <body>
 <header class="header">
@@ -122,17 +99,18 @@
 
             <form id="flightSearchForm">
                 <div class="trip-type">
-                    <input type="radio" id="oneway" name="trip" checked>
+                    <input type="radio" id="oneway" name="trip" checked onclick="toggleReturnDate()">
                     <label for="oneway">One Way</label>
-                    <input type="radio" id="roundtrip" name="trip">
+                    <input type="radio" id="roundtrip" name="trip" onclick="toggleReturnDate()">
                     <label for="roundtrip">Round Trip</label>
                 </div>
 
                 <div class="booking-form">
-                    <div class="form-group">
-                        <label for="from">From</label>
-                        <input type="text" id="from" name="from" placeholder="Search by place/airport" value="Delhi, DEL">
+                    <div class="form-group dropdown">
+                        <label for="fromAirport">From</label>
+                        <input type="text" id="fromAirport" name="fromAirport" placeholder="Airport" contenteditable="true">
                     </div>
+
                     <div class="form-group">
                         <label for="to">To</label>
                         <input type="text" id="to" name="to" placeholder="Search by place/airport" value="Kolkata, CCU">
@@ -141,7 +119,7 @@
                         <label for="departure">Departure</label>
                         <input type="date" id="departure" name="departure" value="">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="returnField">
                         <label for="return">Return</label>
                         <input type="date" id="return" name="return" value="">
                     </div>
@@ -158,6 +136,23 @@
         </div>
     </section>
 </main>
+
+<script>
+    function toggleReturnDate() {
+        const isRoundTrip = document.getElementById('roundtrip').checked;
+        const returnField = document.getElementById('returnField');
+        if (isRoundTrip) {
+            returnField.style.display = 'block';
+        } else {
+            returnField.style.display = 'none';
+        }
+    }
+
+    // Initialize visibility based on default checked value
+    document.addEventListener('DOMContentLoaded', () => {
+        toggleReturnDate();
+    });
+</script>
 
 </body>
 </html>
