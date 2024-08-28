@@ -27,19 +27,22 @@
                     <td colspan="2">Departure: {{flights.[0].departure_airport.name}}</td>
                     <td colspan="2">Arrival: {{flights.[0].arrival_airport.name}}</td>
                 </tr>
-
                 <!-- Flight details -->
                 <tr>
                     <th>Duration</th>
                     <th>Airplane</th>
                     <th>Airline</th>
                     <th>Flight Number</th>
+                    <th>Legroom</th>
+                    <th>Extensions</th>
                 </tr>
                 <tr>
                     <td>{{formatDuration flights.[0].duration}}</td>
                     <td>{{flights.[0].airplane}}</td>
                     <td>{{flights.[0].airline}}</td>
                     <td>{{flights.[0].flight_number}}</td>
+                    <td>{{flights.[0].legroom}}</td>
+                    <td>{{flights.[0].extensions}}</td>
                 </tr>
 
                 <tr>
@@ -55,6 +58,35 @@
             </table>
             <br>
         {{/each}}
+        <h3>Other Flights</h3>
+        <table class="tftable" border="1">
+            <tr>
+                <th>Departure Airport</th>
+                <th>Arrival Airport</th>
+                <th>Duration</th>
+                <th>Airplane</th>
+                <th>Airline</th>
+                <th>Travel Class</th>
+                <th>Flight Number</th>
+                <th>Legroom</th>
+                <th>Extensions</th>
+
+            </tr>
+            {{#each response.other_flights}}
+            <tr>
+                <td>{{flights.[0].departure_airport.name}}</td>
+                <td>{{flights.[0].arrival_airport.name}}</td>
+                <td>{{formatDuration flights.[0].duration}}</td>
+                <td>{{flights.[0].airplane}}</td>
+                <td>{{flights.[0].airline}}</td>
+                <td>{{flights.[0].travel_class}}</td>
+                <td>{{flights.[0].flight_number}}</td>
+                <td>{{flights.[0].legroom}}</td>
+                <td>{{flights.[0].extensions}}</td>
+
+            </tr>
+            {{/each}}
+        </table>
     `;
 
 
