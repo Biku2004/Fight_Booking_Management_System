@@ -100,11 +100,48 @@
                 <button class="flight-btn active">✈️ Book a flight</button>
             </div>
 
+<%--            <form id="flightSearchForm" method="post" action="flightSearch">--%>
+<%--                <div class="trip-type">--%>
+<%--                    <input type="radio" id="oneway" name="trip" checked onclick="toggleReturnDate()">--%>
+<%--                    <label for="oneway">One Way</label>--%>
+<%--                    <input type="radio" id="roundtrip" name="trip" onclick="toggleReturnDate()">--%>
+<%--                    <label for="roundtrip">Round Trip</label>--%>
+<%--                </div>--%>
+
+<%--                <div class="booking-form">--%>
+<%--                    <div class="form-group dropdown">--%>
+<%--                        <label for="fromAirport">From</label>--%>
+<%--                        <input type="text" id="fromAirport" name="from" placeholder="Airport" contenteditable="true">--%>
+<%--                    </div>--%>
+
+<%--                    <div class="form-group">--%>
+<%--                        <label for="to">To</label>--%>
+<%--                        <input type="text" id="to" name="to" placeholder="Search by place/airport" value="Kolkata, CCU">--%>
+<%--                    </div>--%>
+<%--                    <div class="form-group">--%>
+<%--                        <label for="departure">Departure</label>--%>
+<%--                        <input type="date" id="departure" name="departure" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">--%>
+<%--                    </div>--%>
+<%--                    <div class="form-group" id="returnField">--%>
+<%--                        <label for="return">Return</label>--%>
+<%--                        <input type="date" id="return" name="return" pattern="\d{4}-\d{2}-\d{2}" placeholder="YYYY-MM-DD">--%>
+<%--                    </div>--%>
+<%--                    <div class="form-group">--%>
+<%--                        <label for="passengers">Passengers</label>--%>
+<%--                        <input type="number" id="passengers" name="passengers" value="1">--%>
+<%--                    </div>--%>
+
+<%--                    <div class="search">--%>
+<%--                        <button type="submit" class="search-btn">Search</button>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </form>--%>
+
             <form id="flightSearchForm" method="post" action="flightSearch">
                 <div class="trip-type">
-                    <input type="radio" id="oneway" name="trip" checked onclick="toggleReturnDate()">
+                    <input type="radio" id="oneway" name="trip" value="oneway" checked onclick="toggleReturnDate()">
                     <label for="oneway">One Way</label>
-                    <input type="radio" id="roundtrip" name="trip" onclick="toggleReturnDate()">
+                    <input type="radio" id="roundtrip" name="trip" value="roundtrip" onclick="toggleReturnDate()">
                     <label for="roundtrip">Round Trip</label>
                 </div>
 
@@ -136,6 +173,7 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </section>
 </main>
