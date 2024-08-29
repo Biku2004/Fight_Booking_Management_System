@@ -67,7 +67,10 @@
             color: #333;
         }
 
-        .grid-item h2 i {
+        .grid-item i {
+            font-size: 1.6em;
+            margin-bottom: 12px;
+            color: #333;
             margin-right: 8px;
         }
 
@@ -88,10 +91,10 @@
         .grid-item .btn {
             background-color: #2c3e50;
             color: white;
-            padding: 12px 32px;
-            font-size: 1.1em;
+            padding: 8px 20px;
+            font-size: 0.9em;
             border: none;
-            border-radius: 30px;
+            border-radius: 20px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
             margin: 0;
@@ -142,6 +145,7 @@
             z-index: 1;
         }
 
+
     </style>
 </head>
 <body>
@@ -153,47 +157,56 @@
         <button class="btn"><a href="adminregd.jsp">Add</a></button>
     </div>
     <div class="grid-item">
-        <h2><i class="fas fa-user-minus"></i>Delete Admin</h2>
+        <i class="fas fa-user-minus"></i>
+        <h2>Delete Admin</h2>
         <p>Delete any Admin from here</p>
         <button class="btn"><a href="adminDelete.jsp">Delete</a></button>
     </div>
     <div class="grid-item">
-        <h2><i class="fas fa-user-edit"></i>Update Admin</h2>
+        <i class="fas fa-user-edit"></i>
+        <h2>Update Admin</h2>
         <p>Update admin details from here</p>
         <button class="btn"><a href="emailAuthentication.jsp">Update</a></button>
     </div>
     <div class="grid-item">
-        <h2><i class="fas fa-eye"></i>View Admin</h2>
+        <i class="fas fa-eye"></i>
+        <h2>View Admin</h2>
         <p>View every detail about your admins</p>
         <button class="btn"><a href="viewAllAdmins.jsp">View</a></button>
     </div>
     <div class="grid-item">
-        <h2><i class="fas fa-plane"></i>Add Flight</h2>
+        <i class="fas fa-plane"></i>
+        <h2>Add Flight</h2>
         <p>Schedule a flight from here for any situation</p>
         <button class="btn"><a href="addFlight.jsp">Add Flight</a></button>
     </div>
     <div class="grid-item">
-        <h2><i class="fas fa-edit"></i>Modify Flight</h2>
+        <i class="fas fa-edit"></i>
+        <h2>Modify Flight</h2>
         <p>Modify any details of an already scheduled flight</p>
         <button class="btn"><a href="modifyFlight.jsp">Modify Flight</a></button>
     </div>
     <div class="grid-item">
-        <h2><i class="fas fa-trash-alt"></i>Delete Flight</h2>
+        <i class="fas fa-trash-alt"></i>
+        <h2>Delete Flight</h2>
         <p>Delete a scheduled flight</p>
         <button class="btn"><a href="deleteFlight.jsp">Delete</a></button>
     </div>
     <div class="grid-item">
-        <h2><i class="fas fa-chair"></i>Seat Info</h2>
+        <i class="fas fa-chair"></i>
+        <h2>Seat Info</h2>
         <p>View the current status of seats</p>
         <button class="btn"><a href="#">Seat Info</a></button>
     </div>
     <div class="grid-item">
-        <h2><i class="fa-solid fa-person"></i>Passenger Info</h2>
+        <i class="fa-solid fa-person"></i>
+        <h2>Passenger Info</h2>
         <p>Get Passenger Info</p>
         <button class="btn"><a href="#">Passenger info</a></button>
     </div>
     <div class="grid-item">
-        <h2><i class="fas fa-tools"></i>All in One</h2>
+        <i class="fas fa-tools"></i>
+        <h2>All in One</h2>
         <p>Modify any details of an already added flight</p>
         <button class="btn"><a href="allFile.jsp">AllIn1</a></button>
     </div>
