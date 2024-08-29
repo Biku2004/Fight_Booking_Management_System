@@ -6,11 +6,48 @@ body {
     color: #333;
 }
 
-.header {
+/* Container for left and right sections */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-side {
+    width: 200px;
     background-color: #f0f7ff;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
 }
+
+.right-side {
+    flex: 1;
+    padding: 20px;
+    overflow-x: auto;
+}
+.btn-custom {
+    background-color: #a2a2d2; /* Custom background color */
+    color: #fff; /* Text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 18px; /* Font size */
+    font-weight: 600; /* Font weight */
+    border-radius: 30px; /* Rounded corners */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.btn-custom:hover {
+    background-color: #a2a2d2; /* Darker background on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.btn-custom:active {
+    background-color: #a2a2d2; /* Even darker background on click */
+    transform: translateY(-1px); /* Slight reduction in lift */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Lighter shadow on click */
+}
+
 
 .navbar {
     display: flex;
