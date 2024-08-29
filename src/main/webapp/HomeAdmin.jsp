@@ -111,7 +111,7 @@
         <a href=""><h3>Seat Info</h3></a>
     </div>
     <div class="box">
-        <a href=""><h3>Passenger Info</h3></a>
+        <a href="allFile.jsp"><h3>All in One</h3></a>
     </div>
 </div>
 </body>
