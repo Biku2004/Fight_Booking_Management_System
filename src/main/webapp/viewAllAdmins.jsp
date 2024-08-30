@@ -54,7 +54,7 @@
     } else {
     %>
     <tr>
-        <td colspan="7">No admins found.</td>
+        <td colspan="7"><%= request.getAttribute("message") %></td>
     </tr>
     <%
         }
