@@ -113,6 +113,9 @@
     <div class="box">
         <a href="allFile.jsp"><h3>All in One</h3></a>
     </div>
+    <div class="box">
+        <a href="dataFromdb.jsp"><h3>Data From DB</h3></a>
+    </div>
 </div>
 </body>
 </html>
