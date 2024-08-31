@@ -18,6 +18,8 @@ public class FetchDataToTable extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        System.out.println("Servlet called"); // Debug statement
+
         List<Flight> flightList = new ArrayList<>();
 
         // Database connection settings
@@ -25,35 +27,40 @@ public class FetchDataToTable extends HttpServlet {
         String user = "Java-Project";
         String password = "root@localhost";
 
-        try (Connection conn = DriverManager.getConnection(url, user, password);
-             PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM flights");
-             ResultSet rs = pstmt.executeQuery()) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver"); // Load MySQL driver
+            try (Connection conn = DriverManager.getConnection(url, user, password);
+                 PreparedStatement pre = conn.prepareStatement("SELECT * FROM flights");
+                 ResultSet rs = pre.executeQuery()) {
 
-            while (rs.next()) {
-                Flight flight = new Flight();
-                flight.setId(rs.getInt("id"));
-                flight.setFlightNumber(rs.getString("flight_number"));
-                flight.setAirline(rs.getString("airline"));
-                flight.setDepartureAirport(rs.getString("departure_airport"));
-                flight.setArrivalAirport(rs.getString("arrival_airport"));
-                flight.setDuration(rs.getInt("duration"));
-                flight.setAirplane(rs.getString("airplane"));
-                flight.setLegroom(rs.getString("legroom"));
-                flight.setExtensions(rs.getString("extensions"));
-                flight.setTravelClass(rs.getString("travel_class"));
-                flight.setLayoversDuration(rs.getInt("layovers_duration"));
-                flight.setCarbonEmissions(rs.getFloat("carbon_emissions"));
-                flight.setCreatedAt(rs.getTimestamp("created_at"));
+                while (rs.next()) {
+                    Flight flight = new Flight();
+                    flight.setId(rs.getInt("id"));
+                    flight.setFlightNumber(rs.getString("flight_number"));
+                    flight.setAirline(rs.getString("airline"));
+                    flight.setDepartureAirport(rs.getString("departure_airport"));
+                    flight.setArrivalAirport(rs.getString("arrival_airport"));
+                    flight.setDuration(rs.getInt("duration"));
+                    flight.setAirplane(rs.getString("airplane"));
+                    flight.setLegroom(rs.getString("legroom"));
+                    flight.setExtensions(rs.getString("extensions"));
+                    flight.setTravelClass(rs.getString("travel_class"));
+                    flight.setLayoversDuration(rs.getInt("layovers_duration"));
+                    flight.setCarbonEmissions(rs.getFloat("carbon_emissions"));
+                    flight.setCreatedAt(rs.getTimestamp("created_at"));
 
-                flightList.add(flight);
+                    flightList.add(flight);
+                }
+
             }
-
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute("errorMessage", "Error retrieving flight data.");
+            request.setAttribute("errorMessage", "Error retrieving flight data: " + e.getMessage());
         }
 
+        System.out.println("Number of flights: " + flightList.size()); // Debug statement
+
         request.setAttribute("flightList", flightList);
-        request.getRequestDispatcher("dataFromdb.jsp").forward(request, response);
+        request.getRequestDispatcher("/dataFromdb.jsp").forward(request, response);
     }
 }

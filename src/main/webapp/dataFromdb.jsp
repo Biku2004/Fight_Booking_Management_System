@@ -12,17 +12,14 @@
       width: 100%;
       border-collapse: collapse;
     }
-
     th, td {
       padding: 12px;
       text-align: left;
       border-bottom: 1px solid #ddd;
     }
-
     th {
       background-color: #f2f2f2;
     }
-
     tr:hover {
       background-color: #f5f5f5;
     }
@@ -30,6 +27,17 @@
 </head>
 <body>
 <h2>Flight List</h2>
+
+<form action="fetchDataToTable" method="GET">
+  <button type="submit">Load Flights</button>
+</form>
+
+<%
+  System.out.println("JSP page loaded"); // Debug statement
+  Object flightListObj = request.getAttribute("flightList");
+  System.out.println("FlightList in JSP: " + flightListObj); // Debug statement
+%>
+
 <%
   String errorMessage = (String) request.getAttribute("errorMessage");
   if (errorMessage != null) {
@@ -38,6 +46,7 @@
 <%
   }
 %>
+
 <table>
   <thead>
   <tr>
@@ -58,7 +67,11 @@
   </thead>
   <tbody>
   <%
-    List<Flight> flightsList = (List<Flight>) request.getAttribute("flightList");
+    List<Flight> flightsList = null;
+    if (flightListObj instanceof List<?>) {
+      flightsList = (List<Flight>) flightListObj;
+    }
+
     if (flightsList != null && !flightsList.isEmpty()) {
       for (Flight flight : flightsList) {
   %>
@@ -82,7 +95,7 @@
   } else {
   %>
   <tr>
-    <td colspan="13">No flights found.</td>
+    <td colspan="13">No flights found or data not loaded. Click "Load Flights" to retrieve data.</td>
   </tr>
   <%
     }
