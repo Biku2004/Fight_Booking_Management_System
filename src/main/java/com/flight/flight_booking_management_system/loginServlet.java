@@ -18,7 +18,7 @@ import java.sql.ResultSet;
 @WebServlet("/login")
 public class loginServlet extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req , HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email1");
         String pass = req.getParameter("pass1");
 
@@ -40,7 +40,14 @@ public class loginServlet extends HttpServlet {
                 byte[] profilePhoto = photoInputStream.readAllBytes();
                 session.setAttribute("profile_photo", profilePhoto);
 
-                resp.sendRedirect("truehome.jsp");
+                // Check the role of the user and redirect accordingly
+                String role = rs.getString("UserType");  // Assuming 'Role' is a column in your database
+
+                if ("admin".equalsIgnoreCase(role)) {
+                    resp.sendRedirect("HomeAdmin.jsp");  // Redirect to admin home page
+                } else {
+                    resp.sendRedirect("truehome.jsp");  // Redirect to user home page
+                }
             } else {
                 RequestDispatcher rd = req.getRequestDispatcher("/error.jsp");
                 rd.include(req, resp);

@@ -13,14 +13,14 @@ public class AdminDAO {
 
     // SQL queries
     private static final String INSERT_ADMIN_SQL =
-            "INSERT INTO admin (First_Name, Last_Name, Email, Password, Phone_Number, Country, Gender, Profile_Photo_Path, DOB) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            "INSERT INTO register (FirstName, LastName, Email, Password, Phone, Nationality, Gender, DateOfBirth,ProfilePhoto,UserType) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,'admin')";
 
-    private static final String DELETE_ADMIN_SQL = "DELETE FROM admin WHERE Email = ?";
+    private static final String DELETE_ADMIN_SQL = "DELETE FROM register WHERE Email = ? and UserType = 'admin'";
     private static final String UPDATE_ADMIN_SQL =
-            "UPDATE admin SET First_Name = ?, Last_Name = ?, Phone_Number = ?, Country = ?, Gender = ?, DOB = ? WHERE Email = ?";
-    private static final String SELECT_ADMIN_BY_EMAIL = "SELECT * FROM admin WHERE Email = ?";
-    private static final String SELECT_ALL_ADMINS_SQL = "SELECT * FROM admin";
+            "UPDATE register SET FirstName = ?, LastName = ?, Phone = ?, Nationality = ?, Gender = ?, DateOfBirth = ? WHERE Email = ? and UserType = 'admin'";
+    private static final String SELECT_ADMIN_BY_EMAIL = "SELECT * FROM register WHERE UserType = 'admin'";
+    private static final String SELECT_ALL_ADMINS_SQL = "SELECT * FROM register WHERE UserType = 'admin'";
 
     // Establishes a connection to the database
     protected Connection getConnection() throws SQLException {
@@ -52,7 +52,6 @@ public class AdminDAO {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
-            throw e; // Re-throw to handle in the servlet
         }
     }
 
@@ -127,20 +126,27 @@ public class AdminDAO {
              ResultSet rs = pstm.executeQuery()) {
 
             while (rs.next()) {
+                String firstName = rs.getString("FirstName");
+                String lastName = rs.getString("LastName");
+                System.out.println("Retrieved Admin: " + firstName + " " + lastName);
+
                 Admin admin = new Admin();
-                admin.setFirstName(rs.getString("First_Name"));
-                admin.setLastName(rs.getString("Last_Name"));
+                admin.setFirstName(firstName);
+                admin.setLastName(lastName);
                 admin.setEmail(rs.getString("Email"));
-                admin.setPhoneNumber(rs.getString("Phone_Number"));
-                admin.setNationality(rs.getString("Country"));
+                admin.setPhoneNumber(rs.getString("Phone"));
+                admin.setNationality(rs.getString("Nationality"));
                 admin.setGender(rs.getString("Gender"));
-                admin.setDateOfBirth(rs.getString("DOB"));
+                admin.setDateOfBirth(rs.getString("DateOfBirth"));
                 admins.add(admin);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw e; // Re-throw exception to handle in the servlet
+            throw e;
         }
         return admins;
     }
+
+
 }
+

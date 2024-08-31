@@ -15,7 +15,7 @@ public class ShowUpdateFormServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String email = req.getParameter("email");
+        String email = req.getParameter ( "email" );
         Admin admin = null;
 
         try {
@@ -32,4 +32,4 @@ public class ShowUpdateFormServlet extends HttpServlet {
             req.getRequestDispatcher("updateAdminError.jsp").forward(req, resp);
         }
     }
-}
+    }
