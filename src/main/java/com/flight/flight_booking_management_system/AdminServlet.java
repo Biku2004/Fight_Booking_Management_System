@@ -66,8 +66,9 @@ public class AdminServlet extends HttpServlet {
         admin.setPhoneNumber(phoneNumber);
         admin.setNationality(nationality);
         admin.setGender(gender);
-        admin.setProfilePhotoPath("uploads/" + fileName); // Relative path to the uploaded file
         admin.setDateOfBirth(dateOfBirth);
+        admin.setProfilePhotoPath("uploads/" + fileName); // Relative path to the uploaded file
+
 
         // Use DAO to save the admin data
         try {

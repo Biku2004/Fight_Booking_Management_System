@@ -46,8 +46,8 @@ public class AdminDAO {
             preparedStatement.setString(5, admin.getPhoneNumber());
             preparedStatement.setString(6, admin.getNationality());
             preparedStatement.setString(7, admin.getGender());
-            preparedStatement.setString(8, admin.getProfilePhotoPath());
-            preparedStatement.setString(9, admin.getDateOfBirth());
+            preparedStatement.setString(9, admin.getProfilePhotoPath());
+            preparedStatement.setString(8, admin.getDateOfBirth());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
