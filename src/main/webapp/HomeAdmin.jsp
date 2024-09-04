@@ -213,6 +213,12 @@
     <div class="box">
         <a href="dataFromdb.jsp"><h3>Data From DB</h3></a>
     </div>
+    <div class="grid-item">
+        <i class="fas fa-tools"></i>
+        <h2>All in One</h2>
+        <p>Modify any details of an already added flight</p>
+        <button class="btn"><a href="tickets.jsp">Tickets</a></button>
+    </div>
 </div>
 </body>
 </html>
