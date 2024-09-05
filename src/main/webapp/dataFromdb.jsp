@@ -28,14 +28,9 @@
 <body>
 <h2>Flight List</h2>
 
-<form action="fetchDataToTable" method="GET">
-  <button type="submit">Load Flights</button>
-</form>
-
 <%
   System.out.println("JSP page loaded"); // Debug statement
-  Object flightListObj = request.getAttribute("flightList");
-  System.out.println("FlightList in JSP: " + flightListObj); // Debug statement
+  List<Flight> flightsList = (List<Flight>) request.getAttribute("flightList");
 %>
 
 <%
@@ -67,11 +62,6 @@
   </thead>
   <tbody>
   <%
-    List<Flight> flightsList = null;
-    if (flightListObj instanceof List<?>) {
-      flightsList = (List<Flight>) flightListObj;
-    }
-
     if (flightsList != null && !flightsList.isEmpty()) {
       for (Flight flight : flightsList) {
   %>
@@ -95,7 +85,7 @@
   } else {
   %>
   <tr>
-    <td colspan="13">No flights found or data not loaded. Click "Load Flights" to retrieve data.</td>
+    <td colspan="13">No flights found or data not available.</td>
   </tr>
   <%
     }
