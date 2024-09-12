@@ -5,7 +5,7 @@
 <head>
   <title>Modify Flight</title>
   <!-- Add your CSS styles here -->
-  <link rel="stylesheet" href="modifystyle.css">
+  <link rel="stylesheet" href="../cssFile/modifystyle.css">
 </head>
 <body>
 <h2>Modify Flight Details</h2>
