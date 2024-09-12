@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
-    <file url="file://$PROJECT_DIR$/src/main/java/com/flight/flight_booking_management_system/AdminDAO.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/flight/flight_booking_management_system/AllServlet/FlightSearchCloneServlet.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/flight/flight_booking_management_system/EditProfileServlet.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/flight/flight_booking_management_system/FetchDataToTable.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/java/com/flight/flight_booking_management_system/registerServlet.java" dialect="GenericSQL" />
-    <file url="file://$PROJECT_DIR$/src/main/webapp/allFile.jsp" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/flight/flight_booking_management_system/Admin/AdminDAO.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/flight/flight_booking_management_system/Admin/FetchDataToTable.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/flight/flight_booking_management_system/Admin/FlightSearchCloneServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/flight/flight_booking_management_system/LoginRegister/EditProfileServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/com/flight/flight_booking_management_system/LoginRegister/registerServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/Admin/allFile.jsp" dialect="GenericSQL" />
   </component>
 </project>

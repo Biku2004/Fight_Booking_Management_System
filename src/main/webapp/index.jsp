@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome | Flight Management System</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cssFile/styles.css">
 </head>
 <body>
 <video autoplay muted loop id="background-video">
-    <source src="flightvdo2.mp4" type="video/mp4">
+    <source src="video/flightvdo2.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
 <div class="welcome-container">
@@ -19,16 +19,16 @@
     </div>
     <div class="button-group">
         <button class="enter-button">
-            <a href="login.jsp">Log in</a>
+            <a href="login/login.jsp">Log in</a>
         </button>
         <button class="enter-button">
-            <a href="Registration.jsp">Sign up</a>
+            <a href="registration/Registration.jsp">Sign up</a>
         </button>
         <button class="enter-button">
-            <a href="home.jsp">Home</a>
+            <a href="login/home.jsp">Home</a>
         </button>
         <button class="enter-button">
-            <a href="HomeAdmin.jsp">Admin Home</a>
+            <a href="Admin/HomeAdmin.jsp">Admin Home</a>
         </button>
     </div>
 </div>

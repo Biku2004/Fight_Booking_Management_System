@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Ticket Booking</title>
-    <link rel="stylesheet" type="text/css" href="styles2.css">
-    <script src="scripts2.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="cssFile/styles2.css">
+    <script src="Scripts/scripts2.js" defer></script>
 </head>
 <body>
 <div class="container">
