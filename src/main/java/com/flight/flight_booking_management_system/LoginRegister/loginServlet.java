@@ -44,7 +44,7 @@ public class loginServlet extends HttpServlet {
                 String role = rs.getString("UserType");  // Assuming 'Role' is a column in your database
 
                 if ("admin".equalsIgnoreCase(role)) {
-                    resp.sendRedirect("HomeAdmin.jsp");  // Redirect to admin home page
+                    resp.sendRedirect("Admin/HomeAdmin.jsp");  // Redirect to admin home page
                 } else {
                     resp.sendRedirect("login/truehome.jsp");  // Redirect to user home page
                 }
