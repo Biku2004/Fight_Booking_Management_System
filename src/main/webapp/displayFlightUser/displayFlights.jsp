@@ -20,71 +20,103 @@
             .flight-header {background-color:#f0f8ff; font-weight:bold;}
         </style>
 
-        {{#each response.other_flights}}
-            <table class="tftable" border="1">
-                <!-- Header row with departure and arrival airports -->
-                <tr class="flight-header">
-                    <td colspan="2">Departure: {{flights.[0].departure_airport.name}}</td>
-                    <td colspan="2">Arrival: {{flights.[0].arrival_airport.name}}</td>
-                </tr>
-                <!-- Flight details -->
-                <tr>
-                    <th>Duration</th>
-                    <th>Airplane</th>
-                    <th>Airline</th>
-                    <th>Flight Number</th>
-                    <th>Legroom</th>
-                    <th>Extensions</th>
-                </tr>
-                <tr>
-                    <td>{{formatDuration flights.[0].duration}}</td>
-                    <td>{{flights.[0].airplane}}</td>
-                    <td>{{flights.[0].airline}}</td>
-                    <td>{{flights.[0].flight_number}}</td>
-                    <td>{{flights.[0].legroom}}</td>
-                    <td>{{flights.[0].extensions}}</td>
-                </tr>
 
-                <tr>
-                    <th>Travel Class</th>
-                    <th>Layovers Duration</th>
-                    <th>Carbon Emissions</th>
-                </tr>
-                <tr>
-                    <td>{{flights.[0].travel_class}}</td>
-                    <td>{{layovers.[0].duration}}</td>
-                    <td>{{carbon_emissions.this_flight}}</td>
-                </tr>
-            </table>
-            <br>
-        {{/each}}
-        <h3>Other Flights</h3>
         <table class="tftable" border="1">
             <tr>
                 <th>Departure Airport</th>
                 <th>Arrival Airport</th>
+
+                <th>Departure Airport ID</th>
+                <th>Arrival Airport ID</th>
+
+                <th>Departure time</th>
+                <th>Arrival time</th>
+
                 <th>Duration</th>
                 <th>Airplane</th>
                 <th>Airline</th>
+                <th>Airline Logo</th>
                 <th>Travel Class</th>
                 <th>Flight Number</th>
                 <th>Legroom</th>
-                <th>Extensions</th>
 
+                <th>extensions</th>
+
+                <th>Layovers</th>
+
+                <th>total_duration</th>
+                <th>Carbon Emissions (this flight)</th>
+                <th>Typical Carbon Emissions for Route</th>
+                <th>Carbon Emission Difference (%)</th>
+                <th>price</th>
             </tr>
+
+            {{#each response.best_flights}}
+                {{#each flights}}
+                    <tr>
+                        <td>{{departure_airport.name}}</td>
+                        <td>{{arrival_airport.name}}</td>
+                        <td>{{departure_airport.id}}</td>
+                        <td>{{arrival_airport.id}}</td>
+                        <td>{{departure_airport.time}}</td>
+                        <td>{{arrival_airport.time}}</td>
+
+                        <td>{{duration}}</td>
+                        <td>{{airplane}}</td>
+                        <td>{{airline}}</td>
+                        <td><img src="{{airline_logo}}" alt="Airline Logo" style="width:50px;"></td>
+                        <td>{{travel_class}}</td>
+                        <td>{{flight_number}}</td>
+                        <td>{{legroom}}</td>
+
+                        <td>{{extensions}}</td>
+
+                        <td>
+                            {{#each ../layovers}}
+                                {{this.name}} - {{this.duration}} min {{#if overnight}} (Overnight) {{/if}} <br>
+                            {{/each}}
+                        </td>
+                        <td>{{../total_duration}}</td>
+                        <td>{{../carbon_emissions.this_flight}} g</td>
+                        <td>{{../carbon_emissions.typical_for_this_route}} g</td>
+                        <td>{{../carbon_emissions.difference_percent}}%</td>
+                        <td>{{../price}}</td>
+                    </tr>
+                {{/each}}
+            {{/each}}
+
             {{#each response.other_flights}}
-            <tr>
-                <td>{{flights.[0].departure_airport.name}}</td>
-                <td>{{flights.[0].arrival_airport.name}}</td>
-                <td>{{formatDuration flights.[0].duration}}</td>
-                <td>{{flights.[0].airplane}}</td>
-                <td>{{flights.[0].airline}}</td>
-                <td>{{flights.[0].travel_class}}</td>
-                <td>{{flights.[0].flight_number}}</td>
-                <td>{{flights.[0].legroom}}</td>
-                <td>{{flights.[0].extensions}}</td>
+                {{#each flights}}
+                    <tr>
+                        <td>{{departure_airport.name}}</td>
+                        <td>{{arrival_airport.name}}</td>
+                        <td>{{departure_airport.id}}</td>
+                        <td>{{arrival_airport.id}}</td>
+                        <td>{{departure_airport.time}}</td>
+                        <td>{{arrival_airport.time}}</td>
 
-            </tr>
+                        <td>{{duration}}</td>
+                        <td>{{airplane}}</td>
+                        <td>{{airline}}</td>
+                        <td><img src="{{airline_logo}}" alt="Airline Logo" style="width:50px;"></td>
+                        <td>{{travel_class}}</td>
+                        <td>{{flight_number}}</td>
+                        <td>{{legroom}}</td>
+
+                        <td>{{extensions}}</td>
+
+                        <td>
+                            {{#each ../layovers}}
+                                {{this.name}} - {{this.duration}} min {{#if overnight}} (Overnight) {{/if}} <br>
+                            {{/each}}
+                        </td>
+                        <td>{{../total_duration}}</td>
+                        <td>{{../carbon_emissions.this_flight}} g</td>
+                        <td>{{../carbon_emissions.typical_for_this_route}} g</td>
+                        <td>{{../carbon_emissions.difference_percent}}%</td>
+                        <td>{{../price}}</td>
+                    </tr>
+                {{/each}}
             {{/each}}
         </table>
     `;
