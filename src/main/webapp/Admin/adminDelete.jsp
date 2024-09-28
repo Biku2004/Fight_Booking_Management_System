@@ -54,7 +54,7 @@
 <body>
 <div class="form-container">
     <h1>Delete Admin</h1>
-    <form action="deleteAdmin" method="post">
+    <form action="/Flight_Booking_Management_System_war/deleteAdmin" method="post">
         <input type="email" name="email1" placeholder="Enter Admin Email" required/>
         <input type="submit" value="Delete"/>
     </form>
