@@ -58,7 +58,7 @@
 <div class="container">
   <h1>Failed to Add Flight</h1>
   <p>There was an error while processing your request. Please try again later.</p>
-  <a href="addFlight.jsp">Go Back to Add Flight</a>
+  <a href="./addFlight.jsp">Go Back to Add Flight</a>
 </div>
 
 </body>

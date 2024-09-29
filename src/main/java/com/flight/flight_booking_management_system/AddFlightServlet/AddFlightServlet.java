@@ -34,7 +34,7 @@ public class AddFlightServlet extends HttpServlet {
             price = Double.parseDouble(priceStr);
         } catch (NumberFormatException e) {
             System.out.println("Invalid price format: " + e.getMessage());
-            response.sendRedirect("addFlightError.jsp");
+            response.sendRedirect("addFlight/addFlightError.jsp");
             return;
         }
 
@@ -53,17 +53,17 @@ public class AddFlightServlet extends HttpServlet {
 
         if (isAdded) {
             System.out.println("Flight added successfully");
-            response.sendRedirect("addFlightSuccess.jsp");
+            response.sendRedirect("addFlight/addFlightSuccess.jsp");
         } else {
             System.out.println("Failed to add flight");
-            response.sendRedirect("addFlightError.jsp");
+            response.sendRedirect("addFlight/addFlightError.jsp");
         }
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Optional: handle GET requests if needed
-        response.sendRedirect("addFlight.jsp");
+        response.sendRedirect("addFlight/addFlight.jsp");
     }
 }
 
