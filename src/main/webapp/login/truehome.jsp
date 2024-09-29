@@ -140,6 +140,21 @@
 
         </div>
     </section>
+
+    <!-- Section to display flight search results -->
+    <section class="flight-results">
+        <h2>Flight Search Results</h2>
+
+        <div id="flight-results"></div>
+
+    </section>
+
+    <form id="flightDataForm" action="${pageContext.request.contextPath}/fetchDataToTable" method="GET">
+        <input type="hidden" name="from" id="fromInput">
+        <input type="hidden" name="to" id="toInput">
+        <button type="button" id="sendFlightDataBtn">Send Flight Data</button>
+    </form>
+
 </main>
 
 <script>
@@ -156,6 +171,27 @@
     // Initialize visibility based on default checked value
     document.addEventListener('DOMContentLoaded', () => {
         toggleReturnDate();
+    });
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var sendFlightDataBtn = document.getElementById('sendFlightDataBtn');
+        var flightDataForm = document.getElementById('flightDataForm');
+
+        sendFlightDataBtn.addEventListener('click', function() {
+            var fromValue = document.getElementById('fromAirport').value;
+            var toValue = document.getElementById('to').value;
+
+            if (fromValue && toValue) {
+                document.getElementById('fromInput').value = fromValue;
+                document.getElementById('toInput').value = toValue;
+                flightDataForm.submit();
+            } else {
+                alert('Please enter both "From" and "To" airports before sending flight data.');
+            }
+        });
+
     });
 </script>
 

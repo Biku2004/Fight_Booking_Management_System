@@ -81,11 +81,11 @@
         <aside id="leftSide" class="left-side">
             <button onclick="toggleAside()" class="btn btn-custom">Collapse</button>
             <br/><br/>
-            <button onclick="location.href='modifyFlight/modifyFlight.jsp'" class="btn btn-custom">Modify Flight</button>
+            <button class="btn btn-custom"><a href="../modifyFlight/modifyFlight.jsp">Modify Flight</a> </button>
             <br/><br/>
-            <button onclick="location.href='addFlight/addFlight.jsp'" class="btn btn-custom">Add Flight</button>
+            <button  class="btn btn-custom"><a href="../addFlight/addFlight.jsp">Add Flight</a> </button>
             <br/><br/>
-            <button onclick="location.href='deleteFlight/deleteFlight.jsp'" class="btn btn-custom">Delete Flight</button>
+            <button class="btn btn-custom"><a href="../deleteFlight/deleteFlight.jsp">Delete Flight</a></button>
         </aside>
 
         <!-- Right Side -->

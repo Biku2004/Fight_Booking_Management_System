@@ -91,7 +91,7 @@ public class FetchDataToTable extends HttpServlet {
                             flight.setTravelClass(rs.getString("travel_class"));
                             flight.setLayoversDuration(rs.getInt("layovers_duration"));
                             flight.setCarbonEmissions(rs.getFloat("carbon_emissions"));
-                            flight.setCreatedAt(rs.getTimestamp("created_at"));
+
 
                             flightList.add(flight);
                         }
