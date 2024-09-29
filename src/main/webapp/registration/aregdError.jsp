@@ -45,7 +45,7 @@
 <div class="error-container">
     <h1>Admin Registration Error 😟😟😟 Admin Not Registered</h1>
     <h1>Provide All The Credentials Properly</h1>
-    <a href="../Admin/adminregd.jsp">Back To Registration</a>
+    <a href="./Admin/adminregd.jsp">Back To Registration</a>
 </div>
 </body>
 </html>

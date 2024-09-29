@@ -56,7 +56,7 @@
 <div class="message-container">
     <h1>Deletion Result</h1>
     <p>${message}</p>
-    <a href="HomeAdmin.jsp">Back To Home 🏠</a>
+    <a href="./Admin/HomeAdmin.jsp">Back To Home 🏠</a>
 </div>
 </body>
 </html>

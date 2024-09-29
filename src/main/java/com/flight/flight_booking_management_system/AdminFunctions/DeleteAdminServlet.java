@@ -42,6 +42,6 @@ public class DeleteAdminServlet extends HttpServlet {
         req.setAttribute("message", message);
 
         // Forward the request to the JSP page to display the message
-        req.getRequestDispatcher("deleteAdminResult.jsp").forward(req, resp);
+        req.getRequestDispatcher("./Admin/deleteAdminResult.jsp").forward(req, resp);
     }
 }
