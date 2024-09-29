@@ -50,7 +50,7 @@
 <div class="error-container">
     <h1>Error</h1>
     <p><%= request.getAttribute("message") %></p>
-    <a href="../Admin/HomeAdmin.jsp">Go Back</a>
+    <a href="Admin/HomeAdmin.jsp">Go Back</a>
 </div>
 </body>
 </html>
