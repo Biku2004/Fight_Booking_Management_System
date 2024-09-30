@@ -152,7 +152,35 @@
         </div>
     </div>
 </main>
+
 <script>
+    function bookFlight( airlineLogo, airline, flightNumber, departureAirport,
+                         arrivalAirport,departureTime, arrivalTime,airplaneType,travelClass,
+                         duration,extensions,LayoversName, price, legroom, carbonEmissions ) {
+        // Construct the query parameters explicitly
+        const queryParams = new URLSearchParams({
+            'airline_logo' : airlineLogo,
+            'airline': airline,
+            'flight_number': flightNumber,
+            'departure_airport.name': departureAirport,
+            'arrival_airport.name': arrivalAirport,
+            'departure_airport.time': departureTime,
+            'arrival_airport.time': arrivalTime,
+            'airplane': airplaneType,
+            'travel_class': travelClass,
+            'duration': duration,
+            'extensions': extensions,
+            '../layovers':LayoversName,
+            '../price': price,
+            'legroom': legroom,
+            '../carbon_emissions.this_flight': carbonEmissions
+
+        }).toString();
+
+        // Redirect to the booking page with the constructed query parameters
+        window.location.href = `bookFlight/bookFlight.jsp? `+queryParams;
+    }
+
 
     function toggleAside() {
         const aside = document.getElementById("leftSide");
@@ -212,6 +240,7 @@
                 </style>
 
 
+
                 <!-- Airport Details -->
                 <h3>Airports</h3>
                 {{#each response.airports}}
@@ -230,32 +259,24 @@
 
                 <table class="tftable" border="1">
                     <tr>
-                        <th>Departure Airport</th> //1
-                        <th>Arrival Airport</th> //2
-
+                        <th>Departure Airport</th>
+                        <th>Arrival Airport</th>
                         <th>Departure Airport ID</th>
                         <th>Arrival Airport ID</th>
-
                         <th>Departure time</th>
                         <th>Arrival time</th>
-
                         <th>Duration</th>
                         <th>Airplane</th>
                         <th>Airline</th>
                         <th>Airline Logo</th>
                         <th>Travel Class</th>
                         <th>Flight Number</th>
-                        <th>Legroom</th> //13
-
-                        <th>extensions</th>
-
+                        <th>Legroom</th>
+                        <th>Extensions</th>
                         <th>Layovers</th>
-
-                        <th>total_duration</th>
                         <th>Carbon Emissions (this flight)</th>
-                        <th>Typical Carbon Emissions for Route</th>
-                        <th>Carbon Emission Difference (%)</th>
-                        <th>price</th>
+                        <th>Price</th>
+                        <th>Action</th> <!-- Added this header for the Book button -->
                     </tr>
 
                     {{#each response.best_flights}}
@@ -267,7 +288,6 @@
                                 <td>{{arrival_airport.id}}</td>
                                 <td>{{departure_airport.time}}</td>
                                 <td>{{arrival_airport.time}}</td>
-
                                 <td>{{duration}}</td>
                                 <td>{{airplane}}</td>
                                 <td>{{airline}}</td>
@@ -275,23 +295,23 @@
                                 <td>{{travel_class}}</td>
                                 <td>{{flight_number}}</td>
                                 <td>{{legroom}}</td>
-
                                 <td>{{extensions}}</td>
-
                                 <td>
                                     {{#each ../layovers}}
                                         {{this.name}} - {{this.duration}} min {{#if overnight}} (Overnight) {{/if}} <br>
                                     {{/each}}
                                 </td>
-                                <td>{{../total_duration}}</td>
                                 <td>{{../carbon_emissions.this_flight}} g</td>
-                                <td>{{../carbon_emissions.typical_for_this_route}} g</td>
-                                <td>{{../carbon_emissions.difference_percent}}%</td>
                                 <td>{{../price}}</td>
+                                <td>
+                                    <button class="book-btn" onclick="bookFlight('{{airline_logo}}','{{airline}}','{{flight_number}}', '{{departure_airport.name}}',
+                                    '{{arrival_airport.name}}','{{departure_airport.time}}', '{{arrival_airport.time}}','{{airplane}}', '{{travel_class}}','{{duration}}',
+                                    '{{extensions}}','{{../layovers}}',
+                                    '{{../price}}','{{legroom}}', '{{../carbon_emissions.this_flight}}')">Book</button>
+                                </td>
                             </tr>
                         {{/each}}
                     {{/each}}
-
                     {{#each response.other_flights}}
                         {{#each flights}}
                             <tr>
@@ -301,7 +321,6 @@
                                 <td>{{arrival_airport.id}}</td>
                                 <td>{{departure_airport.time}}</td>
                                 <td>{{arrival_airport.time}}</td>
-
                                 <td>{{duration}}</td>
                                 <td>{{airplane}}</td>
                                 <td>{{airline}}</td>
@@ -309,24 +328,26 @@
                                 <td>{{travel_class}}</td>
                                 <td>{{flight_number}}</td>
                                 <td>{{legroom}}</td>
-
                                 <td>{{extensions}}</td>
-
                                 <td>
                                     {{#each ../layovers}}
                                         {{this.name}} - {{this.duration}} min {{#if overnight}} (Overnight) {{/if}} <br>
                                     {{/each}}
                                 </td>
-                                <td>{{../total_duration}}</td>
                                 <td>{{../carbon_emissions.this_flight}} g</td>
-                                <td>{{../carbon_emissions.typical_for_this_route}} g</td>
-                                <td>{{../carbon_emissions.difference_percent}}%</td>
                                 <td>{{../price}}</td>
+                                <td>
+                                    <button class="book-btn" onclick="bookFlight('{{airline_logo}}','{{airline}}','{{flight_number}}', '{{departure_airport.name}}',
+                                    '{{arrival_airport.name}}','{{departure_airport.time}}', '{{arrival_airport.time}}','{{airplane}}', '{{travel_class}}','{{duration}}',
+                                    '{{extensions}}','{{../layovers}}',
+                                    '{{../price}}','{{legroom}}', '{{../carbon_emissions.this_flight}}' )">Book</button>
+                                </td>
                             </tr>
                         {{/each}}
                     {{/each}}
                 </table>
                 `;
+
 
 
             Handlebars.registerHelper('formatDuration', function(duration) {

@@ -43,13 +43,13 @@ public class FlightSearchCloneServlet extends HttpServlet {
                     "&arrival_id=" + to +
                     "&outbound_date=" + departure +
                     "&return_date=" + returnDate +
-                    "&currency=USD&hl=en&api_key=a86e162b04ae4f9880ab0e9716c6336ae410fdddd822aa078139f37f5af071f6";
+                    "&currency=USD&hl=en&api_key=1efb9512df0ef6d56fa82a5a49da7d1f7c6a55a06cc167b712f0811ee3747d25";
         } else {
             // One-way flight search
             apiUrl = "https://serpapi.com/search?engine=google_flights&departure_id=" + from +
                     "&arrival_id=" + to +
                     "&outbound_date=" + departure +
-                    "&type=2&currency=INR&hl=en&api_key=a86e162b04ae4f9880ab0e9716c6336ae410fdddd822aa078139f37f5af071f6";
+                    "&type=2&currency=INR&hl=en&api_key=1efb9512df0ef6d56fa82a5a49da7d1f7c6a55a06cc167b712f0811ee3747d25";
         }
 
         // Fetch flight data from the API
