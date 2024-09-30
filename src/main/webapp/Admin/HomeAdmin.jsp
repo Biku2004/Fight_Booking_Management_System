@@ -15,12 +15,20 @@
     <!-- Link to Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
         .grid-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             padding: 20px;
-            margin: 0 40px;
+            margin: 0 auto;
+            max-width: 1200px; /* Added max-width for better layout */
         }
 
         .grid-item {
@@ -144,8 +152,6 @@
             position: relative;
             z-index: 1;
         }
-
-
     </style>
 </head>
 <body>
@@ -202,7 +208,7 @@
         <i class="fa-solid fa-person"></i>
         <h2>Passenger Info</h2>
         <p>Get Passenger Info</p>
-        <button class="btn"><a href="#">Passenger info</a></button>
+        <button class="btn"><a href="../ViewPassenger/searchBooking.jsp">Passenger info</a></button>
     </div>
     <div class="grid-item">
         <i class="fas fa-tools"></i>
@@ -210,15 +216,18 @@
         <p>Modify any details of an already added flight</p>
         <button class="btn"><a href="allFile.jsp">AllIn1</a></button>
     </div>
-    <div class="box">
-        <a href="../bookFlight/dataFromdb.jsp"><h3>Data From DB</h3></a>
+    <div class="grid-item">
+        <i class="fas fa-database"></i>
+        <h2>Data From DB</h2>
+        <p>Access data from the database</p>
+        <button class="btn"><a href="../bookFlight/dataFromdb.jsp">Data</a></button>
     </div>
     <div class="grid-item">
-        <i class="fas fa-tools"></i>
-        <h2>All in One</h2>
-        <p>Modify any details of an already added flight</p>
+        <i class="fas fa-ticket-alt"></i>
+        <h2>Tickets</h2>
+        <p>Manage your tickets here</p>
         <button class="btn"><a href="../tickets.jsp">Tickets</a></button>
     </div>
 </div>
 </body>
-</html>
+</

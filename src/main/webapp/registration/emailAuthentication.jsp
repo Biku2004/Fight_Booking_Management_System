@@ -53,7 +53,7 @@
 </head>
 <body>
 <h1>Enter Email to Update Admin Details</h1>
-<form action="/Flight_Booking_Management_System_war/showUpdateForm" method="post">
+<form action="<%=request.getContextPath ()%>/showUpdateForm" method="post">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" placeholder="Enter Your Email" required><br><br>
     <input type="submit" value="Submit">

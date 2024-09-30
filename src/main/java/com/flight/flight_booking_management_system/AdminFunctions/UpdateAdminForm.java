@@ -13,10 +13,19 @@ import java.sql.SQLException;
 
 @WebServlet("/updateAdmin")
 public class UpdateAdminForm extends HttpServlet {
-    private AdminDAO adminDAO = new AdminDAO();
+    private static final long serialVersionUID = 1L;
+
+    // Initialize AdminDAO object
+    private AdminDAO adminDAO;
+
+    // Initialize the AdminDAO object in the constructor
+    public UpdateAdminForm() {
+        this.adminDAO = new AdminDAO();
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        // Retrieve admin details from the request
         String email = req.getParameter("email");
         String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
@@ -26,6 +35,15 @@ public class UpdateAdminForm extends HttpServlet {
         String dob = req.getParameter("dob");
         String message;
 
+        // Validate required fields
+        if (email == null || email.isEmpty()) {
+            message = "Email is required to update admin details.";
+            req.setAttribute("message", message);
+            req.getRequestDispatcher("updateAdminSuccess.jsp").forward(req, resp);
+            return;
+        }
+
+        // Create and set admin object properties
         Admin admin = new Admin();
         admin.setEmail(email);
         admin.setFirstName(firstName);
@@ -36,19 +54,22 @@ public class UpdateAdminForm extends HttpServlet {
         admin.setDateOfBirth(dob);
 
         try {
+            // Attempt to update admin in the database
             boolean isUpdated = adminDAO.updateAdmin(admin);
 
             if (isUpdated) {
                 message = "Admin details updated successfully.";
             } else {
-                message = "Failed to update admin details.";
+                message = "Failed to update admin details. Admin may not exist.";
             }
         } catch (SQLException e) {
-            message = "Error occurred: " + e.getMessage();
+            // Log error and set error message
             e.printStackTrace();
+            message = "An error occurred while updating admin details: " + e.getMessage();
         }
 
+        // Set the message attribute and forward to the success page
         req.setAttribute("message", message);
-        req.getRequestDispatcher("updateAdminSuccess.jsp").forward(req, resp);
+        req.getRequestDispatcher("UpdateFlight/updateAdminSuccess.jsp").forward(req, resp);
     }
 }

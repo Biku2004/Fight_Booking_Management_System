@@ -19,7 +19,7 @@ public class AdminDAO {
     private static final String DELETE_ADMIN_SQL = "DELETE FROM register WHERE Email = ? and UserType = 'admin'";
     private static final String UPDATE_ADMIN_SQL =
             "UPDATE register SET FirstName = ?, LastName = ?, Phone = ?, Nationality = ?, Gender = ?, DateOfBirth = ? WHERE Email = ? and UserType = 'admin'";
-    private static final String SELECT_ADMIN_BY_EMAIL = "SELECT * FROM register WHERE UserType = 'admin'";
+private static final String SELECT_ADMIN_BY_EMAIL = "SELECT * FROM register WHERE Email = ? AND UserType = 'admin'";
     private static final String SELECT_ALL_ADMINS_SQL = "SELECT * FROM register WHERE UserType = 'admin'";
 
     // Establishes a connection to the database
@@ -96,27 +96,30 @@ public class AdminDAO {
         return rowUpdated;
     }
 
-    // Retrieves admin details by email
-    public Admin getAdminByEmail(String email) throws SQLException {
-        Admin admin = null;
-        try (Connection conn = getConnection();
-             PreparedStatement pstm = conn.prepareStatement(SELECT_ADMIN_BY_EMAIL)) {
-            pstm.setString(1, email);
-            ResultSet rs = pstm.executeQuery();
+   public Admin getAdminByEmail(String email) throws SQLException {
+       Admin admin = null;
+       try (Connection conn = getConnection();
+            PreparedStatement pstm = conn.prepareStatement(SELECT_ADMIN_BY_EMAIL)) {
+           pstm.setString(1, email); // Set the email parameter correctly
+           ResultSet rs = pstm.executeQuery();
 
-            if (rs.next()) {
-                admin = new Admin();
-                admin.setEmail(rs.getString("Email"));
-                admin.setFirstName(rs.getString("First_Name"));
-                admin.setLastName(rs.getString("Last_Name"));
-                admin.setPhoneNumber(rs.getString("Phone_Number"));
-                admin.setNationality(rs.getString("Country"));
-                admin.setGender(rs.getString("Gender"));
-                admin.setDateOfBirth(rs.getString("DOB"));
-            }
-        }
-        return admin;
-    }
+           if (rs.next()) {
+               admin = new Admin();
+               admin.setEmail(rs.getString("Email"));
+               admin.setFirstName(rs.getString("FirstName"));
+               admin.setLastName(rs.getString("LastName"));
+               admin.setPhoneNumber(rs.getString("Phone"));
+               admin.setNationality(rs.getString("Nationality"));
+               admin.setGender(rs.getString("Gender"));
+               admin.setDateOfBirth(rs.getString("DateOfBirth"));
+           }
+       } catch (SQLException e) {
+           e.printStackTrace();
+           throw e; // Rethrow to handle in the servlet
+       }
+       return admin;
+   }
+
 
     // Retrieves all admin records
     public List<Admin> getAllAdmins() throws SQLException {

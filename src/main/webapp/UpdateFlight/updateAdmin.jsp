@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Update Admin Details</h1>
-<form action="updateAdmin" method="post">
+<form action="<%=request.getContextPath ()%>/updateAdmin" method="post">
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required><br><br>
 

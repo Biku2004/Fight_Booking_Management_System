@@ -24,28 +24,54 @@ public class AddFlightServlet extends HttpServlet {
         String airline = request.getParameter("airline");
         String departureCity = request.getParameter("departureCity");
         String arrivalCity = request.getParameter("arrivalCity");
+        String departureAirport = request.getParameter("departure_airport");
+        String arrivalAirport = request.getParameter("arrival_airport");
         String departureTime = request.getParameter("departureTime");
         String arrivalTime = request.getParameter("arrivalTime");
+        String durationStr = request.getParameter("duration");
+        String airplane = request.getParameter("airplane");
+        String legroom = request.getParameter("legroom");
+        String extensions = request.getParameter("extensions");
+        String travelClass = request.getParameter("travel_class");
+        String layoversDurationStr = request.getParameter("layovers_duration");
+        String carbonEmissionsStr = request.getParameter("carbon_emissions");
         String priceStr = request.getParameter("price");
 
-        // Convert price to double and validate
-        double price;
+
+        // Parse and validate numeric fields
+        int duration = 0;
+        int layoversDuration = 0;
+        double carbonEmissions = 0;
+        double price = 0;
+
         try {
+            duration = Integer.parseInt(durationStr);
+            layoversDuration = layoversDurationStr != null && !layoversDurationStr.isEmpty() ? Integer.parseInt(layoversDurationStr) : 0;
+            carbonEmissions = carbonEmissionsStr != null && !carbonEmissionsStr.isEmpty() ? Double.parseDouble(carbonEmissionsStr) : 0.0;
             price = Double.parseDouble(priceStr);
         } catch (NumberFormatException e) {
-            System.out.println("Invalid price format: " + e.getMessage());
+            System.out.println("Invalid numeric input: " + e.getMessage());
             response.sendRedirect("addFlight/addFlightError.jsp");
+
             return;
         }
 
-        // Create a new AddFlight object
         AddFlight flight = new AddFlight();
         flight.setFlightNumber(flightNumber);
         flight.setAirline(airline);
         flight.setDepartureCity(departureCity);
         flight.setArrivalCity(arrivalCity);
+        flight.setDepartureAirport(departureAirport);
+        flight.setArrivalAirport(arrivalAirport);
         flight.setDepartureTime(departureTime);
         flight.setArrivalTime(arrivalTime);
+        flight.setDuration(duration);
+        flight.setAirplane(airplane);
+        flight.setLegroom(legroom);
+        flight.setExtensions(extensions);
+        flight.setTravelClass(travelClass);
+        flight.setLayoversDuration(layoversDuration);
+        flight.setCarbonEmissions(carbonEmissions);
         flight.setPrice(price);
 
         // Use AddFlightDAO to add flight
@@ -56,7 +82,8 @@ public class AddFlightServlet extends HttpServlet {
             response.sendRedirect("addFlight/addFlightSuccess.jsp");
         } else {
             System.out.println("Failed to add flight");
-            response.sendRedirect("addFlight/addFlightError.jsp");
+            response.sendRedirect(request.getContextPath() + "addFlight/addFlightError.jsp");
+
         }
     }
 

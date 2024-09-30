@@ -27,20 +27,32 @@ public class AddFlightDAO {
     }
 
     // Method to add a flight to the database
+    // Method to add a flight to the database with the updated structure
     public boolean addFlight(AddFlight flight) {
-        String sql = "INSERT INTO flights (flight_number, airline, departure_city, arrival_city, departure_time, arrival_time, price) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO flights (flight_number, airline, departure_airport, arrival_airport, duration, airplane, legroom, extensions, travel_class, layovers_duration, carbon_emissions, departure_time, arrival_time, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            // Set values for the prepared statement
             preparedStatement.setString(1, flight.getFlightNumber());
             preparedStatement.setString(2, flight.getAirline());
-            preparedStatement.setString(3, flight.getDepartureCity());
-            preparedStatement.setString(4, flight.getArrivalCity());
-            preparedStatement.setString(5, flight.getDepartureTime());
-            preparedStatement.setString(6, flight.getArrivalTime());
-            preparedStatement.setDouble(7, flight.getPrice());
+            preparedStatement.setString(3, flight.getDepartureAirport());
+            preparedStatement.setString(4, flight.getArrivalAirport());
+            preparedStatement.setInt(5, flight.getDuration());
+            preparedStatement.setString(6, flight.getAirplane());
+            preparedStatement.setString(7, flight.getLegroom());
+            preparedStatement.setString(8, flight.getExtensions());
+            preparedStatement.setString(9, flight.getTravelClass());
+            preparedStatement.setInt(10, flight.getLayoversDuration());
+            preparedStatement.setDouble(11, flight.getCarbonEmissions());
+            preparedStatement.setString(12, flight.getDepartureTime());
+            preparedStatement.setString(13, flight.getArrivalTime());
+            preparedStatement.setDouble(14, flight.getPrice());
 
+            // Execute update
             int rowsInserted = preparedStatement.executeUpdate();
-            return rowsInserted > 0;
+            return rowsInserted > 0; // Return true if the flight was added successfully
         } catch (SQLException e) {
             e.printStackTrace();
         }

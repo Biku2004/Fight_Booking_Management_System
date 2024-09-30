@@ -35,6 +35,6 @@
 <body>
 <h1>Update Status</h1>
 <p><%= request.getAttribute("message") %></p>
-<a href="../Admin/HomeAdmin.jsp">Go To Admin Home 🏠</a>
+<a href="Admin/HomeAdmin.jsp">Go To Admin Home 🏠</a>
 </body>
 </html>
