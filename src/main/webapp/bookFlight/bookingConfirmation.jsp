@@ -9,7 +9,11 @@
 
 <h2>Booking Confirmation</h2>
 
-<p>Thank you, <strong><%= request.getAttribute("fullName") %></strong>! Your booking for flight number <strong><%= request.getAttribute("flightNumber") %></strong> has been confirmed.</p>
+<p>Thank you,
+    <strong><%= request.getAttribute("fullName") %></strong>
+    ! Your booking for flight number
+    <strong><%= request.getAttribute("flightNumber") %></strong> has been confirmed.
+</p>
 
 </body>
 </html>
