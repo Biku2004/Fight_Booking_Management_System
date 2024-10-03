@@ -48,10 +48,10 @@ public class AddFlightServlet extends HttpServlet {
             duration = Integer.parseInt(durationStr);
             layoversDuration = layoversDurationStr != null && !layoversDurationStr.isEmpty() ? Integer.parseInt(layoversDurationStr) : 0;
             carbonEmissions = carbonEmissionsStr != null && !carbonEmissionsStr.isEmpty() ? Double.parseDouble(carbonEmissionsStr) : 0.0;
-            price = Double.parseDouble(priceStr);
+            price = priceStr != null && !priceStr.isEmpty() ? Double.parseDouble(priceStr) : 0.0;
         } catch (NumberFormatException e) {
             System.out.println("Invalid numeric input: " + e.getMessage());
-            response.sendRedirect("addFlight/addFlightError.jsp");
+            response.sendRedirect(request.getContextPath() + "/addFlight/addFlightError.jsp");
 
             return;
         }
@@ -79,10 +79,10 @@ public class AddFlightServlet extends HttpServlet {
 
         if (isAdded) {
             System.out.println("Flight added successfully");
-            response.sendRedirect("addFlight/addFlightSuccess.jsp");
+            response.sendRedirect(request.getContextPath() + "/addFlight/addFlightSuccess.jsp");
         } else {
             System.out.println("Failed to add flight");
-            response.sendRedirect(request.getContextPath() + "addFlight/addFlightError.jsp");
+            response.sendRedirect(request.getContextPath() + "/addFlight/addFlightError.jsp");
 
         }
     }
@@ -90,7 +90,7 @@ public class AddFlightServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Optional: handle GET requests if needed
-        response.sendRedirect("addFlight/addFlight.jsp");
+        response.sendRedirect("/addFlight/addFlight.jsp");
     }
 }
 
