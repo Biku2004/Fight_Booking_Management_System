@@ -18,17 +18,12 @@ public class ViewAllAdminsServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Admin> admins = null;
         try {
-            admins = adminDAO.getAllAdmins();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-        if (admins != null && !admins.isEmpty()) {
+            List<Admin> admins = adminDAO.getAllAdmins();
             req.setAttribute("admins", admins);
-        } else {
-            req.setAttribute("message", "No admins found.");
+        } catch (SQLException e) {
+            req.setAttribute("message", "Error retrieving admin data. Please try again.");
+            e.printStackTrace();
         }
         req.getRequestDispatcher("viewAllAdmins.jsp").forward(req, resp);
     }

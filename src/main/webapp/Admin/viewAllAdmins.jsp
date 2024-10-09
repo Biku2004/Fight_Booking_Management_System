@@ -1,8 +1,11 @@
-<%@ page import="com.flight.flight_booking_management_system.Admin.Admin" %>
-<%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List" %>
+<%@ page import="com.flight.flight_booking_management_system.Admin.Admin" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <title>View All Admins</title>
     <style>
         table {
@@ -35,30 +38,26 @@
     </tr>
     </thead>
     <tbody>
-    <%
-        List<Admin> admins = (List<Admin>) request.getAttribute("admins");
-        if (admins != null && !admins.isEmpty()) {
-            for (Admin admin : admins) {
-    %>
-    <tr>
-        <td><%= admin.getFirstName() %></td>
-        <td><%= admin.getLastName() %></td>
-        <td><%= admin.getEmail() %></td>
-        <td><%= admin.getPhoneNumber() %></td>
-        <td><%= admin.getNationality() %></td>
-        <td><%= admin.getGender() %></td>
-        <td><%= admin.getDateOfBirth() %></td>
-    </tr>
-    <%
-        }
-    } else {
-    %>
-    <tr>
-        <td colspan="7"><%= request.getAttribute("message") %></td>
-    </tr>
-    <%
-        }
-    %>
+    <c:choose>
+        <c:when test="${not empty admins}">
+            <c:forEach var="admin" items="${admins}">
+                <tr>
+                    <td>${admin.firstName}</td>
+                    <td>${admin.lastName}</td>
+                    <td>${admin.email}</td>
+                    <td>${admin.phoneNumber}</td>
+                    <td>${admin.nationality}</td>
+                    <td>${admin.gender}</td>
+                    <td>${admin.dateOfBirth}</td>
+                </tr>
+            </c:forEach>
+        </c:when>
+        <c:otherwise>
+            <tr>
+                <td colspan="7">No admins found.</td>
+            </tr>
+        </c:otherwise>
+    </c:choose>
     </tbody>
 </table>
 
