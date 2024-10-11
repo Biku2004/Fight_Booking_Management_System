@@ -1,1627 +1,544 @@
 {
+    "best_flights": [
+        {
+            "booking_token": "WyJDalJJVFROUU1qUjRTalIwWXpSQlF6ZGFNWGRDUnkwdExTMHRMUzB0TFMxMmRIQjROMEZCUVVGQlIyTktRV1pWUlVaUWVXRkJFZ1UyUlRNek54b0tDUDhZRUFBYUEwbE9VamdjY053ZCIsW1siSFlEIiwiMjAyNC0xMC0xMiIsIlBOUSIsbnVsbCwiNkUiLCIzMzciXV1d",
+            "total_duration": 65,
+            "price": 3199,
+            "flights": [{
+                "duration": 65,
+                "overnight": true,
+                "legroom": "28 in",
+                "extensions": [
+                    "Below average legroom (28 in)",
+                    "Carbon emissions estimate: 54 kg"
+                ],
+                "departure_airport": {
+                    "name": "Rajiv Gandhi International Airport",
+                    "id": "HYD",
+                    "time": "2024-10-12 01:50"
+                },
+                "flight_number": "6E 337",
+                "airplane": "Airbus A320neo",
+                "arrival_airport": {
+                    "name": "Pune International Airport",
+                    "id": "PNQ",
+                    "time": "2024-10-12 02:55"
+                },
+                "airline": "IndiGo",
+                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+                "travel_class": "Economy"
+            }],
+            "carbon_emissions": {
+                "this_flight": 55000,
+                "typical_for_this_route": 55000,
+                "difference_percent": 0
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
+        },
+        {
+            "booking_token": "WyJDalJJVFROUU1qUjRTalIwWXpSQlF6ZGFNWGRDUnkwdExTMHRMUzB0TFMxMmRIQjROMEZCUVVGQlIyTktRV1pWUlVaUWVXRkJFZ1UyUlRNMU1Sb0tDUDhZRUFBYUEwbE9VamdjY053ZCIsW1siSFlEIiwiMjAyNC0xMC0xMiIsIlBOUSIsbnVsbCwiNkUiLCIzNTEiXV1d",
+            "total_duration": 65,
+            "price": 3199,
+            "flights": [{
+                "duration": 65,
+                "overnight": true,
+                "legroom": "28 in",
+                "extensions": [
+                    "Below average legroom (28 in)",
+                    "Carbon emissions estimate: 54 kg"
+                ],
+                "departure_airport": {
+                    "name": "Rajiv Gandhi International Airport",
+                    "id": "HYD",
+                    "time": "2024-10-12 04:40"
+                },
+                "flight_number": "6E 351",
+                "airplane": "Airbus A320neo",
+                "arrival_airport": {
+                    "name": "Pune International Airport",
+                    "id": "PNQ",
+                    "time": "2024-10-12 05:45"
+                },
+                "airline": "IndiGo",
+                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+                "travel_class": "Economy"
+            }],
+            "carbon_emissions": {
+                "this_flight": 55000,
+                "typical_for_this_route": 55000,
+                "difference_percent": 0
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
+        },
+        {
+            "booking_token": "WyJDalJJVFROUU1qUjRTalIwWXpSQlF6ZGFNWGRDUnkwdExTMHRMUzB0TFMxMmRIQjROMEZCUVVGQlIyTktRV1pWUlVaUWVXRkJFZ1pUUnpJNU1Ua2FDZ2lzSUJBQUdnTkpUbEk0SEhDN0pnPT0iLFtbIkhZRCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIlNHIiwiMjkxOSJdXV0=",
+            "total_duration": 90,
+            "price": 4140,
+            "flights": [{
+                "duration": 90,
+                "legroom": "28 in",
+                "extensions": [
+                    "Below average legroom (28 in)",
+                    "Stream media to your device",
+                    "Carbon emissions estimate: 46 kg"
+                ],
+                "departure_airport": {
+                    "name": "Rajiv Gandhi International Airport",
+                    "id": "HYD",
+                    "time": "2024-10-12 22:25"
+                },
+                "flight_number": "SG 2919",
+                "airplane": "De Havilland-Bombardier Dash-8",
+                "arrival_airport": {
+                    "name": "Pune International Airport",
+                    "id": "PNQ",
+                    "time": "2024-10-12 23:55"
+                },
+                "airline": "SpiceJet",
+                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+                "travel_class": "Economy"
+            }],
+            "carbon_emissions": {
+                "this_flight": 46000,
+                "typical_for_this_route": 55000,
+                "difference_percent": -16
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png"
+        },
+        {
+            "booking_token": "WyJDalJJVFROUU1qUjRTalIwWXpSQlF6ZGFNWGRDUnkwdExTMHRMUzB0TFMxMmRIQjROMEZCUVVGQlIyTktRV1pWUlVaUWVXRkJFZ1UyUlRReU5ob0tDUFFoRUFBYUEwbE9VamdjY0trbyIsW1siSFlEIiwiMjAyNC0xMC0xMiIsIlBOUSIsbnVsbCwiNkUiLCI0MjYiXV1d",
+            "total_duration": 70,
+            "price": 4340,
+            "flights": [{
+                "duration": 70,
+                "often_delayed_by_over_30_min": true,
+                "legroom": "28 in",
+                "extensions": [
+                    "Below average legroom (28 in)",
+                    "Carbon emissions estimate: 54 kg"
+                ],
+                "departure_airport": {
+                    "name": "Rajiv Gandhi International Airport",
+                    "id": "HYD",
+                    "time": "2024-10-12 20:45"
+                },
+                "flight_number": "6E 426",
+                "airplane": "Airbus A320neo",
+                "arrival_airport": {
+                    "name": "Pune International Airport",
+                    "id": "PNQ",
+                    "time": "2024-10-12 21:55"
+                },
+                "airline": "IndiGo",
+                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+                "travel_class": "Economy"
+            }],
+            "carbon_emissions": {
+                "this_flight": 55000,
+                "typical_for_this_route": 55000,
+                "difference_percent": 0
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
+        },
+        {
+            "booking_token": "WyJDalJJVFROUU1qUjRTalIwWXpSQlF6ZGFNWGRDUnkwdExTMHRMUzB0TFMxMmRIQjROMEZCUVVGQlIyTktRV1pWUlVaUWVXRkJFZ1UyUlRRd01ob0tDSTR1RUFBYUEwbE9VamdjY09zMiIsW1siSFlEIiwiMjAyNC0xMC0xMiIsIlBOUSIsbnVsbCwiNkUiLCI0MDIiXV1d",
+            "total_duration": 60,
+            "price": 5902,
+            "flights": [{
+                "duration": 60,
+                "legroom": "28 in",
+                "extensions": [
+                    "Below average legroom (28 in)",
+                    "Carbon emissions estimate: 63 kg"
+                ],
+                "departure_airport": {
+                    "name": "Rajiv Gandhi International Airport",
+                    "id": "HYD",
+                    "time": "2024-10-12 15:45"
+                },
+                "flight_number": "6E 402",
+                "airplane": "Airbus A320",
+                "arrival_airport": {
+                    "name": "Pune International Airport",
+                    "id": "PNQ",
+                    "time": "2024-10-12 16:45"
+                },
+                "airline": "IndiGo",
+                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+                "travel_class": "Economy"
+            }],
+            "carbon_emissions": {
+                "this_flight": 63000,
+                "typical_for_this_route": 55000,
+                "difference_percent": 15
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
+        },
+        {
+            "booking_token": "WyJDalJJVFROUU1qUjRTalIwWXpSQlF6ZGFNWGRDUnkwdExTMHRMUzB0TFMxMmRIQjROMEZCUVVGQlIyTktRV1pWUlVaUWVXRkJFZ1ZUTlRFM016Z2MiLFtbIkhZRCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIlM1IiwiMTczIl1dXQ==",
+            "total_duration": 70,
+            "flights": [{
+                "duration": 70,
+                "extensions": ["Carbon emissions estimate: 97 kg"],
+                "departure_airport": {
+                    "name": "Rajiv Gandhi International Airport",
+                    "id": "HYD",
+                    "time": "2024-10-12 05:45"
+                },
+                "flight_number": "S5 173",
+                "airplane": "Embraer 175",
+                "arrival_airport": {
+                    "name": "Pune International Airport",
+                    "id": "PNQ",
+                    "time": "2024-10-12 06:55"
+                },
+                "airline": "Star Air",
+                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/S5.png",
+                "travel_class": "Economy"
+            }],
+            "carbon_emissions": {
+                "this_flight": 97000,
+                "typical_for_this_route": 55000,
+                "difference_percent": 76
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/S5.png"
+        },
+        {
+            "booking_token": "WyJDalJJVFROUU1qUjRTalIwWXpSQlF6ZGFNWGRDUnkwdExTMHRMUzB0TFMxMmRIQjROMEZCUVVGQlIyTktRV1pWUlVaUWVXRkJFZ1U1U1RnMk56Z2MiLFtbIkhZRCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIjlJIiwiODY3Il1dXQ==",
+            "total_duration": 90,
+            "flights": [{
+                "duration": 90,
+                "legroom": "30 in",
+                "extensions": [
+                    "Average legroom (30 in)",
+                    "Carbon emissions estimate: 75 kg"
+                ],
+                "departure_airport": {
+                    "name": "Rajiv Gandhi International Airport",
+                    "id": "HYD",
+                    "time": "2024-10-12 17:55"
+                },
+                "flight_number": "9I 867",
+                "airplane": "ATR 72",
+                "arrival_airport": {
+                    "name": "Pune International Airport",
+                    "id": "PNQ",
+                    "time": "2024-10-12 19:25"
+                },
+                "airline": "Alliance Air",
+                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/9I.png",
+                "travel_class": "Economy"
+            }],
+            "carbon_emissions": {
+                "this_flight": 75000,
+                "typical_for_this_route": 55000,
+                "difference_percent": 36
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/9I.png"
+        }
+    ],
     "search_metadata": {
-        "raw_html_file": "https://serpapi.com/searches/5ec95717a68057cb/6708f01893584c371741c258.html",
-        "created_at": "2024-10-11 09:30:00 UTC",
-        "processed_at": "2024-10-11 09:30:00 UTC",
-        "id": "6708f01893584c371741c258",
-        "prettify_html_file": "https://serpapi.com/searches/5ec95717a68057cb/6708f01893584c371741c258.prettify",
-        "total_time_taken": 6.97,
-        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=INR&tfs=CBwQAhoeEgoyMDI0LTEwLTEyagcIARIDQk9NcgcIARIDUE5RQgEBSAFwAZgBAg==",
-        "json_endpoint": "https://serpapi.com/searches/5ec95717a68057cb/6708f01893584c371741c258.json",
+        "raw_html_file": "https://serpapi.com/searches/5ec95717a68057cb/670901f4175de64c5a6edae9.html",
+        "created_at": "2024-10-11 10:46:12 UTC",
+        "processed_at": "2024-10-11 10:46:12 UTC",
+        "id": "670901f4175de64c5a6edae9",
+        "prettify_html_file": "https://serpapi.com/searches/5ec95717a68057cb/670901f4175de64c5a6edae9.prettify",
+        "total_time_taken": 2.74,
+        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=INR&tfs=CBwQAhoeEgoyMDI0LTEwLTEyagcIARIDSFlEcgcIARIDUE5RQgEBSAFwAZgBAg==",
+        "json_endpoint": "https://serpapi.com/searches/5ec95717a68057cb/670901f4175de64c5a6edae9.json",
         "status": "Success"
     },
     "other_flights": [
         {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RWU3prNE5IeEJTVGcxTVRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiVUsiLCI5ODQiXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIkFJIiwiODUxIl1dXQ==",
+            "booking_token": "WyJDalJJVFROUU1qUjRTalIwWXpSQlF6ZGFNWGRDUnkwdExTMHRMUzB0TFMxMmRIQjROMEZCUVVGQlIyTktRV1pWUlVaUWVXRkJFZ3cyUlRZME1EVjhOa1UxTWpnYUNnalhLeEFBR2dOSlRsSTRISEQ1TXc9PSIsW1siSFlEIiwiMjAyNC0xMC0xMiIsIkJMUiIsbnVsbCwiNkUiLCI2NDA1Il0sWyJCTFIiLCIyMDI0LTEwLTEyIiwiUE5RIixudWxsLCI2RSIsIjUyOCJdXV0=",
             "layovers": [{
-                "duration": 75,
-                "overnight": true,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 335,
-            "flights": [
-                {
-                    "duration": 135,
-                    "overnight": true,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 116 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 01:20"
-                    },
-                    "flight_number": "UK 984",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 03:35"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 125,
-                    "overnight": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 111 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 04:50"
-                    },
-                    "flight_number": "AI 851",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 06:55"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 228000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RnMU9YeEJTVGcxTVRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiQUkiLCI4NTkiXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIkFJIiwiODUxIl1dXQ==",
-            "layovers": [{
-                "duration": 60,
-                "overnight": true,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 325,
-            "flights": [
-                {
-                    "duration": 140,
-                    "overnight": true,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "In-seat USB outlet",
-                        "Carbon emissions estimate: 106 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 01:30"
-                    },
-                    "flight_number": "AI 859",
-                    "airplane": "Airbus A320neo",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 03:50"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 125,
-                    "overnight": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 111 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 04:50"
-                    },
-                    "flight_number": "AI 851",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 06:55"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 218000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RZeU5YeEpXRGN6T0RnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkxLTyIsbnVsbCwiQUkiLCI2MjUiXSxbIkxLTyIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIklYIiwiNzM4Il1dXQ==",
-            "layovers": [{
-                "duration": 85,
-                "name": "Chaudhary Charan Singh International Airport",
-                "id": "LKO"
-            }],
-            "total_duration": 335,
-            "flights": [
-                {
-                    "duration": 125,
-                    "legroom": "31 in",
-                    "extensions": [
-                        "Average legroom (31 in)",
-                        "Carbon emissions estimate: 139 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 11:15"
-                    },
-                    "flight_number": "AI 625",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Chaudhary Charan Singh International Airport",
-                        "id": "LKO",
-                        "time": "2024-10-12 13:20"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 125,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 123 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Chaudhary Charan Singh International Airport",
-                        "id": "LKO",
-                        "time": "2024-10-12 14:45"
-                    },
-                    "flight_number": "IX 738",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 16:50"
-                    },
-                    "airline": "Air India Express",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 263000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RnMU5YeEJTVGcwT1RnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiQUkiLCI4NTUiXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIkFJIiwiODQ5Il1dXQ==",
-            "layovers": [{
-                "duration": 120,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 375,
-            "flights": [
-                {
-                    "duration": 125,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "31 in",
-                    "extensions": [
-                        "Average legroom (31 in)",
-                        "Carbon emissions estimate: 131 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 11:50"
-                    },
-                    "flight_number": "AI 855",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 13:55"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 130,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 111 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 15:55"
-                    },
-                    "flight_number": "AI 849",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 18:05"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 243000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RWU3prMU1ueEJTVGcwT1RnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiVUsiLCI5NTIiXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIkFJIiwiODQ5Il1dXQ==",
-            "layovers": [{
-                "duration": 70,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 330,
-            "flights": [
-                {
-                    "duration": 130,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 116 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 12:35"
-                    },
-                    "flight_number": "UK 952",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 14:45"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 130,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 111 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 15:55"
-                    },
-                    "flight_number": "AI 849",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 18:05"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 228000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RWU3prMU1ueFZTems1TVRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiVUsiLCI5NTIiXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIlVLIiwiOTkxIl1dXQ==",
-            "layovers": [{
-                "duration": 175,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 435,
-            "flights": [
-                {
-                    "duration": 130,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 116 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 12:35"
-                    },
-                    "flight_number": "UK 952",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 14:45"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 130,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 117 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 17:40"
-                    },
-                    "flight_number": "UK 991",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 19:50"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 234000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RZM04zeFZTems1TVRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiQUkiLCI2NzciXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIlVLIiwiOTkxIl1dXQ==",
-            "layovers": [{
-                "duration": 145,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 410,
-            "flights": [
-                {
-                    "duration": 135,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "In-seat USB outlet",
-                        "Carbon emissions estimate: 106 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 13:00"
-                    },
-                    "flight_number": "AI 677",
-                    "airplane": "Airbus A320neo",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 15:15"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 130,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 117 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 17:40"
-                    },
-                    "flight_number": "UK 991",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 19:50"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 224000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RZNE4zeFZTemszTXpnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiQUkiLCI2ODciXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIlVLIiwiOTczIl1dXQ==",
-            "layovers": [{
-                "duration": 140,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 420,
-            "flights": [
-                {
-                    "duration": 150,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "33 in",
-                    "extensions": [
-                        "Above average legroom (33 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 128 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 16:00"
-                    },
-                    "flight_number": "AI 687",
-                    "airplane": "Boeing 787",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 18:30"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 130,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 117 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 20:50"
-                    },
-                    "flight_number": "UK 973",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 23:00"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 246000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RWU3preE1IeFZTemszTXpnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiVUsiLCI5MTAiXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIlVLIiwiOTczIl1dXQ==",
-            "layovers": [{
-                "duration": 70,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 335,
-            "flights": [
-                {
-                    "duration": 135,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 116 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 17:25"
-                    },
-                    "flight_number": "UK 910",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 19:40"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 130,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 117 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 20:50"
-                    },
-                    "flight_number": "UK 973",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 23:00"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 234000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RZMk1IeEJTVGcwTnpnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiQUkiLCI2NjAiXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIkFJIiwiODQ3Il1dXQ==",
-            "layovers": [{
-                "duration": 85,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 350,
-            "flights": [
-                {
-                    "duration": 140,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "In-seat USB outlet",
-                        "Carbon emissions estimate: 106 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 18:00"
-                    },
-                    "flight_number": "AI 660",
-                    "airplane": "Airbus A320neo",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 20:20"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 125,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 111 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 21:45"
-                    },
-                    "flight_number": "AI 847",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 23:50"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 218000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RWU3prNU5ueEJTVGcwTnpnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiVUsiLCI5OTYiXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIkFJIiwiODQ3Il1dXQ==",
-            "layovers": [{
-                "duration": 65,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 320,
-            "flights": [
-                {
-                    "duration": 130,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 125 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 18:30"
-                    },
-                    "flight_number": "UK 996",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 20:40"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 125,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 111 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 21:45"
-                    },
-                    "flight_number": "AI 847",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-12 23:50"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 237000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RZME1YeEpXRGszTkRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkJMUiIsbnVsbCwiQUkiLCI2NDEiXSxbIkJMUiIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIklYIiwiOTc0Il1dXQ==",
-            "layovers": [{
-                "duration": 70,
+                "duration": 105,
                 "name": "Kempegowda International Airport Bengaluru",
                 "id": "BLR"
             }],
             "total_duration": 260,
+            "price": 5591,
             "flights": [
-                {
-                    "duration": 110,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "31 in",
-                    "extensions": [
-                        "Average legroom (31 in)",
-                        "Carbon emissions estimate: 110 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 18:50"
-                    },
-                    "flight_number": "AI 641",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-12 20:40"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
                 {
                     "duration": 80,
                     "often_delayed_by_over_30_min": true,
+                    "legroom": "28 in",
+                    "extensions": [
+                        "Below average legroom (28 in)",
+                        "Carbon emissions estimate: 52 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Rajiv Gandhi International Airport",
+                        "id": "HYD",
+                        "time": "2024-10-12 13:55"
+                    },
+                    "flight_number": "6E 6405",
+                    "airplane": "Airbus A320neo",
+                    "arrival_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-10-12 15:15"
+                    },
+                    "airline": "IndiGo",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 75,
                     "legroom": "29 in",
                     "extensions": [
                         "Below average legroom (29 in)",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 79 kg"
+                        "Carbon emissions estimate: 64 kg"
                     ],
-                    "ticket_also_sold_by": ["Air India"],
                     "departure_airport": {
                         "name": "Kempegowda International Airport Bengaluru",
                         "id": "BLR",
-                        "time": "2024-10-12 21:50"
+                        "time": "2024-10-12 17:00"
                     },
-                    "flight_number": "IX 974",
+                    "flight_number": "6E 528",
+                    "airplane": "Airbus A321neo",
+                    "arrival_airport": {
+                        "name": "Pune International Airport",
+                        "id": "PNQ",
+                        "time": "2024-10-12 18:15"
+                    },
+                    "airline": "IndiGo",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+                    "travel_class": "Economy"
+                }
+            ],
+            "carbon_emissions": {
+                "this_flight": 116000,
+                "typical_for_this_route": 55000,
+                "difference_percent": 111
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
+        },
+        {
+            "booking_token": "WyJDalJJVFROUU1qUjRTalIwWXpSQlF6ZGFNWGRDUnkwdExTMHRMUzB0TFMxMmRIQjROMEZCUVVGQlIyTktRV1pWUlVaUWVXRkJFZ3cyUlRZek1UbDhOa1V4TURVYUNnalhLeEFBR2dOSlRsSTRISEQ1TXc9PSIsW1siSFlEIiwiMjAyNC0xMC0xMiIsIkJMUiIsbnVsbCwiNkUiLCI2MzE5Il0sWyJCTFIiLCIyMDI0LTEwLTEyIiwiUE5RIixudWxsLCI2RSIsIjEwNSJdXV0=",
+            "layovers": [{
+                "duration": 75,
+                "name": "Kempegowda International Airport Bengaluru",
+                "id": "BLR"
+            }],
+            "total_duration": 230,
+            "price": 5591,
+            "flights": [
+                {
+                    "duration": 70,
+                    "legroom": "29 in",
+                    "extensions": [
+                        "Below average legroom (29 in)",
+                        "Carbon emissions estimate: 49 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Rajiv Gandhi International Airport",
+                        "id": "HYD",
+                        "time": "2024-10-12 16:30"
+                    },
+                    "flight_number": "6E 6319",
+                    "airplane": "Airbus A321neo",
+                    "arrival_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-10-12 17:40"
+                    },
+                    "airline": "IndiGo",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 85,
+                    "legroom": "29 in",
+                    "extensions": [
+                        "Below average legroom (29 in)",
+                        "Carbon emissions estimate: 64 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-10-12 18:55"
+                    },
+                    "flight_number": "6E 105",
+                    "airplane": "Airbus A321neo",
+                    "arrival_airport": {
+                        "name": "Pune International Airport",
+                        "id": "PNQ",
+                        "time": "2024-10-12 20:20"
+                    },
+                    "airline": "IndiGo",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+                    "travel_class": "Economy"
+                }
+            ],
+            "carbon_emissions": {
+                "this_flight": 113000,
+                "typical_for_this_route": 55000,
+                "difference_percent": 105
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
+        },
+        {
+            "booking_token": "WyJDalJJVFROUU1qUjRTalIwWXpSQlF6ZGFNWGRDUnkwdExTMHRMUzB0TFMxMmRIQjROMEZCUVVGQlIyTktRV1pWUlVaUWVXRkJFZ3hWU3pVNE9YeFJVREV4TkRJYUNnanFOUkFBR2dOSlRsSTRISENDUUE9PSIsW1siSFlEIiwiMjAyNC0xMC0xMiIsIkdPWCIsbnVsbCwiVUsiLCI1ODkiXSxbIkdPWCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIlFQIiwiMTE0MiJdXV0=",
+            "layovers": [{
+                "duration": 70,
+                "name": "Manohar International Airport (GOX) - Goa",
+                "id": "GOX"
+            }],
+            "total_duration": 205,
+            "price": 6890,
+            "flights": [
+                {
+                    "duration": 75,
+                    "legroom": "29 in",
+                    "extensions": [
+                        "Below average legroom (29 in)",
+                        "In-seat USB outlet",
+                        "Stream media to your device",
+                        "Carbon emissions estimate: 70 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Rajiv Gandhi International Airport",
+                        "id": "HYD",
+                        "time": "2024-10-12 13:15"
+                    },
+                    "flight_number": "UK 589",
+                    "airplane": "Airbus A320",
+                    "arrival_airport": {
+                        "name": "Manohar International Airport (GOX) - Goa",
+                        "id": "GOX",
+                        "time": "2024-10-12 14:30"
+                    },
+                    "airline": "Vistara",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 60,
+                    "extensions": ["Carbon emissions estimate: 43 kg"],
+                    "departure_airport": {
+                        "name": "Manohar International Airport (GOX) - Goa",
+                        "id": "GOX",
+                        "time": "2024-10-12 15:40"
+                    },
+                    "flight_number": "QP 1142",
                     "airplane": "Boeing 737MAX 8 Passenger",
                     "arrival_airport": {
                         "name": "Pune International Airport",
                         "id": "PNQ",
-                        "time": "2024-10-12 23:10"
+                        "time": "2024-10-12 16:40"
                     },
-                    "airline": "Air India Express",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
+                    "airline": "Akasa Air",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
                     "travel_class": "Economy"
                 }
             ],
-            "carbon_emissions": {"this_flight": 190000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RnNE9IeFZTemt6TlRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiQUkiLCI4ODgiXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIlVLIiwiOTM1Il1dXQ==",
-            "layovers": [{
-                "duration": 85,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 340,
-            "flights": [
-                {
-                    "duration": 135,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 106 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 19:00"
-                    },
-                    "flight_number": "AI 888",
-                    "airplane": "Airbus A320neo",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 21:15"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 120,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 126 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 22:40"
-                    },
-                    "flight_number": "UK 935",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 00:40"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 233000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RWU3prME1IeFZTemt6TlRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiVUsiLCI5NDAiXSxbIkRFTCIsIjIwMjQtMTAtMTIiLCJQTlEiLG51bGwsIlVLIiwiOTM1Il1dXQ==",
-            "layovers": [{
-                "duration": 45,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 295,
-            "flights": [
-                {
-                    "duration": 130,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 116 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 19:45"
-                    },
-                    "flight_number": "UK 940",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 21:55"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 120,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 126 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 22:40"
-                    },
-                    "flight_number": "UK 935",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 00:40"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 243000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3hCU1RneE5ueEpXREV6TVRjNEhBPT0iLFtbIkJPTSIsIjIwMjQtMTAtMTIiLCJERUwiLG51bGwsIkFJIiwiODE2Il0sWyJERUwiLCIyMDI0LTEwLTEzIiwiUE5RIixudWxsLCJJWCIsIjEzMTciXV1d",
-            "layovers": [{
-                "duration": 280,
-                "overnight": true,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 535,
-            "flights": [
-                {
-                    "duration": 135,
-                    "legroom": "33 in",
-                    "extensions": [
-                        "Above average legroom (33 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 143 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 21:00"
-                    },
-                    "flight_number": "AI 816",
-                    "airplane": "Boeing 777",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 23:15"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 120,
-                    "overnight": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 123 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-13 03:55"
-                    },
-                    "flight_number": "IX 1317",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 05:55"
-                    },
-                    "airline": "Air India Express",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 267000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RneE5ueEJTVGcxTVRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiQUkiLCI4MTYiXSxbIkRFTCIsIjIwMjQtMTAtMTMiLCJQTlEiLG51bGwsIkFJIiwiODUxIl1dXQ==",
-            "layovers": [{
-                "duration": 335,
-                "overnight": true,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 595,
-            "flights": [
-                {
-                    "duration": 135,
-                    "legroom": "33 in",
-                    "extensions": [
-                        "Above average legroom (33 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 143 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 21:00"
-                    },
-                    "flight_number": "AI 816",
-                    "airplane": "Boeing 777",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-12 23:15"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 125,
-                    "overnight": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 111 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-13 04:50"
-                    },
-                    "flight_number": "AI 851",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 06:55"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 255000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3hCU1RVNU1YeEpXREV6TWpFNEhBPT0iLFtbIkJPTSIsIjIwMjQtMTAtMTIiLCJCTFIiLG51bGwsIkFJIiwiNTkxIl0sWyJCTFIiLCIyMDI0LTEwLTEzIiwiUE5RIixudWxsLCJJWCIsIjEzMjEiXV1d",
-            "layovers": [{
-                "duration": 325,
-                "overnight": true,
-                "name": "Kempegowda International Airport Bengaluru",
-                "id": "BLR"
-            }],
-            "total_duration": 520,
-            "flights": [
-                {
-                    "duration": 100,
-                    "legroom": "31 in",
-                    "extensions": [
-                        "Average legroom (31 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 85 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 21:45"
-                    },
-                    "flight_number": "AI 591",
-                    "airplane": "Airbus A350",
-                    "arrival_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-12 23:25"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 95,
-                    "overnight": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 90 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-13 04:50"
-                    },
-                    "flight_number": "IX 1321",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 06:25"
-                    },
-                    "airline": "Air India Express",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 176000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RVNU1YeEJTVFUyTlRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkJMUiIsbnVsbCwiQUkiLCI1OTEiXSxbIkJMUiIsIjIwMjQtMTAtMTMiLCJQTlEiLG51bGwsIkFJIiwiNTY1Il1dXQ==",
-            "layovers": [{
-                "duration": 600,
-                "overnight": true,
-                "name": "Kempegowda International Airport Bengaluru",
-                "id": "BLR"
-            }],
-            "total_duration": 785,
-            "flights": [
-                {
-                    "duration": 100,
-                    "legroom": "31 in",
-                    "extensions": [
-                        "Average legroom (31 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 85 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 21:45"
-                    },
-                    "flight_number": "AI 591",
-                    "airplane": "Airbus A350",
-                    "arrival_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-12 23:25"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 85,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 78 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-13 09:25"
-                    },
-                    "flight_number": "AI 565",
-                    "airplane": "Airbus A320neo",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 10:50"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 164000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3hKV0RFek1ERjhRVWsxTmpVNEhBPT0iLFtbIkJPTSIsIjIwMjQtMTAtMTIiLCJCTFIiLG51bGwsIklYIiwiMTMwMSJdLFsiQkxSIiwiMjAyNC0xMC0xMyIsIlBOUSIsbnVsbCwiQUkiLCI1NjUiXV1d",
-            "layovers": [{
-                "duration": 540,
-                "overnight": true,
-                "name": "Kempegowda International Airport Bengaluru",
-                "id": "BLR"
-            }],
-            "total_duration": 735,
-            "flights": [
-                {
-                    "duration": 110,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 99 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 22:35"
-                    },
-                    "flight_number": "IX 1301",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-13 00:25"
-                    },
-                    "airline": "Air India Express",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 85,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 78 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-13 09:25"
-                    },
-                    "flight_number": "AI 565",
-                    "airplane": "Airbus A320neo",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 10:50"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 178000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RWU3prNE5ueEJTVGcxTVRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiVUsiLCI5ODYiXSxbIkRFTCIsIjIwMjQtMTAtMTMiLCJQTlEiLG51bGwsIkFJIiwiODUxIl1dXQ==",
-            "layovers": [{
-                "duration": 230,
-                "overnight": true,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 485,
-            "flights": [
-                {
-                    "duration": 130,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 125 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 22:50"
-                    },
-                    "flight_number": "UK 986",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-13 01:00"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 125,
-                    "overnight": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 111 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-13 04:50"
-                    },
-                    "flight_number": "AI 851",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 06:55"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 237000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RWU3prNE5ueFZTemszTVRnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkRFTCIsbnVsbCwiVUsiLCI5ODYiXSxbIkRFTCIsIjIwMjQtMTAtMTMiLCJQTlEiLG51bGwsIlVLIiwiOTcxIl1dXQ==",
-            "layovers": [{
-                "duration": 450,
-                "overnight": true,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 710,
-            "flights": [
-                {
-                    "duration": 130,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 125 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 22:50"
-                    },
-                    "flight_number": "UK 986",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-13 01:00"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 130,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 117 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-13 08:30"
-                    },
-                    "flight_number": "UK 971",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 10:40"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 243000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFZ3RCU1RNME1ueFZTekV4TURnYyIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIlNJTiIsbnVsbCwiQUkiLCIzNDIiXSxbIlNJTiIsIjIwMjQtMTAtMTMiLCJQTlEiLG51bGwsIlVLIiwiMTEwIl1dXQ==",
-            "layovers": [{
-                "duration": 245,
-                "name": "Singapore Changi Airport",
-                "id": "SIN"
-            }],
-            "total_duration": 935,
-            "flights": [
-                {
-                    "duration": 345,
-                    "overnight": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 293 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 23:35"
-                    },
-                    "flight_number": "AI 342",
-                    "airplane": "Airbus A320neo",
-                    "arrival_airport": {
-                        "name": "Singapore Changi Airport",
-                        "id": "SIN",
-                        "time": "2024-10-13 07:50"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 345,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "Wi-Fi for a fee",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 337 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Singapore Changi Airport",
-                        "id": "SIN",
-                        "time": "2024-10-13 11:55"
-                    },
-                    "flight_number": "UK 110",
-                    "airplane": "Airbus A321",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 15:10"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 631000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFaE5CU1RVeE9IeEpXREkzTkRaOFNWZ3hOREk0T0J3PSIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkNPSyIsbnVsbCwiQUkiLCI1MTgiXSxbIkNPSyIsIjIwMjQtMTAtMTMiLCJCTFIiLG51bGwsIklYIiwiMjc0NiJdLFsiQkxSIiwiMjAyNC0xMC0xMyIsIlBOUSIsbnVsbCwiSVgiLCIxNDI4Il1dXQ==",
-            "layovers": [
-                {
-                    "duration": 455,
-                    "overnight": true,
-                    "name": "Cochin International Airport",
-                    "id": "COK"
-                },
-                {
-                    "duration": 145,
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR"
-                }
-            ],
-            "total_duration": 870,
-            "flights": [
-                {
-                    "duration": 120,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 101 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 23:55"
-                    },
-                    "flight_number": "AI 518",
-                    "airplane": "Airbus A320neo",
-                    "arrival_airport": {
-                        "name": "Cochin International Airport",
-                        "id": "COK",
-                        "time": "2024-10-13 01:55"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 65,
-                    "legroom": "30 in",
-                    "extensions": [
-                        "Average legroom (30 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 55 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Cochin International Airport",
-                        "id": "COK",
-                        "time": "2024-10-13 09:30"
-                    },
-                    "flight_number": "IX 2746",
-                    "airplane": "Boeing 737MAX 8 Passenger",
-                    "arrival_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-13 10:35"
-                    },
-                    "airline": "Air India Express",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 85,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 90 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-13 13:00"
-                    },
-                    "flight_number": "IX 1428",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 14:25"
-                    },
-                    "airline": "Air India Express",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 247000},
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
-        {
-            "booking_token": "WyJDalJJVG5JelowVlhhMFJtUW5OQlFrdFpWRkZDUnkwdExTMHRMUzB0YkhKaVltb3hNa0ZCUVVGQlIyTkpPRUkwU0V0a2NrMUJFaE5CU1RVeE9IeEpXREUwTURWOFNWZ3hOREk0T0J3PSIsW1siQk9NIiwiMjAyNC0xMC0xMiIsIkNPSyIsbnVsbCwiQUkiLCI1MTgiXSxbIkNPSyIsIjIwMjQtMTAtMTMiLCJCTFIiLG51bGwsIklYIiwiMTQwNSJdLFsiQkxSIiwiMjAyNC0xMC0xMyIsIlBOUSIsbnVsbCwiSVgiLCIxNDI4Il1dXQ==",
-            "layovers": [
-                {
-                    "duration": 190,
-                    "overnight": true,
-                    "name": "Cochin International Airport",
-                    "id": "COK"
-                },
-                {
-                    "duration": 410,
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR"
-                }
-            ],
-            "total_duration": 870,
-            "flights": [
-                {
-                    "duration": 120,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Carbon emissions estimate: 101 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                        "id": "BOM",
-                        "time": "2024-10-12 23:55"
-                    },
-                    "flight_number": "AI 518",
-                    "airplane": "Airbus A320neo",
-                    "arrival_airport": {
-                        "name": "Cochin International Airport",
-                        "id": "COK",
-                        "time": "2024-10-13 01:55"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 65,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "Carbon emissions estimate: 63 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Cochin International Airport",
-                        "id": "COK",
-                        "time": "2024-10-13 05:05"
-                    },
-                    "flight_number": "IX 1405",
-                    "airplane": "Boeing 737",
-                    "arrival_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-13 06:10"
-                    },
-                    "airline": "Air India Express",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 85,
-                    "often_delayed_by_over_30_min": true,
-                    "legroom": "28 in",
-                    "extensions": [
-                        "Below average legroom (28 in)",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 90 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-10-13 13:00"
-                    },
-                    "flight_number": "IX 1428",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Pune International Airport",
-                        "id": "PNQ",
-                        "time": "2024-10-13 14:25"
-                    },
-                    "airline": "Air India Express",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {"this_flight": 255000},
+            "carbon_emissions": {
+                "this_flight": 114000,
+                "typical_for_this_route": 55000,
+                "difference_percent": 107
+            },
             "type": "One way",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
         }
     ],
+    "price_insights": {
+        "price_level": "low",
+        "lowest_price": 3199,
+        "typical_price_range": [
+            3450,
+            5000
+        ],
+        "price_history": [
+            [
+                1727029800,
+                3498
+            ],
+            [
+                1727116200,
+                3498
+            ],
+            [
+                1727202600,
+                3498
+            ],
+            [
+                1727289000,
+                3498
+            ],
+            [
+                1727375400,
+                3498
+            ],
+            [
+                1727461800,
+                3498
+            ],
+            [
+                1727548200,
+                3498
+            ],
+            [
+                1727634600,
+                3099
+            ],
+            [
+                1727721000,
+                3099
+            ],
+            [
+                1727807400,
+                3099
+            ],
+            [
+                1727893800,
+                3099
+            ],
+            [
+                1727980200,
+                3199
+            ],
+            [
+                1728066600,
+                3199
+            ],
+            [
+                1728153000,
+                3199
+            ],
+            [
+                1728239400,
+                3199
+            ],
+            [
+                1728325800,
+                3199
+            ],
+            [
+                1728412200,
+                3199
+            ],
+            [
+                1728498600,
+                3199
+            ],
+            [
+                1728585000,
+                3199
+            ]
+        ]
+    },
     "search_parameters": {
-        "departure_id": "BOM",
+        "departure_id": "HYD",
         "hl": "en",
         "engine": "google_flights",
         "gl": "us",
@@ -1645,12 +562,12 @@
         "departure": [{
             "country": "India",
             "country_code": "IN",
-            "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTJ5Q0R5IIxjWsuWKt6lnlBIOlNfNwTqC8yBtOP_uMdzFrluYmn3jZ-6dyEWo6AbIH3x57scrUgF3gvWA",
-            "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRMqVWevN4qkQ8u4HrxtHbv2Oy7UigPckL8bgZUJQWQgjvmJxG7oggYxd2Rw5MwjiBYzZFpr939opSbON9CxkwdD-7DK9it3TPq1ea8pxU",
-            "city": "Mumbai",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZYggVzDR3bBmFCtOJtoteR8sbLdQi7YWrBt50w4pdtQCKQZj7EtTiNrLM6eUDaJqmo7-_seEsSyuA0g",
+            "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSguPRMPWcZhK7VZ5lMPYaqwY8CakryY29B4zKHqfsL5SWkeNjLUBPR7wUiWA6dS2QMNQVpinMxrpUoC14UvLkgJ9aaekuKY1YotySb4vI",
+            "city": "Hyderabad",
             "airport": {
-                "name": "Chhatrapati Shivaji Maharaj International Airport Mumbai",
-                "id": "BOM"
+                "name": "Rajiv Gandhi International Airport",
+                "id": "HYD"
             }
         }]
     }]

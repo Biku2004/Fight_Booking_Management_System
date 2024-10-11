@@ -147,7 +147,7 @@ public class FlightSearchCloneServlet extends HttpServlet {
 
             // Establish database connection
             try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-                String insertSQL = "INSERT INTO flights1 (departure_name, departure_id, departure_time, arrival_name, arrival_id, arrival_time, duration, airplane, airline, airline_logo, travel_class, flight_number, legroom, extensions, total_duration, carbon_emissions, price, type, booking_token) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String insertSQL = "INSERT INTO flights1 (departure_name, departure_id, departure_time, arrival_name, arrival_id, arrival_time, duration, airplane, airline, airline_logo, travel_class, flight_number, legroom, extensions, total_duration, carbon_emissions, price, type, booking_token, layovers) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 for (int i = 0; i < rootArray.length(); i++) {
                     JSONObject rootObject = rootArray.getJSONObject(i);
@@ -161,6 +161,23 @@ public class FlightSearchCloneServlet extends HttpServlet {
                     String type = rootObject.optString("type");
                     String bookingToken = rootObject.optString("booking_token");
 
+                    JSONArray layoversArray = rootObject.optJSONArray("layovers");
+                    StringBuilder layoversBuilder = new StringBuilder();
+                    if (layoversArray != null) {
+                        for (int j = 0; j < layoversArray.length(); j++) {
+                            JSONObject layover = layoversArray.getJSONObject(j);
+                            int layoverDuration = layover.optInt("duration", 0);
+                            String layoverName = layover.optString("name", "N/A");
+                            String layoverId = layover.optString("id", "N/A");
+                            layoversBuilder.append(String.format("{\"duration\": %d, \"name\": \"%s\", \"id\": \"%s\"}", layoverDuration, layoverName, layoverId));
+                            if (j < layoversArray.length() - 1) {
+                                layoversBuilder.append(",");
+                            }
+                        }
+                    }
+                    String layovers = "[" + layoversBuilder + "]";
+
+
                     // Loop through the "flights" array
                     JSONArray flightsArray = rootObject.optJSONArray("flights");
 
@@ -169,13 +186,6 @@ public class FlightSearchCloneServlet extends HttpServlet {
                         JSONObject departureAirport = flightJson.optJSONObject("departure_airport");
                         JSONObject arrivalAirport = flightJson.optJSONObject("arrival_airport");
 
-//                        String departureName = departureAirport.getString("name");
-//                        String departureId = departureAirport.getString("id");
-//                        String departureTime = departureAirport.getString("time");
-//
-//                        String arrivalName = arrivalAirport.getString("name");
-//                        String arrivalId = arrivalAirport.getString("id");
-//                        String arrivalTime = arrivalAirport.getString("time");
 
                         String departureName = (departureAirport != null) ? departureAirport.optString("name", "N/A") : "N/A";
                         String departureId = (departureAirport != null) ? departureAirport.optString("id", "N/A") : "N/A";
@@ -185,14 +195,6 @@ public class FlightSearchCloneServlet extends HttpServlet {
                         String arrivalId = (arrivalAirport != null) ? arrivalAirport.optString("id", "N/A") : "N/A";
                         String arrivalTime = (arrivalAirport != null) ? arrivalAirport.optString("time", "N/A") : "N/A";
 
-//                        int duration = flightJson.getInt("duration");
-//                        String airplane = flightJson.getString("airplane");
-//                        String airline = flightJson.getString("airline");
-//                        String airlineLogo = flightJson.getString("airline_logo");
-//                        String travelClass = flightJson.getString("travel_class");
-//                        String flightNumber = flightJson.getString("flight_number");
-//                        String legroom = flightJson.getString("legroom");
-//                        JSONArray extensions = flightJson.getJSONArray("extensions");
                         int duration = flightJson.optInt("duration", 0);
                         String airplane = flightJson.optString("airplane", "N/A");
                         String airline = flightJson.optString("airline", "N/A");
@@ -223,6 +225,7 @@ public class FlightSearchCloneServlet extends HttpServlet {
                             pstmt.setInt(17, price);
                             pstmt.setString(18, type);
                             pstmt.setString(19, bookingToken);
+                            pstmt.setString(20, layovers);
 
                             pstmt.executeUpdate();
                         }
