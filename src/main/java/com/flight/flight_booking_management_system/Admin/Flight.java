@@ -159,7 +159,11 @@
 
 package com.flight.flight_booking_management_system.Admin;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.sql.Timestamp;
+import java.util.List;
 
 public class Flight {
     private int id;
@@ -182,6 +186,7 @@ public class Flight {
     private int price;
     private String type;
     private String bookingToken;
+    private String layovers;
 
     // Getters and Setters
     public int getId() {
@@ -343,4 +348,22 @@ public class Flight {
     public void setBookingToken(String bookingToken) {
         this.bookingToken = bookingToken;
     }
+    public String getLayovers() {
+        return layovers;
+    }
+
+    public void setLayovers(String layovers) {
+        this.layovers = layovers;
+    }
+
+    public List<Layover> getLayoversList() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            return objectMapper.readValue(layovers, new TypeReference<List<Layover>>() {});
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }

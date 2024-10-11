@@ -185,6 +185,7 @@ public class FetchDataToTable extends HttpServlet {
                             flight.setPrice(rs.getInt("price"));
                             flight.setType(rs.getString("type"));
                             flight.setBookingToken(rs.getString("booking_token"));
+                            flight.setLayovers(rs.getString("layovers"));
 
                             flightList.add(flight);
                         }

@@ -135,6 +135,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="com.flight.flight_booking_management_system.Admin.Flight" %>
+<%@ page import="com.flight.flight_booking_management_system.Admin.Layover" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -240,9 +241,12 @@
     <p>Extensions: <%= flight.getExtensions() %></p>
     <p>Travel Class: <%= flight.getTravelClass() %></p>
     <p>Type: <%= flight.getType() %></p>
+    <p>Layovers: <%= flight.getLayovers() %></p>
 <%--    <p>Booking Token: <%= flight.getBookingToken() %></p>--%>
   </div>
   <div class="flight-meta">
+
+    <p><img src="<%= flight.getAirlineLogo() %>" alt="Airline Logo" style="width: 100px; height: auto;"></p>
     <span class="flight-time">Duration: <%= flight.getDuration() %> minutes</span>
     <span>Total Duration: <%= flight.getTotalDuration() %> minutes</span>
     <span>Carbon Emissions: <%= flight.getCarbonEmissions() %> kg CO2</span>
