@@ -7,15 +7,18 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
+import java.io.File;
+import java.io.IOException;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -27,6 +30,8 @@ public class FlightSearchCloneServlet extends HttpServlet {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/flightregd";
     private static final String DB_USER = "Java-Project";
     private static final String DB_PASSWORD = "root@localhost";
+//    private static final String JSON_FILE_PATH = "D:/Study/Java1/Maven/file.json";
+    private static final String JSON_FILE_PATH = "D:/Study/Java1/Maven/5_project/Flight_Booking_Management_System/src/main/resources/JsonData/file.json";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String from = request.getParameter("from");
@@ -69,6 +74,15 @@ public class FlightSearchCloneServlet extends HttpServlet {
         // Convert the response to JSON
         String jsonResponse = responseBuilder.toString();
 
+        // Print the JSON response
+
+        System.out.println("JSON Response: " + jsonResponse);
+        saveJsonToFile(jsonResponse, JSON_FILE_PATH);
+
+        // Read the JSON file and insert data into the database
+        String fileContent = new String(Files.readAllBytes(Paths.get(JSON_FILE_PATH)));
+        storeFlightsInDatabase(fileContent);
+
         // Parse and store the flights in the database
         storeFlightsInDatabase(jsonResponse);
 
@@ -83,10 +97,45 @@ public class FlightSearchCloneServlet extends HttpServlet {
         System.out.println("Trip Type: " + tripType);
     }
 
+    public static class FilePermission {
+        public static void main(String[] args) {
+            File file = new File("D:/Study/Java1/Maven/5_project/Flight_Booking_Management_System/src/main/resources/JsonData/file.json");
+
+            // Check if file exists
+            if (!file.exists()) {
+                try {
+                    file.createNewFile();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            // Set read and write permissions
+            boolean isReadable = file.setReadable(true);
+            boolean isWritable = file.setWritable(true);
+
+            if (isReadable && isWritable) {
+                System.out.println("File permissions set successfully.");
+            } else {
+                System.out.println("Failed to set file permissions.");
+            }
+        }
+    }
+    private void saveJsonToFile(String jsonResponse, String filePath) throws IOException {
+        File file = new File(filePath);
+        if (!file.exists()) {
+            file.createNewFile();
+        }
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
+            writer.write(jsonResponse);
+        }
+    }
     private void storeFlightsInDatabase(String jsonResponse) {
         try {
             JSONObject jsonObject = new JSONObject(jsonResponse);
             JSONArray flightsArray = jsonObject.getJSONArray("other_flights");
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
             // Establish database connection
             try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
@@ -125,6 +174,8 @@ public class FlightSearchCloneServlet extends HttpServlet {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 }
