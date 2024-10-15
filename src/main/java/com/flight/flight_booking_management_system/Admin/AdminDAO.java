@@ -12,13 +12,10 @@ public class AdminDAO {
     private String jdbcPassword = "root@localhost";
 
     // SQL queries
-    private static final String INSERT_ADMIN_SQL =
-            "INSERT INTO register (FirstName, LastName, Email, Password, Phone, Nationality, Gender, DateOfBirth,ProfilePhoto,UserType) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,'admin')";
+    private static final String INSERT_ADMIN_SQL = "INSERT INTO register (FirstName, LastName, Email, Password, Phone, Nationality, Gender, DateOfBirth,ProfilePhoto,UserType) " + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?,'admin')";
 
     private static final String DELETE_ADMIN_SQL = "DELETE FROM register WHERE Email = ? and UserType = 'admin'";
-    private static final String UPDATE_ADMIN_SQL =
-            "UPDATE register SET FirstName = ?, LastName = ?, Phone = ?, Nationality = ?, Gender = ?, DateOfBirth = ? WHERE Email = ? and UserType = 'admin'";
+    private static final String UPDATE_ADMIN_SQL = "UPDATE register SET FirstName = ?, LastName = ?, Phone = ?, Nationality = ?, Gender = ?, DateOfBirth = ? WHERE Email = ? and UserType = 'admin'";
     private static final String SELECT_ADMIN_BY_EMAIL = "SELECT * FROM register WHERE Email = ? AND UserType = 'admin'";
     private static final String SELECT_ALL_ADMINS_SQL = "SELECT FirstName, LastName, Email, Phone, Nationality, Gender, DateOfBirth FROM register WHERE UserType = 'admin'";
 
@@ -37,8 +34,7 @@ public class AdminDAO {
 
     // Inserts a new admin record into the database
     public void registerAdmin(Admin admin) throws SQLException {
-        try (Connection connection = getConnection ( );
-             PreparedStatement preparedStatement = connection.prepareStatement ( INSERT_ADMIN_SQL )) {
+        try (Connection connection = getConnection ( ); PreparedStatement preparedStatement = connection.prepareStatement ( INSERT_ADMIN_SQL )) {
             preparedStatement.setString ( 1 , admin.getFirstName ( ) );
             preparedStatement.setString ( 2 , admin.getLastName ( ) );
             preparedStatement.setString ( 3 , admin.getEmail ( ) );
@@ -59,8 +55,7 @@ public class AdminDAO {
     public boolean deleteAdmin(String email) throws SQLException {
         boolean rowDeleted = false;
 
-        try (Connection connection = getConnection ( );
-             PreparedStatement preparedStatement = connection.prepareStatement ( DELETE_ADMIN_SQL )) {
+        try (Connection connection = getConnection ( ); PreparedStatement preparedStatement = connection.prepareStatement ( DELETE_ADMIN_SQL )) {
             preparedStatement.setString ( 1 , email );
 
             int affectedRows = preparedStatement.executeUpdate ( );
@@ -77,8 +72,7 @@ public class AdminDAO {
     public boolean updateAdmin(Admin admin) throws SQLException {
         boolean rowUpdated = false;
 
-        try (Connection conn = getConnection ( );
-             PreparedStatement pstm = conn.prepareStatement ( UPDATE_ADMIN_SQL )) {
+        try (Connection conn = getConnection ( ); PreparedStatement pstm = conn.prepareStatement ( UPDATE_ADMIN_SQL )) {
             pstm.setString ( 1 , admin.getFirstName ( ) );
             pstm.setString ( 2 , admin.getLastName ( ) );
             pstm.setString ( 3 , admin.getPhoneNumber ( ) );
@@ -98,8 +92,7 @@ public class AdminDAO {
 
     public Admin getAdminByEmail(String email) throws SQLException {
         Admin admin = null;
-        try (Connection conn = getConnection ( );
-             PreparedStatement pstm = conn.prepareStatement ( SELECT_ADMIN_BY_EMAIL )) {
+        try (Connection conn = getConnection ( ); PreparedStatement pstm = conn.prepareStatement ( SELECT_ADMIN_BY_EMAIL )) {
             pstm.setString ( 1 , email ); // Set the email parameter correctly
             ResultSet rs = pstm.executeQuery ( );
 
@@ -124,9 +117,7 @@ public class AdminDAO {
     // Retrieves all admin records
     public List<Admin> getAllAdmins() throws SQLException {
         List<Admin> admins = new ArrayList<> ( );
-        try (Connection conn = getConnection ( );
-             PreparedStatement pstm = conn.prepareStatement ( SELECT_ALL_ADMINS_SQL );
-             ResultSet rs = pstm.executeQuery ( )) {
+        try (Connection conn = getConnection ( ); PreparedStatement pstm = conn.prepareStatement ( SELECT_ALL_ADMINS_SQL ); ResultSet rs = pstm.executeQuery ( )) {
 
             while (rs.next ( )) {
                 Admin admin = new Admin ( );
