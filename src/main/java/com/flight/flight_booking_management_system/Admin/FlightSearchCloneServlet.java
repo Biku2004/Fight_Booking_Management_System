@@ -20,6 +20,7 @@ import java.util.List;
 import java.io.File;
 import java.io.IOException;
 
+import jakarta.servlet.http.HttpSession;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -39,6 +40,7 @@ public class FlightSearchCloneServlet extends HttpServlet {
         String departure = request.getParameter("departure");
         String returnDate = request.getParameter("return");
         String tripType = request.getParameter("trip");
+
 
         String apiUrl;
 
@@ -81,7 +83,7 @@ public class FlightSearchCloneServlet extends HttpServlet {
 
         // Read the JSON file and insert data into the database
         String fileContent = new String(Files.readAllBytes(Paths.get(JSON_FILE_PATH)));
-        storeFlightsInDatabase(fileContent);
+        storeFlightsInDatabase(fileContent,request,response);
 
         // Parse and store the flights in the database
 //        storeFlightsInDatabase(jsonResponse);
@@ -90,12 +92,26 @@ public class FlightSearchCloneServlet extends HttpServlet {
         request.setAttribute("tripType", tripType);
 
         // Forward to JSP page
-        String jspPage = "Admin/allFile.jsp";
-        RequestDispatcher dispatcher = request.getRequestDispatcher(jspPage);
-        dispatcher.forward(request, response);
+//        String jspPage = "Admin/allFile.jsp";
+//        RequestDispatcher dispatcher = request.getRequestDispatcher(jspPage);
+//        dispatcher.forward(request, response);
 
-        System.out.println("Trip Type: " + tripType);
+//        HttpSession session = request.getSession();
+//        session.setAttribute("lastSearchFrom", from);
+//        session.setAttribute("lastSearchTo", to);
+//
+//        // Generate HTML form with hidden inputs and submit it
+//        response.setContentType("text/html");
+//        response.getWriter().println("<html><body>");
+//        response.getWriter().println("<form id='redirectForm' action='" + request.getContextPath() + "/fetchDataToTable' method='POST'>");
+//        response.getWriter().println("<input type='hidden' name='from' value='" + from + "'>");
+//        response.getWriter().println("<input type='hidden' name='to' value='" + to + "'>");
+//        response.getWriter().println("</form>");
+//        response.getWriter().println("<script>document.getElementById('redirectForm').submit();</script>");
+//        response.getWriter().println("</body></html>");
+//        System.out.println("Trip Type: " + tripType);
     }
+
 
     public static class FilePermission {
         public static void main(String[] args) {
@@ -136,7 +152,7 @@ public class FlightSearchCloneServlet extends HttpServlet {
         }
     }
 
-    private void storeFlightsInDatabase(String fileContent) {
+    private void storeFlightsInDatabase(String fileContent,HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             JSONObject jsonObject = new JSONObject(fileContent);
 
@@ -235,7 +251,21 @@ public class FlightSearchCloneServlet extends HttpServlet {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+
+        redirectToFetchDataToTable(request, response);
     }
+
+    private void redirectToFetchDataToTable(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String from = request.getParameter("from");
+        String to = request.getParameter("to");
+
+        HttpSession session = request.getSession();
+        session.setAttribute("lastSearchFrom", from);
+        session.setAttribute("lastSearchTo", to);
+
+        response.sendRedirect(request.getContextPath() + "/fetchDataToTable?from=" + from + "&to=" + to);
+    }
+
 }
 
 
