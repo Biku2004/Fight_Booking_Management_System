@@ -252,11 +252,22 @@
     <span>Carbon Emissions: <%= flight.getCarbonEmissions() %> kg CO2</span>
     <span>Price: ₹<%= flight.getPrice() %></span>
 
-    <form action="bookFlight/bookFlight.jsp" method="POST">
+    <form action="${pageContext.request.contextPath}/bookFlight/bookFlight.jsp" method="POST">
+
       <input type="hidden" name="flightNumber" value="<%= flight.getFlightNumber() %>">
       <input type="hidden" name="airline" value="<%= flight.getAirline() %>">
       <input type="hidden" name="departure" value="<%= flight.getDepartureName() %>">
       <input type="hidden" name="arrival" value="<%= flight.getArrivalName() %>">
+      <input type="hidden" name="departureTime" value="<%= flight.getDepartureTime() %>">
+      <input type="hidden" name="arrivalTime" value="<%= flight.getArrivalTime() %>">
+      <input type="hidden" name="airplane" value="<%= flight.getAirplane() %>">
+      <input type="hidden" name="legroom" value="<%= flight.getLegroom() %>">
+      <input type="hidden" name="extensions" value="<%= flight.getExtensions() %>">
+      <input type="hidden" name="travel_class" value="<%= flight.getTravelClass() %>">
+      <input type="hidden" name="duration" value="<%= flight.getDuration() %>">
+      <input type="hidden" name="layovers" value="<%= flight.getLayovers() %>">
+      <input type="hidden" name="price" value="<%= flight.getPrice() %>">
+      <input type="hidden" name="carbon_emissions" value="<%= flight.getCarbonEmissions() %>">
       <input type="submit" class="book-button" value="Book">
     </form>
   </div>

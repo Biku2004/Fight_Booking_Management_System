@@ -101,7 +101,7 @@
             </div>
 
 
-            <form id="flightSearchForm" method="post" action="${pageContext.request.contextPath}/flightSearch">
+            <form id="flightSearchForm" method="post" action="${pageContext.request.contextPath}/flightSearchClone">
                 <div class="trip-type">
                     <input type="radio" id="oneway" name="trip" value="oneway" checked onclick="toggleReturnDate()">
                     <label for="oneway">One Way</label>

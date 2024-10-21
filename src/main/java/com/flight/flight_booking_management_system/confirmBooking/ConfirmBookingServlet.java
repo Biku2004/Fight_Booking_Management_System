@@ -22,15 +22,19 @@ public class ConfirmBookingServlet extends HttpServlet {
         String airline = request.getParameter("airline");
         String departure = request.getParameter("departure").trim();
         String arrival = request.getParameter("arrival");
+        String departureTime = request.getParameter("departureTime");
+        String arrivalTime = request.getParameter("arrivalTime");
+        String airplane = request.getParameter("airplane");
+        String legroom = request.getParameter("legroom");
+        String extensions = request.getParameter("extensions");
+        String travelClass = request.getParameter("travel_class");
+        String duration = request.getParameter("duration");
+        String layovers = request.getParameter("layovers");
+        String price = request.getParameter("price");
+        String carbonEmissions = request.getParameter("carbon_emissions");
         String fullName = request.getParameter("fullName"); // Main Booker
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
-
-        // Additional flight details
-        String duration = request.getParameter("duration");
-        String price = request.getParameter("price");
-        String legroom = request.getParameter("legroom");
-        String carbonEmissions = request.getParameter("carbonEmissions");
 
         System.out.println(departure);
         System.out.println(flightNumber);
@@ -55,19 +59,26 @@ public class ConfirmBookingServlet extends HttpServlet {
             connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 
             // Insert into the flight_bookings table
-            String bookingSQL = "INSERT INTO flight_bookings (flight_number, airline, departure, arrival, full_name, email, phone, duration, price, legroom, carbon_emissions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            bookingStmt = connection.prepareStatement(bookingSQL, PreparedStatement.RETURN_GENERATED_KEYS);
+            String bookingQuery = "INSERT INTO bookings (flight_number, airline, departure, arrival, departure_time, arrival_time, airplane, legroom, extensions, travel_class, duration, layovers, price, carbon_emissions, full_name, email, phone, booking_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+            bookingStmt = connection.prepareStatement(bookingQuery);
             bookingStmt.setString(1, flightNumber);
             bookingStmt.setString(2, airline);
             bookingStmt.setString(3, departure);
             bookingStmt.setString(4, arrival);
-            bookingStmt.setString(5, fullName);
-            bookingStmt.setString(6, email);
-            bookingStmt.setString(7, phone);
-            bookingStmt.setString(8, duration); // Duration of the flight
-            bookingStmt.setString(9, (price)); // Price of the flight
-            bookingStmt.setString(10, legroom); // Legroom information
-            bookingStmt.setString(11, carbonEmissions); // Carbon emissions
+            bookingStmt.setString(5, departureTime);
+            bookingStmt.setString(6, arrivalTime);
+            bookingStmt.setString(7, airplane);
+            bookingStmt.setString(8, legroom);
+            bookingStmt.setString(9, extensions);
+            bookingStmt.setString(10, travelClass);
+            bookingStmt.setString(11, duration);
+            bookingStmt.setString(12, layovers);
+            bookingStmt.setString(13, price);
+            bookingStmt.setString(14, carbonEmissions);
+            bookingStmt.setString(15, fullName);
+            bookingStmt.setString(16, email);
+            bookingStmt.setString(17, phone);
+            bookingStmt.executeUpdate();
 
             int rowsInserted = bookingStmt.executeUpdate();
             if (rowsInserted > 0) {

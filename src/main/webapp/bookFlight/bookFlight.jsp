@@ -351,21 +351,20 @@
 <div class="booking-container">
     <div class="flight-info">
         <h3>Flight Information</h3>
-        <p><strong>Image: </strong>  <img src="<%= request.getParameter("airline_logo") %>" alt="Airline Logo" style="width:100px; height:auto;"></p>
+        <p><strong>Flight Number:</strong> <%= request.getParameter("flightNumber") %></p>
         <p><strong>Airline:</strong> <%= request.getParameter("airline") %></p>
-        <p><strong>Flight Number:</strong> <%= request.getParameter("flight_number") %></p>
-        <p><strong>Departure Airport:</strong> <%= request.getParameter("departure_airport.name") %></p>
-        <p><strong>Arrival Airport:</strong> <%= request.getParameter("arrival_airport.name") %></p>
-        <p><strong>Departure Time:</strong> <%= request.getParameter("departure_airport.time") %></p>
-        <p><strong>Arrival Time:</strong> <%= request.getParameter("arrival_airport.time") %></p>
-        <p><strong>Airplane Type:</strong> <%= request.getParameter("airplane") %></p>
-        <p><strong>Travel Class:</strong> <%= request.getParameter("travel_class") %></p>
-        <p><strong>Duration:[min]</strong> <%= request.getParameter("duration") %></p>
-        <p><strong>Extension:</strong> <%= request.getParameter("extensions") %></p>
-        <p><strong>Layovers Name:</strong> <%= request.getParameter("../layovers") %></p>
-        <p><strong>Price: Rs.</strong> <%= request.getParameter("../price") %></p>
+        <p><strong>Departure:</strong> <%= request.getParameter("departure") %></p>
+        <p><strong>Arrival:</strong> <%= request.getParameter("arrival") %></p>
+        <p><strong>Departure Time:</strong> <%= request.getParameter("departureTime") %></p>
+        <p><strong>Arrival Time:</strong> <%= request.getParameter("arrivalTime") %></p>
+        <p><strong>Airplane:</strong> <%= request.getParameter("airplane") %></p>
         <p><strong>Legroom:</strong> <%= request.getParameter("legroom") %></p>
-        <p><strong>Carbon Emissions:</strong> <%= request.getParameter("../carbon_emissions.this_flight") %></p>
+        <p><strong>Extensions:</strong> <%= request.getParameter("extensions") %></p>
+        <p><strong>Travel Class:</strong> <%= request.getParameter("travel_class") %></p>
+        <p><strong>Duration:</strong> <%= request.getParameter("duration") %> minutes</p>
+        <p><strong>Layovers:</strong> <%= request.getParameter("layovers") %></p>
+        <p><strong>Price:</strong> ₹<%= request.getParameter("price") %></p>
+        <p><strong>Carbon Emissions:</strong> <%= request.getParameter("carbon_emissions") %> kg CO2</p>
     </div>
 
     <form action="${pageContext.request.contextPath}/ConfirmBookingServlet" method="POST" id="bookingForm">
@@ -386,18 +385,20 @@
 
         <button type="button" class="add-passenger-btn" id="addPassengerBtn">+ Add Adult/Child</button>
 
-        <input type="hidden" name="airline" value="<%= request.getParameter("airline_logo") %>">
+        <input type="hidden" name="flightNumber" value="<%= request.getParameter("flightNumber") %>">
         <input type="hidden" name="airline" value="<%= request.getParameter("airline") %>">
-        <input type="hidden" name="flightNumber" value="<%= request.getParameter("flight_number") %>">
-        <input type="hidden" name="departure" value="<%= request.getParameter("departure_airport.name") %>">
-        <input type="hidden" name="arrival" value="<%= request.getParameter("arrival_airport.name") %>">
-        <input type="hidden" name="departureTime" value="<%= request.getParameter("departure_airport.time") %>">
-        <input type="hidden" name="arrivalTime" value="<%= request.getParameter("arrival_airport.time") %>">
-        <input type="hidden" name="duration" value="<%= request.getParameter("duration") %>">
-        <input type="hidden" name="price" value="<%= request.getParameter("../price") %>">
+        <input type="hidden" name="departure" value="<%= request.getParameter("departure") %>">
+        <input type="hidden" name="arrival" value="<%= request.getParameter("arrival") %>">
+        <input type="hidden" name="departureTime" value="<%= request.getParameter("departureTime") %>">
+        <input type="hidden" name="arrivalTime" value="<%= request.getParameter("arrivalTime") %>">
+        <input type="hidden" name="airplane" value="<%= request.getParameter("airplane") %>">
         <input type="hidden" name="legroom" value="<%= request.getParameter("legroom") %>">
-        <input type="hidden" name="carbonEmissions" value="<%= request.getParameter("../carbon_emissions.this_flight") %>">
-
+        <input type="hidden" name="extensions" value="<%= request.getParameter("extensions") %>">
+        <input type="hidden" name="travel_class" value="<%= request.getParameter("travel_class") %>">
+        <input type="hidden" name="duration" value="<%= request.getParameter("duration") %>">
+        <input type="hidden" name="layovers" value="<%= request.getParameter("layovers") %>">
+        <input type="hidden" name="price" value="<%= request.getParameter("price") %>">
+        <input type="hidden" name="carbon_emissions" value="<%= request.getParameter("carbon_emissionS") %>">
         <button type="submit" class="book-now">Confirm Booking</button>
     </form>
 </div>
