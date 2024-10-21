@@ -26,10 +26,10 @@ public class ConfirmBookingServlet extends HttpServlet {
         String arrivalTime = request.getParameter("arrivalTime");
         String airplane = request.getParameter("airplane");
         String legroom = request.getParameter("legroom");
-        String extensions = request.getParameter("extensions");
+        String extensions = String.valueOf(request.getParameter("extensions"));
         String travelClass = request.getParameter("travel_class");
         String duration = request.getParameter("duration");
-        String layovers = request.getParameter("layovers");
+        String layovers = String.valueOf(request.getParameter("layovers"));
         String price = request.getParameter("price");
         String carbonEmissions = request.getParameter("carbon_emissions");
         String fullName = request.getParameter("fullName"); // Main Booker
@@ -82,23 +82,14 @@ public class ConfirmBookingServlet extends HttpServlet {
 
             int rowsInserted = bookingStmt.executeUpdate();
             if (rowsInserted > 0) {
-                // Get the generated booking ID
-                var generatedKeys = bookingStmt.getGeneratedKeys();
-                int bookingId = 0;
-                if (generatedKeys.next()) {
-                    bookingId = generatedKeys.getInt(1);
-                    System.out.println(bookingId);
-                }
-
                 // Insert passengers associated with the booking
                 if (passengerNames != null && passengerTypes != null) {
-                    String passengerSQL = "INSERT INTO passengers (booking_id, passenger_name, passenger_type) VALUES (?, ?, ?)";
+                    String passengerSQL = "INSERT INTO passengers (booking_id, passenger_name, passenger_type) VALUES (LAST_INSERT_ID(), ?, ?)";
                     passengerStmt = connection.prepareStatement(passengerSQL);
 
                     for (int i = 0; i < passengerNames.length; i++) {
-                        passengerStmt.setInt(1, bookingId); // Foreign key to the booking table
-                        passengerStmt.setString(2, passengerNames[i]); // Passenger name
-                        passengerStmt.setString(3, passengerTypes[i]); // Passenger type (Adult/Child)
+                        passengerStmt.setString(1, passengerNames[i]); // Passenger name
+                        passengerStmt.setString(2, passengerTypes[i]); // Passenger type (Adult/Child)
                         passengerStmt.addBatch();
 
                         System.out.println(Arrays.toString(passengerNames));
@@ -126,4 +117,5 @@ public class ConfirmBookingServlet extends HttpServlet {
             }
         }
     }
+
 }
