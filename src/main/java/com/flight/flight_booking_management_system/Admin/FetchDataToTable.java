@@ -121,7 +121,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -140,10 +143,28 @@ public class FetchDataToTable extends HttpServlet {
         // Retrieve parameters
         String fromIata = request.getParameter("from");
         String toIata = request.getParameter("to");
+        String date = request.getParameter("date");
+//        String time = request.getParameter("time");
 
         HttpSession session = request.getSession();
         session.setAttribute("lastSearchFrom", fromIata);
         session.setAttribute("lastSearchTo", toIata);
+        session.setAttribute("lastSearchDate", date);
+//        session.setAttribute("lastSearchTime", time);
+
+
+//        String formattedDate = null;
+//        try {
+//            SimpleDateFormat inputFormat = new SimpleDateFormat("MM/dd/yyyy");
+//            SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
+//            Date parsedDate = inputFormat.parse(date);
+//            formattedDate = outputFormat.format(parsedDate);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//            request.setAttribute("errorMessage", "Invalid date format: " + e.getMessage());
+//            request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
+//            return;
+//        }
 
         // Database connection settings
         String url = "jdbc:mysql://localhost:3306/flightregd";
@@ -157,10 +178,12 @@ public class FetchDataToTable extends HttpServlet {
             try (Connection conn = DriverManager.getConnection(url, user, password)) {
 
                 // Prepare SQL statement with parameters
-                String sql = "SELECT * FROM flights1 WHERE departure_id = ? AND arrival_id = ?";
+//                String sql = "SELECT * FROM flights1 WHERE departure_id = ? AND arrival_id = ?";
+                String sql = "SELECT * FROM flights1 WHERE departure_id = ? AND arrival_id = ? AND DATE(departure_time) = ?";
                 try (PreparedStatement pre = conn.prepareStatement(sql)) {
                     pre.setString(1, fromIata);
                     pre.setString(2, toIata);
+                    pre.setString(3, date);
 
                     try (ResultSet rs = pre.executeQuery()) {
                         while (rs.next()) {

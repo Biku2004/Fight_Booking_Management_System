@@ -55,6 +55,33 @@
         #returnField {
             display: none;
         }
+
+        /* Spinner styling */
+        .spinner {
+            display: none; /* Hidden initially */
+            position: fixed;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            width: 50px;
+            height: 50px;
+            margin: -25px 0 0 -25px;
+            border: 4px solid rgba(0, 0, 0, 0.3);
+            border-top: 4px solid #000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Disable page interaction while loading */
+        .loading {
+            opacity: 0.5;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
@@ -100,8 +127,9 @@
                 <button class="flight-btn active">✈️ Book a flight</button>
             </div>
 
+            <div id="loadingSpinner" class="spinner"></div>
 
-            <form id="flightSearchForm" method="post" action="${pageContext.request.contextPath}/flightSearchClone">
+            <form id="flightSearchForm" method="post" action="${pageContext.request.contextPath}/flightSearchClone" onsubmit="showLoading()">
                 <div class="trip-type">
                     <input type="radio" id="oneway" name="trip" value="oneway" checked onclick="toggleReturnDate()">
                     <label for="oneway">One Way</label>
@@ -117,7 +145,7 @@
 
                     <div class="form-group">
                         <label for="to">To</label>
-                        <input type="text" id="to" name="to" placeholder="Search by place/airport" value="Kolkata, CCU">
+                        <input type="text" id="to" name="to" placeholder="Search by place/airport" value="CCU">
                     </div>
                     <div class="form-group">
                         <label for="departure">Departure</label>
@@ -152,12 +180,14 @@
     <form id="flightDataForm" action="${pageContext.request.contextPath}/fetchDataToTable" method="GET">
         <input type="hidden" name="from" id="fromInput">
         <input type="hidden" name="to" id="toInput">
+        <input type="hidden" id="date" name="date" required>
         <button type="button" id="sendFlightDataBtn">Send Flight Data</button>
     </form>
 
 </main>
 
 <script>
+
     function toggleReturnDate() {
         const isRoundTrip = document.getElementById('roundtrip').checked;
         const returnField = document.getElementById('returnField');
@@ -182,10 +212,13 @@
         sendFlightDataBtn.addEventListener('click', function() {
             var fromValue = document.getElementById('fromAirport').value;
             var toValue = document.getElementById('to').value;
+            var date = document.getElementById('departure').value;
 
-            if (fromValue && toValue) {
+            if (fromValue && toValue && date) {
                 document.getElementById('fromInput').value = fromValue;
                 document.getElementById('toInput').value = toValue;
+                document.getElementById('date').value = date;
+                alert(fromValue + toValue + date)
                 flightDataForm.submit();
             } else {
                 alert('Please enter both "From" and "To" airports before sending flight data.');
@@ -193,6 +226,20 @@
         });
 
     });
+
+    function showLoading() {
+        // Show the loading spinner
+        document.getElementById("loadingSpinner").style.display = "block";
+
+        // Optionally disable page interaction during loading
+        document.body.classList.add("loading");
+    }
+
+    // Optional: Hide spinner once the page reloads or search completes
+    window.onload = function() {
+        document.getElementById("loadingSpinner").style.display = "none";
+        document.body.classList.remove("loading");
+    };
 </script>
 
 </body>

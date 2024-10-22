@@ -258,12 +258,14 @@ public class FlightSearchCloneServlet extends HttpServlet {
     private void redirectToFetchDataToTable(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String from = request.getParameter("from");
         String to = request.getParameter("to");
+        String date = request.getParameter("departure");
 
         HttpSession session = request.getSession();
         session.setAttribute("lastSearchFrom", from);
         session.setAttribute("lastSearchTo", to);
+        session.setAttribute("lastSearchDate", date);
 
-        response.sendRedirect(request.getContextPath() + "/fetchDataToTable?from=" + from + "&to=" + to);
+        response.sendRedirect(request.getContextPath() + "/fetchDataToTable?from=" + from + "&to=" + to+"&date="+date);
     }
 
 }
