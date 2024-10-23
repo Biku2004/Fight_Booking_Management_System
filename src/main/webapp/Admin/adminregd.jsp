@@ -7,16 +7,32 @@
     <style>
         body {
             font-family: 'Verdana', sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(135deg, #f06, #f79);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
         .form-container {
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.85);
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
@@ -97,12 +113,6 @@
             text-align: center;
         }
 
-        /* Additional Styles */
-        input:focus, select:focus {
-            border-color: #333;
-            outline: none;
-        }
-
         /* Placeholder animation */
         input:focus + label,
         input:not(:placeholder-shown) + label {
@@ -129,10 +139,57 @@
             transition: width 0.4s ease;
         }
 
-        /* JavaScript controlled progress */
+        /* Floating animated shapes (for more interactivity) */
+        .floating-shape {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-shape:nth-child(1) {
+            width: 120px;
+            height: 120px;
+            top: 10%;
+            left: 20%;
+            animation-duration: 8s;
+        }
+
+        .floating-shape:nth-child(2) {
+            width: 80px;
+            height: 80px;
+            bottom: 15%;
+            right: 15%;
+            animation-duration: 10s;
+        }
+
+        .floating-shape:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            top: 50%;
+            right: 25%;
+            animation-duration: 12s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body>
+<!-- Floating shapes for visual interactivity -->
+<div class="floating-shape"></div>
+<div class="floating-shape"></div>
+<div class="floating-shape"></div>
+
 <div class="form-container">
     <h1>Admin Registration</h1>
 
