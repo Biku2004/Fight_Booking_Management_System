@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: sayan
-  Date: 22-08-2024
-  Time: 22:41
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,18 +10,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #74ebd5, #ACB6E5); /* Gradient background */
             margin: 0;
             padding: 20px;
         }
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
             gap: 20px;
             padding: 20px;
             margin: 0 auto;
-            max-width: 1200px; /* Added max-width for better layout */
+            max-width: 1200px;
         }
 
         .grid-item {
@@ -37,36 +30,16 @@
             border-radius: 12px;
             padding: 20px;
             text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: hidden;
         }
 
-        .grid-item::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background-color: rgba(0, 0, 0, 0.03);
-            transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
-            border-radius: 50%;
-            z-index: 0;
-            transform: translate(-50%, -50%);
-        }
-
-        .grid-item:hover::before {
-            width: 0;
-            height: 0;
-            top: 50%;
-            left: 50%;
-        }
-
         .grid-item:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            background-color: #f0f0f0;
         }
 
         .grid-item h2 {
@@ -76,81 +49,54 @@
         }
 
         .grid-item i {
-            font-size: 1.6em;
+            font-size: 2em;
             margin-bottom: 12px;
-            color: #333;
+            color: #007bff;
             margin-right: 8px;
         }
 
         .grid-item p {
             font-size: 1.05em;
-            color: #777;
+            color: #555;
             line-height: 1.5;
-            margin-bottom: 0;
+            margin-bottom: 20px;
         }
 
         .grid-item a {
             text-decoration: none;
             color: inherit;
-            position: relative;
-            z-index: 1;
         }
 
         .grid-item .btn {
-            background-color: #2c3e50;
+            background-color: #007bff;
             color: white;
-            padding: 8px 20px;
+            padding: 10px 25px;
             font-size: 0.9em;
             border: none;
-            border-radius: 20px;
+            border-radius: 30px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            margin: 0;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             text-transform: uppercase;
             font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .grid-item .btn::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 300%;
-            height: 300%;
-            background-color: rgba(255, 255, 255, 0.1);
-            transition: width 0.4s ease, height 0.4s ease, top 0.4s ease, left 0.4s ease;
-            border-radius: 50%;
-            z-index: 0;
-            transform: translate(-50%, -50%);
-        }
-
-        .grid-item .btn:hover::before {
-            width: 0;
-            height: 0;
-            top: 50%;
-            left: 50%;
         }
 
         .grid-item .btn:hover {
-            background-color: #1a252f;
+            background-color: #0056b3;
             transform: scale(1.08);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
 
         .grid-item .btn:active {
-            background-color: #16202a;
+            background-color: #004080;
             transform: scale(1);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .grid-item .btn a {
-            text-decoration: none;
-            color: inherit;
-            position: relative;
-            z-index: 1;
+        @media (max-width: 768px) {
+            .grid-item i {
+                font-size: 1.6em;
+            }
+            .grid-item h2 {
+                font-size: 1.4em;
+            }
         }
     </style>
 </head>
@@ -174,12 +120,6 @@
         <p>Update admin details from here</p>
         <button class="btn"><a href="../registration/emailAuthentication.jsp">Update</a></button>
     </div>
-<%--    <div class="grid-item">--%>
-<%--        <i class="fas fa-eye"></i>--%>
-<%--        <h2>View Admin</h2>--%>
-<%--        <p>View every detail about your admins</p>--%>
-<%--        <button class="btn"><a href="viewAllAdmins.jsp">View</a></button>--%>
-<%--    </div>--%>
     <div class="grid-item">
         <i class="fas fa-plane"></i>
         <h2>Add Flight</h2>
@@ -230,4 +170,4 @@
     </div>
 </div>
 </body>
-
+</html>
