@@ -19,9 +19,21 @@
             background: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            padding: 40px;
+            padding: 60px; /* Increased padding for more space */
             width: 100%;
-            max-width: 500px;
+            max-width: 600px; /* Increased max-width */
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         h1 {
@@ -46,7 +58,7 @@
             border-radius: 5px;
             margin-bottom: 20px;
             font-size: 16px;
-            transition: border-color 0.3s;
+            transition: border-color 0.3s, box-shadow 0.3s;
         }
 
         input[type="text"]:focus,
@@ -54,6 +66,7 @@
         select:focus {
             border-color: #00796b;
             outline: none;
+            box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
         }
 
         input[type="submit"] {
@@ -66,11 +79,12 @@
             border-radius: 5px;
             cursor: pointer;
             width: 100%;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         input[type="submit"]:hover {
             background-color: #005b4f;
+            transform: scale(1.05);
         }
 
         .progress-container {
@@ -79,6 +93,7 @@
             border-radius: 5px;
             margin-bottom: 20px;
             height: 8px;
+            overflow: hidden; /* Ensure the animation is smooth */
         }
 
         .progress-bar {
@@ -86,7 +101,7 @@
             background-color: #00796b;
             width: 0;
             border-radius: 5px;
-            transition: width 0.5s;
+            transition: width 0.5s ease;
         }
 
         p {
