@@ -169,12 +169,6 @@
         <button class="btn"><a href="allFile.jsp">AllIn1</a></button>
     </div>
     <div class="grid-item">
-        <i class="fas fa-database"></i>
-        <h2>Data From DB</h2>
-        <p>Access data from the database</p>
-        <button class="btn"><a href="../bookFlight/dataFromdb.jsp">Data</a></button>
-    </div>
-    <div class="grid-item">
         <i class="fas fa-ticket-alt"></i>
         <h2>Tickets</h2>
         <p>Manage your tickets here</p>
