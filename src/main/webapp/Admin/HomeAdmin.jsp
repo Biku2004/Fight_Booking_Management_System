@@ -174,12 +174,12 @@
         <p>Update admin details from here</p>
         <button class="btn"><a href="../registration/emailAuthentication.jsp">Update</a></button>
     </div>
-    <div class="grid-item">
-        <i class="fas fa-eye"></i>
-        <h2>View Admin</h2>
-        <p>View every detail about your admins</p>
-        <button class="btn"><a href="viewAllAdmins.jsp">View</a></button>
-    </div>
+<%--    <div class="grid-item">--%>
+<%--        <i class="fas fa-eye"></i>--%>
+<%--        <h2>View Admin</h2>--%>
+<%--        <p>View every detail about your admins</p>--%>
+<%--        <button class="btn"><a href="viewAllAdmins.jsp">View</a></button>--%>
+<%--    </div>--%>
     <div class="grid-item">
         <i class="fas fa-plane"></i>
         <h2>Add Flight</h2>
@@ -230,4 +230,4 @@
     </div>
 </div>
 </body>
-</
+
