@@ -6,6 +6,22 @@
 <head>
   <title>Booking Results</title>
   <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #33A1FF, #6DD5FA, #ffffff);
+      background-size: 400% 400%;
+      animation: gradientAnimation 10s ease infinite;
+      margin: 0;
+      padding: 0;
+    }
+    @keyframes gradientAnimation {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
     table {
       width: 100%;
       border-collapse: collapse;

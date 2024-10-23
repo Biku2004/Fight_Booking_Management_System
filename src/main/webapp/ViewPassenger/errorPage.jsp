@@ -14,15 +14,19 @@
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffcccb; /* Soft red background */
-            color: #d8000c; /* Stronger red color for text */
+            background: linear-gradient(135deg, #ff0000, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center; /* Center text within the container */
+        }
+        @keyframes gradientAnimation {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
         }
         .error-container {
             background-color: #ffebee; /* Lighter red for the container */
