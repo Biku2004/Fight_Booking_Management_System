@@ -38,6 +38,8 @@
             box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 650px;
+            max-height: 600px; /* Set a maximum height */
+            overflow-y: auto; /* Enable vertical scrolling */
             transition: transform 0.3s ease;
         }
 
