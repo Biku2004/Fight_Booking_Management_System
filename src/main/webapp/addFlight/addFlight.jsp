@@ -1,12 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Atkum
-  Date: 22-08-2024
-  Time: 23:00
-  To change this template use File | Settings | File Templates.
---%>
-
-<%--Updated JSP Page --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -14,20 +5,38 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f7ff;
+            background: linear-gradient(135deg, #33A1FF, #6DD5FA, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s ease infinite;
             margin: 0;
             padding: 0;
             color: #333;
         }
-
+        @keyframes gradientAnimation {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
         .container {
             width: 80%;
             max-width: 800px;
             margin: 50px auto;
-            background: #ffffff;
+            background: linear-gradient(135deg, #0095ff, #63ffe7, #ffffff);
+            animation: gradientAnimation 8s ease infinite;
             border-radius: 15px;
             padding: 30px;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            opacity: 0; /* Start invisible */
+            animation: fadeIn 1s forwards; /* Fade-in effect */
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1; /* Fully visible */
+            }
         }
 
         .container h1 {
@@ -148,7 +157,6 @@
                 <option value="Economy">Economy</option>
                 <option value="Business">Business</option>
                 <option value="First">First</option>
-                <!-- Add more options as needed -->
             </select>
         </div>
         <div class="form-group">
@@ -170,8 +178,6 @@
 </div>
 </body>
 </html>
-
-
 
 <%--Old JSP PAGe--%>
 

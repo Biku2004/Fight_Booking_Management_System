@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Verdana', sans-serif;
-            background: linear-gradient(to right, #33FF57, #33A1FF);
+            background: linear-gradient(to right, #ffffff, #33A1FF);
             background-size: 400% 400%;
             animation: gradientAnimation 10s ease infinite;
             display: flex;
