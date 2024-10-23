@@ -13,16 +13,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden; /* Prevent scrollbars caused by floating shapes */
         }
 
         .container {
             background: #ffffff;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            padding: 60px; /* Increased padding for more space */
+            padding: 60px;
             width: 100%;
-            max-width: 600px; /* Increased max-width */
+            max-width: 600px;
+            position: relative; /* Position relative for absolute positioning of shapes */
             animation: slideIn 0.5s ease forwards;
+            z-index: 1; /* Ensure form is above floating shapes */
         }
 
         @keyframes slideIn {
@@ -35,6 +38,32 @@
                 transform: translateY(0);
             }
         }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px); /* Adjust the height of the float */
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .floating-shape {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.25); /* Transparent shapes */
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite; /* Apply float animation */
+            z-index: 0; /* Ensure shapes are below the form */
+        }
+
+        /* Define various shapes */
+        .shape1 { width: 100px; height: 100px; top: 10%; left: 10%; }
+        .shape2 { width: 80px; height: 80px; top: 20%; right: 15%; }
+        .shape3 { width: 120px; height: 120px; bottom: 15%; left: 5%; }
+        .shape4 { width: 90px; height: 90px; bottom: 25%; right: 10%; }
 
         h1 {
             color: #00796b;
@@ -153,6 +182,12 @@
     <p>Admin details could not be retrieved.</p>
     <% } %>
 </div>
+
+<!-- Floating Shapes -->
+<div class="floating-shape shape1"></div>
+<div class="floating-shape shape2"></div>
+<div class="floating-shape shape3"></div>
+<div class="floating-shape shape4"></div>
 
 <script>
     function updateProgressBar() {
