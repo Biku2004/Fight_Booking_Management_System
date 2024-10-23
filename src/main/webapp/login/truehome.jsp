@@ -168,22 +168,6 @@
 
         </div>
     </section>
-
-    <!-- Section to display flight search results -->
-    <section class="flight-results">
-        <h2>Flight Search Results</h2>
-
-        <div id="flight-results"></div>
-
-    </section>
-
-    <form id="flightDataForm" action="${pageContext.request.contextPath}/fetchDataToTable" method="GET">
-        <input type="hidden" name="from" id="fromInput">
-        <input type="hidden" name="to" id="toInput">
-        <input type="hidden" id="date" name="date" required>
-        <button type="button" id="sendFlightDataBtn">Send Flight Data</button>
-    </form>
-
 </main>
 
 <script>
