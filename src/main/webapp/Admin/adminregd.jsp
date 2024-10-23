@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Verdana', sans-serif;
-            background: linear-gradient(135deg, #f06, #f79);
+            background: linear-gradient(to right, #33FF57, #33A1FF);
             background-size: 400% 400%;
             animation: gradientAnimation 10s ease infinite;
             display: flex;
@@ -136,7 +136,7 @@
         .progress-bar .progress {
             height: 100%;
             width: 0%;
-            background-color: #333;
+            background-color: #0084ff;
             border-radius: 5px;
             transition: width 0.4s ease;
         }
@@ -144,7 +144,7 @@
         /* Floating animated shapes (for more interactivity) */
         .floating-shape {
             position: absolute;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgb(97, 100, 101);
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
         }
