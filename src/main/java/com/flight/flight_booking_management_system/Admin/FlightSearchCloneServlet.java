@@ -130,18 +130,23 @@ public class FlightSearchCloneServlet extends HttpServlet {
     }
     private void saveJsonToFile(String jsonResponse, String filePath) throws IOException {
         File file = new File(filePath);
-        if (!file.exists()) {
-            file.createNewFile();
+        // Ensure the directories exist
+        if (!file.getParentFile().exists()) {
+            file.getParentFile().mkdirs(); // Create directories if they don't exist
         }
-//        try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-//            writer.write(jsonResponse);
-//        }
+
+        if (!file.exists()) {
+            file.createNewFile();  // Create the file if it doesn't exist
+        }
+
         JSONObject json = new JSONObject(jsonResponse);
         String prettyJson = json.toString(4); // Indent with 4 spaces for pretty-printing
+
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file))) {
-            writer.write(prettyJson);
+            writer.write(prettyJson);  // Write the JSON data to the file
         }
     }
+
 
     private void storeFlightsInDatabase(String fileContent,HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
