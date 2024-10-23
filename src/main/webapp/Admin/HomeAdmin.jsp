@@ -10,11 +10,23 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5); /* Gradient background */
+            background: linear-gradient(to right, #33FF57, #33A1FF);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
             margin: 0;
             padding: 20px;
         }
-
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
