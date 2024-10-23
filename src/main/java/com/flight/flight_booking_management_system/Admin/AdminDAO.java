@@ -112,31 +112,5 @@ public class AdminDAO {
         }
         return admin;
     }
-
-
-    // Retrieves all admin records
-    public List<Admin> getAllAdmins() throws SQLException {
-        List<Admin> admins = new ArrayList<> ( );
-        try (Connection conn = getConnection ( ); PreparedStatement pstm = conn.prepareStatement ( SELECT_ALL_ADMINS_SQL ); ResultSet rs = pstm.executeQuery ( )) {
-
-            while (rs.next ( )) {
-                Admin admin = new Admin ( );
-                admin.setFirstName ( rs.getString ( "FirstName" ) );
-                admin.setLastName ( rs.getString ( "LastName" ) );
-                admin.setEmail ( rs.getString ( "Email" ) );
-                admin.setPhoneNumber ( rs.getString ( "Phone" ) );
-                admin.setNationality ( rs.getString ( "Nationality" ) );
-                admin.setGender ( rs.getString ( "Gender" ) );
-                admin.setDateOfBirth ( rs.getString ( "DateOfBirth" ) );
-                admins.add ( admin );
-            }
-        } catch (SQLException e) {
-            e.printStackTrace ( );
-            throw e;
-        }
-        return admins;
-    }
-
-
 }
 
