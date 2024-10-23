@@ -73,6 +73,22 @@
             background-color: #005b4f;
         }
 
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            height: 8px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #00796b;
+            width: 0;
+            border-radius: 5px;
+            transition: width 0.5s;
+        }
+
         p {
             text-align: center;
             color: red;
@@ -83,11 +99,14 @@
 <body>
 <div class="container">
     <h1>Update Admin Details</h1>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
 
     <%-- Check if the admin object is present --%>
     <% Admin admin = (Admin) request.getAttribute("admin"); %>
     <% if (admin != null) { %>
-    <form action="updateAdmin" method="post">
+    <form action="updateAdmin" method="post" id="updateForm" oninput="updateProgressBar()">
         <input type="hidden" name="email" value="<%= admin.getEmail() %>">
 
         <label for="firstName">First Name:</label>
@@ -119,5 +138,25 @@
     <p>Admin details could not be retrieved.</p>
     <% } %>
 </div>
+
+<script>
+    function updateProgressBar() {
+        const form = document.getElementById('updateForm');
+        const progressBar = document.getElementById('progressBar');
+        const totalFields = 6; // Total number of fields to track progress
+        let filledFields = 0;
+
+        // Count filled fields
+        for (let i = 0; i < form.elements.length; i++) {
+            if (form.elements[i].type !== "submit" && form.elements[i].value !== "") {
+                filledFields++;
+            }
+        }
+
+        // Calculate progress
+        const progressPercentage = (filledFields / totalFields) * 100;
+        progressBar.style.width = progressPercentage + '%';
+    }
+</script>
 </body>
 </html>
