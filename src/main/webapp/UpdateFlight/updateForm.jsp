@@ -8,7 +8,20 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background: linear-gradient(to right, #ffffff, #63fadd);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
         }
         h1 {
             color: #333;

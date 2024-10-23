@@ -4,150 +4,125 @@
     <title>Update Admin Details</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #33A1FF, #6DD5FA, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s ease infinite;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
         }
+
+        @keyframes gradientAnimation {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
         h1 {
             color: #333;
             text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
+
         form {
-            background: #0c95be;
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
-            position: relative;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 1s ease-in-out;
         }
-        .form-control {
-            position: relative;
-            margin-bottom: 20px;
-            width: 100%;
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-        .form-control input {
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input[type="email"] {
             width: 100%;
-            padding: 10px 15px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 16px;
             font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            background-color: #f4f4f4;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="email"]:focus {
+            border-color: #33A1FF;
             outline: none;
-            transition: border-color 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 0 5px rgba(51, 161, 255, 0.5);
         }
-        .form-control input:focus {
-            border-color: #007bff;
-            background-color: white;
-        }
-        .form-control label {
-            position: absolute;
-            top: 14px;
-            left: 15px;
-            font-size: 16px;
-            color: #999;
-            pointer-events: none;
-            transition: 0.3s;
-        }
-        .form-control input:focus + label,
-        .form-control input:not(:placeholder-shown) + label {
-            top: -12px;
-            left: 12px;
-            font-size: 12px;
-            color: #007bff;
-        }
+
         input[type="submit"] {
-            background-color: #007bff;
+            background-color: #33A1FF;
             color: white;
             border: none;
-            padding: 12px;
-            font-size: 18px;
-            border-radius: 6px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 4px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s;
             width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
+
         input[type="submit"]:hover {
-            background-color: #0056b3;
-            transform: scale(1.02);
+            background-color: #2A8CE6;
+            transform: translateY(-2px);
         }
-        .validation-message {
-            display: none;
-            font-size: 14px;
-            color: red;
-            margin-top: -10px;
-            margin-bottom: 10px;
+
+        input[type="submit"]:active {
+            background-color: #2480CC;
+            transform: translateY(1px);
         }
-        .form-success {
-            display: none;
-            text-align: center;
-            color: green;
-            margin-top: 20px;
-        }
-        .form-error {
-            display: none;
-            text-align: center;
-            color: red;
-            margin-top: 20px;
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            form {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
         }
     </style>
+
 </head>
 <body>
-
-<form id="updateForm" action="<%=request.getContextPath()%>/showUpdateForm" method="post">
-    <h1>Update Admin Details</h1>
-
-    <div class="form-control">
-        <input type="email" id="email" name="email" placeholder=" " required>
-        <label for="email">Email</label>
-        <div class="validation-message" id="emailValidation">Please enter a valid email address.</div>
-    </div>
-
+<form action="<%=request.getContextPath ()%>/showUpdateForm" method="post">
+    <h1>Enter Email to Update Admin Details</h1>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter Your Email" required><br><br>
     <input type="submit" value="Submit">
-
-    <div class="form-success" id="formSuccess">Admin details updated successfully!</div>
-    <div class="form-error" id="formError">Failed to update admin details. Try again.</div>
 </form>
-
-<script>
-    const form = document.getElementById('updateForm');
-    const emailInput = document.getElementById('email');
-    const emailValidation = document.getElementById('emailValidation');
-    const formSuccess = document.getElementById('formSuccess');
-    const formError = document.getElementById('formError');
-
-    form.addEventListener('submit', function(event) {
-        const email = emailInput.value;
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-        if (!emailRegex.test(email)) {
-            emailValidation.style.display = 'block';
-            event.preventDefault();
-        } else {
-            emailValidation.style.display = 'none';
-        }
-
-        // Simulate success or error response
-        setTimeout(function() {
-            formSuccess.style.display = 'block';  // Replace with actual backend response logic
-            formError.style.display = 'none';    // Use error message on failure
-        }, 500);
-    });
-
-    emailInput.addEventListener('input', function() {
-        const email = emailInput.value;
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            emailValidation.style.display = 'block';
-        } else {
-            emailValidation.style.display = 'none';
-        }
-    });
-</script>
-
 </body>
 </html>
