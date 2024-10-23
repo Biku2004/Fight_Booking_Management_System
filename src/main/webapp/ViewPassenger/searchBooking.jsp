@@ -19,6 +19,7 @@
       margin: 0;
       padding: 0;
     }
+
     @keyframes gradientAnimation {
       0%, 100% {
         background-position: 0% 50%;
@@ -27,11 +28,24 @@
         background-position: 100% 50%;
       }
     }
+
+    /* New fade-in animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(30px); /* Slide from below */
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0); /* Set it in place */
+      }
+    }
+
     .container {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh; /* Full height of the viewport */
+      height: 100vh;
       padding: 20px;
     }
 
@@ -39,51 +53,74 @@
       max-width: 400px;
       width: 100%;
       background: white;
-      padding: 30px; /* Increased padding for a more spacious look */
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow for a classy feel */
-      text-align: center; /* Center text inside the container */
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      opacity: 0; /* Initial opacity for fade-in */
+      animation: fadeIn 1.5s ease forwards; /* Fade-in effect */
+    }
+
+    .form-container:hover {
+      transform: translateY(-5px);
     }
 
     h2 {
       color: #333;
-      margin: 0 0 20px 0; /* Margin below the headline */
-      font-size: 1.8em; /* Increased font size for the headline */
+      font-size: 2em;
+      margin-bottom: 30px;
+      letter-spacing: 0.5px;
     }
 
     label {
-      display: block; /* Block display for label to separate it from input */
-      margin-bottom: 10px; /* Space between label and input */
-      font-size: 1em; /* Font size for the label */
-      color: #555; /* Darker color for better readability */
+      display: block;
+      margin-bottom: 12px;
+      font-size: 1.1em;
+      color: #555;
     }
 
     input[type="text"] {
       width: 100%;
-      padding: 12px; /* Increased padding for the input */
-      margin: 10px 0 20px 0; /* Space around the input */
-      border: 1px solid #ced4da; /* Lighter border color */
-      border-radius: 6px;
-      font-size: 1em;
+      padding: 14px;
+      margin: 15px 0 25px 0;
+      border: 1px solid #ced4da;
+      border-radius: 8px;
+      font-size: 1.1em;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    input[type="text"]:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+      outline: none;
     }
 
     input[type="submit"] {
-      background-color: #007bff; /* Bootstrap primary color */
+      background-color: #007bff;
       color: white;
-      padding: 12px 15px;
+      padding: 14px 20px;
       border: none;
-      border-radius: 6px; /* Rounded corners */
+      border-radius: 8px;
       cursor: pointer;
       width: 100%;
-      font-size: 1em;
-      transition: background-color 0.3s ease, transform 0.2s ease; /* Transition for hover effect */
+      font-size: 1.1em;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
     }
 
     input[type="submit"]:hover {
-      background-color: #0056b3; /* Darker shade on hover */
-      transform: scale(1.05); /* Slightly scale up on hover */
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    input[type="submit"]:active {
+      background-color: #004080;
+      transform: scale(1);
     }
   </style>
+
+
 </head>
 <body>
 <div class="container">
