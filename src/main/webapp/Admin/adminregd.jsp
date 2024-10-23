@@ -144,10 +144,12 @@
         /* Floating animated shapes (for more interactivity) */
         .floating-shape {
             position: absolute;
-            background-color: rgb(97, 100, 101);
+            background-color: rgb(97, 100, 101); /* Keep the original color */
+            opacity: 0.5; /* Set opacity to 0.5 for 50% transparency */
             border-radius: 50%;
             animation: float 6s ease-in-out infinite;
         }
+
 
         .floating-shape:nth-child(1) {
             width: 120px;
