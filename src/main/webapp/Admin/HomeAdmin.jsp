@@ -163,12 +163,6 @@
         <button class="btn"><a href="../ViewPassenger/searchBooking.jsp">Passenger info</a></button>
     </div>
     <div class="grid-item">
-        <i class="fas fa-tools"></i>
-        <h2>All in One</h2>
-        <p>Modify any details of an already added flight</p>
-        <button class="btn"><a href="allFile.jsp">AllIn1</a></button>
-    </div>
-    <div class="grid-item">
         <i class="fas fa-ticket-alt"></i>
         <h2>Tickets</h2>
         <p>Manage your tickets here</p>
