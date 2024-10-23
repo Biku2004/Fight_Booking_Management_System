@@ -226,7 +226,7 @@
         <i class="fas fa-ticket-alt"></i>
         <h2>Tickets</h2>
         <p>Manage your tickets here</p>
-        <button class="btn"><a href="../tickets.jsp">Tickets</a></button>
+        <button class="btn"><a href="../bookFlight/tickets.jsp">Tickets</a></button>
     </div>
 </div>
 </body>

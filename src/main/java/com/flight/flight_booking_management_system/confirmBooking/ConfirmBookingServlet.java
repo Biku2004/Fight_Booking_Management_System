@@ -1,5 +1,7 @@
 package com.flight.flight_booking_management_system.confirmBooking;
 
+import com.mysql.cj.Session;
+import com.mysql.cj.protocol.Message;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -7,12 +9,16 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.net.PasswordAuthentication;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Properties;
+
+
 
 @WebServlet("/ConfirmBookingServlet")
 public class ConfirmBookingServlet extends HttpServlet {
@@ -100,10 +106,15 @@ public class ConfirmBookingServlet extends HttpServlet {
                     passengerStmt.executeBatch();
                 }
 
+                // Send confirmation email
+//                String subject = "Booking Confirmation";
+//                String messageText = "Dear " + fullName + ",\n\nYour booking for flight " + flightNumber + " has been confirmed.";
+//                MailSender.sendEmail(email, subject, messageText);
+
                 // Redirect to confirmation page
                 request.setAttribute("fullName", fullName);
                 request.setAttribute("flightNumber", flightNumber);
-                request.getRequestDispatcher("bookFlight/bookingConfirmation.jsp").forward(request, response);
+                request.getRequestDispatcher("bookFlight/tickets.jsp").forward(request, response);
             }
         } catch (SQLException | ClassNotFoundException e) {
             throw new ServletException("Booking failed!", e);

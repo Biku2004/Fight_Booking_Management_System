@@ -33,6 +33,7 @@ public class FlightSearchCloneServlet extends HttpServlet {
     private static final String DB_PASSWORD = "root@localhost";
 //    private static final String JSON_FILE_PATH = "D:/Study/Java1/Maven/file.json";
     private static final String JSON_FILE_PATH = "D:/Study/Java1/Maven/5_project/Flight_Booking_Management_System/src/main/resources/JsonData/file.json";
+//    private static final String JSON_FILE_PATH = "D:/Study/Java1/Maven/5_project/Flight_Booking_Management_System/src/main/resources/JsonData/file.json";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String from = request.getParameter("from");
@@ -100,16 +101,6 @@ public class FlightSearchCloneServlet extends HttpServlet {
 //        session.setAttribute("lastSearchFrom", from);
 //        session.setAttribute("lastSearchTo", to);
 //
-//        // Generate HTML form with hidden inputs and submit it
-//        response.setContentType("text/html");
-//        response.getWriter().println("<html><body>");
-//        response.getWriter().println("<form id='redirectForm' action='" + request.getContextPath() + "/fetchDataToTable' method='POST'>");
-//        response.getWriter().println("<input type='hidden' name='from' value='" + from + "'>");
-//        response.getWriter().println("<input type='hidden' name='to' value='" + to + "'>");
-//        response.getWriter().println("</form>");
-//        response.getWriter().println("<script>document.getElementById('redirectForm').submit();</script>");
-//        response.getWriter().println("</body></html>");
-//        System.out.println("Trip Type: " + tripType);
     }
 
 
