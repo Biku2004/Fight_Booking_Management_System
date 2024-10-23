@@ -1,0 +1,66 @@
+create table if not exists flightregd.flights1
+(
+    id               int auto_increment
+        primary key,
+    departure_name   varchar(255) not null,
+    departure_id     varchar(10)  not null,
+    departure_time   datetime     not null,
+    arrival_name     varchar(255) not null,
+    arrival_id       varchar(10)  not null,
+    arrival_time     datetime     not null,
+    duration         int          not null,
+    airplane         varchar(255) not null,
+    airline          varchar(255) not null,
+    airline_logo     varchar(255) null,
+    travel_class     varchar(50)  not null,
+    flight_number    varchar(50)  not null,
+    legroom          varchar(50)  null,
+    extensions       text         null,
+    total_duration   int          not null,
+    carbon_emissions float        not null,
+    price            int          not null,
+    type             varchar(50)  not null,
+    booking_token    varchar(500) null,
+    layovers         json         null
+);
+----------------------------------------------------------------------
+create table if not exists flightregd.bookings
+(
+    booking_id       int auto_increment
+        primary key,
+    flight_number    varchar(50)                         not null,
+    airline          varchar(100)                        not null,
+    departure        varchar(100)                        not null,
+    arrival          varchar(100)                        not null,
+    departure_time   datetime                            not null,
+    arrival_time     datetime                            not null,
+    airplane         varchar(100)                        null,
+    legroom          varchar(50)                         null,
+    extensions       varchar(255)                        null,
+    travel_class     varchar(50)                         null,
+    duration         varchar(255)                        null,
+    layovers         varchar(255)                        null,
+    price            decimal(10, 2)                      null,
+    carbon_emissions varchar(255)                        null,
+    full_name        varchar(100)                        not null,
+    email            varchar(100)                        not null,
+    phone            varchar(20)                         not null,
+    booking_time     timestamp default CURRENT_TIMESTAMP null
+);
+
+--------------------------------------------------------------------------------------
+create table if not exists flightregd.passengers
+(
+    passenger_id   int auto_increment
+        primary key,
+    booking_id     int          null,
+    passenger_name varchar(100) not null,
+    passenger_type varchar(50)  not null,
+    constraint passengers_ibfk_1
+        foreign key (booking_id) references flightregd.bookings (booking_id)
+            on delete cascade
+);
+
+create index booking_id
+    on flightregd.passengers (booking_id);
+
