@@ -104,6 +104,21 @@
 
         <button type="button" class="add-passenger-btn" id="addPassengerBtn">+ Add Adult/Child</button>
 
+        <input type="hidden" name="flightNumber" value="<%= request.getAttribute("flightNumber") %>">
+        <input type="hidden" name="airline" value="<%= request.getAttribute("airline") %>">
+        <input type="hidden" name="departure" value="<%= request.getAttribute("departure") %>">
+        <input type="hidden" name="arrival" value="<%= request.getAttribute("arrival") %>">
+        <input type="hidden" name="departureTime" value="<%= request.getAttribute("departureTime") %>">
+        <input type="hidden" name="arrivalTime" value="<%= request.getAttribute("arrivalTime") %>">
+        <input type="hidden" name="airplane" value="<%= request.getAttribute("airplane") %>">
+        <input type="hidden" name="legroom" value="<%= request.getAttribute("legroom") %>">
+        <input type="hidden" name="extensions" value="<%= request.getAttribute("extensions") %>">
+        <input type="hidden" name="travel_class" value="<%= request.getAttribute("travelClass") %>">
+        <input type="hidden" name="duration" value="<%= request.getAttribute("duration") %>">
+        <input type="hidden" name="layovers" value="<%= request.getAttribute("layovers") %>">
+        <input type="hidden" name="price" value="<%= request.getAttribute("price") %>">
+        <input type="hidden" name="carbon_emissions" value="<%= request.getAttribute("carbonEmissions")%>">
+
         <button type="submit" class="book-now">Confirm Booking</button>
     </form>
 </div>

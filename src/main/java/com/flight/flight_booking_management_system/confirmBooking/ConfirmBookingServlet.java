@@ -26,7 +26,7 @@ public class ConfirmBookingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String flightNumber = request.getParameter("flightNumber");
         String airline = request.getParameter("airline");
-        String departure = request.getParameter("departure").trim();
+        String departure = request.getParameter("departure");
         String arrival = request.getParameter("arrival");
         String departureTime = request.getParameter("departureTime");
         String arrivalTime = request.getParameter("arrivalTime");
