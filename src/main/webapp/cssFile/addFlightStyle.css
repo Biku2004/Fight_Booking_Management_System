@@ -1,0 +1,93 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6f0ff; /* Softer background color */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ffffff;
+    padding: 15px; /* Increased padding for better spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #008cba; /* Changed link color for better visibility */
+}
+
+h1 {
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px; /* Added margin for spacing */
+}
+
+.form-container {
+    width: 80%; /* Increased width for larger screens */
+    max-width: 800px; /* Set maximum width */
+    margin: auto;
+    background-color: #ffffff;
+    padding: 30px; /* Increased padding */
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px; /* Increased margin for better spacing */
+    color: #333;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+input[type="file"],
+textarea {
+    width: calc(100% - 16px); /* Adjusted width for padding */
+    padding: 10px; /* Increased padding for comfort */
+    margin-bottom: 20px; /* Increased bottom margin */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #008cba;
+    color: white;
+    padding: 12px; /* Increased padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #005f5f; /* Darker shade on hover */
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-row div {
+    width: calc(48% - 10px); /* Adjusted width to account for margins */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column; /* Stack elements on smaller screens */
+    }
+    .form-row div {
+        width: 100%; /* Full width on small screens */
+    }
+}

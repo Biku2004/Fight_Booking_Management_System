@@ -4,7 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkyWay Flight Management</title>
+    <link rel="stylesheet" href="../cssFile/addFlightStyle.css">
+<%--    <style>--%>
+<%--        body {--%>
+<%--            font-family: Arial, sans-serif;--%>
+<%--            background-color: #f2f6ff;--%>
+<%--            margin: 0;--%>
+<%--            padding: 0;--%>
+<%--        }--%>
 
+<%--        header {--%>
+<%--            background-color: #ffffff;--%>
+<%--            padding: 10px;--%>
+<%--        }--%>
+
+<%--        nav {--%>
+<%--            display: flex;--%>
+<%--            justify-content: space-around;--%>
+<%--            padding: 10px;--%>
+<%--        }--%>
+
+<%--        nav a {--%>
+<%--            text-decoration: none;--%>
+<%--            font-size: 18px;--%>
+<%--            color: black;--%>
+<%--        }--%>
+
+<%--        h1 {--%>
+<%--            text-align: center;--%>
+<%--            color: #333333;--%>
+<%--        }--%>
+
+<%--        .form-container {--%>
+<%--            width: 60%;--%>
+<%--            margin: auto;--%>
+<%--            background-color: #ffffff;--%>
+<%--            padding: 20px;--%>
+<%--            border-radius: 10px;--%>
+<%--            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);--%>
+<%--        }--%>
+
+<%--        label {--%>
+<%--            font-size: 14px;--%>
+<%--            font-weight: bold;--%>
+<%--            display: block;--%>
+<%--            margin-bottom: 5px;--%>
+<%--            color: #333;--%>
+<%--        }--%>
+
+<%--        input[type="text"], input[type="date"], input[type="number"], input[type="file"] {--%>
+<%--            width: 100%;--%>
+<%--            padding: 8px;--%>
+<%--            margin-bottom: 15px;--%>
+<%--            border: 1px solid #ccc;--%>
+<%--            border-radius: 5px;--%>
+<%--            box-sizing: border-box;--%>
+<%--        }--%>
+
+<%--        .form-row {--%>
+<%--            display: flex;--%>
+<%--            justify-content: space-between;--%>
+<%--        }--%>
+
+<%--        .form-row div {--%>
+<%--            width: 48%;--%>
+<%--        }--%>
+
+<%--        input[type="submit"] {--%>
+<%--            background-color: #008cba;--%>
+<%--            color: white;--%>
+<%--            padding: 10px 15px;--%>
+<%--            border: none;--%>
+<%--            border-radius: 5px;--%>
+<%--            cursor: pointer;--%>
+<%--            font-size: 16px;--%>
+<%--        }--%>
+
+<%--        input[type="submit"]:hover {--%>
+<%--            background-color: #005f5f;--%>
+<%--        }--%>
+
+<%--        .flight-options {--%>
+<%--            margin: 15px 0;--%>
+<%--        }--%>
+
+<%--    </style>--%>
 </head>
 <body>
 <header>
@@ -135,31 +219,6 @@
 </div>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
