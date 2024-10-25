@@ -34,14 +34,17 @@ public class loginServlet extends HttpServlet {
             if (rs.next()) {
                 HttpSession session = req.getSession();
                 session.setAttribute("session_name", rs.getString("FirstName"));
+                session.setAttribute("email", email); // Storing the email in session
 
                 // Retrieve the profile photo as a byte array
                 InputStream photoInputStream = rs.getBinaryStream("ProfilePhoto");
-                byte[] profilePhoto = photoInputStream.readAllBytes();
-                session.setAttribute("profile_photo", profilePhoto);
+                if (photoInputStream != null) {
+                    byte[] profilePhoto = photoInputStream.readAllBytes();
+                    session.setAttribute("profile_photo", profilePhoto);
+                }
 
                 // Check the role of the user and redirect accordingly
-                String role = rs.getString("UserType");  // Assuming 'Role' is a column in your database
+                String role = rs.getString("UserType");  // Assuming 'UserType' is a column in your database
 
                 if ("admin".equalsIgnoreCase(role)) {
                     resp.sendRedirect("Admin/HomeAdmin.jsp");  // Redirect to admin home page

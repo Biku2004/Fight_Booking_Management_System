@@ -1,113 +1,84 @@
 package com.flight.flight_booking_management_system.LoginRegister;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.Part;
+import jakarta.servlet.http.*;
+import java.io.*;
+import java.sql.*;
+import java.util.Arrays;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-
-@MultipartConfig(maxFileSize = 16177215) // Set max file size to around 16MB
 @WebServlet("/editProfile")
 public class EditProfileServlet extends HttpServlet {
 
+    private UserDAO userDAO;
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String email = req.getParameter("email");
+    public void init() {
+        Connection connection = DatabaseConnection.getConnection();
+        userDAO = new UserDAO(connection);
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String email = request.getParameter("email"); // This should come from the query string or form submission
+        System.out.println("Fetching user with email: " + email); // Debugging log
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightregd", "Java-Project", "root@localhost");
-
-            String query = "SELECT * FROM register WHERE Email = ?";
-            PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, email);
-
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                req.setAttribute("firstName", rs.getString("FirstName"));
-                req.setAttribute("lastName", rs.getString("LastName"));
-                req.setAttribute("email", rs.getString("Email"));
-                req.setAttribute("phone", rs.getString("Phone"));
-                req.setAttribute("passportNumber", rs.getString("PassportNumber"));
-                req.setAttribute("nationality", rs.getString("Nationality"));
-                req.setAttribute("gender", rs.getString("Gender"));
-                req.setAttribute("dateOfBirth", rs.getString("DateOfBirth"));
+            User user = userDAO.getUserByEmail(email);
+            if (user != null) {
+                request.setAttribute("user", user);
+                request.getRequestDispatcher("editProfile.jsp").forward(request, response);
+            } else {
+                response.sendRedirect("updateUserError.jsp");
             }
-
-            RequestDispatcher rd = req.getRequestDispatcher("/editProfile.jsp");
-            rd.forward(req, resp);
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            resp.getWriter().print("<h1 style='color:red'>Exception Occurred: " + e.getMessage() + "</h1>");
+        } catch (SQLException e) {
+            throw new ServletException(e);
         }
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String firstName = req.getParameter("firstName");
-        String lastName = req.getParameter("lastName");
-        String email = req.getParameter("email");
-        String phone = req.getParameter("phone");
-        String passportNumber = req.getParameter("passportNumber");
-        String nationality = req.getParameter("nationality");
-        String gender = req.getParameter("gender");
-        String dateOfBirth = req.getParameter("dateOfBirth");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Log all request parameters for debugging
+        request.getParameterMap().forEach((key, value) -> {
+            System.out.println(key + ": " + Arrays.toString(value));
+        });
 
-        Part filePart = req.getPart("profilePhoto");
-        InputStream profilePhotoStream = null;
+        String email = request.getParameter("email");
+        System.out.println("Email received: " + email); // Log the received email
 
-        if (filePart != null && filePart.getSize() > 0) {
-            profilePhotoStream = filePart.getInputStream();
+        if (email == null || email.isEmpty()) {
+            response.sendRedirect("updateUserError.jsp?message=Email is missing.");
+            return;
         }
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/flightregd", "Java-Project", "root@localhost");
-
-            String query = "UPDATE register SET FirstName = ?, LastName = ?, Phone = ?, PassportNumber = ?, Nationality = ?, Gender = ?, DateOfBirth = ?"
-                    + (profilePhotoStream != null ? ", ProfilePhoto = ?" : "")
-                    + " WHERE Email = ?";
-
-            PreparedStatement ps = con.prepareStatement(query);
-            ps.setString(1, firstName);
-            ps.setString(2, lastName);
-            ps.setString(3, phone);
-            ps.setString(4, passportNumber);
-            ps.setString(5, nationality);
-            ps.setString(6, gender);
-            ps.setString(7, dateOfBirth);
-
-            if (profilePhotoStream != null) {
-                ps.setBlob(8, profilePhotoStream);
-                ps.setString(9, email);
-            } else {
-                ps.setString(8, email);
+            User existingUser = userDAO.getUserByEmail(email);
+            if (existingUser == null) {
+                throw new ServletException("User not found for email: " + email);
             }
 
-            int rowsAffected = ps.executeUpdate();
+            // Retrieve user data from form
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String phone = request.getParameter("phone");
+            String passportNumber = request.getParameter("passportNumber");
+            String nationality = request.getParameter("nationality");
+            String gender = request.getParameter("gender");
+            String dateOfBirth = request.getParameter("dateOfBirth");
 
-            if (rowsAffected > 0) {
-                resp.sendRedirect("profile.jsp"); // Redirect to the profile page or another page after successful update
-            } else {
-                RequestDispatcher rd = req.getRequestDispatcher("/error.jsp");
-                rd.include(req, resp);
-            }
+            // Handle file upload for profile photo
+            Part filePart = request.getPart("profilePhoto");
+            InputStream profilePhoto = (filePart != null) ? filePart.getInputStream() : null;
 
-        } catch (Exception e) {
-            e.printStackTrace();
-            resp.getWriter().print("<h1 style='color:red'>Exception Occurred: " + e.getMessage() + "</h1>");
+            User user = new User(0, firstName, lastName, email, null, phone, passportNumber, nationality, gender, dateOfBirth, null);
+            user.setProfilePhoto(profilePhoto != null ? new javax.sql.rowset.serial.SerialBlob(profilePhoto.readAllBytes()) : null);
+
+            // Update user in the database
+            userDAO.updateUser(user);
+            response.sendRedirect("updateUserSuccess.jsp");
+        } catch (SQLException e) {
+            System.err.println("SQL Exception: " + e.getMessage());
+            throw new ServletException(e);
         }
     }
 }

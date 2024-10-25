@@ -107,7 +107,7 @@
                 }
             %>
             <div class="dropdown-content">
-                <a href="../editProfile.jsp">Edit Profile</a>
+                <a href="<%= request.getContextPath() %>/editProfile?email=<%= session.getAttribute("email") %>">Edit Profile</a>
                 <a href="login.jsp">Logout</a>
             </div>
         </div>
