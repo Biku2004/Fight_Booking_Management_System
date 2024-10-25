@@ -1,3 +1,19 @@
+/* Wrapper for Side-by-Side Layout */
+.booking-wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Flex Basis for Booking and Form */
+.booking-container,
+form {
+    flex: 1;
+    min-width: 300px; /* Adjust for responsive design */
+}
+
 /* Basic Styling */
 body {
     font-family: 'Roboto', sans-serif;
@@ -9,6 +25,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
 }
 
@@ -26,8 +43,15 @@ h2 {
     text-align: center;
     color: #333;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin: 0 0 20px;
+    font-size: 28px;
     animation: fadeIn 2s ease-in-out;
+}
+h3 {
+    text-align: center;
+    color: #333;
+    margin: 0 0 20px;
+    font-size: 20px;
 }
 
 @keyframes fadeIn {
@@ -41,41 +65,17 @@ h2 {
     padding: 30px;
     border-radius: 15px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-    max-width: 700px;
-    width: 100%;
-    margin: 20px auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 700px;
+    height: 600px; /* Fixed height */
+    overflow-y: auto; /* Enable vertical scrollbar */
 }
 .booking-container:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Flight Information Section */
-.flight-info h3 {
-    color: #007bff;
-    font-weight: 500;
-    margin-bottom: 10px;
-    text-align: center;
-    animation: slideIn 1s ease-in-out;
-}
-
-@keyframes slideIn {
-    from { transform: translateY(-20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.flight-info p {
-    margin: 5px 0;
-    color: #555;
-    font-size: 14px;
-    transition: color 0.3s ease;
-}
-.flight-info p:hover {
-    color: #007bff;
-}
-
-/* Table Styling for Flight Information */
+/* Flight Info Table */
 .flight-info-table {
     width: 100%;
     border-collapse: collapse;
@@ -84,7 +84,6 @@ h2 {
 .flight-info-table td, .flight-info-table th {
     border: 1px solid #ddd;
     padding: 10px;
-    text-align: left;
 }
 .flight-info-table tr:nth-child(even) {
     background-color: #f9f9f9;
@@ -93,45 +92,33 @@ h2 {
     background-color: #f1f1f1;
 }
 
-/* Form Group Styling */
+/* Form Group */
 .form-group {
     margin-bottom: 15px;
 }
 .form-group label {
     display: block;
-    margin-bottom: 5px;
     color: #666;
     font-size: 14px;
-    transition: color 0.3s ease;
-}
-.form-group label:hover {
-    color: #007bff;
 }
 .form-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     font-size: 15px;
 }
-.form-group input:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    outline: none;
-}
 
-/* Buttons Styling */
+/* Button */
 button, .book-now, .add-passenger-btn, .remove-passenger {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Confirm Booking Button */
+/* Confirm Booking */
 .book-now {
     background-color: #28a745;
     color: #fff;
@@ -140,10 +127,9 @@ button, .book-now, .add-passenger-btn, .remove-passenger {
 }
 .book-now:hover {
     background-color: #218838;
-    transform: scale(1.05);
 }
 
-/* Add Passenger Button */
+/* Add Passenger */
 .add-passenger-btn {
     background-color: #007bff;
     color: #fff;
@@ -152,7 +138,6 @@ button, .book-now, .add-passenger-btn, .remove-passenger {
 }
 .add-passenger-btn:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
 }
 
 /* Passenger Container */
@@ -160,30 +145,51 @@ button, .book-now, .add-passenger-btn, .remove-passenger {
     margin-top: 20px;
     border-top: 1px solid #ccc;
     padding-top: 20px;
-    animation: fadeIn 1s ease-in-out;
 }
 
-/* Remove Passenger Button */
+/* Remove Passenger */
 .remove-passenger {
     background-color: #dc3545;
     color: white;
-    padding: 8px 16px;
-    margin-top: 10px;
 }
-.remove-passenger:hover {
-    background-color: #c82333;
+
+/* Booking Form Styling */
+#bookingForm {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    width: 100%;
+    max-height: 500px; /* Maximum height for scrollable content */
+    overflow-y: auto; /* Scrollable content within the form */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#bookingForm:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Scrollbar Styling for .booking-container */
+.booking-container::-webkit-scrollbar {
+    width: 10px;
+}
+.booking-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    border-radius: 5px;
+}
+.booking-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 5px;
+    border: 2px solid #f1f1f1; /* Space around scrollbar */
+}
+.booking-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Scrollbar color on hover */
 }
 
 /* Responsive Design */
-@media (max-width: 600px) {
-    .booking-container {
-        padding: 20px;
-    }
-    .form-group input {
-        padding: 8px;
-    }
-    .book-now, .add-passenger-btn {
-        font-size: 15px;
+@media (max-width: 768px) {
+    .booking-wrapper {
+        flex-direction: column;
     }
 }

@@ -11,6 +11,7 @@
 
 <h2>Flight Booking</h2>
 
+<div class="booking-wrapper">
 <div class="booking-container">
     <h3>Flight Information</h3>
     <table class="flight-info-table">
@@ -81,6 +82,7 @@
 
 
     <form action="${pageContext.request.contextPath}/ConfirmBookingServlet" method="POST" id="bookingForm">
+        <h3> Give Details Here</h3>
         <div class="form-group">
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" name="fullName" required>
@@ -105,6 +107,7 @@
         <button type="submit" class="book-now">Confirm Booking</button>
     </form>
 </div>
+
 
 <script>
     function openSeatSelection() {
