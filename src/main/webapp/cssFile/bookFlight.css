@@ -1,0 +1,195 @@
+/* Wrapper for Side-by-Side Layout */
+.booking-wrapper {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Flex Basis for Booking and Form */
+.booking-container,
+form {
+    flex: 1;
+    min-width: 300px; /* Adjust for responsive design */
+}
+
+/* Basic Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #33A1FF, #6DD5FA, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@keyframes gradientAnimation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Heading */
+h2 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    margin: 0 0 20px;
+    font-size: 28px;
+    animation: fadeIn 2s ease-in-out;
+}
+h3 {
+    text-align: center;
+    color: #333;
+    margin: 0 0 20px;
+    font-size: 20px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Booking Container */
+.booking-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 700px;
+    height: 600px; /* Fixed height */
+    overflow-y: auto; /* Enable vertical scrollbar */
+}
+.booking-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Flight Info Table */
+.flight-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.flight-info-table td, .flight-info-table th {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+.flight-info-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.flight-info-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    color: #666;
+    font-size: 14px;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+/* Button */
+button, .book-now, .add-passenger-btn, .remove-passenger {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Confirm Booking */
+.book-now {
+    background-color: #28a745;
+    color: #fff;
+    width: 100%;
+    margin-top: 20px;
+}
+.book-now:hover {
+    background-color: #218838;
+}
+
+/* Add Passenger */
+.add-passenger-btn {
+    background-color: #007bff;
+    color: #fff;
+    margin-top: 10px;
+    width: 100%;
+}
+.add-passenger-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Passenger Container */
+.passenger-container {
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+    padding-top: 20px;
+}
+
+/* Remove Passenger */
+.remove-passenger {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Booking Form Styling */
+#bookingForm {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
+    width: 100%;
+    max-height: 500px; /* Maximum height for scrollable content */
+    overflow-y: auto; /* Scrollable content within the form */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#bookingForm:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Scrollbar Styling for .booking-container */
+.booking-container::-webkit-scrollbar {
+    width: 10px;
+}
+.booking-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Track color */
+    border-radius: 5px;
+}
+.booking-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar color */
+    border-radius: 5px;
+    border: 2px solid #f1f1f1; /* Space around scrollbar */
+}
+.booking-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Scrollbar color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .booking-wrapper {
+        flex-direction: column;
+    }
+}
