@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,6 +62,10 @@
         }
         .seat.selected {
             background-color: green;
+        }
+        .seat.disabled {
+            background-color: red;
+            cursor: not-allowed;
         }
         .aisle {
             background-color: transparent;
@@ -131,9 +134,37 @@
     <div class="tail"></div>
 </div>
 
+<form id="seatForm" action="${pageContext.request.contextPath}/bookFlight/bookFlight.jsp" method="POST">
+    <input type="hidden" name="selectedSeat" id="selectedSeat">
+</form>
+
 <script>
     function toggleSeat(seat) {
-        seat.classList.toggle("selected");
+        if (seat.classList.contains('disabled')) {
+            return;
+        }
+
+        const selectedSeatInput = document.getElementById('selectedSeat');
+        const previouslySelectedSeat = document.querySelector('.seat.selected');
+
+        if (previouslySelectedSeat) {
+            previouslySelectedSeat.classList.remove('selected');
+        }
+
+        seat.classList.add('selected');
+        selectedSeatInput.value = seat.id;
+
+        // Submit the form automatically
+        document.getElementById('seatForm').submit();
+    }
+
+    // Disable the selected seat if it is passed from bookFlight.jsp
+    const selectedSeat = '<%= request.getParameter("selectedSeat") %>';
+    if (selectedSeat) {
+        const seatElement = document.getElementById(selectedSeat);
+        if (seatElement) {
+            seatElement.classList.add('disabled');
+        }
     }
 </script>
 

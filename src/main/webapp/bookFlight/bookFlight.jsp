@@ -42,26 +42,6 @@
             margin: 5px 0;
             color: #555;
         }
-
-        /*.seat {*/
-        /*    width: 40px;*/
-        /*    height: 40px;*/
-        /*    background-color: gray;*/
-        /*    margin: 5px;*/
-        /*    display: inline-block;*/
-        /*    text-align: center;*/
-        /*    line-height: 40px;*/
-        /*    color: white;*/
-        /*    cursor: pointer;*/
-        /*}*/
-        /*.seat.selected {*/
-        /*    background-color: green;*/
-        /*}*/
-        /*.seat-container {*/
-        /*    display: flex;*/
-        /*    flex-wrap: wrap;*/
-        /*    justify-content: center;*/
-        /*}*/
         .form-group {
             margin-bottom: 15px;
         }
@@ -118,32 +98,6 @@
 <h2>Flight Booking</h2>
 
 <div class="booking-container">
-
-<%--    <div class="airplane-container">--%>
-<%--        <div class="row">--%>
-<%--            <div class="seat" id="1A" onclick="toggleSeat(this)">1A</div>--%>
-<%--            <div class="seat" id="1B" onclick="toggleSeat(this)">1B</div>--%>
-<%--            <div class="aisle"></div>--%>
-<%--            <div class="seat" id="1C" onclick="toggleSeat(this)">1C</div>--%>
-<%--            <div class="seat" id="1D" onclick="toggleSeat(this)">1D</div>--%>
-<%--        </div>--%>
-<%--        <div class="row">--%>
-<%--            <div class="seat" id="2A" onclick="toggleSeat(this)">2A</div>--%>
-<%--            <div class="seat" id="2B" onclick="toggleSeat(this)">2B</div>--%>
-<%--            <div class="aisle"></div>--%>
-<%--            <div class="seat" id="2C" onclick="toggleSeat(this)">2C</div>--%>
-<%--            <div class="seat" id="2D" onclick="toggleSeat(this)">2D</div>--%>
-<%--        </div>--%>
-<%--        <div class="row">--%>
-<%--            <div class="seat" id="3A" onclick="toggleSeat(this)">3A</div>--%>
-<%--            <div class="seat" id="3B" onclick="toggleSeat(this)">3B</div>--%>
-<%--            <div class="aisle"></div>--%>
-<%--            <div class="seat" id="3C" onclick="toggleSeat(this)">3C</div>--%>
-<%--            <div class="seat" id="3D" onclick="toggleSeat(this)">3D</div>--%>
-<%--        </div>--%>
-<%--        <!-- Add more rows as needed -->--%>
-<%--    </div>--%>
-
     <div class="flight-info">
         <h3>Flight Information</h3>
         <p><strong>Flight Number:</strong> <%= request.getAttribute("flightNumber") %></p>
@@ -160,6 +114,7 @@
         <p><strong>Layovers:</strong> <%= String.valueOf(request.getAttribute("layovers")) %></p>
         <p><strong>Price:</strong> ₹<%= request.getAttribute("price")%></p>
         <p><strong>Carbon Emissions:</strong> <%= request.getAttribute("carbonEmissions") %> kg CO2</p>
+        <p><strong>Selected Seat:</strong> <%= request.getParameter("selectedSeat") %></p>
     </div>
 
     <form action="${pageContext.request.contextPath}/ConfirmBookingServlet" method="POST" id="bookingForm">
@@ -176,12 +131,10 @@
             <input type="tel" id="phone" name="phone" required>
         </div>
         <div class="form-group">
-            <label for="phone">Seats:
-                <a href="${pageContext.request.contextPath}/bookFlight/seats.jsp">Seats</a>
-            </label>
-            <input type="tel" id="Seats" name="Seats" required>
+            <label for="Seats">Seats:</label>
+            <input type="text" id="Seats" name="Seats" value="<%= request.getParameter("selectedSeat") %>" readonly>
+            <button type="button" onclick="window.location.href='${pageContext.request.contextPath}/bookFlight/seats.jsp'">Select Seat</button>
         </div>
-
 
         <div id="passengerList"></div>
 
@@ -202,7 +155,7 @@
         <input type="hidden" name="price" value="<%= request.getAttribute("price") %>">
         <input type="hidden" name="carbon_emissions" value="<%= request.getAttribute("carbonEmissions")%>">
 
-        <input type="hidden" name="selectedSeat" id="selectedSeat">
+        <input type="hidden" name="selectedSeat" id="selectedSeat" value="<%= request.getParameter("selectedSeat") %>">
         <button type="submit" class="book-now">Confirm Booking</button>
     </form>
 </div>
@@ -234,22 +187,7 @@
         `;
         passengerList.appendChild(passengerDiv);
     });
-
-    // document.addEventListener('DOMContentLoaded', function() {
-    //     const seats = document.querySelectorAll('.seat');
-    //     const selectedSeatInput = document.getElementById('selectedSeat');
-    //
-    //     seats.forEach(seat => {
-    //         seat.addEventListener('click', function() {
-    //             seats.forEach(s => s.classList.remove('selected'));
-    //             this.classList.add('selected');
-    //             selectedSeatInput.value = this.getAttribute('data-seat-number');
-    //         });
-    //     });
-    // });
 </script>
 
 </body>
 </html>
-
-
