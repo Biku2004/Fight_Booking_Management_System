@@ -108,12 +108,8 @@
             %>
             <div class="dropdown-content">
                 <a href="../editProfile.jsp">Edit Profile</a>
+                <a href="login.jsp">Logout</a>
             </div>
-        </div>
-
-        <!-- Logout Button -->
-        <div class="logout">
-            <button class="login-btn"><a href="login.jsp">Logout</a></button>
         </div>
     </nav>
 </header>
@@ -123,9 +119,6 @@
         <h1>Hi there, where would you like to <span class="skyway">SkyWay</span> today?</h1>
 
         <div class="booking-options">
-            <div class="flight-hotel">
-                <button class="flight-btn active">✈️ Book a flight</button>
-            </div>
 
             <div id="loadingSpinner" class="spinner"></div>
 
