@@ -12,10 +12,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 import java.io.File;
 import java.io.IOException;
@@ -148,28 +145,24 @@ public class FlightSearchCloneServlet extends HttpServlet {
     }
 
 
-    private void storeFlightsInDatabase(String fileContent,HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void storeFlightsInDatabase(String fileContent, HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             JSONObject jsonObject = new JSONObject(fileContent);
-
-            // Loop through the root-level array (e.g., "best_flights" or "other_flights")
             JSONArray rootArray = jsonObject.getJSONArray("other_flights");
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Establish database connection
             try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
                 String insertSQL = "INSERT INTO flights1 (departure_name, departure_id, departure_time, arrival_name, arrival_id, arrival_time, duration, airplane, airline, airline_logo, travel_class, flight_number, legroom, extensions, total_duration, carbon_emissions, price, type, booking_token, layovers) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                String checkSQL = "SELECT COUNT(*) FROM flights1 WHERE departure_id = ? AND arrival_id = ? AND departure_time = ? AND arrival_time = ? AND flight_number = ?";
 
                 for (int i = 0; i < rootArray.length(); i++) {
                     JSONObject rootObject = rootArray.getJSONObject(i);
 
-                    // Access root-level keys
-                    int totalDuration = rootObject.optInt("total_duration",0);
+                    int totalDuration = rootObject.optInt("total_duration", 0);
                     JSONObject carbonEmissions = rootObject.optJSONObject("carbon_emissions");
-//                    float carbonEmissionsThisFlight = (float) carbonEmissions.getDouble("this_flight");
                     float carbonEmissionsThisFlight = (carbonEmissions != null) ? (float) carbonEmissions.optDouble("this_flight", 0.0) : 0.0f;
-                    int price = rootObject.optInt("price");
+                    int price = rootObject.optInt("price", -1); // Default to -1 if price is not available
                     String type = rootObject.optString("type");
                     String bookingToken = rootObject.optString("booking_token");
 
@@ -189,15 +182,12 @@ public class FlightSearchCloneServlet extends HttpServlet {
                     }
                     String layovers = "[" + layoversBuilder + "]";
 
-
-                    // Loop through the "flights" array
                     JSONArray flightsArray = rootObject.optJSONArray("flights");
 
                     for (int j = 0; j < flightsArray.length(); j++) {
                         JSONObject flightJson = flightsArray.getJSONObject(j);
                         JSONObject departureAirport = flightJson.optJSONObject("departure_airport");
                         JSONObject arrivalAirport = flightJson.optJSONObject("arrival_airport");
-
 
                         String departureName = (departureAirport != null) ? departureAirport.optString("name", "N/A") : "N/A";
                         String departureId = (departureAirport != null) ? departureAirport.optString("id", "N/A") : "N/A";
@@ -216,6 +206,23 @@ public class FlightSearchCloneServlet extends HttpServlet {
                         String legroom = flightJson.optString("legroom", "N/A");
                         JSONArray extensions = flightJson.optJSONArray("extensions");
 
+                        // Check for duplicate entries
+                        try (PreparedStatement checkStmt = conn.prepareStatement(checkSQL)) {
+                            checkStmt.setString(1, departureId);
+                            checkStmt.setString(2, arrivalId);
+                            checkStmt.setString(3, departureTime);
+                            checkStmt.setString(4, arrivalTime);
+                            checkStmt.setString(5, flightNumber);
+
+                            try (ResultSet rs = checkStmt.executeQuery()) {
+                                if (rs.next() && rs.getInt(1) > 0) {
+                                    // Duplicate entry found, skip insertion
+                                    continue;
+                                }
+                            }
+                        }
+
+                        // Insert new flight record
                         try (PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
                             pstmt.setString(1, departureName);
                             pstmt.setString(2, departureId);
@@ -230,7 +237,6 @@ public class FlightSearchCloneServlet extends HttpServlet {
                             pstmt.setString(11, travelClass);
                             pstmt.setString(12, flightNumber);
                             pstmt.setString(13, legroom);
-//                            pstmt.setString(14, extensions.toString());
                             pstmt.setString(14, (extensions != null) ? extensions.toString() : "[]");
                             pstmt.setInt(15, totalDuration);
                             pstmt.setFloat(16, carbonEmissionsThisFlight);
