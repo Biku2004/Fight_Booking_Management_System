@@ -5,109 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Flight</title>
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #33A1FF, #6DD5FA, #ffffff);
-            background-size: 400% 400%;
-            animation: gradientAnimation 8s ease infinite;
-            margin: 0;
-            padding: 20px;
-        }
-        @keyframes gradientAnimation {
-            0%, 100% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-            font-weight: 600;
-        }
-        .booking-container {
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-            max-width: 700px;
-            margin: 20px auto;
-            transition: transform 0.3s ease;
-        }
-        .booking-container:hover {
-            transform: scale(1.02);
-        }
-        .flight-info {
-            margin-bottom: 25px;
-        }
-        .flight-info p {
-            margin: 5px 0;
-            color: #555;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #666;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            transition: border-color 0.3s ease;
-        }
-        .form-group input:focus {
-            border-color: #007bff;
-        }
-        .book-now {
-            background-color: #28a745;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 18px;
-            transition: background-color 0.3s ease;
-        }
-        .book-now:hover {
-            background-color: #218838;
-        }
-        .add-passenger-btn {
-            background-color: #007bff;
-            color: #fff;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-        .add-passenger-btn:hover {
-            background-color: #0056b3;
-        }
-        .passenger-container {
-            margin-top: 20px;
-            border-top: 1px solid #ccc;
-            padding-top: 20px;
-        }
-        .remove-passenger {
-            background-color: #dc3545;
-            color: white;
-            padding: 5px 10px;
-            margin-top: 10px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .remove-passenger:hover {
-            background-color: #c82333;
-        }
-    </style>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/cssFile/bookFlight.css">
 </head>
 <body>
 
@@ -125,10 +23,10 @@
         <p><strong>Airplane:</strong> <%= request.getAttribute("airplane") %></p>
         <p><strong>Legroom:</strong> <%= request.getAttribute("legroom") %></p>
         <p><strong>Extensions:</strong> <%= String.valueOf(request.getAttribute("extensions")) %></p>
-        <p><strong>Travel Class:</strong> <%= request.getAttribute("travelClass")%></p>
+        <p><strong>Travel Class:</strong> <%= request.getAttribute("travelClass") %></p>
         <p><strong>Duration:</strong> <%= request.getAttribute("duration") %> minutes</p>
         <p><strong>Layovers:</strong> <%= String.valueOf(request.getAttribute("layovers")) %></p>
-        <p><strong>Price:</strong> ₹<%= request.getAttribute("price")%></p>
+        <p><strong>Price:</strong> ₹<%= request.getAttribute("price") %></p>
         <p><strong>Carbon Emissions:</strong> <%= request.getAttribute("carbonEmissions") %> kg CO2</p>
         <p><strong>Selected Seat:</strong> <span id="selectedSeatDisplay"><%= request.getParameter("selectedSeat") %></span></p>
     </div>
@@ -179,11 +77,8 @@
 <script>
     function openSeatSelection() {
         const selectedSeat = document.getElementById('Seats').value;
-
-        // Open the seat selection page in a new window
         const seatWindow = window.open('${pageContext.request.contextPath}/bookFlight/seats.jsp', 'Select Seat', 'width=800,height=600');
 
-        // Send the current selected seat to the new window once it's loaded
         seatWindow.onload = function() {
             const previousSeatElement = seatWindow.document.getElementById('previouslySelectedSeat');
             if (previousSeatElement) {
