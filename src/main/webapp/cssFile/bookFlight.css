@@ -27,6 +27,12 @@ h2 {
     color: #333;
     font-weight: 600;
     margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Booking Container */
@@ -38,10 +44,11 @@ h2 {
     max-width: 700px;
     width: 100%;
     margin: 20px auto;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .booking-container:hover {
-    transform: scale(1.02);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Flight Information Section */
@@ -50,11 +57,40 @@ h2 {
     font-weight: 500;
     margin-bottom: 10px;
     text-align: center;
+    animation: slideIn 1s ease-in-out;
 }
+
+@keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
 .flight-info p {
     margin: 5px 0;
     color: #555;
     font-size: 14px;
+    transition: color 0.3s ease;
+}
+.flight-info p:hover {
+    color: #007bff;
+}
+
+/* Table Styling for Flight Information */
+.flight-info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.flight-info-table td, .flight-info-table th {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+.flight-info-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.flight-info-table tr:hover {
+    background-color: #f1f1f1;
 }
 
 /* Form Group Styling */
@@ -66,17 +102,22 @@ h2 {
     margin-bottom: 5px;
     color: #666;
     font-size: 14px;
+    transition: color 0.3s ease;
+}
+.form-group label:hover {
+    color: #007bff;
 }
 .form-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     font-size: 15px;
 }
 .form-group input:focus {
     border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     outline: none;
 }
 
@@ -87,7 +128,7 @@ button, .book-now, .add-passenger-btn, .remove-passenger {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 /* Confirm Booking Button */
@@ -99,6 +140,7 @@ button, .book-now, .add-passenger-btn, .remove-passenger {
 }
 .book-now:hover {
     background-color: #218838;
+    transform: scale(1.05);
 }
 
 /* Add Passenger Button */
@@ -110,6 +152,7 @@ button, .book-now, .add-passenger-btn, .remove-passenger {
 }
 .add-passenger-btn:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Passenger Container */
@@ -117,6 +160,7 @@ button, .book-now, .add-passenger-btn, .remove-passenger {
     margin-top: 20px;
     border-top: 1px solid #ccc;
     padding-top: 20px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 /* Remove Passenger Button */
@@ -128,6 +172,7 @@ button, .book-now, .add-passenger-btn, .remove-passenger {
 }
 .remove-passenger:hover {
     background-color: #c82333;
+    transform: scale(1.05);
 }
 
 /* Responsive Design */
