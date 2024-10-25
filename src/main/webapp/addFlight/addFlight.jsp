@@ -3,91 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyWay Flight Booking</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f6ff;
-            margin: 0;
-            padding: 0;
-        }
+    <title>SkyWay Flight Management</title>
 
-        header {
-            background-color: #ffffff;
-            padding: 10px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-around;
-            padding: 10px;
-        }
-
-        nav a {
-            text-decoration: none;
-            font-size: 18px;
-            color: black;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333333;
-        }
-
-        .form-container {
-            width: 60%;
-            margin: auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        label {
-            font-size: 14px;
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-        }
-
-        input[type="text"], input[type="date"], input[type="number"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .form-row {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .form-row div {
-            width: 48%;
-        }
-
-        input[type="submit"] {
-            background-color: #008cba;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #005f5f;
-        }
-
-        .flight-options {
-            margin: 15px 0;
-        }
-
-    </style>
 </head>
 <body>
 <header>
@@ -100,49 +17,125 @@
     </nav>
 </header>
 
-<h1>Hi there, where would you like to SkyWay today?</h1>
+<h1>Add a Flight to SkyWay</h1>
 
 <div class="form-container">
-    <form action="BookFlightServlet" method="POST">
+    <form action="AddFlightServlet" method="POST" enctype="multipart/form-data">
         <div class="form-row">
             <div>
-                <label for="from">From</label>
-                <input type="text" id="from" name="departure_name" placeholder="Enter Departure Location" required>
+                <label for="departure_name">Departure Name</label>
+                <input type="text" id="departure_name" name="departure_name" placeholder="Enter Departure Location" required>
             </div>
             <div>
-                <label for="to">To</label>
-                <input type="text" id="to" name="arrival_name" placeholder="Enter Arrival Location" required>
+                <label for="departure_id">Departure ID</label>
+                <input type="text" id="departure_id" name="departure_id" placeholder="e.g. DEL" required>
             </div>
         </div>
 
         <div class="form-row">
             <div>
-                <label for="departure">Departure</label>
-                <input type="date" id="departure" name="departure_time" required>
+                <label for="arrival_name">Arrival Name</label>
+                <input type="text" id="arrival_name" name="arrival_name" placeholder="Enter Arrival Location" required>
             </div>
             <div>
-                <label for="return">Return</label>
-                <input type="date" id="return" name="arrival_time">
+                <label for="arrival_id">Arrival ID</label>
+                <input type="text" id="arrival_id" name="arrival_id" placeholder="e.g. CCU" required>
             </div>
         </div>
 
         <div class="form-row">
             <div>
-                <label for="passengers">Passengers</label>
-                <input type="number" id="passengers" name="passengers" min="1" value="1" required>
+                <label for="departure_time">Departure Time</label>
+                <input type="datetime-local" id="departure_time" name="departure_time" required>
             </div>
-            <div class="flight-options">
-                <label>Flight Type</label>
-                <input type="radio" id="one-way" name="type" value="one-way" checked> One Way
-                <input type="radio" id="round-trip" name="type" value="round-trip"> Round Trip
+            <div>
+                <label for="arrival_time">Arrival Time</label>
+                <input type="datetime-local" id="arrival_time" name="arrival_time" required>
             </div>
         </div>
 
-        <input type="submit" value="Search">
+        <div class="form-row">
+            <div>
+                <label for="duration">Flight Duration (minutes)</label>
+                <input type="number" id="duration" name="duration" min="1" required>
+            </div>
+            <div>
+                <label for="total_duration">Total Duration (minutes)</label>
+                <input type="number" id="total_duration" name="total_duration" min="1" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="airplane">Airplane Model</label>
+                <input type="text" id="airplane" name="airplane" placeholder="Enter Airplane Model" required>
+            </div>
+            <div>
+                <label for="airline">Airline Name</label>
+                <input type="text" id="airline" name="airline" placeholder="Enter Airline Name" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="airline_logo">Airline Logo</label>
+                <input type="file" id="airline_logo" name="airline_logo" accept="image/*">
+            </div>
+            <div>
+                <label for="travel_class">Travel Class</label>
+                <input type="text" id="travel_class" name="travel_class" placeholder="e.g. Economy, Business" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="flight_number">Flight Number</label>
+                <input type="text" id="flight_number" name="flight_number" placeholder="e.g. AI-123" required>
+            </div>
+            <div>
+                <label for="legroom">Legroom</label>
+                <input type="text" id="legroom" name="legroom" placeholder="Enter Legroom details">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="carbon_emissions">Carbon Emissions (kg)</label>
+                <input type="number" id="carbon_emissions" name="carbon_emissions" step="0.01" min="0" required>
+            </div>
+            <div>
+                <label for="price">Price (INR)</label>
+                <input type="number" id="price" name="price" min="0" required>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div>
+                <label for="type">Flight Type</label>
+                <input type="text" id="type" name="type" placeholder="e.g. Direct, Layover" required>
+            </div>
+            <div>
+                <label for="extensions">Extensions</label>
+                <textarea id="extensions" name="extensions" placeholder="Enter any extra details"></textarea>
+            </div>
+        </div>
+
+        <div>
+            <label for="booking_token">Booking Token</label>
+            <input type="text" id="booking_token" name="booking_token" placeholder="Enter Booking Token">
+        </div>
+
+        <div>
+            <label for="layovers">Layovers (JSON Format)</label>
+            <textarea id="layovers" name="layovers" placeholder='Enter layovers in JSON format, e.g. [{"location": "XYZ", "duration": 60}]'></textarea>
+        </div>
+
+        <input type="submit" value="Add Flight">
     </form>
 </div>
 </body>
 </html>
+
 
 
 
