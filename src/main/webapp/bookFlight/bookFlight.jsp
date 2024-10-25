@@ -7,24 +7,44 @@
     <title>Book Flight</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: #f0f8ff;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #33A1FF, #6DD5FA, #ffffff);
+            background-size: 400% 400%;
+            animation: gradientAnimation 8s ease infinite;
             margin: 0;
             padding: 20px;
-            display: flex;
-            justify-content: center;
         }
-        .booking-container {
-            background-color: #fff;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 700px;
-            width: 100%;
+        @keyframes gradientAnimation {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
         }
         h2 {
             text-align: center;
             color: #333;
+            font-weight: 600;
+        }
+        .booking-container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            max-width: 700px;
+            margin: 20px auto;
+            transition: transform 0.3s ease;
+        }
+        .booking-container:hover {
+            transform: scale(1.02);
+        }
+        .flight-info {
+            margin-bottom: 25px;
+        }
+        .flight-info p {
+            margin: 5px 0;
+            color: #555;
         }
         .form-group {
             margin-bottom: 15px;
@@ -32,36 +52,88 @@
         .form-group label {
             display: block;
             margin-bottom: 5px;
+            color: #666;
         }
         .form-group input {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus {
+            border-color: #007bff;
         }
         .book-now {
             background-color: #28a745;
-            color: white;
-            padding: 10px;
+            color: #fff;
+            padding: 10px 20px;
             border: none;
-            width: 100%;
             border-radius: 5px;
             cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        .book-now:hover {
+            background-color: #218838;
+        }
+        .add-passenger-btn {
+            background-color: #007bff;
+            color: #fff;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .add-passenger-btn:hover {
+            background-color: #0056b3;
+        }
+        .passenger-container {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        .remove-passenger {
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .remove-passenger:hover {
+            background-color: #c82333;
         }
     </style>
 </head>
 <body>
 
-<div class="booking-container">
-    <h2>Flight Booking</h2>
+<h2>Flight Booking</h2>
 
+<div class="booking-container">
     <div class="flight-info">
+        <h3>Flight Information</h3>
         <p><strong>Flight Number:</strong> <%= request.getAttribute("flightNumber") %></p>
         <p><strong>Airline:</strong> <%= request.getAttribute("airline") %></p>
+        <p><strong>Departure:</strong> <%= request.getAttribute("departure") %></p>
+        <p><strong>Arrival:</strong> <%= request.getAttribute("arrival") %></p>
+        <p><strong>Departure Time:</strong> <%= request.getAttribute("departureTime") %></p>
+        <p><strong>Arrival Time:</strong> <%= request.getAttribute("arrivalTime") %></p>
+        <p><strong>Airplane:</strong> <%= request.getAttribute("airplane") %></p>
+        <p><strong>Legroom:</strong> <%= request.getAttribute("legroom") %></p>
+        <p><strong>Extensions:</strong> <%= String.valueOf(request.getAttribute("extensions")) %></p>
+        <p><strong>Travel Class:</strong> <%= request.getAttribute("travelClass")%></p>
+        <p><strong>Duration:</strong> <%= request.getAttribute("duration") %> minutes</p>
+        <p><strong>Layovers:</strong> <%= String.valueOf(request.getAttribute("layovers")) %></p>
+        <p><strong>Price:</strong> ₹<%= request.getAttribute("price")%></p>
+        <p><strong>Carbon Emissions:</strong> <%= request.getAttribute("carbonEmissions") %> kg CO2</p>
         <p><strong>Selected Seat:</strong> <span id="selectedSeatDisplay"><%= request.getParameter("selectedSeat") %></span></p>
     </div>
 
-    <form id="bookingForm" action="${pageContext.request.contextPath}/ConfirmBookingServlet" method="POST">
+    <form action="${pageContext.request.contextPath}/ConfirmBookingServlet" method="POST" id="bookingForm">
         <div class="form-group">
             <label for="fullName">Full Name:</label>
             <input type="text" id="fullName" name="fullName" required>
@@ -71,10 +143,34 @@
             <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="form-group">
             <label for="Seats">Seats:</label>
             <input type="text" id="Seats" name="Seats" value="<%= request.getParameter("selectedSeat") %>" readonly>
             <button type="button" onclick="openSeatSelection()">Select Seat</button>
         </div>
+
+        <div id="passengerList"></div>
+
+        <button type="button" class="add-passenger-btn" id="addPassengerBtn">+ Add Adult/Child</button>
+
+        <input type="hidden" name="flightNumber" value="<%= request.getAttribute("flightNumber") %>">
+        <input type="hidden" name="airline" value="<%= request.getAttribute("airline") %>">
+        <input type="hidden" name="departure" value="<%= request.getAttribute("departure") %>">
+        <input type="hidden" name="arrival" value="<%= request.getAttribute("arrival") %>">
+        <input type="hidden" name="departureTime" value="<%= request.getAttribute("departureTime") %>">
+        <input type="hidden" name="arrivalTime" value="<%= request.getAttribute("arrivalTime") %>">
+        <input type="hidden" name="airplane" value="<%= request.getAttribute("airplane") %>">
+        <input type="hidden" name="legroom" value="<%= request.getAttribute("legroom") %>">
+        <input type="hidden" name="extensions" value="<%= request.getAttribute("extensions") %>">
+        <input type="hidden" name="travel_class" value="<%= request.getAttribute("travelClass") %>">
+        <input type="hidden" name="duration" value="<%= request.getAttribute("duration") %>">
+        <input type="hidden" name="layovers" value="<%= request.getAttribute("layovers") %>">
+        <input type="hidden" name="price" value="<%= request.getAttribute("price") %>">
+        <input type="hidden" name="carbon_emissions" value="<%= request.getAttribute("carbonEmissions") %>">
+        <input type="hidden" name="selectedSeat" id="selectedSeat" value="<%= request.getParameter("selectedSeat") %>">
 
         <button type="submit" class="book-now">Confirm Booking</button>
     </form>
@@ -87,15 +183,49 @@
         // Open the seat selection page in a new window
         const seatWindow = window.open('${pageContext.request.contextPath}/bookFlight/seats.jsp', 'Select Seat', 'width=800,height=600');
 
-        // Send the current selected seat to the new window
+        // Send the current selected seat to the new window once it's loaded
         seatWindow.onload = function() {
-            seatWindow.document.getElementById('previouslySelectedSeat').value = selectedSeat;
+            const previousSeatElement = seatWindow.document.getElementById('previouslySelectedSeat');
+            if (previousSeatElement) {
+                previousSeatElement.value = selectedSeat;
+            }
         };
     }
 
-    function updateSelectedSeat(seat) {
-        document.getElementById('selectedSeatDisplay').textContent = seat;
-        document.getElementById('Seats').value = seat;
+    function updateSelectedSeat(seatId) {
+        document.getElementById('Seats').value = seatId;
+        document.getElementById('selectedSeatDisplay').innerText = seatId;
+    }
+
+    let passengerCount = 0;
+    const addPassengerBtn = document.getElementById('addPassengerBtn');
+    const passengerList = document.getElementById('passengerList');
+
+    addPassengerBtn.addEventListener('click', () => {
+        passengerCount++;
+
+        const passengerDiv = document.createElement('div');
+        passengerDiv.classList.add('passenger-container');
+        passengerDiv.innerHTML = `
+            <h4>Passenger ${passengerCount}</h4>
+            <div class="form-group">
+                <label for="passengerName${passengerCount}">Name:</label>
+                <input type="text" name="passengerName${passengerCount}" required>
+            </div>
+            <div class="form-group">
+                <label for="passengerAge${passengerCount}">Age:</label>
+                <input type="number" name="passengerAge${passengerCount}" required>
+            </div>
+            <button type="button" class="remove-passenger" onclick="removePassenger(this)">Remove Passenger</button>
+        `;
+
+        passengerList.appendChild(passengerDiv);
+    });
+
+    function removePassenger(button) {
+        const passengerDiv = button.parentNode;
+        passengerDiv.parentNode.removeChild(passengerDiv);
+        passengerCount--;
     }
 </script>
 
