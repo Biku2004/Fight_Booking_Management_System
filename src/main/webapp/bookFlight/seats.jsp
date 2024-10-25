@@ -23,148 +23,91 @@
             border-radius: 50px;
             padding: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            position: relative;
+            width: 90%;
+            max-width: 800px;
         }
-        .nose {
-            width: 80px;
-            height: 80px;
-            background-color: silver;
-            border-radius: 50% 50% 0 0;
-            margin-bottom: 10px;
-        }
-        .tail {
-            width: 120px;
-            height: 100px;
-            background-color: silver;
-            border-radius: 0 0 50px 50px;
-            margin-top: 10px;
-        }
-        .airplane-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 30px;
-            display: grid;
-            grid-template-columns: repeat(7, 60px);
-            grid-gap: 15px;
+        .seat-row {
+            display: flex;
             justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
         }
         .seat {
             width: 50px;
             height: 50px;
-            background-color: gray;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             color: white;
             font-weight: bold;
             border-radius: 8px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+            position: relative;
         }
-        .seat.selected {
-            background-color: green;
-        }
-        .seat.disabled {
-            background-color: red;
-            cursor: not-allowed;
-        }
-        .aisle {
-            background-color: transparent;
-            border: none;
-        }
-        .wing {
-            width: 400px;
-            height: 100px;
-            background-color: silver;
+        .seat.first { background-color: #FFD700; }
+        .seat.business { background-color: #4CAF50; }
+        .seat.economy { background-color: #2196F3; }
+        .seat.selected { background-color: #FF5722; }
+        .seat.disabled { background-color: gray; cursor: not-allowed; }
+
+        .tooltip {
+            visibility: hidden;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
             position: absolute;
-            left: -200px;
-            top: 50%;
-            transform: translateY(-50%);
-            border-radius: 20px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            top: -35px;
+            width: 80px;
+            font-size: 12px;
         }
-        .wing.right {
-            left: auto;
-            right: -200px;
+        .seat:hover .tooltip {
+            visibility: visible;
         }
     </style>
 </head>
 <body>
 
 <div class="airplane-body">
-    <!-- Airplane Nose (Front) -->
-    <div class="nose"></div>
-
-    <!-- Left and Right Wings -->
-    <div class="wing"></div>
-    <div class="wing right"></div>
-
-    <!-- Airplane Seat Layout -->
-    <div class="airplane-container">
-        <!-- Row 1 -->
-        <div class="seat" id="1A" onclick="toggleSeat(this)">1A</div>
-        <div class="seat" id="1B" onclick="toggleSeat(this)">1B</div>
-        <div class="aisle"></div>
-        <div class="seat" id="1C" onclick="toggleSeat(this)">1C</div>
-        <div class="seat" id="1D" onclick="toggleSeat(this)">1D</div>
-        <div class="aisle"></div>
-        <div class="seat" id="1E" onclick="toggleSeat(this)">1E</div>
-
-        <!-- Row 2 -->
-        <div class="seat" id="2A" onclick="toggleSeat(this)">2A</div>
-        <div class="seat" id="2B" onclick="toggleSeat(this)">2B</div>
-        <div class="aisle"></div>
-        <div class="seat" id="2C" onclick="toggleSeat(this)">2C</div>
-        <div class="seat" id="2D" onclick="toggleSeat(this)">2D</div>
-        <div class="aisle"></div>
-        <div class="seat" id="2E" onclick="toggleSeat(this)">2E</div>
-
-        <!-- Row 3 -->
-        <div class="seat" id="3A" onclick="toggleSeat(this)">3A</div>
-        <div class="seat" id="3B" onclick="toggleSeat(this)">3B</div>
-        <div class="aisle"></div>
-        <div class="seat" id="3C" onclick="toggleSeat(this)">3C</div>
-        <div class="seat" id="3D" onclick="toggleSeat(this)">3D</div>
-        <div class="aisle"></div>
-        <div class="seat" id="3E" onclick="toggleSeat(this)">3E</div>
-
-        <!-- Add more rows as needed -->
+    <h3>First Class</h3>
+    <div class="seat-row">
+        <div class="seat first" id="1A" onclick="selectSeat(this)">1A<span class="tooltip">First Class</span></div>
+        <div class="seat first" id="1B" onclick="selectSeat(this)">1B<span class="tooltip">First Class</span></div>
+        <div class="seat first" id="1C" onclick="selectSeat(this)">1C<span class="tooltip">First Class</span></div>
     </div>
 
-    <!-- Airplane Tail (Back) -->
-    <div class="tail"></div>
+    <h3>Business Class</h3>
+    <div class="seat-row">
+        <div class="seat business" id="2A" onclick="selectSeat(this)">2A<span class="tooltip">Business Class</span></div>
+        <div class="seat business" id="2B" onclick="selectSeat(this)">2B<span class="tooltip">Business Class</span></div>
+    </div>
+
+    <h3>Economy Class</h3>
+    <div class="seat-row">
+        <div class="seat economy" id="3A" onclick="selectSeat(this)">3A<span class="tooltip">Economy Class</span></div>
+        <div class="seat economy" id="3B" onclick="selectSeat(this)">3B<span class="tooltip">Economy Class</span></div>
+        <div class="seat economy" id="3C" onclick="selectSeat(this)">3C<span class="tooltip">Economy Class</span></div>
+    </div>
 </div>
 
-<form id="seatForm" action="${pageContext.request.contextPath}/bookFlight/bookFlight.jsp" method="POST">
-    <input type="hidden" name="selectedSeat" id="selectedSeat">
-</form>
+<input type="hidden" id="previouslySelectedSeat" value="">
 
 <script>
-    function toggleSeat(seat) {
+    function selectSeat(seat) {
         if (seat.classList.contains('disabled')) {
+            alert("This seat is already occupied.");
             return;
         }
 
-        const selectedSeatInput = document.getElementById('selectedSeat');
-        const previouslySelectedSeat = document.querySelector('.seat.selected');
+        // Clear previously selected seat
+        const previouslySelected = document.querySelector('.seat.selected');
+        if (previouslySelected) previouslySelected.classList.remove('selected');
 
-        if (previouslySelectedSeat) {
-            previouslySelectedSeat.classList.remove('selected');
-        }
-
+        // Select new seat
         seat.classList.add('selected');
-        selectedSeatInput.value = seat.id;
 
-        // Submit the form automatically
-        document.getElementById('seatForm').submit();
-    }
-
-    // Disable the selected seat if it is passed from bookFlight.jsp
-    const selectedSeat = '<%= request.getParameter("selectedSeat") %>';
-    if (selectedSeat) {
-        const seatElement = document.getElementById(selectedSeat);
-        if (seatElement) {
-            seatElement.classList.add('disabled');
-        }
+        // Update selected seat in parent window
+        window.opener.updateSelectedSeat(seat.id);
+        window.close();
     }
 </script>
 
