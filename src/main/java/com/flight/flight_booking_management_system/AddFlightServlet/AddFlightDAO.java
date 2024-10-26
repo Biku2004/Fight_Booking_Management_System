@@ -26,33 +26,57 @@ public class AddFlightDAO {
         return connection;
     }
 
-    // Method to add a flight to the database
-    // Method to add a flight to the database with the updated structure
+    // Add Method for AddFlight
     public boolean addFlight(AddFlight flight) {
-        String sql = "INSERT INTO flights (flight_number, airline, departure_airport, arrival_airport, duration, airplane, legroom, extensions, travel_class, layovers_duration, carbon_emissions, departure_time, arrival_time, price) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO flights1 (departure_name, " +
+                "departure_id, " +
+                "departure_time, " +
+                "arrival_name," +
+                " arrival_id, " +
+                "arrival_time, " +
+                "duration," +
+                " airplane, " +
+                "airline, " +
+                "airline_logo," +
+                " travel_class, " +
+                "flight_number," +
+                " legroom, " +
+                "extensions," +
+                " total_duration, " +
+                "carbon_emissions," +
+                " price, " +
+                "type, " +
+                "booking_token, " +
+                "layovers) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             // Set values for the prepared statement
-            preparedStatement.setString(1, flight.getFlightNumber());
-            preparedStatement.setString(2, flight.getAirline());
-            preparedStatement.setString(3, flight.getDepartureAirport());
-            preparedStatement.setString(4, flight.getArrivalAirport());
-            preparedStatement.setInt(5, flight.getDuration());
-            preparedStatement.setString(6, flight.getAirplane());
-            preparedStatement.setString(7, flight.getLegroom());
-            preparedStatement.setString(8, flight.getExtensions());
-            preparedStatement.setString(9, flight.getTravelClass());
-            preparedStatement.setInt(10, flight.getLayoversDuration());
-            preparedStatement.setDouble(11, flight.getCarbonEmissions());
-            preparedStatement.setString(12, flight.getDepartureTime());
-            preparedStatement.setString(13, flight.getArrivalTime());
-            preparedStatement.setDouble(14, flight.getPrice());
+            preparedStatement.setString(1, flight.getDepartureName());
+            preparedStatement.setString(2, flight.getDepartureId());
+            preparedStatement.setString(3, flight.getDepartureTime());
+            preparedStatement.setString(4, flight.getArrivalName());
+            preparedStatement.setString(5, flight.getArrivalId());
+            preparedStatement.setString(6, flight.getArrivalTime());
+            preparedStatement.setInt(7, flight.getDuration());
+            preparedStatement.setString(8, flight.getAirplane());
+            preparedStatement.setString(9, flight.getAirline());
+            preparedStatement.setString(10, flight.getAirlineLogo());
+            preparedStatement.setString(11, flight.getTravelClass());
+            preparedStatement.setString(12, flight.getFlightNumber());
+            preparedStatement.setString(13, flight.getLegroom());
+            preparedStatement.setString(14, flight.getExtensions());
+            preparedStatement.setInt(15, flight.getTotalDuration());
+            preparedStatement.setDouble(16, flight.getCarbonEmissions());
+            preparedStatement.setDouble(17, flight.getPrice());
+            preparedStatement.setString(18, flight.getType());
+            preparedStatement.setString(19, flight.getBookingToken());
+            preparedStatement.setString(20, flight.getLayovers());
 
-            // Execute update
+
             int rowsInserted = preparedStatement.executeUpdate();
-            return rowsInserted > 0; // Return true if the flight was added successfully
+            return rowsInserted > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         }
