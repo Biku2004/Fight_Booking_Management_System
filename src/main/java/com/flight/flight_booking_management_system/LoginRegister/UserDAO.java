@@ -5,7 +5,7 @@ import java.sql.*;
 import java.util.Arrays;
 
 public class UserDAO {
-    private Connection connection;
+    private final Connection connection;
 
     public UserDAO(Connection connection) {
         this.connection = connection;

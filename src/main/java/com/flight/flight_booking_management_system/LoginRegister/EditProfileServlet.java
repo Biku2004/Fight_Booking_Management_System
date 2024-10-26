@@ -1,6 +1,7 @@
 package com.flight.flight_booking_management_system.LoginRegister;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.*;
@@ -8,6 +9,7 @@ import java.sql.*;
 import java.util.Arrays;
 
 @WebServlet("/editProfile")
+@MultipartConfig(maxFileSize = 16177215) // Set a limit for file upload size (15MB in this case)
 public class EditProfileServlet extends HttpServlet {
 
     private UserDAO userDAO;
@@ -23,16 +25,22 @@ public class EditProfileServlet extends HttpServlet {
         String email = request.getParameter("email"); // This should come from the query string or form submission
         System.out.println("Fetching user with email: " + email); // Debugging log
 
+        if (email == null || email.isEmpty()) {
+            response.sendRedirect("updateUserError.jsp?message=Invalid email.");
+            return;
+        }
+
         try {
             User user = userDAO.getUserByEmail(email);
             if (user != null) {
                 request.setAttribute("user", user);
                 request.getRequestDispatcher("editProfile.jsp").forward(request, response);
             } else {
-                response.sendRedirect("updateUserError.jsp");
+                response.sendRedirect("updateUserError.jsp?message=User not found.");
             }
         } catch (SQLException e) {
-            throw new ServletException(e);
+            System.err.println("SQL Exception during user fetch: " + e.getMessage());
+            response.sendRedirect("updateUserError.jsp?message=Database error.");
         }
     }
 
@@ -54,7 +62,8 @@ public class EditProfileServlet extends HttpServlet {
         try {
             User existingUser = userDAO.getUserByEmail(email);
             if (existingUser == null) {
-                throw new ServletException("User not found for email: " + email);
+                response.sendRedirect("updateUserError.jsp?message=User not found.");
+                return;
             }
 
             // Retrieve user data from form
@@ -68,17 +77,27 @@ public class EditProfileServlet extends HttpServlet {
 
             // Handle file upload for profile photo
             Part filePart = request.getPart("profilePhoto");
-            InputStream profilePhoto = (filePart != null) ? filePart.getInputStream() : null;
+            InputStream profilePhotoInputStream = (filePart != null && filePart.getSize() > 0) ? filePart.getInputStream() : null;
 
-            User user = new User(0, firstName, lastName, email, null, phone, passportNumber, nationality, gender, dateOfBirth, null);
-            user.setProfilePhoto(profilePhoto != null ? new javax.sql.rowset.serial.SerialBlob(profilePhoto.readAllBytes()) : null);
+            // Create a new user object for the update
+            User user = new User(existingUser.getId(), firstName, lastName, email, existingUser.getPassword(), phone, passportNumber, nationality, gender, dateOfBirth, existingUser.getProfilePhoto());
+
+            // Update the profile photo if a new one was uploaded
+            if (profilePhotoInputStream != null) {
+                byte[] profilePhotoBytes = profilePhotoInputStream.readAllBytes();
+                user.setProfilePhoto(new javax.sql.rowset.serial.SerialBlob(profilePhotoBytes));
+                profilePhotoInputStream.close(); // Close input stream after reading
+            }
 
             // Update user in the database
             userDAO.updateUser(user);
             response.sendRedirect("updateUserSuccess.jsp");
         } catch (SQLException e) {
-            System.err.println("SQL Exception: " + e.getMessage());
-            throw new ServletException(e);
+            System.err.println("SQL Exception during user update: " + e.getMessage());
+            response.sendRedirect("updateUserError.jsp?message=Database error.");
+        } catch (IOException e) {
+            System.err.println("File upload error: " + e.getMessage());
+            response.sendRedirect("updateUserError.jsp?message=File upload error.");
         }
     }
 }
