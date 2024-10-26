@@ -15,9 +15,13 @@
         <p class="text-center mb-4">Update your information</p>
         <% User user = (User) request.getAttribute("user"); %>
         <% if (user != null) { %>
-        <form action="${pageContext.request.contextPath}/editProfile" method="post" enctype="multipart/form-data">
-            <!-- Hidden input for email -->
-            <input type="hidden" name="email" value="<%= user.getEmail() %>">
+        <!-- Corrected form action with proper JSP syntax -->
+        <form action="<%= request.getContextPath() %>/editProfile" method="post" enctype="multipart/form-data">
+            <!-- Use only the readonly input for email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>" readonly>
+            </div>
 
             <div class="form-row">
                 <div class="form-group col-md-6">
@@ -29,13 +33,6 @@
                     <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.getLastName() %>" required>
                 </div>
             </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" value="<%= user.getEmail() %>" readonly>
-                <input type="hidden" name="email" value="<%= user.getEmail() %>">
-            </div>
-
 
             <div class="form-group">
                 <label for="phone">Phone</label>
