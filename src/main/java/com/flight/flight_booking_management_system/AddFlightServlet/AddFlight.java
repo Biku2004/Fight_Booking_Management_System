@@ -24,7 +24,6 @@ public class AddFlight {
     private String layovers;
 
 
-
     public int getId() {
         return id;
     }
@@ -33,36 +32,52 @@ public class AddFlight {
         this.id = id;
     }
 
-    public String getFlightNumber() {
-        return flightNumber;
+    public String getDepartureName() {
+        return departureName;
     }
 
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
+    public void setDepartureName(String departureName) {
+        this.departureName = departureName;
     }
 
-    public String getAirline() {
-        return airline;
+    public String getDepartureId() {
+        return departureId;
     }
 
-    public void setAirline(String airline) {
-        this.airline = airline;
+    public void setDepartureId(String departureId) {
+        this.departureId = departureId;
     }
 
-    public String getDepartureAirport() {
-        return departureAirport;
+    public String getDepartureTime() {
+        return departureTime;
     }
 
-    public void setDepartureAirport(String departureAirport) {
-        this.departureAirport = departureAirport;
+    public void setDepartureTime(String departureTime) {
+        this.departureTime = departureTime;
     }
 
-    public String getArrivalAirport() {
-        return arrivalAirport;
+    public String getArrivalName() {
+        return arrivalName;
     }
 
-    public void setArrivalAirport(String arrivalAirport) {
-        this.arrivalAirport = arrivalAirport;
+    public void setArrivalName(String arrivalName) {
+        this.arrivalName = arrivalName;
+    }
+
+    public String getArrivalId() {
+        return arrivalId;
+    }
+
+    public void setArrivalId(String arrivalId) {
+        this.arrivalId = arrivalId;
+    }
+
+    public String getArrivalTime() {
+        return arrivalTime;
+    }
+
+    public void setArrivalTime(String arrivalTime) {
+        this.arrivalTime = arrivalTime;
     }
 
     public int getDuration() {
@@ -81,6 +96,38 @@ public class AddFlight {
         this.airplane = airplane;
     }
 
+    public String getAirline() {
+        return airline;
+    }
+
+    public void setAirline(String airline) {
+        this.airline = airline;
+    }
+
+    public String getAirlineLogo() {
+        return airlineLogo;
+    }
+
+    public void setAirlineLogo(String airlineLogo) {
+        this.airlineLogo = airlineLogo;
+    }
+
+    public String getTravelClass() {
+        return travelClass;
+    }
+
+    public void setTravelClass(String travelClass) {
+        this.travelClass = travelClass;
+    }
+
+    public String getFlightNumber() {
+        return flightNumber;
+    }
+
+    public void setFlightNumber(String flightNumber) {
+        this.flightNumber = flightNumber;
+    }
+
     public String getLegroom() {
         return legroom;
     }
@@ -97,20 +144,12 @@ public class AddFlight {
         this.extensions = extensions;
     }
 
-    public String getTravelClass() {
-        return travelClass;
+    public int getTotalDuration() {
+        return totalDuration;
     }
 
-    public void setTravelClass(String travelClass) {
-        this.travelClass = travelClass;
-    }
-
-    public int getLayoversDuration() {
-        return layoversDuration;
-    }
-
-    public void setLayoversDuration(int layoversDuration) {
-        this.layoversDuration = layoversDuration;
+    public void setTotalDuration(int totalDuration) {
+        this.totalDuration = totalDuration;
     }
 
     public double getCarbonEmissions() {
@@ -121,22 +160,6 @@ public class AddFlight {
         this.carbonEmissions = carbonEmissions;
     }
 
-    public String getDepartureTime() {
-        return departureTime;
-    }
-
-    public void setDepartureTime(String departureTime) {
-        this.departureTime = departureTime;
-    }
-
-    public String getArrivalTime() {
-        return arrivalTime;
-    }
-
-    public void setArrivalTime(String arrivalTime) {
-        this.arrivalTime = arrivalTime;
-    }
-
     public double getPrice() {
         return price;
     }
@@ -145,84 +168,27 @@ public class AddFlight {
         this.price = price;
     }
 
-    public void setDepartureCity(String departureCity) {
-        this.departureAirport = departureCity;
+    public String getType() {
+        return type;
     }
 
-    public void setArrivalCity(String arrivalCity) {
-        this.arrivalAirport = arrivalCity;
-    }
-}
-
-
-
-Old code
-
-package com.flight.flight_booking_management_system.AddFlightServlet;
-
-public class AddFlight {
-    private String flightNumber;
-    private String airline;
-    private String departureCity;
-    private String arrivalCity;
-    private String departureTime;
-    private String arrivalTime;
-    private double price;
-
-    // Getters and Setters for each field
-    public String getFlightNumber() {
-        return flightNumber;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
+    public String getBookingToken() {
+        return bookingToken;
     }
 
-    public String getAirline() {
-        return airline;
+    public void setBookingToken(String bookingToken) {
+        this.bookingToken = bookingToken;
     }
 
-    public void setAirline(String airline) {
-        this.airline = airline;
+    public String getLayovers() {
+        return layovers;
     }
 
-    public String getDepartureCity() {
-        return departureCity;
-    }
-
-    public void setDepartureCity(String departureCity) {
-        this.departureCity = departureCity;
-    }
-
-    public String getArrivalCity() {
-        return arrivalCity;
-    }
-
-    public void setArrivalCity(String arrivalCity) {
-        this.arrivalCity = arrivalCity;
-    }
-
-    public String getDepartureTime() {
-        return departureTime;
-    }
-
-    public void setDepartureTime(String departureTime) {
-        this.departureTime = departureTime;
-    }
-
-    public String getArrivalTime() {
-        return arrivalTime;
-    }
-
-    public void setArrivalTime(String arrivalTime) {
-        this.arrivalTime = arrivalTime;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
+    public void setLayovers(String layovers) {
+        this.layovers = layovers;
     }
 }
