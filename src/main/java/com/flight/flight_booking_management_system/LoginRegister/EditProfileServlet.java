@@ -91,7 +91,7 @@ public class EditProfileServlet extends HttpServlet {
 
             // Update user in the database
             userDAO.updateUser(user);
-            response.sendRedirect("updateUserSuccess.jsp");
+            response.sendRedirect("updateUserSuccess.jsp?message=Updated successfully, " + firstName + "!");
         } catch (SQLException e) {
             System.err.println("SQL Exception during user update: " + e.getMessage());
             response.sendRedirect("updateUserError.jsp?message=Database error.");

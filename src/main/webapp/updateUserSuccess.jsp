@@ -34,7 +34,7 @@
 </head>
 <body>
 <h1>Update Status</h1>
-<p><%= request.getAttribute("message") %></p>
+<p><%= request.getParameter("message") %></p>
 <a href="login/truehome.jsp">Go To Home 🏠</a>
 </body>
 </html>
