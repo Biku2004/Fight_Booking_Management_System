@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkyWay Flight Management</title>
-<%--    <link rel="stylesheet" href="../cssFile/addFlightStyle.css">--%>
+    <link rel="stylesheet" href="../cssFile/addFlightStyle.css">
 
 </head>
 <body>
 <header>
     <nav>
-        <a href="#">a</a>
-        <a href="#">b</a>
-        <a href="#">c</a>
-        <a href="#">d</a>
-        <a href="#">e</a>
+        <a href="../Admin/HomeAdmin.jsp">SkyWay</a>
+        <a href="../ViewPassenger/searchBooking.jsp">Passenger</a>
+        <a href="../bookFlight/tickets.jsp">Ticket</a>
+        <a href="../Admin/adminregd.jsp">Admin</a>
+        <a href="../Admin/adminDelete.jsp">Delete Admin</a>
     </nav>
 </header>
 

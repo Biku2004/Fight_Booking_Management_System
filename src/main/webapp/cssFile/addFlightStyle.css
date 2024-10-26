@@ -6,20 +6,28 @@ body {
 }
 
 header {
-    background-color: #ffffff;
-    padding: 15px; /* Increased padding for better spacing */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #008cba; /* Navbar background color */
+    padding: 15px 0; /* Padding for top and bottom */
 }
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: center; /* Centering the nav items */
+    align-items: center; /* Vertically center items */
 }
 
 nav a {
     text-decoration: none;
     font-size: 18px;
-    color: #008cba; /* Changed link color for better visibility */
+    color: white; /* Text color */
+    padding: 10px 20px; /* Padding around links */
+    margin: 0 15px; /* Margin between links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+nav a:hover {
+    background-color: #005f5f; /* Darker shade on hover */
 }
 
 h1 {
