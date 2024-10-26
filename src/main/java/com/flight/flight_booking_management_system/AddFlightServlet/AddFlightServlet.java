@@ -44,29 +44,29 @@ public class AddFlightServlet extends HttpServlet {
 
         // Parse and validate numeric fields
         int duration = 0;
-        int layoversDuration = 0;
+        int totalDuration = 0;
         double carbonEmissions = 0.0;
         double price = 0.0;
 
         try {
-            duration = Integer.parseInt(durationStr);
-            layoversDuration = layoversDurationStr != null && !layoversDurationStr.isEmpty() ? Integer.parseInt(layoversDurationStr) : 0;
+            duration = durationStr != null && !durationStr.isEmpty() ? Integer.parseInt(durationStr) : 0;
+            totalDuration = totalDurationStr != null && !totalDurationStr.isEmpty() ? Integer.parseInt(totalDurationStr) : 0;
             carbonEmissions = carbonEmissionsStr != null && !carbonEmissionsStr.isEmpty() ? Double.parseDouble(carbonEmissionsStr) : 0.0;
             price = priceStr != null && !priceStr.isEmpty() ? Double.parseDouble(priceStr) : 0.0;
         } catch (NumberFormatException e) {
             System.out.println("Invalid numeric input: " + e.getMessage());
             response.sendRedirect(request.getContextPath() + "/addFlight/addFlightError.jsp");
-
             return;
         }
 
         AddFlight flight = new AddFlight();
         flight.setFlightNumber(flightNumber);
         flight.setAirline(airline);
-        flight.setDepartureCity(departureCity);
-        flight.setArrivalCity(arrivalCity);
-        flight.setDepartureAirport(departureAirport);
-        flight.setArrivalAirport(arrivalAirport);
+        flight.setAirlineLogo(airlineLogo);
+        flight.setDepartureName(departureName);
+        flight.setDepartureId(departureId);
+        flight.setArrivalName(arrivalName);
+        flight.setArrivalId(arrivalId);
         flight.setDepartureTime(departureTime);
         flight.setArrivalTime(arrivalTime);
         flight.setDuration(duration);
@@ -74,9 +74,13 @@ public class AddFlightServlet extends HttpServlet {
         flight.setLegroom(legroom);
         flight.setExtensions(extensions);
         flight.setTravelClass(travelClass);
-        flight.setLayoversDuration(layoversDuration);
+        flight.setLayovers(layovers);  // Assuming this is a JSON-formatted string
+        flight.setTotalDuration(totalDuration);
         flight.setCarbonEmissions(carbonEmissions);
         flight.setPrice(price);
+        flight.setType(type);
+        flight.setBookingToken(bookingToken);
+
 
         // Use AddFlightDAO to add flight
         boolean isAdded = addFlightDAO.addFlight(flight);
