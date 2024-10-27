@@ -20,66 +20,66 @@
       padding: 0;
     }
     header {
-      background-color: #008cba; /* Navbar background */
-      padding: 15px 0; /* Padding for navbar */
+      background-color: #008cba;
+      padding: 15px 0;
     }
     nav {
       display: flex;
-      justify-content: center; /* Centering nav items */
-      align-items: center; /* Vertically center items */
+      justify-content: center;
+      align-items: center;
     }
     nav a {
       text-decoration: none;
       font-size: 18px;
-      color: white; /* Text color */
-      padding: 10px 20px; /* Padding around links */
-      margin: 0 15px; /* Margin between links */
-      border-radius: 5px; /* Rounded corners */
-      transition: background-color 0.3s ease; /* Smooth transition effect */
+      color: white;
+      padding: 10px 20px;
+      margin: 0 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
     nav a:hover {
-      background-color: #005f5f; /* Darker shade on hover */
+      background-color: #005f5f;
     }
 
     .container {
-      width: 80%; /* Increased width for larger screens */
-      max-width: 500px; /* Set maximum width */
-      background: #ffffff; /* White background for container */
-      border-radius: 10px; /* Rounded corners */
-      padding: 30px; /* Padding for comfort */
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-      text-align: center; /* Centered text */
+      width: 80%;
+      max-width: 500px;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
     h1 {
       font-size: 24px;
-      color: #4CAF50; /* Success color */
+      color: #4CAF50;
       margin-bottom: 20px;
     }
     p {
       font-size: 16px;
-      color: #333333; /* Dark text for readability */
+      color: #333333;
       margin-bottom: 30px;
     }
     .btn {
       display: inline-block;
       padding: 12px 20px;
-      border-radius: 5px; /* Rounded corners for buttons */
-      background-color: #008cba; /* Primary button color */
-      color: white; /* Button text color */
-      text-decoration: none; /* Remove underline from links */
+      border-radius: 5px;
+      background-color: #008cba;
+      color: white;
+      text-decoration: none;
       font-size: 16px;
-      font-weight: bold; /* Bold text */
-      transition: background-color 0.3s ease; /* Smooth transition */
+      font-weight: bold;
+      transition: background-color 0.3s ease;
     }
     .btn:hover {
-      background-color: #005f5f; /* Darker shade on hover for primary button */
+      background-color: #005f5f;
     }
     .btn-secondary {
-      background-color: #6c757d; /* Secondary button color */
-      margin-left: 10px; /* Space between buttons */
+      background-color: #6c757d;
+      margin-left: 10px;
     }
     .btn-secondary:hover {
-      background-color: #5a6268; /* Darker shade on hover for secondary button */
+      background-color: #5a6268;
     }
   </style>
 </head>
