@@ -49,7 +49,7 @@ public class loginServlet extends HttpServlet {
                 if ("admin".equalsIgnoreCase(role)) {
                     resp.sendRedirect("Admin/HomeAdmin.jsp");  // Redirect to admin home page
                 } else {
-                    resp.sendRedirect("login/truehome.jsp");  // Redirect to user home page
+                    resp.sendRedirect("login/home.jsp");  // Redirect to user home page
                 }
             } else {
                 RequestDispatcher rd = req.getRequestDispatcher("/error.jsp");
