@@ -6,37 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airplane Seat Selection</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/cssFile/seats.css"> <!-- Link to the external CSS file -->
-    <style>
-        .seat-row {
-            display: flex;
-            justify-content: space-between; /* Space between the two divisions */
-            margin-bottom: 20px; /* Space between seat rows */
-        }
-        .division {
-            display: flex;
-            flex-direction: row; /* Stack the seats vertically */
-            justify-content: flex-start; /* Align seats at the top */
-            width: 45%; /* Width of each division */
-        }
-        .seat {
-            cursor: pointer;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            text-align: center;
-            width: 70px; /* Width of each seat */
-            margin-bottom: 10px; /* Space between seats in a division */
-        }
-        .seat.selected {
-            background-color: #4CAF50; /* Selected seat color */
-            color: white;
-        }
-        .seat.disabled {
-            background-color: #f44336; /* Disabled seat color */
-            color: white;
-            cursor: not-allowed;
-        }
-    </style>
 </head>
 <body>
 

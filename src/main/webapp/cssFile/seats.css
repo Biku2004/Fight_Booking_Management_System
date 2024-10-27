@@ -1,47 +1,33 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-}
-
-.airplane-body {
-    position: relative;
-    width: 400px; /* Adjust width according to seat layout */
-    text-align: center;
-}
-
 .seat-row {
     display: flex;
-    flex-wrap: wrap; /* Allow seats to wrap to the next line */
-    justify-content: center;
-    margin-bottom: 10px;
+    justify-content: space-between; /* Space between the two divisions */
+    margin-bottom: 20px; /* Space between seat rows */
+}
+
+.division {
+    display: flex;
+    flex-direction: column; /* Stack the seats vertically */
+    justify-content: flex-start; /* Align seats at the top */
+    width: 45%; /* Width of each division */
 }
 
 .seat {
-    background-color: #b89fc9;
-    border-radius: 6px;
-    padding: 10px 15px;
-    margin: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
-    width: 70px; /* Adjust seat width to fit 3 seats in a row */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     text-align: center;
+    width: 70px; /* Width of each seat */
+    margin-bottom: 10px; /* Space between seats in a division */
 }
 
-.seat:hover {
-    background-color: #a47fb0;
+.seat.selected {
+    background-color: #4CAF50; /* Selected seat color */
+    color: white;
 }
 
-.selected {
-    background-color: #e26b6b !important;
-}
-
-.selected-seat {
-    text-align: center;
-    font-size: 1.2em;
-    margin-top: 20px;
+.seat.disabled {
+    background-color: #f44336; /* Disabled seat color */
+    color: white;
+    cursor: not-allowed;
 }
