@@ -5,7 +5,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Airplane Seat Selection</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/cssFile/seats.css"> <!-- Link to the external CSS file -->
+    <style>
+        h3 {
+            text-align: center;
+            cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+            font-size: 24px; /* Increase font size for better visibility */
+            color: #0084ff; /* Change text color */
+            transition: color 0.3s ease, transform 0.2s ease; /* Smooth transition for color and scaling */
+        }
+        h3:hover {
+            color: #0056b3; /* Darker shade on hover */
+            transform: scale(1.05); /* Slightly enlarge the text on hover */
+        }
+        h3:active {
+            transform: scale(0.95); /* Scale down when clicked */
+        }
+        .seat-row {
+            display: flex;
+            justify-content: space-between; /* Space between the two divisions */
+            margin-bottom: 20px; /* Space between seat rows */
+        }
+        .division {
+            display: flex;
+            flex-direction: row; /* Stack the seats vertically */
+            justify-content: flex-start; /* Align seats at the top */
+            width: 45%; /* Width of each division */
+        }
+        .seat {
+            background-color: #8c00ff; /* Light gray background */
+            cursor: pointer;
+            padding: 10px;
+            border: 2px solid #0084ff; /* Slightly thicker border for better visibility */
+            border-radius: 5px;
+            text-align: center;
+            width: 70px; /* Width of each seat */
+            margin: 0 10px 10px 0;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+        }
+        .seat:hover {
+            background-color: #d9edf7; /* Light blue background on hover */
+            transform: scale(1.05); /* Slightly increase the size on hover */
+        }
+        .seat.selected {
+            background-color: #4CAF50; /* Selected seat color */
+            color: white;
+            border-color: #388e3c; /* Darker border for selected seat */
+        }
+        .seat.disabled {
+            background-color: #f44336; /* Disabled seat color */
+            color: white;
+            cursor: not-allowed;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -17,14 +69,14 @@
     <h3>First Class</h3>
     <div class="seat-row">
         <div class="division">
-            <div class="seat first" id="1AF" onclick="selectSeat(this)">1AF</div>
-            <div class="seat first" id="2BF" onclick="selectSeat(this)">2BF</div>
-            <div class="seat first" id="3CF" onclick="selectSeat(this)">3CF</div>
+            <div class="seat first" id="1AFW" onclick="selectSeat(this)">1AFW</div>
+            <div class="seat first" id="2BFM" onclick="selectSeat(this)">2BFM</div>
+            <div class="seat first" id="3CFA" onclick="selectSeat(this)">3CFA</div>
         </div>
         <div class="division">
-            <div class="seat first" id="4DF" onclick="selectSeat(this)">4DF</div>
-            <div class="seat first" id="5EF" onclick="selectSeat(this)">5EF</div>
-            <div class="seat first" id="6FF" onclick="selectSeat(this)">6FF</div>
+            <div class="seat first" id="4DFA" onclick="selectSeat(this)">4DFA</div>
+            <div class="seat first" id="5EFM" onclick="selectSeat(this)">5EFM</div>
+            <div class="seat first" id="6FFW" onclick="selectSeat(this)">6FFW</div>
         </div>
     </div>
     <div class="seat-row">
