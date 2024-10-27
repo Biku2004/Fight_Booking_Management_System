@@ -10,17 +10,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Flight Modification Failed</title>
-    <link rel="stylesheet" href="../cssFile/styles.css"> <!-- Assuming you have a styles.css for styling -->
+    <title>Flight Modification Error</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #e6f0ff; /* Background color */
             margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #008cba; /* Navbar background */
+            padding: 15px 0; /* Padding for navbar */
+        }
+
+        nav {
+            display: flex;
+            justify-content: center; /* Centering nav items */
+            align-items: center; /* Vertically center items */
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 18px;
+            color: white; /* Text color */
+            padding: 10px 20px; /* Padding around links */
+            margin: 0 15px; /* Margin between links */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth transition effect */
+        }
+
+        nav a:hover {
+            background-color: #005f5f; /* Darker shade on hover */
         }
 
         .container {
@@ -31,10 +52,12 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 400px;
             width: 100%;
+            margin: auto; /* Center the container */
+            margin-top: 50px; /* Space from top */
         }
 
         h1 {
-            color: #f44336; /* Red color for error message */
+            color: #ff0000; /* Red color for error message */
             font-size: 24px;
             margin-bottom: 20px;
         }
@@ -50,24 +73,41 @@
             padding: 10px 20px;
             font-size: 16px;
             color: #fff;
-            background-color: #f44336; /* Same red color */
+            background-color: #ff0000; /* Red color for error button */
             text-decoration: none;
             border-radius: 5px;
             margin: 5px;
         }
 
         a.button:hover {
-            background-color: #d32f2f; /* Darker red on hover */
+            background-color: #cc0000; /* Darker red on hover */
         }
     </style>
 </head>
 <body>
+
+<header>
+    <nav>
+        <a href="../Admin/HomeAdmin.jsp">SkyWay</a>
+        <a href="../ViewPassenger/searchBooking.jsp">Passenger</a>
+        <a href="../bookFlight/tickets.jsp">Ticket</a>
+        <a href="../Admin/adminregd.jsp">Admin</a>
+        <a href="../Admin/adminDelete.jsp">Delete Admin</a>
+    </nav>
+</header>
+
 <div class="container">
-    <h1>Flight Modification Failed</h1>
-    <p>There was an error while trying to update the flight details. Please try again.</p>
-    <a class="button" href="HomeAdmin.jsp.jsp">Return to Dashboard</a>
+    <h1>Error Modifying Flight!</h1>
+    <p>There was an issue while trying to modify the flight details. Please check the information and try again.</p>
+
+    <%-- Optionally display specific error messages --%>
+    <% if (request.getAttribute("errorMessage") != null) { %>
+    <p><strong><%= request.getAttribute("errorMessage") %></strong></p>
+    <% } %>
+
     <a class="button" href="modifyFlight.jsp">Try Again</a>
+    <a class="button" href="../Admin/HomeAdmin.jsp">Return to Dashboard</a>
 </div>
+
 </body>
 </html>
-
