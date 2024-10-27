@@ -35,6 +35,6 @@
 <body>
 <h1>Update Status</h1>
 <p><%= request.getParameter("message") %></p>
-<a href="login/truehome.jsp">Go To Home 🏠</a>
+<a href="login/home.jsp">Go To Home 🏠</a>
 </body>
 </html>
