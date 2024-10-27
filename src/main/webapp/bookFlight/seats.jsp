@@ -16,35 +16,34 @@
 
     <h3>First Class</h3>
     <div class="seat-row">
-        <div class="seat first" id="1A" onclick="selectSeat(this)">1A<span class="tooltip"></span></div>
-        <div class="seat first" id="1B" onclick="selectSeat(this)">1B<span class="tooltip"></span></div>
-        <div class="seat first" id="1C" onclick="selectSeat(this)">1C<span class="tooltip"></span></div>
-        <div class="seat first" id="1D" onclick="selectSeat(this)">1D<span class="tooltip"></span></div>
-        <div class="seat first" id="1E" onclick="selectSeat(this)">1E<span class="tooltip"></span></div>
-        <div class="seat first" id="1F" onclick="selectSeat(this)">1F<span class="tooltip"></span></div>
+        <div class="seat first" id="1AF" onclick="selectSeat(this)">1AF<span class="tooltip"></span></div>
+        <div class="seat first" id="2BF" onclick="selectSeat(this)">2BF<span class="tooltip"></span></div>
+        <div class="seat first" id="3CF" onclick="selectSeat(this)">3CF<span class="tooltip"></span></div>
+        <div class="seat first" id="4DF" onclick="selectSeat(this)">4DF<span class="tooltip"></span></div>
+        <div class="seat first" id="5EF" onclick="selectSeat(this)">5EF<span class="tooltip"></span></div>
+        <div class="seat first" id="6FF" onclick="selectSeat(this)">6FF<span class="tooltip"></span></div>
     </div>
 
     <h3>Business Class</h3>
     <div class="seat-row">
-        <div class="seat business" id="2A" onclick="selectSeat(this)">1A<span class="tooltip"></span></div>
-        <div class="seat business" id="2B" onclick="selectSeat(this)">1B<span class="tooltip"></span></div>
-        <div class="seat business" id="2C" onclick="selectSeat(this)">1C<span class="tooltip"></span></div>
-        <div class="seat business" id="2D" onclick="selectSeat(this)">1D<span class="tooltip"></span></div>
-        <div class="seat business" id="2E" onclick="selectSeat(this)">1E<span class="tooltip"></span></div>
-        <div class="seat business" id="2F" onclick="selectSeat(this)">1F<span class="tooltip"></span></div>
+        <div class="seat business" id="1AB" onclick="selectSeat(this)">1AB<span class="tooltip"></span></div>
+        <div class="seat business" id="2BB" onclick="selectSeat(this)">2BB<span class="tooltip"></span></div>
+        <div class="seat business" id="3DB" onclick="selectSeat(this)">3DB<span class="tooltip"></span></div>
+        <div class="seat business" id="4EB" onclick="selectSeat(this)">4EB<span class="tooltip"></span></div>
+        <div class="seat business" id="5FB" onclick="selectSeat(this)">5FB<span class="tooltip"></span></div>
     </div>
 
     <h3>Economy Class</h3>
     <div class="seat-row">
-        <div class="seat economy" id="3A" onclick="selectSeat(this)">1A<span class="tooltip"></span></div>
-        <div class="seat economy" id="3B" onclick="selectSeat(this)">1B<span class="tooltip"></span></div>
-        <div class="seat economy" id="3C" onclick="selectSeat(this)">1C<span class="tooltip"></span></div>
-        <div class="seat economy" id="3D" onclick="selectSeat(this)">1D<span class="tooltip"></span></div>
-        <div class="seat economy" id="3E" onclick="selectSeat(this)">1E<span class="tooltip"></span></div>
-        <div class="seat economy" id="3F" onclick="selectSeat(this)">1F<span class="tooltip"></span></div>
-        <div class="seat economy" id="3G" onclick="selectSeat(this)">1G<span class="tooltip"></span></div>
-        <div class="seat economy" id="3H" onclick="selectSeat(this)">1H<span class="tooltip"></span></div>
-        <div class="seat economy" id="3I" onclick="selectSeat(this)">1I<span class="tooltip"></span></div>
+        <div class="seat economy" id="1AE" onclick="selectSeat(this)">1AE<span class="tooltip"></span></div>
+        <div class="seat economy" id="2CE" onclick="selectSeat(this)">2CE<span class="tooltip"></span></div>
+        <div class="seat economy" id="3BE" onclick="selectSeat(this)">3BE<span class="tooltip"></span></div>
+        <div class="seat economy" id="4DE" onclick="selectSeat(this)">4DE<span class="tooltip"></span></div>
+        <div class="seat economy" id="5EE" onclick="selectSeat(this)">5EE<span class="tooltip"></span></div>
+        <div class="seat economy" id="6FE" onclick="selectSeat(this)">6FE<span class="tooltip"></span></div>
+        <div class="seat economy" id="7GE" onclick="selectSeat(this)">7GE<span class="tooltip"></span></div>
+        <div class="seat economy" id="8HE" onclick="selectSeat(this)">8HE<span class="tooltip"></span></div>
+        <div class="seat economy" id="9IE" onclick="selectSeat(this)">9IE<span class="tooltip"></span></div>
     </div>
 </div>
 
