@@ -169,11 +169,11 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Atul" required>
+                    <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Sayan" required>
                 </div>
                 <div class="form-group col-md-6">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Kumar" required>
+                    <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Ash" required>
                 </div>
             </div>
 
