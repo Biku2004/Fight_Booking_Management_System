@@ -17,13 +17,13 @@
 
     body {
       font-family: Arial, sans-serif;
-      background-color: #e6f0ff; /* Matching background color */
+      background-color: #e6f0ff;
       margin: 0;
       padding: 0;
     }
 
     header {
-      background-color: #008cba; /* Navbar background */
+      background-color: #008cba;
       padding: 15px 0;
     }
 
@@ -44,40 +44,40 @@
     }
 
     nav a:hover {
-      background-color: #005f5f; /* Darker shade on hover */
+      background-color: #005f5f;
     }
 
     .error-container {
       width: 80%;
-      max-width: 600px; /* Set maximum width */
+      max-width: 600px;
       margin: auto;
-      background-color: #ffffff; /* White background for error message */
-      padding: 30px; /* Padding for comfort */
-      border-radius: 10px; /* Rounded corners */
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-      text-align: center; /* Center text */
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
     }
 
     h1 {
-      color: #ff0000; /* Red color for error message */
+      color: #ff0000;
     }
 
     p {
-      color: #333333; /* Darker text for readability */
+      color: #333333;
     }
 
     .back-button {
       display: inline-block;
-      margin-top: 20px; /* Spacing above button */
+      margin-top: 20px;
       padding: 10px 15px;
-      background-color: #008cba; /* Button color */
-      color: white; /* Button text color */
-      border-radius: 5px; /* Rounded corners for button */
-      text-decoration: none; /* Remove underline from link */
+      background-color: #008cba;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
     }
 
     .back-button:hover {
-      background-color: #005f5f; /* Darker shade on hover */
+      background-color: #005f5f;
     }
   </style>
 
@@ -97,10 +97,10 @@
   <h1>Error Adding Flight</h1>
   <p>There was an issue while trying to add the flight. Please check the details and try again.</p>
 
-  <!-- Optionally display specific error messages -->
-  <% if (request.getAttribute("errorMessage") != null) { %>
-  <p><strong><%= request.getAttribute("errorMessage") %></strong></p>
-  <% } %>
+
+<%--  <% if (request.getAttribute("errorMessage") != null) { %>--%>
+<%--  <p><strong><%= request.getAttribute("errorMessage") %></strong></p>--%>
+<%--  <% } %>--%>
 
   <a class="back-button" href="../Admin/HomeAdmin.jsp">Go Back</a>
 </div>
