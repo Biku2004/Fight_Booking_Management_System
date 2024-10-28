@@ -46,6 +46,7 @@ create table if not exists flightregd.bookings
     email            varchar(100)                        not null,
     phone            varchar(20)                         not null,
     booking_time     timestamp default CURRENT_TIMESTAMP null
+    seat VARCHAR(10) NOT NULL
 );
 
 --------------------------------------------------------------------------------------

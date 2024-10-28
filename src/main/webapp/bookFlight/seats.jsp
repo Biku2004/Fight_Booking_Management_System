@@ -1,4 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.google.gson.Gson" %>
+<%@ page import="java.util.List" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,56 +10,55 @@
     <style>
         h3 {
             text-align: center;
-            cursor: pointer; /* Change cursor to pointer to indicate interactivity */
-            font-size: 24px; /* Increase font size for better visibility */
-            color: #0084ff; /* Change text color */
-            transition: color 0.3s ease, transform 0.2s ease; /* Smooth transition for color and scaling */
+            cursor: pointer;
+            font-size: 24px;
+            color: #0084ff;
+            transition: color 0.3s ease, transform 0.2s ease;
         }
         h3:hover {
-            color: #0056b3; /* Darker shade on hover */
-            transform: scale(1.05); /* Slightly enlarge the text on hover */
+            color: #0056b3;
+            transform: scale(1.05);
         }
         h3:active {
-            transform: scale(0.95); /* Scale down when clicked */
+            transform: scale(0.95);
         }
         .seat-row {
             display: flex;
-            justify-content: space-between; /* Space between the two divisions */
-            margin-bottom: 20px; /* Space between seat rows */
+            justify-content: space-between;
+            margin-bottom: 20px;
         }
         .division {
             display: flex;
-            flex-direction: row; /* Stack the seats vertically */
-            justify-content: flex-start; /* Align seats at the top */
-            width: 45%; /* Width of each division */
+            flex-direction: row;
+            justify-content: flex-start;
+            width: 45%;
         }
         .seat {
-            background-color: #8c00ff; /* Light gray background */
+            background-color: #8c00ff;
             cursor: pointer;
             padding: 10px;
-            border: 2px solid #0084ff; /* Slightly thicker border for better visibility */
+            border: 2px solid #0084ff;
             border-radius: 5px;
             text-align: center;
-            width: 70px; /* Width of each seat */
+            width: 70px;
             margin: 0 10px 10px 0;
-            transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition effects */
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         .seat:hover {
-            background-color: #d9edf7; /* Light blue background on hover */
-            transform: scale(1.05); /* Slightly increase the size on hover */
+            background-color: #d9edf7;
+            transform: scale(1.05);
         }
         .seat.selected {
-            background-color: #4CAF50; /* Selected seat color */
+            background-color: #4CAF50;
             color: white;
-            border-color: #388e3c; /* Darker border for selected seat */
+            border-color: #388e3c;
         }
         .seat.disabled {
-            background-color: #f44336; /* Disabled seat color */
+            background-color: #f44336; /* Booked seat color */
             color: white;
             cursor: not-allowed;
         }
     </style>
-
 </head>
 <body>
 
@@ -166,6 +167,9 @@
         window.close();
     }
 </script>
+
+
+
 
 </body>
 </html>
