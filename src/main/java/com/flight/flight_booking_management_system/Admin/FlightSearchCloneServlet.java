@@ -89,15 +89,6 @@ public class FlightSearchCloneServlet extends HttpServlet {
         request.setAttribute("flightData", jsonResponse);
         request.setAttribute("tripType", tripType);
 
-        // Forward to JSP page
-//        String jspPage = "Admin/allFile.jsp";
-//        RequestDispatcher dispatcher = request.getRequestDispatcher(jspPage);
-//        dispatcher.forward(request, response);
-
-//        HttpSession session = request.getSession();
-//        session.setAttribute("lastSearchFrom", from);
-//        session.setAttribute("lastSearchTo", to);
-//
     }
 
 
