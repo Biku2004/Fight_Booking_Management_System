@@ -1,93 +1,47 @@
 {
-    "best_flights": [{
-        "booking_token": "WyJDalJJVDA1WU0wczJTRkZMYW1kQlRrRnhjMmRDUnkwdExTMHRMUzB0TFhaM2RHOHhNMEZCUVVGQlIyTm1SVmR6Um1sYVJqSkJFZ1kyUlRZM09UTWFDZ2lYSWhBQUdnTkpUbEk0SEhEVUtBPT0iLFtbIkJCSSIsIjIwMjQtMTAtMjkiLCJDQ1UiLG51bGwsIjZFIiwiNjc5MyJdXV0=",
-        "total_duration": 60,
-        "price": 4375,
-        "flights": [{
-            "duration": 60,
-            "legroom": "28 in",
-            "extensions": [
-                "Below average legroom (28 in)",
-                "Carbon emissions estimate: 47 kg"
-            ],
-            "departure_airport": {
-                "name": "Biju Patnaik International Airport",
-                "id": "BBI",
-                "time": "2024-10-29 07:05"
-            },
-            "flight_number": "6E 6793",
-            "airplane": "Airbus A320neo",
-            "arrival_airport": {
-                "name": "Netaji Subhash Chandra Bose International Airport",
-                "id": "CCU",
-                "time": "2024-10-29 08:05"
-            },
-            "airline": "IndiGo",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-            "travel_class": "Economy"
-        }],
-        "carbon_emissions": {
-            "this_flight": 47000,
-            "typical_for_this_route": 45000,
-            "difference_percent": 4
-        },
-        "type": "One way",
-        "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-    }],
-    "search_metadata": {
-        "raw_html_file": "https://serpapi.com/searches/e8612b3668cfe831/671f116aa3657a56e2e67dec.html",
-        "created_at": "2024-10-28 04:22:02 UTC",
-        "processed_at": "2024-10-28 04:22:02 UTC",
-        "id": "671f116aa3657a56e2e67dec",
-        "prettify_html_file": "https://serpapi.com/searches/e8612b3668cfe831/671f116aa3657a56e2e67dec.prettify",
-        "total_time_taken": 3,
-        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=INR&tfs=CBwQAhoeEgoyMDI0LTEwLTI5agcIARIDQkJJcgcIARIDQ0NVQgEBSAFwAZgBAg==",
-        "json_endpoint": "https://serpapi.com/searches/e8612b3668cfe831/671f116aa3657a56e2e67dec.json",
-        "status": "Success"
-    },
-    "other_flights": [
+    "best_flights": [
         {
-            "booking_token": "WyJDalJJVDA1WU0wczJTRkZMYW1kQlRrRnhjMmRDUnkwdExTMHRMUzB0TFhaM2RHOHhNMEZCUVVGQlIyTm1SVmR6Um1sYVJqSkJFZ1kyUlRjMU9EUWFDZ2l4S2hBQUdnTkpUbEk0SEhDMU1nPT0iLFtbIkJCSSIsIjIwMjQtMTAtMjkiLCJDQ1UiLG51bGwsIjZFIiwiNzU4NCJdXV0=",
+            "booking_token": "WyJDalJJTkhoM1ZrdG5NR0ZLVmpSQlJFUTJOMUZDUnkwdExTMHRMUzB0TFhaM2JtOHhPRUZCUVVGQlIyTnFkMGR2UWpVNGVqQkJFZ1kyUlRjMU9EUWFDZ2p6RnhBQUdnTkpUbEk0SEhDMkhBPT0iLFtbIkJCSSIsIjIwMjQtMTEtMDEiLCJDQ1UiLG51bGwsIjZFIiwiNzU4NCJdXV0=",
             "total_duration": 75,
-            "price": 5425,
+            "price": 3059,
             "flights": [{
                 "duration": 75,
                 "often_delayed_by_over_30_min": true,
                 "legroom": "28 in",
                 "extensions": [
                     "Below average legroom (28 in)",
-                    "Carbon emissions estimate: 45 kg"
+                    "Carbon emissions estimate: 44 kg"
                 ],
                 "departure_airport": {
                     "name": "Biju Patnaik International Airport",
                     "id": "BBI",
-                    "time": "2024-10-29 19:25"
+                    "time": "2024-11-01 19:25"
                 },
                 "flight_number": "6E 7584",
                 "airplane": "ATR 72",
                 "arrival_airport": {
                     "name": "Netaji Subhash Chandra Bose International Airport",
                     "id": "CCU",
-                    "time": "2024-10-29 20:40"
+                    "time": "2024-11-01 20:40"
                 },
                 "airline": "IndiGo",
                 "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
                 "travel_class": "Economy"
             }],
             "carbon_emissions": {
-                "this_flight": 46000,
+                "this_flight": 45000,
                 "typical_for_this_route": 45000,
-                "difference_percent": 2
+                "difference_percent": 0
             },
             "type": "One way",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
         },
         {
-            "booking_token": "WyJDalJJVDA1WU0wczJTRkZMYW1kQlRrRnhjMmRDUnkwdExTMHRMUzB0TFhaM2RHOHhNMEZCUVVGQlIyTm1SVmR6Um1sYVJqSkJFZ1kyUlRjeE1UY2FDZ2lhS3hBQUdnTkpUbEk0SEhDeE13PT0iLFtbIkJCSSIsIjIwMjQtMTAtMjkiLCJDQ1UiLG51bGwsIjZFIiwiNzExNyJdXV0=",
-            "total_duration": 80,
-            "price": 5530,
+            "booking_token": "WyJDalJJTkhoM1ZrdG5NR0ZLVmpSQlJFUTJOMUZDUnkwdExTMHRMUzB0TFhaM2JtOHhPRUZCUVVGQlIyTnFkMGR2UWpVNGVqQkJFZ1kyUlRZM09UTWFDZ2pCR2hBQUdnTkpUbEk0SEhEREh3PT0iLFtbIkJCSSIsIjIwMjQtMTEtMDEiLCJDQ1UiLG51bGwsIjZFIiwiNjc5MyJdXV0=",
+            "total_duration": 60,
+            "price": 3393,
             "flights": [{
-                "duration": 80,
+                "duration": 60,
                 "legroom": "28 in",
                 "extensions": [
                     "Below average legroom (28 in)",
@@ -96,14 +50,14 @@
                 "departure_airport": {
                     "name": "Biju Patnaik International Airport",
                     "id": "BBI",
-                    "time": "2024-10-29 21:20"
+                    "time": "2024-11-01 07:05"
                 },
-                "flight_number": "6E 7117",
-                "airplane": "ATR 72",
+                "flight_number": "6E 6793",
+                "airplane": "Airbus A320neo",
                 "arrival_airport": {
                     "name": "Netaji Subhash Chandra Bose International Airport",
                     "id": "CCU",
-                    "time": "2024-10-29 22:40"
+                    "time": "2024-11-01 08:05"
                 },
                 "airline": "IndiGo",
                 "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
@@ -118,303 +72,256 @@
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
         },
         {
-            "booking_token": "WyJDalJJVDA1WU0wczJTRkZMYW1kQlRrRnhjMmRDUnkwdExTMHRMUzB0TFhaM2RHOHhNMEZCUVVGQlIyTm1SVmR6Um1sYVJqSkJFZ1kyUlRjek5USWFDZ2pWTFJBQUdnTkpUbEk0SEhDb05nPT0iLFtbIkJCSSIsIjIwMjQtMTAtMjkiLCJDQ1UiLG51bGwsIjZFIiwiNzM1MiJdXV0=",
+            "booking_token": "WyJDalJJTkhoM1ZrdG5NR0ZLVmpSQlJFUTJOMUZDUnkwdExTMHRMUzB0TFhaM2JtOHhPRUZCUVVGQlIyTnFkMGR2UWpVNGVqQkJFZ1pKV0RJM05UazRIQT09IixbWyJCQkkiLCIyMDI0LTExLTAxIiwiQ0NVIixudWxsLCJJWCIsIjI3NTkiXV1d",
             "total_duration": 70,
-            "price": 5845,
-            "flights": [{
-                "duration": 70,
-                "legroom": "28 in",
-                "extensions": [
-                    "Below average legroom (28 in)",
-                    "Carbon emissions estimate: 45 kg"
-                ],
-                "departure_airport": {
-                    "name": "Biju Patnaik International Airport",
-                    "id": "BBI",
-                    "time": "2024-10-29 15:20"
-                },
-                "flight_number": "6E 7352",
-                "airplane": "ATR 72",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-10-29 16:30"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 46000,
-                "typical_for_this_route": 45000,
-                "difference_percent": 2
-            },
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "booking_token": "WyJDalJJVDA1WU0wczJTRkZMYW1kQlRrRnhjMmRDUnkwdExTMHRMUzB0TFhaM2RHOHhNMEZCUVVGQlIyTm1SVmR6Um1sYVJqSkJFZ1pKV0RJM05Ua2FDZ2o3TGhBQUdnTkpUbEk0SEhEdU53PT0iLFtbIkJCSSIsIjIwMjQtMTAtMjkiLCJDQ1UiLG51bGwsIklYIiwiMjc1OSJdXV0=",
-            "total_duration": 70,
-            "price": 6011,
             "flights": [{
                 "duration": 70,
                 "legroom": "28 in",
                 "extensions": [
                     "Below average legroom (28 in)",
                     "Stream media to your device",
-                    "Carbon emissions estimate: 62 kg"
+                    "Carbon emissions estimate: 59 kg"
                 ],
                 "departure_airport": {
                     "name": "Biju Patnaik International Airport",
                     "id": "BBI",
-                    "time": "2024-10-29 14:40"
+                    "time": "2024-11-01 14:40"
                 },
                 "flight_number": "IX 2759",
                 "airplane": "Airbus A320",
                 "arrival_airport": {
                     "name": "Netaji Subhash Chandra Bose International Airport",
                     "id": "CCU",
-                    "time": "2024-10-29 15:50"
+                    "time": "2024-11-01 15:50"
                 },
                 "airline": "Air India Express",
                 "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
                 "travel_class": "Economy"
             }],
             "carbon_emissions": {
-                "this_flight": 62000,
+                "this_flight": 60000,
                 "typical_for_this_route": 45000,
-                "difference_percent": 38
+                "difference_percent": 33
             },
             "type": "One way",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png"
         },
         {
-            "booking_token": "WyJDalJJVDA1WU0wczJTRkZMYW1kQlRrRnhjMmRDUnkwdExTMHRMUzB0TFhaM2RHOHhNMEZCUVVGQlIyTm1SVmR6Um1sYVJqSkJFZ1pKV0RFd09UZ2FDZ2o3TGhBQUdnTkpUbEk0SEhEdU53PT0iLFtbIkJCSSIsIjIwMjQtMTAtMjkiLCJDQ1UiLG51bGwsIklYIiwiMTA5OCJdXV0=",
+            "booking_token": "WyJDalJJTkhoM1ZrdG5NR0ZLVmpSQlJFUTJOMUZDUnkwdExTMHRMUzB0TFhaM2JtOHhPRUZCUVVGQlIyTnFkMGR2UWpVNGVqQkJFZ1U1U1RjME9EZ2MiLFtbIkJCSSIsIjIwMjQtMTEtMDEiLCJDQ1UiLG51bGwsIjlJIiwiNzQ4Il1dXQ==",
+            "total_duration": 80,
+            "flights": [{
+                "duration": 80,
+                "legroom": "30 in",
+                "extensions": [
+                    "Average legroom (30 in)",
+                    "Carbon emissions estimate: 62 kg"
+                ],
+                "departure_airport": {
+                    "name": "Biju Patnaik International Airport",
+                    "id": "BBI",
+                    "time": "2024-11-01 18:55"
+                },
+                "flight_number": "9I 748",
+                "airplane": "ATR 72",
+                "arrival_airport": {
+                    "name": "Netaji Subhash Chandra Bose International Airport",
+                    "id": "CCU",
+                    "time": "2024-11-01 20:15"
+                },
+                "airline": "Alliance Air",
+                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/9I.png",
+                "travel_class": "Economy"
+            }],
+            "carbon_emissions": {
+                "this_flight": 63000,
+                "typical_for_this_route": 45000,
+                "difference_percent": 40
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/9I.png"
+        }
+    ],
+    "search_metadata": {
+        "raw_html_file": "https://serpapi.com/searches/9c7e18c69a047fb1/6723c069e9b6914d2fbe6c89.html",
+        "created_at": "2024-10-31 17:37:45 UTC",
+        "processed_at": "2024-10-31 17:37:45 UTC",
+        "id": "6723c069e9b6914d2fbe6c89",
+        "prettify_html_file": "https://serpapi.com/searches/9c7e18c69a047fb1/6723c069e9b6914d2fbe6c89.prettify",
+        "total_time_taken": 2.05,
+        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=INR&tfs=CBwQAhoeEgoyMDI0LTExLTAxagcIARIDQkJJcgcIARIDQ0NVQgEBSAFwAZgBAg==",
+        "json_endpoint": "https://serpapi.com/searches/9c7e18c69a047fb1/6723c069e9b6914d2fbe6c89.json",
+        "status": "Success"
+    },
+    "other_flights": [
+        {
+            "booking_token": "WyJDalJJTkhoM1ZrdG5NR0ZLVmpSQlJFUTJOMUZDUnkwdExTMHRMUzB0TFhaM2JtOHhPRUZCUVVGQlIyTnFkMGR2UWpVNGVqQkJFZ1kyUlRjeE1UY2FDZ2pGSUJBQUdnTkpUbEk0SEhEWkpnPT0iLFtbIkJCSSIsIjIwMjQtMTEtMDEiLCJDQ1UiLG51bGwsIjZFIiwiNzExNyJdXV0=",
+            "total_duration": 80,
+            "price": 4165,
+            "flights": [{
+                "duration": 80,
+                "legroom": "28 in",
+                "extensions": [
+                    "Below average legroom (28 in)",
+                    "Carbon emissions estimate: 44 kg"
+                ],
+                "departure_airport": {
+                    "name": "Biju Patnaik International Airport",
+                    "id": "BBI",
+                    "time": "2024-11-01 21:20"
+                },
+                "flight_number": "6E 7117",
+                "airplane": "ATR 72",
+                "arrival_airport": {
+                    "name": "Netaji Subhash Chandra Bose International Airport",
+                    "id": "CCU",
+                    "time": "2024-11-01 22:40"
+                },
+                "airline": "IndiGo",
+                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+                "travel_class": "Economy"
+            }],
+            "carbon_emissions": {
+                "this_flight": 45000,
+                "typical_for_this_route": 45000,
+                "difference_percent": 0
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
+        },
+        {
+            "booking_token": "WyJDalJJTkhoM1ZrdG5NR0ZLVmpSQlJFUTJOMUZDUnkwdExTMHRMUzB0TFhaM2JtOHhPRUZCUVVGQlIyTnFkMGR2UWpVNGVqQkJFZ1kyUlRjek5USWFDZ2l4S2hBQUdnTkpUbEk0SEhDME1nPT0iLFtbIkJCSSIsIjIwMjQtMTEtMDEiLCJDQ1UiLG51bGwsIjZFIiwiNzM1MiJdXV0=",
             "total_duration": 70,
-            "price": 6011,
+            "price": 5425,
+            "flights": [{
+                "duration": 70,
+                "legroom": "28 in",
+                "extensions": [
+                    "Below average legroom (28 in)",
+                    "Carbon emissions estimate: 44 kg"
+                ],
+                "departure_airport": {
+                    "name": "Biju Patnaik International Airport",
+                    "id": "BBI",
+                    "time": "2024-11-01 15:20"
+                },
+                "flight_number": "6E 7352",
+                "airplane": "ATR 72",
+                "arrival_airport": {
+                    "name": "Netaji Subhash Chandra Bose International Airport",
+                    "id": "CCU",
+                    "time": "2024-11-01 16:30"
+                },
+                "airline": "IndiGo",
+                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
+                "travel_class": "Economy"
+            }],
+            "carbon_emissions": {
+                "this_flight": 45000,
+                "typical_for_this_route": 45000,
+                "difference_percent": 0
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
+        },
+        {
+            "booking_token": "WyJDalJJTkhoM1ZrdG5NR0ZLVmpSQlJFUTJOMUZDUnkwdExTMHRMUzB0TFhaM2JtOHhPRUZCUVVGQlIyTnFkMGR2UWpVNGVqQkJFZ1pKV0RFd09UZzRIQT09IixbWyJCQkkiLCIyMDI0LTExLTAxIiwiQ0NVIixudWxsLCJJWCIsIjEwOTgiXV1d",
+            "total_duration": 70,
             "flights": [{
                 "duration": 70,
                 "legroom": "28 in",
                 "extensions": [
                     "Below average legroom (28 in)",
                     "Stream media to your device",
-                    "Carbon emissions estimate: 62 kg"
+                    "Carbon emissions estimate: 59 kg"
                 ],
                 "departure_airport": {
                     "name": "Biju Patnaik International Airport",
                     "id": "BBI",
-                    "time": "2024-10-29 18:35"
+                    "time": "2024-11-01 18:35"
                 },
                 "flight_number": "IX 1098",
                 "airplane": "Airbus A320",
                 "arrival_airport": {
                     "name": "Netaji Subhash Chandra Bose International Airport",
                     "id": "CCU",
-                    "time": "2024-10-29 19:45"
+                    "time": "2024-11-01 19:45"
                 },
                 "airline": "Air India Express",
                 "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
                 "travel_class": "Economy"
             }],
             "carbon_emissions": {
-                "this_flight": 62000,
+                "this_flight": 60000,
                 "typical_for_this_route": 45000,
-                "difference_percent": 38
+                "difference_percent": 33
             },
             "type": "One way",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png"
-        },
-        {
-            "booking_token": "WyJDalJJVDA1WU0wczJTRkZMYW1kQlRrRnhjMmRDUnkwdExTMHRMUzB0TFhaM2RHOHhNMEZCUVVGQlIyTm1SVmR6Um1sYVJqSkJFZ3RWU3pjNE5ueEJTVGMyTnpnYyIsW1siQkJJIiwiMjAyNC0xMC0yOSIsIkRFTCIsbnVsbCwiVUsiLCI3ODYiXSxbIkRFTCIsIjIwMjQtMTAtMjkiLCJDQ1UiLG51bGwsIkFJIiwiNzY3Il1dXQ==",
-            "layovers": [{
-                "duration": 45,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
-            }],
-            "total_duration": 325,
-            "flights": [
-                {
-                    "duration": 145,
-                    "legroom": "29 in",
-                    "extensions": [
-                        "Below average legroom (29 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 125 kg"
-                    ],
-                    "ticket_also_sold_by": ["Air India"],
-                    "departure_airport": {
-                        "name": "Biju Patnaik International Airport",
-                        "id": "BBI",
-                        "time": "2024-10-29 09:40"
-                    },
-                    "flight_number": "UK 786",
-                    "airplane": "Airbus A320",
-                    "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-29 12:05"
-                    },
-                    "airline": "Vistara",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 135,
-                    "extensions": [
-                        "Standard recliner seat",
-                        "In-seat power & USB outlets",
-                        "Carbon emissions estimate: 175 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-10-29 12:50"
-                    },
-                    "flight_number": "AI 767",
-                    "airplane": "Airbus A320neo",
-                    "arrival_airport": {
-                        "name": "Netaji Subhash Chandra Bose International Airport",
-                        "id": "CCU",
-                        "time": "2024-10-29 15:05"
-                    },
-                    "airline": "Air India",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
-                    "travel_class": "Business Class"
-                }
-            ],
-            "carbon_emissions": {
-                "this_flight": 302000,
-                "typical_for_this_route": 45000,
-                "difference_percent": 571
-            },
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
         }
     ],
     "price_insights": {
-        "price_level": "typical",
-        "lowest_price": 4375,
+        "price_level": "low",
+        "lowest_price": 3059,
         "typical_price_range": [
             3350,
-            4400
+            4100
         ],
         "price_history": [
             [
-                1727634600,
-                3393
-            ],
-            [
-                1727721000,
-                3393
-            ],
-            [
-                1727807400,
-                3393
-            ],
-            [
-                1727893800,
-                3393
-            ],
-            [
-                1727980200,
-                3393
-            ],
-            [
-                1728066600,
-                3393
-            ],
-            [
-                1728153000,
-                3393
-            ],
-            [
-                1728239400,
-                3393
-            ],
-            [
-                1728325800,
-                3393
-            ],
-            [
-                1728412200,
-                3393
-            ],
-            [
-                1728498600,
-                3745
-            ],
-            [
-                1728585000,
-                3745
-            ],
-            [
-                1728671400,
-                3745
-            ],
-            [
-                1728757800,
-                3745
-            ],
-            [
-                1728844200,
-                3745
-            ],
-            [
-                1728930600,
-                3745
-            ],
-            [
-                1729017000,
-                3745
-            ],
-            [
-                1729103400,
-                4060
-            ],
-            [
                 1729189800,
-                4060
+                3393
             ],
             [
                 1729276200,
-                4375
-            ],
-            [
-                1729362600,
-                4375
-            ],
-            [
-                1729449000,
-                4375
-            ],
-            [
-                1729535400,
-                3272
-            ],
-            [
-                1729621800,
-                3272
-            ],
-            [
-                1729708200,
-                3272
-            ],
-            [
-                1729794600,
-                3272
-            ],
-            [
-                1729881000,
-                3393
-            ],
-            [
-                1729967400,
                 3850
             ],
             [
+                1729362600,
+                3850
+            ],
+            [
+                1729449000,
+                3393
+            ],
+            [
+                1729535400,
+                3393
+            ],
+            [
+                1729621800,
+                3059
+            ],
+            [
+                1729708200,
+                3059
+            ],
+            [
+                1729794600,
+                3059
+            ],
+            [
+                1729881000,
+                3059
+            ],
+            [
+                1729967400,
+                3059
+            ],
+            [
                 1730053800,
-                4375
+                3059
+            ],
+            [
+                1730140200,
+                3059
+            ],
+            [
+                1730226600,
+                3059
+            ],
+            [
+                1730313000,
+                3059
             ]
         ]
     },
@@ -426,7 +333,7 @@
         "arrival_id": "CCU",
         "currency": "INR",
         "type": "2",
-        "outbound_date": "2024-10-29"
+        "outbound_date": "2024-11-01"
     },
     "airports": [{
         "arrival": [{

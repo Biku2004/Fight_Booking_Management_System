@@ -427,6 +427,28 @@
     }
 
 
+    .dropdown {
+      position: relative;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    .dropdown-content div {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+    }
+    .dropdown-content div:hover {
+      background-color: #f1f1f1;
+    }
+
     /* Smooth scrolling */
     html {
       scroll-behavior: smooth;
@@ -490,16 +512,16 @@
           <input type="radio" id="roundtrip" name="trip" value="roundtrip" onclick="toggleReturnDate()">
           <label for="roundtrip">Round Trip</label>
         </div>
-
         <div class="booking-form">
           <div class="form-group dropdown">
             <label for="fromAirport">From</label>
-            <input type="text" id="fromAirport" name="from" placeholder="Airport">
+            <input type="text" id="fromAirport" name="from" placeholder="Airport" oninput="showDropdown(this, 'fromDropdown')">
+            <div id="fromDropdown" class="dropdown-content"></div>
           </div>
-
-          <div class="form-group">
+          <div class="form-group dropdown">
             <label for="to">To</label>
-            <input type="text" id="to" name="to" placeholder="Search by place/airport">
+            <input type="text" id="to" name="to" placeholder="Search by place/airport" oninput="showDropdown(this, 'toDropdown')">
+            <div id="toDropdown" class="dropdown-content"></div>
           </div>
           <div class="form-group">
             <label for="departure">Departure</label>
@@ -513,7 +535,6 @@
             <label for="passengers">Passengers</label>
             <input type="number" id="passengers" name="passengers" value="1">
           </div>
-
           <div class="search">
             <button type="submit" class="search-btn">Search</button>
           </div>
@@ -597,162 +618,6 @@
   </section>
 
 </main>
-
-<script>
-  // Scroll to home section on page load
-  window.onload = function() {
-    window.scrollTo(0, 0);
-  }
-
-  function toggleReturnDate() {
-    const isRoundTrip = document.getElementById('roundtrip').checked;
-    const returnField = document.getElementById('returnField');
-    if (isRoundTrip) {
-      returnField.style.display = 'block';
-    } else {
-      returnField.style.display = 'none';
-    }
-  }
-
-  // Initialize visibility based on default checked value
-  document.addEventListener('DOMContentLoaded', () => {
-    toggleReturnDate();
-  });
-
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-    var sendFlightDataBtn = document.getElementById('sendFlightDataBtn');
-    var flightDataForm = document.getElementById('flightDataForm');
-
-    sendFlightDataBtn.addEventListener('click', function() {
-      var fromValue = document.getElementById('fromAirport').value;
-      var toValue = document.getElementById('to').value;
-      var date = document.getElementById('departure').value;
-
-      if (fromValue && toValue && date) {
-        document.getElementById('fromInput').value = fromValue;
-        document.getElementById('toInput').value = toValue;
-        document.getElementById('date').value = date;
-        alert(fromValue + toValue + date)
-        flightDataForm.submit();
-      } else {
-        alert('Please enter both "From" and "To" airports before sending flight data.');
-      }
-    });
-
-  });
-
-  function showLoading() {
-    // Show the loading spinner
-    document.getElementById("loadingSpinner").style.display = "block";
-
-    // Optionally disable page interaction during loading
-    document.body.classList.add("loading");
-  }
-
-  // Optional: Hide spinner once the page reloads or search completes
-  window.onload = function() {
-    document.getElementById("loadingSpinner").style.display = "none";
-    document.body.classList.remove("loading");
-  };
-
-
-
-
-  // JavaScript Functionality for Popular Destinations Section
-  // JavaScript for handling next/previous button functionality
-  const destinations = [
-    {
-      img: '../Images/Agra.jpg',
-      title: 'Agra',
-      desc: 'Home to the magnificent Taj Mahal, one of the Seven Wonders of the World.'
-    },
-    {
-      img: '../Images/Jaipur.jpg',
-      title: 'Jaipur',
-      desc: 'The Pink City, known for its royal palaces and historic forts.'
-    },
-    {
-      img: '../Images/Goa.jpg',
-      title: 'Goa',
-      desc: 'Famous for its pristine beaches, vibrant nightlife, and Portuguese architecture.'
-    },
-    {
-      img: '../Images/Kerala.jpg',
-      title: 'Kerala',
-      desc: "God's Own Country, known for its backwaters and lush landscapes."
-    },
-    {
-      img: '../Images/Leh Ladakh.jpg',
-      title: 'Leh Ladakh',
-      desc: 'A paradise for adventure seekers, with stunning mountain ranges and serene landscapes.'
-    },
-    {
-      img: '../Images/Varanasi.jpg',
-      title: 'Varanasi',
-      desc: 'The spiritual capital of India, known for its ghats and sacred Ganges river.'
-    },
-    {
-      img: '../Images/Rishikesh.jpg',
-      title: 'Rishikesh',
-      desc: 'A spiritual town on the Ganges, famous for yoga, meditation, and adventure sports.'
-    },
-    {
-      img: '../Images/Amritsar.jpg',
-      title: 'Amritsar',
-      desc: 'Known for the Golden Temple, a symbol of Sikhism and peace.'
-    },
-    {
-      img: '../Images/Mumbai.jpg',
-      title: 'Mumbai',
-      desc: 'The City of Dreams, a bustling metropolis known for Bollywood and Marine Drive.'
-    },
-    {
-      img: '../Images/Darjeeling.jpg',
-      title: 'Darjeeling',
-      desc: 'A hill station in West Bengal famous for its tea gardens and panoramic views of the Himalayas.'
-    },
-    {
-      img: '../Images/Udaipur.jpg',
-      title: 'Udaipur',
-      desc: 'The City of Lakes, known for its romantic charm and royal heritage.'
-    },
-    {
-      img: '../Images/Konark.jpg',
-      title: 'Konark',
-      desc: 'Famous for the Sun Temple, a UNESCO World Heritage site in Odisha.'
-    },
-    {
-      img: '../Images/Puri.jpg',
-      title: 'Puri',
-      desc: 'A popular pilgrimage destination in Odisha, known for the Jagannath Temple and beautiful beaches.'
-    }
-  ];
-
-  let currentDestination = 0;
-
-  function showDestination(index) {
-    const destination = destinations[index];
-    document.getElementById('destination-img').src = destination.img;
-    document.getElementById('destination-title').textContent = destination.title;
-    document.getElementById('destination-desc').textContent = destination.desc;
-  }
-
-  document.getElementById('prevButton').addEventListener('click', () => {
-    currentDestination = (currentDestination - 1 + destinations.length) % destinations.length;
-    showDestination(currentDestination);
-  });
-
-  document.getElementById('nextButton').addEventListener('click', () => {
-    currentDestination = (currentDestination + 1) % destinations.length;
-    showDestination(currentDestination);
-  });
-
-  // Initialize the first destination
-  showDestination(currentDestination);
-
-
-</script>
+<script src="../Scripts/home.js"></script>
 </body>
 </html>
