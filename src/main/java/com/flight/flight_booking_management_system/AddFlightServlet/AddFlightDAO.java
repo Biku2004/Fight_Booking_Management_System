@@ -106,7 +106,7 @@ public class AddFlightDAO {
 
     // Method to delete a flight from the database
     public boolean deleteFlight(DeleteFlight flight) {
-        String sql = "DELETE FROM flights WHERE flight_number = ?";
+        String sql = "DELETE FROM flights1 WHERE flight_number = ? , DATE(departure_time) = ?,AND DATE(arrival_time) = ?";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, flight.getFlightNumber());
