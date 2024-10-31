@@ -23,9 +23,12 @@ public class DeleteFlightServlet extends HttpServlet {
             throws ServletException, IOException {
         // Get the flight number from the request
         String flightNumber = request.getParameter("flightNumber");
+        String departureTime = request.getParameter("departureTime");
+        String arrivalTime = request.getParameter("arrivalTime");
 
-        // Create an instance of DeleteFlight with the flight number
-        DeleteFlight flight = new DeleteFlight(flightNumber);
+
+        // Create an instance of DeleteFlight with the flight number , departure time and arrival time
+        DeleteFlight flight = new DeleteFlight(flightNumber,departureTime,arrivalTime);
 
         // Call the deleteFlight method from DAO to delete the flight
         boolean isDeleted = flightDAO.deleteFlight(flight);
