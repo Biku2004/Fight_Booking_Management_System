@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet("/deleteFlight")
+@WebServlet("/deleteFlight1")
 public class DeleteFlightServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private AddFlightDAO flightDAO;
