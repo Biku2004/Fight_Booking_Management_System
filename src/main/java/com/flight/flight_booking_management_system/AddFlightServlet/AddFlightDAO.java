@@ -3,10 +3,9 @@ package com.flight.flight_booking_management_system.AddFlightServlet;
 import com.flight.flight_booking_management_system.AdminFunctions.DeleteFlight;
 import com.flight.flight_booking_management_system.AdminFunctions.ModifyFlight;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddFlightDAO {
     // Database connection parameters
@@ -104,7 +103,24 @@ public class AddFlightDAO {
         return false;
     }
 
-    // Method to delete a flight from the database
+    public List<DeleteFlight> getFlightsByFlightNumber(String flightNumber) {
+        List<DeleteFlight> flights = new ArrayList<>();
+        String sql = "SELECT flight_number, departure_time, arrival_time FROM flights1 WHERE flight_number = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, flightNumber);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String departureDateTime = resultSet.getString("departure_time");
+                String arrivalDateTime = resultSet.getString("arrival_time");
+                flights.add(new DeleteFlight(flightNumber, departureDateTime, arrivalDateTime));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flights;
+    }
+
     public boolean deleteFlight(DeleteFlight flight) {
         String sql = "DELETE FROM flights1 WHERE flight_number = ? AND departure_time = ? AND arrival_time = ?";
         try (Connection connection = getConnection();

@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/deleteFlight1")
 public class DeleteFlightServlet extends HttpServlet {
@@ -21,31 +22,37 @@ public class DeleteFlightServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Get the flight number from the request
+        // Get the flight number, departure date, and arrival date from the request
         String flightNumber = request.getParameter("flightNumber");
-        String departureTime = request.getParameter("departureTime");
-        String arrivalTime = request.getParameter("arrivalTime");
+        String departureDateTime = request.getParameter("departureTime");
+        String arrivalDateTime = request.getParameter("arrivalTime");
 
-
-        // Create an instance of DeleteFlight with the flight number , departure time and arrival time
-        DeleteFlight flight = new DeleteFlight(flightNumber,departureTime,arrivalTime);
+        // Create an instance of DeleteFlight with the flight number, departure date, and arrival date
+        DeleteFlight flight = new DeleteFlight(flightNumber, departureDateTime, arrivalDateTime);
 
         // Call the deleteFlight method from DAO to delete the flight
         boolean isDeleted = flightDAO.deleteFlight(flight);
 
         // Redirect to the appropriate page based on the result
         if (isDeleted) {
-            // Redirect to success page if deletion is successful
-            response.sendRedirect("deleteFlightSuccess.jsp");
+            response.sendRedirect("deleteFlight/deleteFlightSuccess.jsp");
         } else {
-            // Redirect to error page if deletion fails
-            response.sendRedirect("deleteFlightError.jsp");
+            response.sendRedirect("deleteFlight/deleteFlightError.jsp");
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Typically, doPost handles deletion, but you can redirect to the form or error page if needed
-        response.sendRedirect("deleteFlight/deleteFlight.jsp");
+        // Get the flight number from the request
+        String flightNumber = request.getParameter("flightNumber");
+
+        // Fetch flights by flight number
+        List<DeleteFlight> flights = flightDAO.getFlightsByFlightNumber(flightNumber);
+
+        // Set the flights as a request attribute
+        request.setAttribute("flights", flights);
+
+        // Forward to the JSP
+        request.getRequestDispatcher("deleteFlight/deleteFlight.jsp").forward(request, response);
     }
 }
