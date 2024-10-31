@@ -59,7 +59,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Delete Flight</title>
-    <link rel="stylesheet" href="../cssFile/deleteflightStyle.css">
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/cssFile/deleteflightStyle.css">
 </head>
 <body>
 <h1>Delete Flight</h1>
