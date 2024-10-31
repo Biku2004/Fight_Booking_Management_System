@@ -15,29 +15,26 @@
     <link rel="stylesheet" href="../cssFile/deleteflightStyle.css">
 </head>
 <body>
-<div class="container">
     <h1>Delete Flight</h1>
-    <form action="<%= request.getContextPath() %>/deleteFlight" method="post">
-        <div class="form-group">
-            <label for="flightNumber">Flight Number:</label>
-            <input type="text" id="flightNumber" name="flightNumber" required>
-        </div>
-        <br/>
-        <div>
-            <th><label for="departureTime">Departure Time:</label></th>
-            <td><input type="datetime-local" id="departureTime" name="departureTime" value="" required></td>
-
-        </div>
-        <br/>
-        <div>
-            <th><label for="arrivalTime">Arrival Time:</label></th>
-            <td><input type="datetime-local" id="arrivalTime" name="departureTime" value="" required></td>
-        </div>
-        <br/>
-        <div class="form-group">
-            <button type="submit" class="btn">Delete Flight</button>
-        </div>
-    </form>
+    <div class="container">
+        <h1>Delete Flight</h1>
+        <form action="<%= request.getContextPath() %>/deleteFlight1" method="post">
+            <div class="form-group">
+                <label for="flightNumber">Flight Number:</label>
+                <input type="text" id="flightNumber" name="flightNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="departureTime">Departure Date and Time:</label>
+                <input type="datetime-local" id="departureTime" name="departureTime" required>
+            </div>
+            <div class="form-group">
+                <label for="arrivalTime">Arrival Date and Time:</label>
+                <input type="datetime-local" id="arrivalTime" name="arrivalTime" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn">Delete Flight</button>
+            </div>
+        </form>
 
     <%-- Display success or error messages based on request parameters --%>
     <%
