@@ -44,6 +44,18 @@
         th {
             background-color: #f2f2f2;
         }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -82,6 +94,10 @@
             }
         %>
     </table>
+
+    <div class="button-container">
+        <button onclick="location.href='tickets.jsp'">Show Ticket</button>
+    </div>
 </div>
 
 </body>

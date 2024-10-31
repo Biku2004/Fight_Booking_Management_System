@@ -266,7 +266,7 @@
         top: 10px;
         left: 10px;
         font-family: Arial;
-        font-size: 20px;
+        font-size: 15px;
         font-weight: bold;
         color: rgba(0,0,102,1);
     }
@@ -285,7 +285,7 @@
         top: 10px;
         left: 20px;
         font-family: Arial;
-        font-size: 38px;
+        font-size: 10px;
         color: #222;
     }
 
@@ -294,7 +294,7 @@
         top: 10px;
         left: 180px;
         font-family: Arial;
-        font-size: 38px;
+        font-size: 10px;
         color: #222;
     }
 
@@ -317,7 +317,7 @@
         left: 5px;
         top: -10px;
         font-family: Arial;
-        font-size: 110px;
+        font-size: 100px;
         font-weight: bold;
         color: rgba(255,255,255,0.2);
     }
@@ -328,13 +328,13 @@
         left: 10px;
         font-family: Arial Narrow, Arial;
         font-weight: bold;
-        font-size: 14px;
+        font-size: 12px;
         color: #999;
     }
 
     .name span{
         color: #555;
-        font-size: 17px;
+        font-size: 12px;
     }
 
     .flight{
@@ -343,13 +343,13 @@
         left: 180px;
         font-family: Arial Narrow, Arial;
         font-weight: bold;
-        font-size: 14px;
+        font-size: 12px;
         color: #999;
     }
 
     .flight span{
         color: #555;
-        font-size: 17px;
+        font-size: 12px;
     }
 
     .gate{
@@ -467,7 +467,7 @@
     }
 
     .nameslip{
-        top: 60px;
+        top: 10px;
         left: 410px;
     }
 
@@ -480,13 +480,13 @@
     }
 
     .jfkslip{
-        font-size: 30px;
+        font-size: 10px;
         top: 20px;
         left: 410px;
     }
 
     .sfoslip{
-        font-size: 30px;
+        font-size: 10px;
         top: 20px;
         left: 530px;
     }
@@ -512,38 +512,30 @@
     }
 </style>
 <div class="box">
-    <ul class="left">
-        <!-- Left dots or design elements remain unchanged -->
-    </ul>
-
-    <ul class="right">
-        <!-- Right dots or design elements remain unchanged -->
-    </ul>
-
     <div class="ticket">
-        <span class="airline">British Airways</span>
-        <span class="airline airlineslip">British Airways</span>
+        <span class="airline"><%= session.getAttribute("airline") %></span>
+        <span class="airline airlineslip"><%= session.getAttribute("airline") %></span>
         <span class="boarding">Boarding pass</span>
         <div class="content">
-            <span class="jfk">LHR</span> <!-- Updated airport code -->
-            <span class="plane"><!-- Plane SVG remains unchanged --></span>
-            <span class="sfo">ENG</span> <!-- Updated destination code -->
+            <span class="jfk"><%= session.getAttribute("departure") %></span>
+            <span class="plane"><%= session.getAttribute("airplane") %></span>
+            <span class="sfo"><%= session.getAttribute("arrival") %></span>
 
-            <span class="jfk jfkslip">LHR</span> <!-- Slip copy updated -->
+            <span class="jfk jfkslip"><%= session.getAttribute("departure") %></span>
             <span class="plane planeslip"><!-- Plane SVG for slip remains unchanged --></span>
-            <span class="sfo sfoslip">ENG</span> <!-- Slip destination updated -->
+            <span class="sfo sfoslip"><%= session.getAttribute("arrival") %></span>
 
             <div class="sub-content">
-                <span class="watermark">British Airways</span>
-                <span class="name">PASSENGER NAME<br><span>Smith, Alex</span></span> <!-- Updated name -->
-                <span class="flight">FLIGHT<br><span>BA789</span></span> <!-- Updated flight number -->
-                <span class="gate">GATE<br><span>22C</span></span> <!-- Updated gate -->
-                <span class="seat">SEAT<br><span>12B</span></span> <!-- Updated seat -->
-                <span class="boardingtime">BOARDING TIME<br><span>10:45AM ON SEPTEMBER 15, 2024</span></span> <!-- Updated time -->
+                <span class="watermark"><%= session.getAttribute("airline") %></span>
+                <span class="name">PASSENGER NAME<br><span><%= session.getAttribute("fullName") %></span></span>
+                <span class="flight">FLIGHT<br><span><%= session.getAttribute("flightNumber") %></span></span>
+                <span class="gate">GATE<br><span>22C</span></span>
+                <span class="seat">SEAT<br><span><%= ((String[]) session.getAttribute("passengerSeats"))[0] %></span></span>
+                <span class="boardingtime">BOARDING TIME<br><span><%= session.getAttribute("departureTime") %></span></span>
 
-                <span class="flight flightslip">FLIGHT N<br><span>BA789</span></span> <!-- Slip flight number -->
-                <span class="seat seatslip">SEAT<br><span>12B</span></span> <!-- Slip seat -->
-                <span class="name nameslip">PASSENGER NAME<br><span>Smith, Alex</span></span> <!-- Slip name -->
+                <span class="flight flightslip">FLIGHT N<br><span><%= session.getAttribute("flightNumber") %></span></span>
+                <span class="seat seatslip">SEAT<br><span><%= ((String[]) session.getAttribute("passengerSeats"))[0] %></span></span>
+                <span class="name nameslip">PASSENGER NAME<br><span><%= session.getAttribute("fullName") %></span></span>
             </div>
         </div>
         <div class="barcode"></div>
