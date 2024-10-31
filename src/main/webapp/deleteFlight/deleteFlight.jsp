@@ -22,6 +22,18 @@
             <label for="flightNumber">Flight Number:</label>
             <input type="text" id="flightNumber" name="flightNumber" required>
         </div>
+        <br/>
+        <div>
+            <th><label for="departureTime">Departure Time:</label></th>
+            <td><input type="datetime-local" id="departureTime" name="departureTime" value="" required></td>
+
+        </div>
+        <br/>
+        <div>
+            <th><label for="arrivalTime">Arrival Time:</label></th>
+            <td><input type="datetime-local" id="arrivalTime" name="departureTime" value="" required></td>
+        </div>
+        <br/>
         <div class="form-group">
             <button type="submit" class="btn">Delete Flight</button>
         </div>
