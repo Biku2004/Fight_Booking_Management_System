@@ -78,54 +78,7 @@
         <button type="submit" class="book-now">Confirm Booking</button>
     </form>
 </div>
-
-<script>
-    function openSeatSelection() {
-        const selectedSeat = document.getElementById('Seats').value;
-        const seatWindow = window.open('${pageContext.request.contextPath}/bookFlight/seats.jsp', 'Select Seat', 'width=800,height=600');
-
-        seatWindow.onload = function() {
-            const previousSeatElement = seatWindow.document.getElementById('previouslySelectedSeat');
-            if (previousSeatElement) {
-                previousSeatElement.value = selectedSeat;
-            }
-        };
-    }
-
-    function updateSelectedSeat(seatId) {
-        document.getElementById('Seats').value = seatId;
-        document.getElementById('selectedSeatDisplay').innerText = seatId;
-    }
-
-    let passengerCount = 0;
-    const addPassengerBtn = document.getElementById('addPassengerBtn');
-    const passengerList = document.getElementById('passengerList');
-
-    addPassengerBtn.addEventListener('click', () => {
-        passengerCount++;
-        const passengerDiv = document.createElement('div');
-        passengerDiv.classList.add('passenger-container');
-        passengerDiv.innerHTML = `
-            <h4>Passenger ${passengerCount}</h4>
-            <div class="form-group">
-                <label for="passengerName${passengerCount}">Name:</label>
-                <input type="text" name="passengerName${passengerCount}" required>
-            </div>
-            <div class="form-group">
-                <label for="passengerAge${passengerCount}">Age:</label>
-                <input type="number" name="passengerAge${passengerCount}" required>
-            </div>
-            <button type="button" class="remove-passenger" onclick="removePassenger(this)">Remove Passenger</button>
-        `;
-        passengerList.appendChild(passengerDiv);
-    });
-
-    function removePassenger(button) {
-        const passengerDiv = button.parentNode;
-        passengerDiv.parentNode.removeChild(passengerDiv);
-        passengerCount--;
-    }
-</script>
-
+<script src="${pageContext.request.contextPath}/Scripts/bookFlightScript.js"></script>
 </body>
+
 </html>
