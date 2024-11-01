@@ -10,6 +10,15 @@ public class Admin {
     private String gender;
     private String profilePhotoPath;
     private String dateOfBirth;
+    private String UserType;
+
+    public String getUserType() {
+        return UserType;
+    }
+
+    public void setUserType(String userType) {
+        UserType = userType;
+    }
 
     // Getters and Setters for each field
     public String getFirstName() { return firstName; }
@@ -38,4 +47,6 @@ public class Admin {
 
     public String getDateOfBirth() { return dateOfBirth; }
     public void setDateOfBirth(String dateOfBirth) { this.dateOfBirth = dateOfBirth; }
+
+
 }

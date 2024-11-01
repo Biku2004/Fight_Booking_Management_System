@@ -37,6 +37,7 @@ public class AdminServlet extends HttpServlet {
         String phoneNumber = request.getParameter("ph1");
         String nationality = request.getParameter("nationality");
         String gender = request.getParameter("gender");
+        String userType = request.getParameter("UserType");
         String dateOfBirth = request.getParameter("dateOfBirth");
 
         Part filePart = request.getPart("profilePhoto");
@@ -67,7 +68,7 @@ public class AdminServlet extends HttpServlet {
         admin.setGender(gender);
         admin.setDateOfBirth(dateOfBirth);
         admin.setProfilePhotoPath("uploads/" + fileName); /// Relative path to the uploaded file
-
+        admin.setUserType("admin");
 
         // Use DAO to save the admin data
         try {
