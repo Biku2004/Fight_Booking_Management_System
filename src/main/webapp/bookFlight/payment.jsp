@@ -6,6 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <style>
+        /* Page styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #payButton {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #3399cc;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #payButton:hover {
+            background-color: #287ba0;
+        }
+    </style>
 </head>
 <body>
 <h2>Payment</h2>
