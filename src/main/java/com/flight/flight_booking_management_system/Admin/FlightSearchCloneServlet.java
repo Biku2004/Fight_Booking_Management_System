@@ -135,6 +135,121 @@ public class FlightSearchCloneServlet extends HttpServlet {
     }
 
 
+//    private void storeFlightsInDatabase(String fileContent, HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        try {
+//            JSONObject jsonObject = new JSONObject(fileContent);
+//            JSONArray rootArray = jsonObject.getJSONArray("other_flights");
+//
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//
+//            try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+//                String insertSQL = "INSERT INTO flights1 (departure_name, departure_id, departure_time, arrival_name, arrival_id, arrival_time, duration, airplane, airline, airline_logo, travel_class, flight_number, legroom, extensions, total_duration, carbon_emissions, price, type, booking_token, layovers) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+//                String checkSQL = "SELECT COUNT(*) FROM flights1 WHERE departure_id = ? AND arrival_id = ? AND departure_time = ? AND arrival_time = ? AND flight_number = ?";
+//
+//                for (int i = 0; i < rootArray.length(); i++) {
+//                    JSONObject rootObject = rootArray.getJSONObject(i);
+//
+//                    int totalDuration = rootObject.optInt("total_duration", 0);
+//                    JSONObject carbonEmissions = rootObject.optJSONObject("carbon_emissions");
+//                    float carbonEmissionsThisFlight = (carbonEmissions != null) ? (float) carbonEmissions.optDouble("this_flight", 0.0) : 0.0f;
+//                    int price = rootObject.optInt("price", -1); // Default to -1 if price is not available
+//                    String type = rootObject.optString("type");
+//                    String bookingToken = rootObject.optString("booking_token");
+//
+//                    JSONArray layoversArray = rootObject.optJSONArray("layovers");
+//                    StringBuilder layoversBuilder = new StringBuilder();
+//                    if (layoversArray != null) {
+//                        for (int j = 0; j < layoversArray.length(); j++) {
+//                            JSONObject layover = layoversArray.getJSONObject(j);
+//                            int layoverDuration = layover.optInt("duration", 0);
+//                            String layoverName = layover.optString("name", "N/A");
+//                            String layoverId = layover.optString("id", "N/A");
+//                            layoversBuilder.append(String.format("{\"duration\": %d, \"name\": \"%s\", \"id\": \"%s\"}", layoverDuration, layoverName, layoverId));
+//                            if (j < layoversArray.length() - 1) {
+//                                layoversBuilder.append(",");
+//                            }
+//                        }
+//                    }
+//                    String layovers = "[" + layoversBuilder + "]";
+//
+//                    JSONArray flightsArray = rootObject.optJSONArray("flights");
+//
+//
+//
+//                    for (int j = 0; j < flightsArray.length(); j++) {
+//                        JSONObject flightJson = flightsArray.getJSONObject(j);
+//                        JSONObject departureAirport = flightJson.optJSONObject("departure_airport");
+//                        JSONObject arrivalAirport = flightJson.optJSONObject("arrival_airport");
+//
+//                        String departureName = (departureAirport != null) ? departureAirport.optString("name", "N/A") : "N/A";
+//                        String departureId = (departureAirport != null) ? departureAirport.optString("id", "N/A") : "N/A";
+//                        String departureTime = (departureAirport != null) ? departureAirport.optString("time", "N/A") : "N/A";
+//
+//                        String arrivalName = (arrivalAirport != null) ? arrivalAirport.optString("name", "N/A") : "N/A";
+//                        String arrivalId = (arrivalAirport != null) ? arrivalAirport.optString("id", "N/A") : "N/A";
+//                        String arrivalTime = (arrivalAirport != null) ? arrivalAirport.optString("time", "N/A") : "N/A";
+//
+//                        int duration = flightJson.optInt("duration", 0);
+//                        String airplane = flightJson.optString("airplane", "N/A");
+//                        String airline = flightJson.optString("airline", "N/A");
+//                        String airlineLogo = flightJson.optString("airline_logo", "N/A");
+//                        String travelClass = flightJson.optString("travel_class", "N/A");
+//                        String flightNumber = flightJson.optString("flight_number", "N/A");
+//                        String legroom = flightJson.optString("legroom", "N/A");
+//                        JSONArray extensions = flightJson.optJSONArray("extensions");
+//
+//                        // Check for duplicate entries
+//                        try (PreparedStatement checkStmt = conn.prepareStatement(checkSQL)) {
+//                            checkStmt.setString(1, departureId);
+//                            checkStmt.setString(2, arrivalId);
+//                            checkStmt.setString(3, departureTime);
+//                            checkStmt.setString(4, arrivalTime);
+//                            checkStmt.setString(5, flightNumber);
+//
+//                            try (ResultSet rs = checkStmt.executeQuery()) {
+//                                if (rs.next() && rs.getInt(1) > 0) {
+//                                    // Duplicate entry found, skip insertion
+//                                    continue;
+//                                }
+//                            }
+//                        }
+//
+//                        // Insert new flight record
+//                        try (PreparedStatement pstmt = conn.prepareStatement(insertSQL)) {
+//                            pstmt.setString(1, departureName);
+//                            pstmt.setString(2, departureId);
+//                            pstmt.setString(3, departureTime);
+//                            pstmt.setString(4, arrivalName);
+//                            pstmt.setString(5, arrivalId);
+//                            pstmt.setString(6, arrivalTime);
+//                            pstmt.setInt(7, duration);
+//                            pstmt.setString(8, airplane);
+//                            pstmt.setString(9, airline);
+//                            pstmt.setString(10, airlineLogo);
+//                            pstmt.setString(11, travelClass);
+//                            pstmt.setString(12, flightNumber);
+//                            pstmt.setString(13, legroom);
+//                            pstmt.setString(14, (extensions != null) ? extensions.toString() : "[]");
+//                            pstmt.setInt(15, totalDuration);
+//                            pstmt.setFloat(16, carbonEmissionsThisFlight);
+//                            pstmt.setInt(17, price);
+//                            pstmt.setString(18, type);
+//                            pstmt.setString(19, bookingToken);
+//                            pstmt.setString(20, layovers);
+//
+//                            pstmt.executeUpdate();
+//                        }
+//                    }
+//                }
+//            }
+//        } catch (SQLException | ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//
+//        redirectToFetchDataToTable(request, response);
+//    }
+
+
     private void storeFlightsInDatabase(String fileContent, HttpServletRequest request, HttpServletResponse response) throws IOException {
         try {
             JSONObject jsonObject = new JSONObject(fileContent);
@@ -174,27 +289,46 @@ public class FlightSearchCloneServlet extends HttpServlet {
 
                     JSONArray flightsArray = rootObject.optJSONArray("flights");
 
-                    for (int j = 0; j < flightsArray.length(); j++) {
-                        JSONObject flightJson = flightsArray.getJSONObject(j);
-                        JSONObject departureAirport = flightJson.optJSONObject("departure_airport");
-                        JSONObject arrivalAirport = flightJson.optJSONObject("arrival_airport");
+                    if (flightsArray != null && flightsArray.length() > 0) {
+                        JSONObject firstFlight = flightsArray.getJSONObject(0);
+                        JSONObject lastFlight = flightsArray.getJSONObject(flightsArray.length() - 1);
 
-                        String departureName = (departureAirport != null) ? departureAirport.optString("name", "N/A") : "N/A";
-                        String departureId = (departureAirport != null) ? departureAirport.optString("id", "N/A") : "N/A";
-                        String departureTime = (departureAirport != null) ? departureAirport.optString("time", "N/A") : "N/A";
+                        JSONObject firstDepartureAirport = firstFlight.optJSONObject("departure_airport");
+                        JSONObject lastArrivalAirport = lastFlight.optJSONObject("arrival_airport");
 
-                        String arrivalName = (arrivalAirport != null) ? arrivalAirport.optString("name", "N/A") : "N/A";
-                        String arrivalId = (arrivalAirport != null) ? arrivalAirport.optString("id", "N/A") : "N/A";
-                        String arrivalTime = (arrivalAirport != null) ? arrivalAirport.optString("time", "N/A") : "N/A";
+                        String departureName = (firstDepartureAirport != null) ? firstDepartureAirport.optString("name", "N/A") : "N/A";
+                        String departureId = (firstDepartureAirport != null) ? firstDepartureAirport.optString("id", "N/A") : "N/A";
+                        String departureTime = (firstDepartureAirport != null) ? firstDepartureAirport.optString("time", "N/A") : "N/A";
 
-                        int duration = flightJson.optInt("duration", 0);
-                        String airplane = flightJson.optString("airplane", "N/A");
-                        String airline = flightJson.optString("airline", "N/A");
-                        String airlineLogo = flightJson.optString("airline_logo", "N/A");
-                        String travelClass = flightJson.optString("travel_class", "N/A");
-                        String flightNumber = flightJson.optString("flight_number", "N/A");
-                        String legroom = flightJson.optString("legroom", "N/A");
-                        JSONArray extensions = flightJson.optJSONArray("extensions");
+                        String arrivalName = (lastArrivalAirport != null) ? lastArrivalAirport.optString("name", "N/A") : "N/A";
+                        String arrivalId = (lastArrivalAirport != null) ? lastArrivalAirport.optString("id", "N/A") : "N/A";
+                        String arrivalTime = (lastArrivalAirport != null) ? lastArrivalAirport.optString("time", "N/A") : "N/A";
+
+                        int duration = 0;
+                        String airplane = "";
+                        String airline = "";
+                        String airlineLogo = "";
+                        String travelClass = "";
+                        String flightNumber = "";
+                        String legroom = "";
+                        JSONArray extensions = new JSONArray();
+
+                        for (int j = 0; j < flightsArray.length(); j++) {
+                            JSONObject flightJson = flightsArray.getJSONObject(j);
+                            duration += flightJson.optInt("duration", 0);
+                            airplane = flightJson.optString("airplane", "N/A");
+                            airline = flightJson.optString("airline", "N/A");
+                            airlineLogo = flightJson.optString("airline_logo", "N/A");
+                            travelClass = flightJson.optString("travel_class", "N/A");
+                            flightNumber = flightJson.optString("flight_number", "N/A");
+                            legroom = flightJson.optString("legroom", "N/A");
+                            JSONArray flightExtensions = flightJson.optJSONArray("extensions");
+                            if (flightExtensions != null) {
+                                for (int k = 0; k < flightExtensions.length(); k++) {
+                                    extensions.put(flightExtensions.get(k));
+                                }
+                            }
+                        }
 
                         // Check for duplicate entries
                         try (PreparedStatement checkStmt = conn.prepareStatement(checkSQL)) {
@@ -227,7 +361,7 @@ public class FlightSearchCloneServlet extends HttpServlet {
                             pstmt.setString(11, travelClass);
                             pstmt.setString(12, flightNumber);
                             pstmt.setString(13, legroom);
-                            pstmt.setString(14, (extensions != null) ? extensions.toString() : "[]");
+                            pstmt.setString(14, extensions.toString());
                             pstmt.setInt(15, totalDuration);
                             pstmt.setFloat(16, carbonEmissionsThisFlight);
                             pstmt.setInt(17, price);

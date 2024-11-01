@@ -1,1049 +1,1010 @@
 {
     "best_flights": [
         {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1pSVURFek56Y2FDZ2pxZGhBQ0dnTlZVMFE0SEhEcWRnPT0iLFtbIkJMUiIsIjIwMjQtMTEtMDciLCJDQ1UiLG51bGwsIlFQIiwiMTM3NyJdXV0=",
-            "total_duration": 155,
-            "price": 153,
-            "flights": [{
-                "duration": 155,
-                "often_delayed_by_over_30_min": true,
-                "extensions": ["Carbon emissions estimate: 116 kg"],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 19:40"
-                },
-                "flight_number": "QP 1377",
-                "airplane": "Boeing 737MAX 8 Passenger",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 22:15"
-                },
-                "airline": "Akasa Air",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 116000,
-                "typical_for_this_route": 125000,
-                "difference_percent": -7
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1UyUlRJeU14b0tDUEo0RUFJYUExVlRSRGdjY1BKNCIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkNDVSIsbnVsbCwiNkUiLCIyMjMiXV1d",
-            "total_duration": 150,
-            "price": 155,
-            "flights": [{
-                "duration": 150,
-                "often_delayed_by_over_30_min": true,
-                "legroom": "29 in",
-                "extensions": [
-                    "Below average legroom (29 in)",
-                    "Carbon emissions estimate: 105 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 17:05"
-                },
-                "flight_number": "6E 223",
-                "airplane": "Airbus A321neo",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 19:35"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 105000,
-                "typical_for_this_route": 125000,
-                "difference_percent": -16
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1ZUUnpVeE54b0xDSytGQVJBQ0dnTlZVMFE0SEhDdmhRRT0iLFtbIkJMUiIsIjIwMjQtMTEtMDciLCJDQ1UiLG51bGwsIlNHIiwiNTE3Il1dXQ==",
-            "total_duration": 155,
-            "price": 171,
-            "flights": [{
-                "duration": 155,
-                "legroom": "29 in",
-                "extensions": [
-                    "Below average legroom (29 in)",
-                    "Stream media to your device",
-                    "Carbon emissions estimate: 168 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 18:00"
-                },
-                "flight_number": "SG 517",
-                "airplane": "Boeing 737",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 20:35"
-                },
-                "airline": "SpiceJet",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 168000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 34
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1pKV0RJM01ERTRIQT09IixbWyJCTFIiLCIyMDI0LTExLTA3IiwiQ0NVIixudWxsLCJJWCIsIjI3MDEiXV1d",
-            "total_duration": 145,
-            "flights": [{
-                "duration": 145,
-                "legroom": "28 in",
-                "extensions": [
-                    "Below average legroom (28 in)",
-                    "Stream media to your device",
-                    "Carbon emissions estimate: 145 kg"
-                ],
-                "ticket_also_sold_by": ["Air India"],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 05:25"
-                },
-                "flight_number": "IX 2701",
-                "airplane": "Airbus A320",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 07:50"
-                },
-                "airline": "Air India Express",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 145000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 16
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png"
-        }
-    ],
-    "search_metadata": {
-        "raw_html_file": "https://serpapi.com/searches/87b0e70f2d4f7331/67245faaa54d7ee64ebd1f88.html",
-        "created_at": "2024-11-01 04:57:14 UTC",
-        "processed_at": "2024-11-01 04:57:14 UTC",
-        "id": "67245faaa54d7ee64ebd1f88",
-        "prettify_html_file": "https://serpapi.com/searches/87b0e70f2d4f7331/67245faaa54d7ee64ebd1f88.prettify",
-        "total_time_taken": 1.26,
-        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=USD&tfs=CBwQAhoeEgoyMDI0LTExLTA3agcIARIDQkxScgcIARIDQ0NVGh4SCjIwMjQtMTEtMDlqBwgBEgNDQ1VyBwgBEgNCTFJCAQFIAXABmAEB",
-        "json_endpoint": "https://serpapi.com/searches/87b0e70f2d4f7331/67245faaa54d7ee64ebd1f88.json",
-        "status": "Success"
-    },
-    "other_flights": [
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1kyUlRZME16a2FDZ2p5ZUJBQ0dnTlZVMFE0SEhEeWVBPT0iLFtbIkJMUiIsIjIwMjQtMTEtMDciLCJDQ1UiLG51bGwsIjZFIiwiNjQzOSJdXV0=",
-            "total_duration": 155,
-            "price": 155,
-            "flights": [{
-                "duration": 155,
-                "legroom": "28 in",
-                "extensions": [
-                    "Below average legroom (28 in)",
-                    "Carbon emissions estimate: 128 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 06:10"
-                },
-                "flight_number": "6E 6439",
-                "airplane": "Airbus A320",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 08:45"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 128000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 2
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1UyUlRRME1ob0tDUEo0RUFJYUExVlRSRGdjY1BKNCIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkNDVSIsbnVsbCwiNkUiLCI0NDIiXV1d",
-            "total_duration": 150,
-            "price": 155,
-            "flights": [{
-                "duration": 150,
-                "legroom": "29 in",
-                "extensions": [
-                    "Below average legroom (29 in)",
-                    "Carbon emissions estimate: 105 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 08:25"
-                },
-                "flight_number": "6E 442",
-                "airplane": "Airbus A321neo",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 10:55"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 105000,
-                "typical_for_this_route": 125000,
-                "difference_percent": -16
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1UyUlRVd014b0tDUEo0RUFJYUExVlRSRGdjY1BKNCIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkNDVSIsbnVsbCwiNkUiLCI1MDMiXV1d",
-            "total_duration": 155,
-            "price": 155,
-            "flights": [{
-                "duration": 155,
-                "often_delayed_by_over_30_min": true,
-                "legroom": "29 in",
-                "extensions": [
-                    "Below average legroom (29 in)",
-                    "Carbon emissions estimate: 105 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 10:05"
-                },
-                "flight_number": "6E 503",
-                "airplane": "Airbus A321neo",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 12:40"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 105000,
-                "typical_for_this_route": 125000,
-                "difference_percent": -16
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1UyUlRNeE1ob0tDUEo0RUFJYUExVlRSRGdjY1BKNCIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkNDVSIsbnVsbCwiNkUiLCIzMTIiXV1d",
-            "total_duration": 150,
-            "price": 155,
-            "flights": [{
-                "duration": 150,
-                "legroom": "28 in",
-                "extensions": [
-                    "Below average legroom (28 in)",
-                    "Carbon emissions estimate: 128 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 12:00"
-                },
-                "flight_number": "6E 312",
-                "airplane": "Airbus A320",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 14:30"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 128000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 2
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1UyUlRFM01ob0tDUEo0RUFJYUExVlRSRGdjY1BKNCIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkNDVSIsbnVsbCwiNkUiLCIxNzIiXV1d",
-            "total_duration": 150,
-            "price": 155,
-            "flights": [{
-                "duration": 150,
-                "often_delayed_by_over_30_min": true,
-                "legroom": "29 in",
-                "extensions": [
-                    "Below average legroom (29 in)",
-                    "Carbon emissions estimate: 105 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 13:20"
-                },
-                "flight_number": "6E 172",
-                "airplane": "Airbus A321neo",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 15:50"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 105000,
-                "typical_for_this_route": 125000,
-                "difference_percent": -16
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1kyUlRZMU56SWFDZ2p5ZUJBQ0dnTlZVMFE0SEhEeWVBPT0iLFtbIkJMUiIsIjIwMjQtMTEtMDciLCJDQ1UiLG51bGwsIjZFIiwiNjU3MiJdXV0=",
-            "total_duration": 150,
-            "price": 155,
-            "flights": [{
-                "duration": 150,
-                "often_delayed_by_over_30_min": true,
-                "legroom": "29 in",
-                "extensions": [
-                    "Below average legroom (29 in)",
-                    "Carbon emissions estimate: 105 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 15:10"
-                },
-                "flight_number": "6E 6572",
-                "airplane": "Airbus A321neo",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 17:40"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 105000,
-                "typical_for_this_route": 125000,
-                "difference_percent": -16
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1UyUlRZM05ob0tDUEo0RUFJYUExVlRSRGdjY1BKNCIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkNDVSIsbnVsbCwiNkUiLCI2NzYiXV1d",
-            "total_duration": 145,
-            "price": 155,
-            "flights": [{
-                "duration": 145,
-                "legroom": "28 in",
-                "extensions": [
-                    "Below average legroom (28 in)",
-                    "Carbon emissions estimate: 128 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 18:35"
-                },
-                "flight_number": "6E 676",
-                "airplane": "Airbus A320",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 21:00"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 128000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 2
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1UyUlRrM05Sb0tDUEo0RUFJYUExVlRSRGdjY1BKNCIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkNDVSIsbnVsbCwiNkUiLCI5NzUiXV1d",
-            "total_duration": 150,
-            "price": 155,
-            "flights": [{
-                "duration": 150,
-                "legroom": "29 in",
-                "extensions": [
-                    "Below average legroom (29 in)",
-                    "Carbon emissions estimate: 105 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 20:40"
-                },
-                "flight_number": "6E 975",
-                "airplane": "Airbus A321neo",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 23:10"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 105000,
-                "typical_for_this_route": 125000,
-                "difference_percent": -16
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1UyUlRrMU1ob0tDUEo0RUFJYUExVlRSRGdjY1BKNCIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkNDVSIsbnVsbCwiNkUiLCI5NTIiXV1d",
-            "total_duration": 150,
-            "price": 155,
-            "flights": [{
-                "duration": 150,
-                "legroom": "29 in",
-                "extensions": [
-                    "Below average legroom (29 in)",
-                    "Carbon emissions estimate: 105 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 22:15"
-                },
-                "flight_number": "6E 952",
-                "airplane": "Airbus A321neo",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-08 00:45"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 105000,
-                "typical_for_this_route": 125000,
-                "difference_percent": -16
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1UyUlRJeU54b0tDSUI5RUFJYUExVlRSRGdjY0lCOSIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkNDVSIsbnVsbCwiNkUiLCIyMjciXV1d",
-            "total_duration": 145,
-            "price": 160,
-            "flights": [{
-                "duration": 145,
-                "overnight": true,
-                "legroom": "28 in",
-                "extensions": [
-                    "Below average legroom (28 in)",
-                    "Carbon emissions estimate: 128 kg"
-                ],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 04:45"
-                },
-                "flight_number": "6E 227",
-                "airplane": "Airbus A320",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 07:10"
-                },
-                "airline": "IndiGo",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 128000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 2
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/6E.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1pSVURFMU5qRWFDd2pUaFFFUUFob0RWVk5FT0J4dzA0VUIiLFtbIkJMUiIsIjIwMjQtMTEtMDciLCJDQ1UiLG51bGwsIlFQIiwiMTU2MSJdXV0=",
-            "total_duration": 165,
-            "price": 172,
-            "flights": [{
-                "duration": 165,
-                "extensions": ["Carbon emissions estimate: 116 kg"],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 06:05"
-                },
-                "flight_number": "QP 1561",
-                "airplane": "Boeing 737MAX 8 Passenger",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 08:50"
-                },
-                "airline": "Akasa Air",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 116000,
-                "typical_for_this_route": 125000,
-                "difference_percent": -7
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QP.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1ZWU3pjMk14b0xDUGVhQVJBQ0dnTlZVMFE0SEhEM21nRT0iLFtbIkJMUiIsIjIwMjQtMTEtMDciLCJDQ1UiLG51bGwsIlVLIiwiNzYzIl1dXQ==",
-            "total_duration": 140,
-            "price": 199,
-            "flights": [{
-                "duration": 140,
-                "legroom": "29 in",
-                "extensions": [
-                    "Below average legroom (29 in)",
-                    "In-seat USB outlet",
-                    "Stream media to your device",
-                    "Carbon emissions estimate: 142 kg"
-                ],
-                "ticket_also_sold_by": ["Air India"],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 12:30"
-                },
-                "flight_number": "UK 763",
-                "airplane": "Airbus A320",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 14:50"
-                },
-                "airline": "Vistara",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 143000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 14
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png"
-        },
-        {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1ZWU3pjMk5Sb0xDUGVhQVJBQ0dnTlZVMFE0SEhEM21nRT0iLFtbIkJMUiIsIjIwMjQtMTEtMDciLCJDQ1UiLG51bGwsIlVLIiwiNzY1Il1dXQ==",
-            "total_duration": 155,
-            "price": 199,
-            "flights": [{
-                "duration": 155,
-                "often_delayed_by_over_30_min": true,
-                "legroom": "29 in",
-                "extensions": [
-                    "Below average legroom (29 in)",
-                    "In-seat USB outlet",
-                    "Stream media to your device",
-                    "Carbon emissions estimate: 142 kg"
-                ],
-                "ticket_also_sold_by": ["Air India"],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 16:40"
-                },
-                "flight_number": "UK 765",
-                "airplane": "Airbus A320",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 19:15"
-                },
-                "airline": "Vistara",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png",
-                "travel_class": "Economy"
-            }],
-            "carbon_emissions": {
-                "this_flight": 143000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 14
-            },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/UK.png"
-        },
-        {
+            "booking_token": "WyJDalJJWTJWVmEyRllVakpIYkRSQlFqaGZZVUZDUnkwdExTMHRMUzB0TFMxMmRHNXJNMEZCUVVGQlIyTnJaalZGVHpKSGN6WkJFZ3RVUnpNeU5ueFVSell4TkJvTENLbWpBaEFBR2dOSlRsSTRISEM1MmdJPSIsW1siQkxSIiwiMjAyNC0xMS0wMiIsIkJLSyIsbnVsbCwiVEciLCIzMjYiXSxbIkJLSyIsIjIwMjQtMTEtMDIiLCJQRUsiLG51bGwsIlRHIiwiNjE0Il1dXQ==",
             "layovers": [{
-                "duration": 320,
-                "overnight": true,
-                "name": "Indira Gandhi International Airport",
-                "id": "DEL"
+                "duration": 235,
+                "name": "Suvarnabhumi Airport",
+                "id": "BKK"
             }],
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ3RUUnpVek5YeFRSekkyTXhvTENJajFBUkFDR2dOVlUwUTRISENJOVFFPSIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkRFTCIsbnVsbCwiU0ciLCI1MzUiXSxbIkRFTCIsIjIwMjQtMTEtMDgiLCJDQ1UiLG51bGwsIlNHIiwiMjYzIl1dXQ==",
-            "total_duration": 630,
-            "price": 314,
+            "total_duration": 740,
+            "price": 37289,
             "flights": [
                 {
-                    "duration": 165,
-                    "legroom": "29 in",
+                    "duration": 225,
+                    "overnight": true,
+                    "legroom": "32 in",
                     "extensions": [
-                        "Below average legroom (29 in)",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 182 kg"
+                        "Above average legroom (32 in)",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 186 kg"
                     ],
                     "departure_airport": {
                         "name": "Kempegowda International Airport Bengaluru",
                         "id": "BLR",
-                        "time": "2024-11-07 22:30"
+                        "time": "2024-11-02 01:00"
                     },
-                    "flight_number": "SG 535",
-                    "airplane": "Boeing 737",
+                    "flight_number": "TG 326",
+                    "airplane": "Airbus A350",
                     "arrival_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-11-08 01:15"
+                        "name": "Suvarnabhumi Airport",
+                        "id": "BKK",
+                        "time": "2024-11-02 06:15"
                     },
-                    "airline": "SpiceJet",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+                    "airline": "THAI",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
                     "travel_class": "Economy"
                 },
                 {
-                    "duration": 145,
-                    "legroom": "29 in",
+                    "duration": 280,
+                    "legroom": "31 in",
                     "extensions": [
-                        "Below average legroom (29 in)",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 147 kg"
+                        "Average legroom (31 in)",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 229 kg"
                     ],
                     "departure_airport": {
-                        "name": "Indira Gandhi International Airport",
-                        "id": "DEL",
-                        "time": "2024-11-08 06:35"
+                        "name": "Suvarnabhumi Airport",
+                        "id": "BKK",
+                        "time": "2024-11-02 10:10"
                     },
-                    "flight_number": "SG 263",
-                    "airplane": "Boeing 737",
+                    "flight_number": "TG 614",
+                    "airplane": "Boeing 777",
                     "arrival_airport": {
-                        "name": "Netaji Subhash Chandra Bose International Airport",
-                        "id": "CCU",
-                        "time": "2024-11-08 09:00"
+                        "name": "Beijing Capital International Airport",
+                        "id": "PEK",
+                        "time": "2024-11-02 15:50"
                     },
-                    "airline": "SpiceJet",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png",
+                    "airline": "THAI",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
                     "travel_class": "Economy"
                 }
             ],
             "carbon_emissions": {
-                "this_flight": 330000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 164
+                "this_flight": 416000,
+                "typical_for_this_route": 557000,
+                "difference_percent": -25
             },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SG.png"
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png"
         },
         {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1pKV0RJM05UTTRIQT09IixbWyJCTFIiLCIyMDI0LTExLTA3IiwiQ0NVIixudWxsLCJJWCIsIjI3NTMiXV1d",
-            "total_duration": 165,
-            "flights": [{
-                "duration": 165,
+            "booking_token": "WyJDalJJWTJWVmEyRllVakpIYkRSQlFqaGZZVUZDUnkwdExTMHRMUzB0TFMxMmRHNXJNMEZCUVVGQlIyTnJaalZGVHpKSGN6WkJFaEJOU0RFd05YeE5TRGM0ZkVOWU16TTBHZ3NJMXJ3Q0VBQWFBMGxPVWpnY2NNejRBZz09IixbWyJCTFIiLCIyMDI0LTExLTAyIiwiS1VMIixudWxsLCJNSCIsIjEwNSJdLFsiS1VMIiwiMjAyNC0xMS0wMiIsIkhLRyIsbnVsbCwiTUgiLCI3OCJdLFsiSEtHIiwiMjAyNC0xMS0wMyIsIlBFSyIsbnVsbCwiQ1giLCIzMzQiXV1d",
+            "layovers": [
+                {
+                    "duration": 60,
+                    "name": "Kuala Lumpur International Airport",
+                    "id": "KUL"
+                },
+                {
+                    "duration": 460,
+                    "overnight": true,
+                    "name": "Hong Kong International Airport",
+                    "id": "HKG"
+                }
+            ],
+            "total_duration": 1215,
+            "price": 40534,
+            "flights": [
+                {
+                    "duration": 260,
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "In-seat USB outlet",
+                        "Stream media to your device",
+                        "Carbon emissions estimate: 228 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-11-02 12:00"
+                    },
+                    "flight_number": "MH 105",
+                    "airplane": "Boeing 737",
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2024-11-02 18:50"
+                    },
+                    "airline": "Malaysia Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 240,
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "In-seat USB outlet",
+                        "Stream media to your device",
+                        "Carbon emissions estimate: 204 kg"
+                    ],
+                    "ticket_also_sold_by": ["Cathay Pacific"],
+                    "departure_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2024-11-02 19:50"
+                    },
+                    "flight_number": "MH 78",
+                    "airplane": "Boeing 737",
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2024-11-02 23:50"
+                    },
+                    "airline": "Malaysia Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 195,
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 149 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2024-11-03 07:30"
+                    },
+                    "flight_number": "CX 334",
+                    "airplane": "Airbus A321neo",
+                    "arrival_airport": {
+                        "name": "Beijing Capital International Airport",
+                        "id": "PEK",
+                        "time": "2024-11-03 10:45"
+                    },
+                    "airline": "Cathay Pacific",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+                    "travel_class": "Economy"
+                }
+            ],
+            "carbon_emissions": {
+                "this_flight": 583000,
+                "typical_for_this_route": 557000,
+                "difference_percent": 5
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
+        },
+        {
+            "booking_token": "WyJDalJJWTJWVmEyRllVakpIYkRSQlFqaGZZVUZDUnkwdExTMHRMUzB0TFMxMmRHNXJNMEZCUVVGQlIyTnJaalZGVHpKSGN6WkJFZ3RUVVRVeE1YeFRVVGd3TWhvTENJdlNCQkFBR2dOSlRsSTRISERBd2dVPSIsW1siQkxSIiwiMjAyNC0xMS0wMiIsIlNJTiIsbnVsbCwiU1EiLCI1MTEiXSxbIlNJTiIsIjIwMjQtMTEtMDMiLCJQRUsiLG51bGwsIlNRIiwiODAyIl1dXQ==",
+            "layovers": [{
+                "duration": 155,
+                "name": "Singapore Changi Airport",
+                "id": "SIN"
+            }],
+            "total_duration": 790,
+            "price": 76043,
+            "flights": [
+                {
+                    "duration": 270,
+                    "overnight": true,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Free Wi-Fi",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 210 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-11-02 23:10"
+                    },
+                    "flight_number": "SQ 511",
+                    "airplane": "Airbus A350",
+                    "arrival_airport": {
+                        "name": "Singapore Changi Airport",
+                        "id": "SIN",
+                        "time": "2024-11-03 06:10"
+                    },
+                    "airline": "Singapore Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 365,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Free Wi-Fi",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 458 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Singapore Changi Airport",
+                        "id": "SIN",
+                        "time": "2024-11-03 08:45"
+                    },
+                    "flight_number": "SQ 802",
+                    "airplane": "Boeing 777",
+                    "arrival_airport": {
+                        "name": "Beijing Capital International Airport",
+                        "id": "PEK",
+                        "time": "2024-11-03 14:50"
+                    },
+                    "airline": "Singapore Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
+                    "travel_class": "Economy"
+                }
+            ],
+            "carbon_emissions": {
+                "this_flight": 669000,
+                "typical_for_this_route": 557000,
+                "difference_percent": 20
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png"
+        }
+    ],
+    "search_metadata": {
+        "raw_html_file": "https://serpapi.com/searches/9c7e18c69a047fb1/67247f9188bcde868ce69e3e.html",
+        "created_at": "2024-11-01 07:13:21 UTC",
+        "processed_at": "2024-11-01 07:13:21 UTC",
+        "id": "67247f9188bcde868ce69e3e",
+        "prettify_html_file": "https://serpapi.com/searches/9c7e18c69a047fb1/67247f9188bcde868ce69e3e.prettify",
+        "total_time_taken": 1.14,
+        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=INR&tfs=CBwQAhoeEgoyMDI0LTExLTAyagcIARIDQkxScgcIARIDUEVLQgEBSAFwAZgBAg==",
+        "json_endpoint": "https://serpapi.com/searches/9c7e18c69a047fb1/67247f9188bcde868ce69e3e.json",
+        "status": "Success"
+    },
+    "other_flights": [
+        {
+            "booking_token": "WyJDalJJWTJWVmEyRllVakpIYkRSQlFqaGZZVUZDUnkwdExTMHRMUzB0TFMxMmRHNXJNMEZCUVVGQlIyTnJaalZGVHpKSGN6WkJFaEJOU0RFd05YeE5TRGN5ZkVOWU16RXlHZ3NJdUtjQ0VBQWFBMGxPVWpnY2NLemZBZz09IixbWyJCTFIiLCIyMDI0LTExLTAyIiwiS1VMIixudWxsLCJNSCIsIjEwNSJdLFsiS1VMIiwiMjAyNC0xMS0wMyIsIkhLRyIsbnVsbCwiTUgiLCI3MiJdLFsiSEtHIiwiMjAyNC0xMS0wMyIsIlBFSyIsbnVsbCwiQ1giLCIzMTIiXV1d",
+            "layovers": [
+                {
+                    "duration": 845,
+                    "overnight": true,
+                    "name": "Kuala Lumpur International Airport",
+                    "id": "KUL"
+                },
+                {
+                    "duration": 245,
+                    "name": "Hong Kong International Airport",
+                    "id": "HKG"
+                }
+            ],
+            "total_duration": 1800,
+            "price": 37816,
+            "flights": [
+                {
+                    "duration": 260,
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "In-seat USB outlet",
+                        "Stream media to your device",
+                        "Carbon emissions estimate: 228 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-11-02 12:00"
+                    },
+                    "flight_number": "MH 105",
+                    "airplane": "Boeing 737",
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2024-11-02 18:50"
+                    },
+                    "airline": "Malaysia Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 240,
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "In-seat USB outlet",
+                        "Stream media to your device",
+                        "Carbon emissions estimate: 177 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2024-11-03 08:55"
+                    },
+                    "flight_number": "MH 72",
+                    "airplane": "Boeing 737MAX 8 Passenger",
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2024-11-03 12:55"
+                    },
+                    "airline": "Malaysia Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 210,
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 149 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2024-11-03 17:00"
+                    },
+                    "flight_number": "CX 312",
+                    "airplane": "Airbus A321neo",
+                    "arrival_airport": {
+                        "name": "Beijing Capital International Airport",
+                        "id": "PEK",
+                        "time": "2024-11-03 20:30"
+                    },
+                    "airline": "Cathay Pacific",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+                    "travel_class": "Economy"
+                }
+            ],
+            "carbon_emissions": {
+                "this_flight": 555000,
+                "typical_for_this_route": 557000,
+                "difference_percent": 0
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
+        },
+        {
+            "booking_token": "WyJDalJJWTJWVmEyRllVakpIYkRSQlFqaGZZVUZDUnkwdExTMHRMUzB0TFMxMmRHNXJNMEZCUVVGQlIyTnJaalZGVHpKSGN6WkJFZ3RUVVRVd09YeFRVVGd3TUJvTENOSG5CQkFBR2dOSlRsSTRISENRM0FVPSIsW1siQkxSIiwiMjAyNC0xMS0wMiIsIlNJTiIsbnVsbCwiU1EiLCI1MDkiXSxbIlNJTiIsIjIwMjQtMTEtMDMiLCJQRUsiLG51bGwsIlNRIiwiODAwIl1dXQ==",
+            "layovers": [{
+                "duration": 365,
+                "name": "Singapore Changi Airport",
+                "id": "SIN"
+            }],
+            "total_duration": 1010,
+            "price": 78801,
+            "flights": [
+                {
+                    "duration": 280,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Free Wi-Fi",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 210 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-11-02 11:55"
+                    },
+                    "flight_number": "SQ 509",
+                    "airplane": "Airbus A350",
+                    "arrival_airport": {
+                        "name": "Singapore Changi Airport",
+                        "id": "SIN",
+                        "time": "2024-11-02 19:05"
+                    },
+                    "airline": "Singapore Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 365,
+                    "overnight": true,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Free Wi-Fi",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 284 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Singapore Changi Airport",
+                        "id": "SIN",
+                        "time": "2024-11-03 01:10"
+                    },
+                    "flight_number": "SQ 800",
+                    "airplane": "Airbus A350",
+                    "arrival_airport": {
+                        "name": "Beijing Capital International Airport",
+                        "id": "PEK",
+                        "time": "2024-11-03 07:15"
+                    },
+                    "airline": "Singapore Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
+                    "travel_class": "Economy"
+                }
+            ],
+            "carbon_emissions": {
+                "this_flight": 494000,
+                "typical_for_this_route": 557000,
+                "difference_percent": -11
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png"
+        },
+        {
+            "booking_token": "WyJDalJJWTJWVmEyRllVakpIYkRSQlFqaGZZVUZDUnkwdExTMHRMUzB0TFMxMmRHNXJNMEZCUVVGQlIyTnJaalZGVHpKSGN6WkJFZ3RGU3pVMk4zeEZTek13T0JvTENJaUZCUkFBR2dOSlRsSTRISENRL3dVPSIsW1siQkxSIiwiMjAyNC0xMS0wMiIsIkRYQiIsbnVsbCwiRUsiLCI1NjciXSxbIkRYQiIsIjIwMjQtMTEtMDMiLCJQRUsiLG51bGwsIkVLIiwiMzA4Il1dXQ==",
+            "layovers": [{
+                "duration": 720,
                 "overnight": true,
-                "legroom": "28 in",
-                "extensions": [
-                    "Below average legroom (28 in)",
-                    "Stream media to your device",
-                    "Carbon emissions estimate: 145 kg"
-                ],
-                "ticket_also_sold_by": ["Air India"],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 04:30"
-                },
-                "flight_number": "IX 2753",
-                "airplane": "Airbus A320",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 07:15"
-                },
-                "airline": "Air India Express",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                "travel_class": "Economy"
+                "name": "Dubai International Airport",
+                "id": "DXB"
             }],
+            "total_duration": 1420,
+            "price": 82568,
+            "flights": [
+                {
+                    "duration": 250,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 244 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-11-02 20:20"
+                    },
+                    "flight_number": "EK 567",
+                    "airplane": "Boeing 777",
+                    "arrival_airport": {
+                        "name": "Dubai International Airport",
+                        "id": "DXB",
+                        "time": "2024-11-02 23:00"
+                    },
+                    "airline": "Emirates",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 450,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 495 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Dubai International Airport",
+                        "id": "DXB",
+                        "time": "2024-11-03 11:00"
+                    },
+                    "flight_number": "EK 308",
+                    "airplane": "Boeing 777",
+                    "arrival_airport": {
+                        "name": "Beijing Capital International Airport",
+                        "id": "PEK",
+                        "time": "2024-11-03 22:30"
+                    },
+                    "airline": "Emirates",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+                    "travel_class": "Economy"
+                }
+            ],
             "carbon_emissions": {
-                "this_flight": 145000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 16
+                "this_flight": 740000,
+                "typical_for_this_route": 557000,
+                "difference_percent": 33
             },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png"
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png"
         },
         {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1pKV0RFMU9UYzRIQT09IixbWyJCTFIiLCIyMDI0LTExLTA3IiwiQ0NVIixudWxsLCJJWCIsIjE1OTciXV1d",
-            "total_duration": 160,
-            "flights": [{
-                "duration": 160,
-                "legroom": "28 in",
-                "extensions": [
-                    "Below average legroom (28 in)",
-                    "Stream media to your device",
-                    "Carbon emissions estimate: 145 kg"
-                ],
-                "ticket_also_sold_by": ["Air India"],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 20:10"
-                },
-                "flight_number": "IX 1597",
-                "airplane": "Airbus A320",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 22:50"
-                },
-                "airline": "Air India Express",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                "travel_class": "Economy"
+            "booking_token": "WyJDalJJWTJWVmEyRllVakpIYkRSQlFqaGZZVUZDUnkwdExTMHRMUzB0TFMxMmRHNXJNMEZCUVVGQlIyTnJaalZGVHpKSGN6WkJFZ3RGU3pVMk9YeEZTek13T0JvTENOaXhCUkFBR2dOSlRsSTRISENadEFZPSIsW1siQkxSIiwiMjAyNC0xMS0wMiIsIkRYQiIsbnVsbCwiRUsiLCI1NjkiXSxbIkRYQiIsIjIwMjQtMTEtMDIiLCJQRUsiLG51bGwsIkVLIiwiMzA4Il1dXQ==",
+            "layovers": [{
+                "duration": 230,
+                "name": "Dubai International Airport",
+                "id": "DXB"
             }],
+            "total_duration": 930,
+            "price": 88280,
+            "flights": [
+                {
+                    "duration": 250,
+                    "overnight": true,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 244 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-11-02 04:30"
+                    },
+                    "flight_number": "EK 569",
+                    "airplane": "Airbus A380",
+                    "arrival_airport": {
+                        "name": "Dubai International Airport",
+                        "id": "DXB",
+                        "time": "2024-11-02 07:10"
+                    },
+                    "airline": "Emirates",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 450,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 495 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Dubai International Airport",
+                        "id": "DXB",
+                        "time": "2024-11-02 11:00"
+                    },
+                    "flight_number": "EK 308",
+                    "airplane": "Boeing 777",
+                    "arrival_airport": {
+                        "name": "Beijing Capital International Airport",
+                        "id": "PEK",
+                        "time": "2024-11-02 22:30"
+                    },
+                    "airline": "Emirates",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+                    "travel_class": "Economy"
+                }
+            ],
             "carbon_emissions": {
-                "this_flight": 145000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 16
+                "this_flight": 739000,
+                "typical_for_this_route": 557000,
+                "difference_percent": 33
             },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png"
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png"
         },
         {
-            "departure_token": "WyJDalJJTVZWdFMxOUhha0k1WVc5QlFrNTZVbEZDUnkwdExTMHRMUzB0YjNsamFHUXhNa0ZCUVVGQlIyTnJXRFp2VFZKTlNYVkJFZ1pKV0RFMU16UTRIQT09IixbWyJCTFIiLCIyMDI0LTExLTA3IiwiQ0NVIixudWxsLCJJWCIsIjE1MzQiXV1d",
-            "total_duration": 170,
-            "flights": [{
-                "duration": 170,
-                "legroom": "28 in",
-                "extensions": [
-                    "Below average legroom (28 in)",
-                    "Stream media to your device",
-                    "Carbon emissions estimate: 145 kg"
-                ],
-                "ticket_also_sold_by": ["Air India"],
-                "departure_airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR",
-                    "time": "2024-11-07 20:15"
-                },
-                "flight_number": "IX 1534",
-                "airplane": "Airbus A320",
-                "arrival_airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU",
-                    "time": "2024-11-07 23:05"
-                },
-                "airline": "Air India Express",
-                "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png",
-                "travel_class": "Economy"
+            "booking_token": "WyJDalJJWTJWVmEyRllVakpIYkRSQlFqaGZZVUZDUnkwdExTMHRMUzB0TFMxMmRHNXJNMEZCUVVGQlIyTnJaalZGVHpKSGN6WkJFZ3RGU3pVMk4zeEZTek13TmhvTENNdjBCUkFBR2dOSlRsSTRISERnZ3djPSIsW1siQkxSIiwiMjAyNC0xMS0wMiIsIkRYQiIsbnVsbCwiRUsiLCI1NjciXSxbIkRYQiIsIjIwMjQtMTEtMDMiLCJQRUsiLG51bGwsIkVLIiwiMzA2Il1dXQ==",
+            "layovers": [{
+                "duration": 260,
+                "overnight": true,
+                "name": "Dubai International Airport",
+                "id": "DXB"
             }],
+            "total_duration": 955,
+            "price": 96843,
+            "flights": [
+                {
+                    "duration": 250,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 244 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-11-02 20:20"
+                    },
+                    "flight_number": "EK 567",
+                    "airplane": "Boeing 777",
+                    "arrival_airport": {
+                        "name": "Dubai International Airport",
+                        "id": "DXB",
+                        "time": "2024-11-02 23:00"
+                    },
+                    "airline": "Emirates",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 445,
+                    "overnight": true,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 489 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Dubai International Airport",
+                        "id": "DXB",
+                        "time": "2024-11-03 03:20"
+                    },
+                    "flight_number": "EK 306",
+                    "airplane": "Boeing 777",
+                    "arrival_airport": {
+                        "name": "Beijing Capital International Airport",
+                        "id": "PEK",
+                        "time": "2024-11-03 14:45"
+                    },
+                    "airline": "Emirates",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+                    "travel_class": "Economy"
+                }
+            ],
             "carbon_emissions": {
-                "this_flight": 145000,
-                "typical_for_this_route": 125000,
-                "difference_percent": 16
+                "this_flight": 734000,
+                "typical_for_this_route": 557000,
+                "difference_percent": 32
             },
-            "type": "Round trip",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/IX.png"
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png"
+        },
+        {
+            "booking_token": "WyJDalJJWTJWVmEyRllVakpIYkRSQlFqaGZZVUZDUnkwdExTMHRMUzB0TFMxMmRHNXJNMEZCUVVGQlIyTnJaalZGVHpKSGN6WkJFaEZVUnpNeU5ueERXRGN3TUh4RFdETTVNaG9MQ0xtbkNSQUFHZ05KVGxJNEhIRHlpQXM9IixbWyJCTFIiLCIyMDI0LTExLTAyIiwiQktLIixudWxsLCJURyIsIjMyNiJdLFsiQktLIiwiMjAyNC0xMS0wMiIsIkhLRyIsbnVsbCwiQ1giLCI3MDAiXSxbIkhLRyIsIjIwMjQtMTEtMDIiLCJQRUsiLG51bGwsIkNYIiwiMzkyIl1dXQ==",
+            "layovers": [
+                {
+                    "duration": 125,
+                    "name": "Suvarnabhumi Airport",
+                    "id": "BKK"
+                },
+                {
+                    "duration": 100,
+                    "name": "Hong Kong International Airport",
+                    "id": "HKG"
+                }
+            ],
+            "total_duration": 830,
+            "price": 152505,
+            "flights": [
+                {
+                    "duration": 225,
+                    "overnight": true,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 186 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Kempegowda International Airport Bengaluru",
+                        "id": "BLR",
+                        "time": "2024-11-02 01:00"
+                    },
+                    "flight_number": "TG 326",
+                    "airplane": "Airbus A350",
+                    "arrival_airport": {
+                        "name": "Suvarnabhumi Airport",
+                        "id": "BKK",
+                        "time": "2024-11-02 06:15"
+                    },
+                    "airline": "THAI",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 170,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 158 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Suvarnabhumi Airport",
+                        "id": "BKK",
+                        "time": "2024-11-02 08:20"
+                    },
+                    "flight_number": "CX 700",
+                    "airplane": "Airbus A330",
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2024-11-02 12:10"
+                    },
+                    "airline": "Cathay Pacific",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+                    "travel_class": "Economy"
+                },
+                {
+                    "duration": 210,
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "In-seat power outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 174 kg"
+                    ],
+                    "departure_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2024-11-02 13:50"
+                    },
+                    "flight_number": "CX 392",
+                    "airplane": "Airbus A330",
+                    "arrival_airport": {
+                        "name": "Beijing Capital International Airport",
+                        "id": "PEK",
+                        "time": "2024-11-02 17:20"
+                    },
+                    "airline": "Cathay Pacific",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+                    "travel_class": "Economy"
+                }
+            ],
+            "carbon_emissions": {
+                "this_flight": 519000,
+                "typical_for_this_route": 557000,
+                "difference_percent": -7
+            },
+            "type": "One way",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
         }
     ],
     "price_insights": {
-        "price_level": "typical",
-        "lowest_price": 153,
+        "price_level": "high",
+        "lowest_price": 37289,
         "typical_price_range": [
-            115,
-            160
+            32000,
+            35500
         ],
         "price_history": [
             [
                 1725215400,
-                132
+                35250
             ],
             [
                 1725301800,
-                157
+                35251
             ],
             [
                 1725388200,
-                157
+                35250
             ],
             [
                 1725474600,
-                145
+                35258
             ],
             [
                 1725561000,
-                145
+                35263
             ],
             [
                 1725647400,
-                157
+                33646
             ],
             [
                 1725733800,
-                157
+                33646
             ],
             [
                 1725820200,
-                157
+                33646
             ],
             [
                 1725906600,
-                157
+                33647
             ],
             [
                 1725993000,
-                157
+                33638
             ],
             [
                 1726079400,
-                157
+                33643
             ],
             [
                 1726165800,
-                157
+                33645
             ],
             [
                 1726252200,
-                157
+                33642
             ],
             [
                 1726338600,
-                157
+                33642
             ],
             [
                 1726425000,
-                157
+                33642
             ],
             [
                 1726511400,
-                157
+                33642
             ],
             [
                 1726597800,
-                157
+                34055
             ],
             [
                 1726684200,
-                157
+                34057
             ],
             [
                 1726770600,
-                157
+                34055
             ],
             [
                 1726857000,
-                157
+                33640
             ],
             [
                 1726943400,
-                158
+                33640
             ],
             [
                 1727029800,
-                158
+                33640
             ],
             [
                 1727116200,
-                149
+                33630
             ],
             [
                 1727202600,
-                147
+                33635
             ],
             [
                 1727289000,
-                130
+                34073
             ],
             [
                 1727375400,
-                129
+                34082
             ],
             [
                 1727461800,
-                129
+                34086
             ],
             [
                 1727548200,
-                139
+                34086
             ],
             [
                 1727634600,
-                129
+                33660
             ],
             [
                 1727721000,
-                129
+                33675
             ],
             [
                 1727807400,
-                129
+                34112
             ],
             [
                 1727893800,
-                138
+                34103
             ],
             [
                 1727980200,
-                138
+                33687
             ],
             [
                 1728066600,
-                138
+                33680
             ],
             [
                 1728153000,
-                138
+                33680
             ],
             [
                 1728239400,
-                135
+                33680
             ],
             [
                 1728325800,
-                129
+                33683
             ],
             [
                 1728412200,
-                117
+                34081
             ],
             [
                 1728498600,
-                116
+                34076
             ],
             [
                 1728585000,
-                115
+                34075
             ],
             [
                 1728671400,
-                115
+                34074
             ],
             [
                 1728757800,
-                122
+                34074
             ],
             [
                 1728844200,
-                116
+                34074
             ],
             [
                 1728930600,
-                131
+                34089
             ],
             [
                 1729017000,
-                136
+                34086
             ],
             [
                 1729103400,
-                137
+                34081
             ],
             [
                 1729189800,
-                113
+                34082
             ],
             [
                 1729276200,
-                116
+                34077
             ],
             [
                 1729362600,
-                129
+                34077
             ],
             [
                 1729449000,
-                126
+                34077
             ],
             [
                 1729535400,
-                133
+                34081
             ],
             [
                 1729621800,
-                137
+                34968
             ],
             [
                 1729708200,
-                137
+                34964
             ],
             [
                 1729794600,
-                137
+                37286
             ],
             [
                 1729881000,
-                143
+                37286
             ],
             [
                 1729967400,
-                143
+                37286
             ],
             [
                 1730053800,
-                145
+                37286
             ],
             [
                 1730140200,
-                149
+                37289
             ],
             [
                 1730226600,
-                149
+                37286
             ],
             [
                 1730313000,
-                160
+                37286
             ],
             [
                 1730399400,
-                153
+                37289
             ]
         ]
     },
@@ -1052,59 +1013,33 @@
         "hl": "en",
         "engine": "google_flights",
         "gl": "us",
-        "arrival_id": "CCU",
-        "currency": "USD",
-        "outbound_date": "2024-11-07",
-        "return_date": "2024-11-09"
+        "arrival_id": "PEK",
+        "currency": "INR",
+        "type": "2",
+        "outbound_date": "2024-11-02"
     },
-    "airports": [
-        {
-            "arrival": [{
-                "country": "India",
-                "country_code": "IN",
-                "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSecDvisIigWFhZfc6_t7zuRjY6CguemYu7TcnMn8NLYeGQo73sD4Iil-ZVxlK_ySWd8ZbzQ8fsiRsiaQ",
-                "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQfUYGOAsN4MK8aZeUx8Nsg9Gh9SnPM1QWODebr4jtn0sJ8018bFwzMPTCIPv2sugOgVQ3cj_x--Tk2s5A6IH4vnILmH57hvoEdwL-Dj1k",
-                "city": "Kolkata",
-                "airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU"
-                }
-            }],
-            "departure": [{
-                "country": "India",
-                "country_code": "IN",
-                "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQIQIUfZg6v3rdHMVD96D5vTNuXwVO7zsdZy0l7s2uiyV-xuK8nJlokAp_ChoLy9r0vjJWcOOBkEvBI2g",
-                "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSFrS_QMxzjURYrYSPiuRW9uR9imYuBAhdE49jwKag7Ucgl0en4CNAtP0hf1MDSGdvhAw2s1-2w71_b-pcIyFOM1F1yMSPQLO5_XlgJc_4",
-                "city": "Bengaluru",
-                "airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR"
-                }
-            }]
-        },
-        {
-            "arrival": [{
-                "country": "India",
-                "country_code": "IN",
-                "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQIQIUfZg6v3rdHMVD96D5vTNuXwVO7zsdZy0l7s2uiyV-xuK8nJlokAp_ChoLy9r0vjJWcOOBkEvBI2g",
-                "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSFrS_QMxzjURYrYSPiuRW9uR9imYuBAhdE49jwKag7Ucgl0en4CNAtP0hf1MDSGdvhAw2s1-2w71_b-pcIyFOM1F1yMSPQLO5_XlgJc_4",
-                "city": "Bengaluru",
-                "airport": {
-                    "name": "Kempegowda International Airport Bengaluru",
-                    "id": "BLR"
-                }
-            }],
-            "departure": [{
-                "country": "India",
-                "country_code": "IN",
-                "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSecDvisIigWFhZfc6_t7zuRjY6CguemYu7TcnMn8NLYeGQo73sD4Iil-ZVxlK_ySWd8ZbzQ8fsiRsiaQ",
-                "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQfUYGOAsN4MK8aZeUx8Nsg9Gh9SnPM1QWODebr4jtn0sJ8018bFwzMPTCIPv2sugOgVQ3cj_x--Tk2s5A6IH4vnILmH57hvoEdwL-Dj1k",
-                "city": "Kolkata",
-                "airport": {
-                    "name": "Netaji Subhash Chandra Bose International Airport",
-                    "id": "CCU"
-                }
-            }]
-        }
-    ]
+    "airports": [{
+        "arrival": [{
+            "country": "China",
+            "country_code": "CN",
+            "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQ9v_tNYxaummsU2qbFn8zuYzkcG0x6qCvqB2gbBnx-2FVlZZPsnkvUXGk07vxotk-0vRQMUYCjj2d4Wg",
+            "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSzsj_yw6o3vb8i54_D21VgI5rTohxexQkZ0TrZKDKJwTSKw2yqnRYLoIcBWIY50BlHo-OPMm68zbUO-qnFvmQmm6jvtWPwo7WOzjNGX_A",
+            "city": "Beijing",
+            "airport": {
+                "name": "Beijing Capital International Airport",
+                "id": "PEK"
+            }
+        }],
+        "departure": [{
+            "country": "India",
+            "country_code": "IN",
+            "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQIQIUfZg6v3rdHMVD96D5vTNuXwVO7zsdZy0l7s2uiyV-xuK8nJlokAp_ChoLy9r0vjJWcOOBkEvBI2g",
+            "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSFrS_QMxzjURYrYSPiuRW9uR9imYuBAhdE49jwKag7Ucgl0en4CNAtP0hf1MDSGdvhAw2s1-2w71_b-pcIyFOM1F1yMSPQLO5_XlgJc_4",
+            "city": "Bengaluru",
+            "airport": {
+                "name": "Kempegowda International Airport Bengaluru",
+                "id": "BLR"
+            }
+        }]
+    }]
 }

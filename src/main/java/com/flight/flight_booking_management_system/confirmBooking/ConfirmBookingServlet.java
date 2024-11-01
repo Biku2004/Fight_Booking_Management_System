@@ -39,7 +39,7 @@ public class ConfirmBookingServlet extends HttpServlet {
         }
     }
 
-
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String flightNumber = request.getParameter("flightNumber");
         String airline = request.getParameter("airline");
