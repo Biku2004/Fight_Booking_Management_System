@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/ModifyFlightServlet")
 public class ModifyFlightServlet extends HttpServlet {
@@ -23,12 +24,32 @@ public class ModifyFlightServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // Retrieve parameters from the request
+        // Retrieve parameters from the request for searching
         String flightNumber = request.getParameter("flightNumber");
+        String departureTime = request.getParameter("departureTime");
+
+        // Check if we are searching for a flight or modifying an existing one
+        if (request.getParameter("action") != null && request.getParameter("action").equals("search")) {
+            // Fetch flights by flight number and departure time
+            List<ModifyFlight> flights = flightDAO.getFlightsByDetails(flightNumber, departureTime);
+
+            if (flights != null && !flights.isEmpty()) {
+                // If flight found, set it as a request attribute and forward to modify form
+                request.setAttribute("flights", flights);
+                request.getRequestDispatcher("modifyFlightForm.jsp").forward(request, response);
+            } else {
+                // If no flight found, set an error message and redirect back to search page
+                request.setAttribute("errorMessage", "No flight found with the provided details.");
+                request.getRequestDispatcher("modifyFlight/modifyFlight.jsp").forward(request, response);
+            }
+            return; // Exit after handling search
+
+        }
+
+        // Retrieve parameters for modification
         String airline = request.getParameter("airline");
         String departureCity = request.getParameter("departureCity");
         String arrivalCity = request.getParameter("arrivalCity");
-        String departureTime = request.getParameter("departureTime");
         String arrivalTime = request.getParameter("arrivalTime");
         String priceStr = request.getParameter("price");
 
