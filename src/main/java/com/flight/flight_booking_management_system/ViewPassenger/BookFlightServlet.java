@@ -21,6 +21,13 @@ public class BookFlightServlet extends HttpServlet {
     private static final String DB_USER = "Java-Project";
     private static final String DB_PASSWORD = "root@localhost";
 
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String flightNumber = request.getParameter("flightNumber");
 
