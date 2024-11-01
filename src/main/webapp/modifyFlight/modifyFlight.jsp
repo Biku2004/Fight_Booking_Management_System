@@ -95,7 +95,9 @@
   <h2>Search Flight to Modify</h2>
 
   <!-- Search Flight Form -->
-  <form action="${pageContext.request.contextPath}/searchFlight" method="post">
+  <form action="${pageContext.request.contextPath}/ModifyFlightServlet" method="post">
+    <input type="hidden" name="action" value="search">
+
     <label for="flightNumber">Flight Number:</label>
     <input type="text" id="flightNumber" name="flightNumber" required>
 
