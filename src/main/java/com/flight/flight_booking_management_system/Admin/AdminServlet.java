@@ -39,10 +39,9 @@ public class AdminServlet extends HttpServlet {
         String gender = request.getParameter("gender");
         String dateOfBirth = request.getParameter("dateOfBirth");
 
-        // Handle file upload
         Part filePart = request.getPart("profilePhoto");
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
-        String uploadPath = getServletContext().getRealPath("") + File.separator + "uploads";
+        String uploadPath = System.getProperty("user.home") + File.separator + "uploads";
         File uploadDir = new File(uploadPath);
         if (!uploadDir.exists()) uploadDir.mkdir();
         String filePath = uploadPath + File.separator + fileName;
@@ -67,7 +66,7 @@ public class AdminServlet extends HttpServlet {
         admin.setNationality(nationality);
         admin.setGender(gender);
         admin.setDateOfBirth(dateOfBirth);
-        admin.setProfilePhotoPath("uploads/" + fileName); // Relative path to the uploaded file
+        admin.setProfilePhotoPath("uploads/" + fileName); /// Relative path to the uploaded file
 
 
         // Use DAO to save the admin data
