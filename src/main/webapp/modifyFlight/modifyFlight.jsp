@@ -3,83 +3,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Modify Flight</title>
-<%--  <link rel="stylesheet" href="../cssFile/modifystyle.css">--%>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #e6f0ff; /* Background color */
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #008cba; /* Navbar background */
-      padding: 15px 0; /* Padding for navbar */
-    }
-    nav {
-      display: flex;
-      justify-content: center; /* Centering nav items */
-      align-items: center; /* Vertically center items */
-    }
-    nav a {
-      text-decoration: none;
-      font-size: 18px;
-      color: white; /* Text color */
-      padding: 10px 20px; /* Padding around links */
-      margin: 0 15px; /* Margin between links */
-      border-radius: 5px; /* Rounded corners */
-      transition: background-color 0.3s ease; /* Smooth transition effect */
-    }
-    nav a:hover {
-      background-color: #005f5f; /* Darker shade on hover */
-    }
-    h2 {
-      text-align: center;
-      color: #333333; /* Heading color */
-    }
-    .form-container {
-      width: 80%; /* Increased width for larger screens */
-      max-width: 800px; /* Set maximum width */
-      margin: auto;
-      background: #ffffff; /* White background for container */
-      border-radius: 10px; /* Rounded corners */
-      padding: 30px; /* Padding for comfort */
-      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    }
-    table {
-      width: 100%; /* Full width table */
-      margin-top: 20px;
-    }
-    th, td {
-      padding: 10px; /* Padding for table cells */
-      text-align: left; /* Left align text in cells */
-    }
-    th {
-      background-color: #f2f2f2; /* Light gray background for headers */
-    }
-    input[type="text"],
-    input[type="number"],
-    input[type="datetime-local"] {
-      width: calc(100% - 16px); /* Full width inputs with padding adjustment */
-      padding: 8px; /* Padding for inputs */
-      margin-bottom: 15px; /* Space below inputs */
-      border-radius: 5px; /* Rounded corners for inputs */
-      border: 1px solid #ccc; /* Border style for inputs */
-    }
-    input[type="submit"] {
-      background-color: #008cba; /* Submit button color */
-      color: white; /* Button text color */
-      padding: 10px 15px; /* Padding for button */
-      border-radius: 5px; /* Rounded corners for button */
-      border: none; /* Remove border from button */
-      cursor: pointer; /* Pointer cursor on hover */
-    }
-    input[type="submit"]:hover {
-      background-color: #005f5f; /* Darker shade on hover for button */
-    }
-  </style>
-
+  <link rel="stylesheet" href="../cssFile/styles.css">
 </head>
 <body>
 
@@ -93,66 +18,189 @@
   </nav>
 </header>
 
-<h2>Modify Flight Details</h2>
+<div class="container">
+  <h2>Search Flight to Modify</h2>
 
-<!-- Display a message if there is any error or success -->
-<%
-  String message = (String) request.getAttribute("message");
-  String messageType = (String) request.getAttribute("messageType");
-  if (message != null) {
-%>
-<div class="<%= messageType %>">
-  <%= message %>
-</div>
-<% } %>
+  <!-- Search Flight Form -->
+  <form action="${pageContext.request.contextPath}/searchFlight" method="post">
+    <label for="flightNumber">Flight Number:</label>
+    <input type="text" id="flightNumber" name="flightNumber" required>
 
-<!-- Modify Flight Form -->
-<div class="form-container">
-  <form action="${pageContext.request.contextPath}/ModifyFlightServlet" method="post">
-    <!-- Hidden field to pass flight ID -->
-    <input type="hidden" name="flightId" value="${flight.flightId}">
+    <label for="departureTime">Departure Time:</label>
+    <input type="datetime-local" id="departureTime" name="departureTime">
 
-    <table>
-      <tr>
-        <th><label for="flightNumber">Flight Number:</label></th>
-        <td><input type="text" id="flightNumber" name="flightNumber" value="${flight.flightNumber}" required></td>
-      </tr>
-      <tr>
-        <th><label for="airline">Airline:</label></th>
-        <td><input type="text" id="airline" name="airline" value="${flight.airline}" required></td>
-      </tr>
-      <tr>
-        <th><label for="departureCity">Departure City:</label></th>
-        <td><input type="text" id="departureCity" name="departureCity" value="${flight.departureCity}" required></td>
-      </tr>
-      <tr>
-        <th><label for="arrivalCity">Arrival City:</label></th>
-        <td><input type="text" id="arrivalCity" name="arrivalCity" value="${flight.arrivalCity}" required></td>
-      </tr>
-      <tr>
-        <th><label for="departureTime">Departure Time:</label></th>
-        <td><input type="datetime-local" id="departureTime" name="departureTime" value="${flight.departureTime}" required></td>
-      </tr>
-      <tr>
-        <th><label for="arrivalTime">Arrival Time:</label></th>
-        <td><input type="datetime-local" id="arrivalTime" name="arrivalTime" value="${flight.arrivalTime}" required></td>
-      </tr>
-      <tr>
-        <th><label for="price">Price:</label></th>
-        <td><input type="number" id="price" name="price" step="0.01" value="${flight.price}" required></td>
-      </tr>
-    </table>
-
-    <!-- Submit Button -->
-    <input type="submit" value="Update Flight">
+    <input type="submit" value="Search Flight">
   </form>
 
-  <!-- Back to Dashboard Link -->
-  <a href="../Admin/HomeAdmin.jsp">Back to Dashboard</a>
+  <%-- Check if there are any messages --%>
+  <%
+    String message = (String) request.getAttribute("message");
+    if (message != null) {
+  %>
+  <div style="color:red;"> <%= message %> </div>
+  <% } %>
+
 </div>
 
 </body>
 </html>
+
+
+<%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
+<%--<!DOCTYPE html>--%>
+<%--<html lang="en">--%>
+<%--<head>--%>
+<%--  <meta charset="UTF-8">--%>
+<%--  <meta name="viewport" content="width=device-width, initial-scale=1.0">--%>
+<%--  <title>Modify Flight</title>--%>
+<%--&lt;%&ndash;  <link rel="stylesheet" href="../cssFile/modifystyle.css">&ndash;%&gt;--%>
+<%--  <style>--%>
+<%--    body {--%>
+<%--      font-family: 'Arial', sans-serif;--%>
+<%--      background-color: #e6f0ff; /* Background color */--%>
+<%--      margin: 0;--%>
+<%--      padding: 0;--%>
+<%--    }--%>
+<%--    header {--%>
+<%--      background-color: #008cba; /* Navbar background */--%>
+<%--      padding: 15px 0; /* Padding for navbar */--%>
+<%--    }--%>
+<%--    nav {--%>
+<%--      display: flex;--%>
+<%--      justify-content: center; /* Centering nav items */--%>
+<%--      align-items: center; /* Vertically center items */--%>
+<%--    }--%>
+<%--    nav a {--%>
+<%--      text-decoration: none;--%>
+<%--      font-size: 18px;--%>
+<%--      color: white; /* Text color */--%>
+<%--      padding: 10px 20px; /* Padding around links */--%>
+<%--      margin: 0 15px; /* Margin between links */--%>
+<%--      border-radius: 5px; /* Rounded corners */--%>
+<%--      transition: background-color 0.3s ease; /* Smooth transition effect */--%>
+<%--    }--%>
+<%--    nav a:hover {--%>
+<%--      background-color: #005f5f; /* Darker shade on hover */--%>
+<%--    }--%>
+<%--    h2 {--%>
+<%--      text-align: center;--%>
+<%--      color: #333333; /* Heading color */--%>
+<%--    }--%>
+<%--    .form-container {--%>
+<%--      width: 80%; /* Increased width for larger screens */--%>
+<%--      max-width: 800px; /* Set maximum width */--%>
+<%--      margin: auto;--%>
+<%--      background: #ffffff; /* White background for container */--%>
+<%--      border-radius: 10px; /* Rounded corners */--%>
+<%--      padding: 30px; /* Padding for comfort */--%>
+<%--      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */--%>
+<%--    }--%>
+<%--    table {--%>
+<%--      width: 100%; /* Full width table */--%>
+<%--      margin-top: 20px;--%>
+<%--    }--%>
+<%--    th, td {--%>
+<%--      padding: 10px; /* Padding for table cells */--%>
+<%--      text-align: left; /* Left align text in cells */--%>
+<%--    }--%>
+<%--    th {--%>
+<%--      background-color: #f2f2f2; /* Light gray background for headers */--%>
+<%--    }--%>
+<%--    input[type="text"],--%>
+<%--    input[type="number"],--%>
+<%--    input[type="datetime-local"] {--%>
+<%--      width: calc(100% - 16px); /* Full width inputs with padding adjustment */--%>
+<%--      padding: 8px; /* Padding for inputs */--%>
+<%--      margin-bottom: 15px; /* Space below inputs */--%>
+<%--      border-radius: 5px; /* Rounded corners for inputs */--%>
+<%--      border: 1px solid #ccc; /* Border style for inputs */--%>
+<%--    }--%>
+<%--    input[type="submit"] {--%>
+<%--      background-color: #008cba; /* Submit button color */--%>
+<%--      color: white; /* Button text color */--%>
+<%--      padding: 10px 15px; /* Padding for button */--%>
+<%--      border-radius: 5px; /* Rounded corners for button */--%>
+<%--      border: none; /* Remove border from button */--%>
+<%--      cursor: pointer; /* Pointer cursor on hover */--%>
+<%--    }--%>
+<%--    input[type="submit"]:hover {--%>
+<%--      background-color: #005f5f; /* Darker shade on hover for button */--%>
+<%--    }--%>
+<%--  </style>--%>
+
+<%--</head>--%>
+<%--<body>--%>
+
+<%--<header>--%>
+<%--  <nav>--%>
+<%--    <a href="../Admin/HomeAdmin.jsp">SkyWay</a>--%>
+<%--    <a href="../ViewPassenger/searchBooking.jsp">Passenger</a>--%>
+<%--    <a href="../bookFlight/tickets.jsp">Ticket</a>--%>
+<%--    <a href="../Admin/adminregd.jsp">Admin</a>--%>
+<%--    <a href="../Admin/adminDelete.jsp">Delete Admin</a>--%>
+<%--  </nav>--%>
+<%--</header>--%>
+
+<%--<h2>Modify Flight Details</h2>--%>
+
+<%--<!-- Display a message if there is any error or success -->--%>
+<%--<%--%>
+<%--  String message = (String) request.getAttribute("message");--%>
+<%--  String messageType = (String) request.getAttribute("messageType");--%>
+<%--  if (message != null) {--%>
+<%--%>--%>
+<%--<div class="<%= messageType %>">--%>
+<%--  <%= message %>--%>
+<%--</div>--%>
+<%--<% } %>--%>
+
+<%--<!-- Modify Flight Form -->--%>
+<%--<div class="form-container">--%>
+<%--  <form action="${pageContext.request.contextPath}/ModifyFlightServlet" method="post">--%>
+<%--    <!-- Hidden field to pass flight ID -->--%>
+<%--    <input type="hidden" name="flightId" value="${flight.flightId}">--%>
+
+<%--    <table>--%>
+<%--      <tr>--%>
+<%--        <th><label for="flightNumber">Flight Number:</label></th>--%>
+<%--        <td><input type="text" id="flightNumber" name="flightNumber" value="${flight.flightNumber}" required></td>--%>
+<%--      </tr>--%>
+<%--      <tr>--%>
+<%--        <th><label for="airline">Airline:</label></th>--%>
+<%--        <td><input type="text" id="airline" name="airline" value="${flight.airline}" required></td>--%>
+<%--      </tr>--%>
+<%--      <tr>--%>
+<%--        <th><label for="departureCity">Departure City:</label></th>--%>
+<%--        <td><input type="text" id="departureCity" name="departureCity" value="${flight.departureCity}" required></td>--%>
+<%--      </tr>--%>
+<%--      <tr>--%>
+<%--        <th><label for="arrivalCity">Arrival City:</label></th>--%>
+<%--        <td><input type="text" id="arrivalCity" name="arrivalCity" value="${flight.arrivalCity}" required></td>--%>
+<%--      </tr>--%>
+<%--      <tr>--%>
+<%--        <th><label for="departureTime">Departure Time:</label></th>--%>
+<%--        <td><input type="datetime-local" id="departureTime" name="departureTime" value="${flight.departureTime}" required></td>--%>
+<%--      </tr>--%>
+<%--      <tr>--%>
+<%--        <th><label for="arrivalTime">Arrival Time:</label></th>--%>
+<%--        <td><input type="datetime-local" id="arrivalTime" name="arrivalTime" value="${flight.arrivalTime}" required></td>--%>
+<%--      </tr>--%>
+<%--      <tr>--%>
+<%--        <th><label for="price">Price:</label></th>--%>
+<%--        <td><input type="number" id="price" name="price" step="0.01" value="${flight.price}" required></td>--%>
+<%--      </tr>--%>
+<%--    </table>--%>
+
+<%--    <!-- Submit Button -->--%>
+<%--    <input type="submit" value="Update Flight">--%>
+<%--  </form>--%>
+
+<%--  <!-- Back to Dashboard Link -->--%>
+<%--  <a href="../Admin/HomeAdmin.jsp">Back to Dashboard</a>--%>
+<%--</div>--%>
+
+<%--</body>--%>
+<%--</html>--%>
 
 
 
