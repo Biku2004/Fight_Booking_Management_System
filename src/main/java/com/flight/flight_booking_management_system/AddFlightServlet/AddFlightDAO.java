@@ -25,28 +25,9 @@ public class AddFlightDAO {
         return connection;
     }
 
-    // Add Method for AddFlight
+    // Method to add a flight
     public boolean addFlight(AddFlight flight) {
-        String sql = "INSERT INTO flights1 (departure_name, " +
-                "departure_id, " +
-                "departure_time, " +
-                "arrival_name," +
-                " arrival_id, " +
-                "arrival_time, " +
-                "duration," +
-                " airplane, " +
-                "airline, " +
-                "airline_logo," +
-                " travel_class, " +
-                "flight_number," +
-                " legroom, " +
-                "extensions," +
-                " total_duration, " +
-                "carbon_emissions," +
-                " price, " +
-                "type, " +
-                "booking_token, " +
-                "layovers) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO flights1 (departure_name, departure_id, departure_time, arrival_name, arrival_id, arrival_time, duration, airplane, airline, airline_logo, travel_class, flight_number, legroom, extensions, total_duration, carbon_emissions, price, type, booking_token, layovers) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
@@ -54,10 +35,10 @@ public class AddFlightDAO {
             // Set values for the prepared statement
             preparedStatement.setString(1, flight.getDepartureName());
             preparedStatement.setString(2, flight.getDepartureId());
-            preparedStatement.setString(3, flight.getDepartureTime());
+            preparedStatement.setTimestamp(3, Timestamp.valueOf(flight.getDepartureTime())); // Adjusted for Timestamp
             preparedStatement.setString(4, flight.getArrivalName());
             preparedStatement.setString(5, flight.getArrivalId());
-            preparedStatement.setString(6, flight.getArrivalTime());
+            preparedStatement.setTimestamp(6, Timestamp.valueOf(flight.getArrivalTime())); // Adjusted for Timestamp
             preparedStatement.setInt(7, flight.getDuration());
             preparedStatement.setString(8, flight.getAirplane());
             preparedStatement.setString(9, flight.getAirline());
@@ -67,12 +48,11 @@ public class AddFlightDAO {
             preparedStatement.setString(13, flight.getLegroom());
             preparedStatement.setString(14, flight.getExtensions());
             preparedStatement.setInt(15, flight.getTotalDuration());
-            preparedStatement.setDouble(16, flight.getCarbonEmissions());
+            preparedStatement.setFloat(16, (float) flight.getCarbonEmissions()); // Adjusted for float
             preparedStatement.setDouble(17, flight.getPrice());
             preparedStatement.setString(18, flight.getType());
             preparedStatement.setString(19, flight.getBookingToken());
             preparedStatement.setString(20, flight.getLayovers());
-
 
             int rowsInserted = preparedStatement.executeUpdate();
             return rowsInserted > 0;
@@ -82,16 +62,17 @@ public class AddFlightDAO {
         return false;
     }
 
-    // Additional methods for update, delete, and fetch flights can be added here
+    // Method to modify a flight
     public boolean modifyFlight(ModifyFlight flight) {
-        String sql = "UPDATE flights SET airline = ?, departure_city = ?, arrival_city = ?, departure_time = ?, arrival_time = ?, price = ? WHERE flight_number = ?";
+        String sql = "UPDATE flights1 SET airline = ?, departure_name = ?, arrival_name = ?, departure_time = ?, arrival_time = ?, price = ? WHERE flight_number = ?";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
             preparedStatement.setString(1, flight.getAirline());
-            preparedStatement.setString(2, flight.getDepartureCity());
-            preparedStatement.setString(3, flight.getArrivalCity());
-            preparedStatement.setString(4, flight.getDepartureTime());
-            preparedStatement.setString(5, flight.getArrivalTime());
+            preparedStatement.setString(2, flight.getDepartureName()); // Assuming this is the departure name
+            preparedStatement.setString(3, flight.getArrivalName()); // Assuming this is the arrival name
+            preparedStatement.setTimestamp(4, Timestamp.valueOf(flight.getDepartureTime())); // Adjusted for Timestamp
+            preparedStatement.setTimestamp(5, Timestamp.valueOf(flight.getArrivalTime())); // Adjusted for Timestamp
             preparedStatement.setDouble(6, flight.getPrice());
             preparedStatement.setString(7, flight.getFlightNumber());
 
@@ -103,31 +84,47 @@ public class AddFlightDAO {
         return false;
     }
 
-    public List<DeleteFlight> getFlightsByFlightNumber(String flightNumber) {
-        List<DeleteFlight> flights = new ArrayList<>();
-        String sql = "SELECT flight_number, departure_time, arrival_time FROM flights1 WHERE flight_number = ?";
+    // Method to get flights by details for modification
+    public List<ModifyFlight> getFlightsByDetails(String flightNumber, String departureTime) {
+        List<ModifyFlight> flights = new ArrayList<>();
+        String sql = "SELECT * FROM flights1 WHERE flight_number = ? AND departure_time = ?";
+
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
             preparedStatement.setString(1, flightNumber);
+            preparedStatement.setTimestamp(2, Timestamp.valueOf(departureTime)); // Adjusted for Timestamp
+
             ResultSet resultSet = preparedStatement.executeQuery();
+
             while (resultSet.next()) {
-                String departureDateTime = resultSet.getString("departure_time");
-                String arrivalDateTime = resultSet.getString("arrival_time");
-                flights.add(new DeleteFlight(flightNumber, departureDateTime, arrivalDateTime));
+                ModifyFlight flight = new ModifyFlight(
+                        resultSet.getString("flight_number"),
+                        resultSet.getString("airline"),
+                        resultSet.getString("departure_name"),
+                        resultSet.getString("arrival_name"),
+                        resultSet.getTimestamp("departure_time").toString(), // Convert to String if needed
+                        resultSet.getTimestamp("arrival_time").toString(),   // Convert to String if needed
+                        resultSet.getDouble("price")
+                );
+                flights.add(flight);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return flights;
     }
 
     public boolean deleteFlight(DeleteFlight flight) {
         String sql = "DELETE FROM flights1 WHERE flight_number = ? AND departure_time = ? AND arrival_time = ?";
+
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
             preparedStatement.setString(1, flight.getFlightNumber());
-            preparedStatement.setString(2, flight.getDepartureTime());
-            preparedStatement.setString(3, flight.getArrivalTime());
+            preparedStatement.setTimestamp(2, Timestamp.valueOf(flight.getDepartureTime())); // Adjusted for Timestamp
+            preparedStatement.setTimestamp(3, Timestamp.valueOf(flight.getArrivalTime())); // Adjusted for Timestamp
 
             int rowsDeleted = preparedStatement.executeUpdate();
             return rowsDeleted > 0;
@@ -136,5 +133,4 @@ public class AddFlightDAO {
         }
         return false;
     }
-
 }
