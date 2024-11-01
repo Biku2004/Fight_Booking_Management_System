@@ -155,14 +155,11 @@
             return;
         }
 
-        // Clear previously selected seat
         const previouslySelected = document.querySelector('.seat.selected');
         if (previouslySelected) previouslySelected.classList.remove('selected');
 
-        // Select new seat
         seat.classList.add('selected');
 
-        // Update selected seat in parent window
         window.opener.updateSelectedSeat(seat.id);
         window.close();
     }

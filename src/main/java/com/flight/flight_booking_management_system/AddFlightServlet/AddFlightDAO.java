@@ -116,15 +116,31 @@ public class AddFlightDAO {
         return flights;
     }
 
-    public boolean deleteFlight(DeleteFlight flight) {
-        String sql = "DELETE FROM flights1 WHERE flight_number = ? AND departure_time = ? AND arrival_time = ?";
-
+    public List<DeleteFlight> getFlightsByFlightNumber(String flightNumber) {
+        List<DeleteFlight> flights = new ArrayList<>();
+        String sql = "SELECT flight_number, departure_time, arrival_time FROM flights1 WHERE flight_number = ?";
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, flightNumber);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String departureDateTime = resultSet.getString("departure_time");
+                String arrivalDateTime = resultSet.getString("arrival_time");
+                flights.add(new DeleteFlight(flightNumber, departureDateTime, arrivalDateTime));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return flights;
+    }
 
+    public boolean deleteFlight(DeleteFlight flight) {
+        String sql = "DELETE FROM flights1 WHERE flight_number = ? AND departure_time = ? AND arrival_time = ?";
+        try (Connection connection = getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setString(1, flight.getFlightNumber());
-            preparedStatement.setTimestamp(2, Timestamp.valueOf(flight.getDepartureTime())); // Adjusted for Timestamp
-            preparedStatement.setTimestamp(3, Timestamp.valueOf(flight.getArrivalTime())); // Adjusted for Timestamp
+            preparedStatement.setString(2, flight.getDepartureTime());
+            preparedStatement.setString(3, flight.getArrivalTime());
 
             int rowsDeleted = preparedStatement.executeUpdate();
             return rowsDeleted > 0;
