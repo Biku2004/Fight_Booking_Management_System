@@ -3,22 +3,27 @@ package com.flight.flight_booking_management_system.AdminFunctions;
 public class ModifyFlight {
     private String flightNumber;
     private String airline;
-    private String departureCity;
-    private String arrivalCity;
-    private String departureTime;
-    private String arrivalTime;
+    private String departureName;  // Changed from departureCity to departureName
+    private String arrivalName;     // Changed from arrivalCity to arrivalName
+    private String departureTime;   // Keep as is for datetime handling
+    private String arrivalTime;      // Keep as is for datetime handling
     private double price;
 
     // Default constructor
     public ModifyFlight() {}
 
     // Parameterized constructor
-    public ModifyFlight(String flightNumber, String airline, String departureCity, String arrivalCity,
-                        String departureTime, String arrivalTime, double price) {
+    public ModifyFlight(String flightNumber,
+                        String airline,
+                        String departureName,
+                        String arrivalName,
+                        String departureTime,
+                        String arrivalTime,
+                        double price) {
         this.flightNumber = flightNumber;
         this.airline = airline;
-        this.departureCity = departureCity;
-        this.arrivalCity = arrivalCity;
+        this.departureName = departureName;  // Updated field name
+        this.arrivalName = arrivalName;       // Updated field name
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
         this.price = price;
@@ -42,20 +47,20 @@ public class ModifyFlight {
         this.airline = airline;
     }
 
-    public String getDepartureCity() {
-        return departureCity;
+    public String getDepartureName() {  // Updated getter method name
+        return departureName;
     }
 
-    public void setDepartureCity(String departureCity) {
-        this.departureCity = departureCity;
+    public void setDepartureName(String departureName) {  // Updated setter method name
+        this.departureName = departureName;
     }
 
-    public String getArrivalCity() {
-        return arrivalCity;
+    public String getArrivalName() {  // Updated getter method name
+        return arrivalName;
     }
 
-    public void setArrivalCity(String arrivalCity) {
-        this.arrivalCity = arrivalCity;
+    public void setArrivalName(String arrivalName) {  // Updated setter method name
+        this.arrivalName = arrivalName;
     }
 
     public String getDepartureTime() {
