@@ -7,7 +7,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Flight Booking</title>
-  <link rel="stylesheet" href="${pageContext.request.contextPath}/cssFile/home.css">
   <script src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js"></script>
 
   <style>
@@ -16,6 +15,7 @@
       margin: 0;
       padding: 0;
       text-decoration: none;
+      font-family: Poppins, sans-serif;
     }
 
     /* Header styles */
