@@ -600,7 +600,7 @@
       <a href="https://www.instagram.com/s.y.n__a.s.h" target="_blank">Instagram</a>
     </div>
     <h3>Send us a message:</h3>
-    <form id="contactForm">
+    <form id="contactForm" action="submitContactForm" method="post">
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
