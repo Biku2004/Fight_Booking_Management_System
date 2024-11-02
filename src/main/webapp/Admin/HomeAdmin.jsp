@@ -168,6 +168,12 @@
         <p>Manage your tickets here</p>
         <button class="btn"><a href="../bookFlight/tickets.jsp">Tickets</a></button>
     </div>
+    <div class="grid-item">
+        <i class="fas fa-comment"></i>
+        <h2>Messages</h2>
+        <p>View and delete messages</p>
+        <button class="btn"><a href="../adminMessages.jsp">Messages</a></button>
+    </div>
 </div>
 </body>
 </html>
