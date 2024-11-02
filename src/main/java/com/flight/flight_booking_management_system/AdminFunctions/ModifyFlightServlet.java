@@ -8,6 +8,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 @WebServlet("/ModifyFlightServlet")
@@ -26,20 +29,19 @@ public class ModifyFlightServlet extends HttpServlet {
 
         // Retrieve parameters from the request for searching
         String flightNumber = request.getParameter("flightNumber");
-        String departureTime = request.getParameter("departureTime");
 
         // Check if we are searching for a flight or modifying an existing one
         if (request.getParameter("action") != null && request.getParameter("action").equals("search")) {
-            // Fetch flights by flight number and departure time
-            List<ModifyFlight> flights = flightDAO.getFlightsByDetails(flightNumber, departureTime);
+            // Fetch flights by flight number
+            List<ModifyFlight> flights = flightDAO.getFlightsByNumber(flightNumber);
 
             if (flights != null && !flights.isEmpty()) {
-                // If flight found, set it as a request attribute and forward to modify form
+                // If flights found, set them as a request attribute and forward to modify form
                 request.setAttribute("flights", flights);
-                request.getRequestDispatcher("modifyFlightForm.jsp").forward(request, response);
+                request.getRequestDispatcher("modifyFlight/modifyFlightList.jsp").forward(request, response);
             } else {
                 // If no flight found, set an error message and redirect back to search page
-                request.setAttribute("errorMessage", "No flight found with the provided details.");
+                request.setAttribute("errorMessage", "No flight found with the provided number.");
                 request.getRequestDispatcher("modifyFlight/modifyFlight.jsp").forward(request, response);
             }
             return; // Exit after handling search
@@ -50,7 +52,7 @@ public class ModifyFlightServlet extends HttpServlet {
         String airline = request.getParameter("airline");
         String departureCity = request.getParameter("departureCity");
         String arrivalCity = request.getParameter("arrivalCity");
-        String arrivalTime = request.getParameter("arrivalTime");
+        String arrivalTimeStr = request.getParameter("arrivalTime");
         String priceStr = request.getParameter("price");
 
         double price = 0.0;
@@ -63,8 +65,24 @@ public class ModifyFlightServlet extends HttpServlet {
             return;
         }
 
+        // Convert departure and arrival times to Timestamp
+        Timestamp departureTime;
+        Timestamp arrivalTime;
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        try {
+            departureTime = new Timestamp(dateFormat.parse(request.getParameter("departureTime")).getTime());
+            arrivalTime = new Timestamp(dateFormat.parse(arrivalTimeStr).getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+            request.setAttribute("errorMessage", "Invalid date format. Please use 'yyyy-MM-dd HH:mm:ss'.");
+            request.getRequestDispatcher("modifyFlight/modifyFlight.jsp").forward(request, response);
+            return;
+        }
+
         // Create a ModifyFlight object to encapsulate the updated flight details
-        ModifyFlight flight = new ModifyFlight(flightNumber, airline, departureCity, arrivalCity, departureTime, arrivalTime, price);
+        ModifyFlight flight = new ModifyFlight(flightNumber, airline, departureCity, arrivalCity, departureTime.toString(), arrivalTime.toString(), price);
 
         // Call the DAO method to modify the flight details in the database
         boolean isModified = flightDAO.modifyFlight(flight);

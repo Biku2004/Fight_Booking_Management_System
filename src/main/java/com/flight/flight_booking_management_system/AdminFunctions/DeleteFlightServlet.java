@@ -47,10 +47,10 @@ public class DeleteFlightServlet extends HttpServlet {
         String flightNumber = request.getParameter("flightNumber");
 
         // Fetch flights by flight number
-        List<DeleteFlight> flights = flightDAO.getFlightsByFlightNumber(flightNumber);
+//        List<DeleteFlight> flights = AddFlightDAO.getFlightsByFlightNumber(flightNumber);
 
         // Set the flights as a request attribute
-        request.setAttribute("flights", flights);
+//        request.setAttribute("flights", flights);
 
         // Forward to the JSP
         request.getRequestDispatcher("deleteFlight/deleteFlight.jsp").forward(request, response);

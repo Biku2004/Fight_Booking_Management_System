@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.flight.flight_booking_management_system.AdminFunctions.ModifyFlight" %><%--
   Created by IntelliJ IDEA.
   User: Atkum
   Date: 01-11-2024
@@ -29,7 +29,7 @@
     <h2>Modify Flight Details</h2>
 
     <!-- Modify Flight Form -->
-    <% List<Flight> flights = (List<Flight>) request.getAttribute("flights"); %>
+    <% List<ModifyFlight> flights = (List<ModifyFlight>) request.getAttribute("flights"); %>
 
     <% if (flights != null && !flights.isEmpty()) { %>
     Flight flight = flights.get(0); // Assuming we modify only one flight at a time
