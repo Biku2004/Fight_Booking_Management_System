@@ -32,21 +32,26 @@ public class ModifyFlightServlet extends HttpServlet {
 
         // Check if we are searching for a flight or modifying an existing one
         if (request.getParameter("action") != null && request.getParameter("action").equals("search")) {
-            // Fetch flights by flight number
             List<ModifyFlight> flights = flightDAO.getFlightsByNumber(flightNumber);
 
             if (flights != null && !flights.isEmpty()) {
-                // If flights found, set them as a request attribute and forward to modify form
-                request.setAttribute("flights", flights);
-                request.getRequestDispatcher("modifyFlight/modifyFlightList.jsp").forward(request, response);
+                if (flights.size() == 1) {
+                    // Only one flight found, forward directly to modifySingleFlight.jsp
+                    request.setAttribute("flight", flights.get(0));
+                    request.getRequestDispatcher("/modifyFlight/modifySingleFlight.jsp").forward(request, response);
+                } else {
+                    // Multiple flights found, forward to modifyFlightList.jsp
+                    request.setAttribute("flights", flights);
+                    request.getRequestDispatcher("/modifyFlight/modifyFlightList.jsp").forward(request, response);
+                }
             } else {
-                // If no flight found, set an error message and redirect back to search page
+                // No flights found, show an error message on the original page
                 request.setAttribute("errorMessage", "No flight found with the provided number.");
-                request.getRequestDispatcher("modifyFlight/modifyFlight.jsp").forward(request, response);
+                request.getRequestDispatcher("/modifyFlight/modifyFlight.jsp").forward(request, response);
             }
-            return; // Exit after handling search
-
+            return;
         }
+
 
         // Retrieve parameters for modification
         String airline = request.getParameter("airline");
@@ -77,7 +82,7 @@ public class ModifyFlightServlet extends HttpServlet {
         } catch (ParseException e) {
             e.printStackTrace();
             request.setAttribute("errorMessage", "Invalid date format. Please use 'yyyy-MM-dd HH:mm:ss'.");
-            request.getRequestDispatcher("modifyFlight/modifyFlight.jsp").forward(request, response);
+            request.getRequestDispatcher("/modifyFlight/modifyFlight.jsp").forward(request, response);
             return;
         }
 
@@ -90,11 +95,11 @@ public class ModifyFlightServlet extends HttpServlet {
         // Handle the result of the modification operation
         if (isModified) {
             // If modification is successful, redirect to success page
-            response.sendRedirect("modifyFlightSuccess.jsp");
+            response.sendRedirect(request.getContextPath() + "/modifyFlightSuccess.jsp");
         } else {
             // If modification fails, show error message on the modify page
             request.setAttribute("errorMessage", "Failed to modify flight details. Please try again.");
-            request.getRequestDispatcher("modifyFlight/modifyFlightError.jsp").forward(request, response);
+            request.getRequestDispatcher("/modifyFlight/modifyFlightError.jsp").forward(request, response);
         }
     }
 
@@ -102,6 +107,6 @@ public class ModifyFlightServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // For now, redirect GET requests to the modification form page
-        response.sendRedirect("modifyFlight/modifyFlight.jsp");
+        response.sendRedirect(request.getContextPath() + "/modifyFlight/modifyFlight.jsp");
     }
 }
