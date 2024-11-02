@@ -84,17 +84,15 @@ public class AddFlightDAO {
         return false;
     }
 
-    // Method to get flights by details for modification
-    public List<ModifyFlight> getFlightsByDetails(String flightNumber, String departureTime) {
+    //Modify Flight form database
+    public List<ModifyFlight> getFlightsByNumber(String flightNumber) {
         List<ModifyFlight> flights = new ArrayList<>();
-        String sql = "SELECT * FROM flights1 WHERE flight_number = ? AND departure_time = ?";
+        String sql = "SELECT * FROM flights1 WHERE flight_number = ?";
 
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
 
             preparedStatement.setString(1, flightNumber);
-            preparedStatement.setTimestamp(2, Timestamp.valueOf(departureTime)); // Adjusted for Timestamp
-
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
@@ -115,6 +113,7 @@ public class AddFlightDAO {
 
         return flights;
     }
+
 
     public List<DeleteFlight> getFlightsByFlightNumber(String flightNumber) {
         List<DeleteFlight> flights = new ArrayList<>();
