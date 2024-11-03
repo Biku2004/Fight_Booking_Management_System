@@ -58,6 +58,7 @@ public class ConfirmBookingServlet extends HttpServlet {
         String fullName = request.getParameter("fullName");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
+        String seat = request.getParameter("Seats");
 
         String[] passengerNames = request.getParameterValues("passengerName");
         String[] passengerAges = request.getParameterValues("passengerAge");
@@ -81,6 +82,7 @@ public class ConfirmBookingServlet extends HttpServlet {
         session.setAttribute("fullName", fullName);
         session.setAttribute("email", email);
         session.setAttribute("phone", phone);
+        session.setAttribute("seat", seat);
         session.setAttribute("passengerNames", passengerNames);
         session.setAttribute("passengerAges", passengerAges);
         session.setAttribute("passengerSeats", passengerSeats);
@@ -136,6 +138,7 @@ public class ConfirmBookingServlet extends HttpServlet {
         String fullName = (String) session.getAttribute("fullName");
         String email = (String) session.getAttribute("email");
         String phone = (String) session.getAttribute("phone");
+        String seat = (String) session.getAttribute("seat");
 
         String[] passengerNames = (String[]) session.getAttribute("passengerNames");
         String[] passengerAges = (String[]) session.getAttribute("passengerAges");
@@ -155,7 +158,7 @@ public class ConfirmBookingServlet extends HttpServlet {
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 
-                String bookingQuery = "INSERT INTO bookings (flight_number, airline, departure, arrival, departure_time, arrival_time, airplane, legroom, extensions, travel_class, duration, layovers, price, carbon_emissions, full_name, email, phone, booking_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+                String bookingQuery = "INSERT INTO bookings (flight_number, airline, departure, arrival, departure_time, arrival_time, airplane, legroom, extensions, travel_class, duration, layovers, price, carbon_emissions, full_name, email, phone, seat, booking_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
                 bookingStmt = connection.prepareStatement(bookingQuery, PreparedStatement.RETURN_GENERATED_KEYS);
                 bookingStmt.setString(1, flightNumber);
                 bookingStmt.setString(2, airline);
@@ -174,6 +177,7 @@ public class ConfirmBookingServlet extends HttpServlet {
                 bookingStmt.setString(15, fullName);
                 bookingStmt.setString(16, email);
                 bookingStmt.setString(17, phone);
+                bookingStmt.setString(18, seat);
                 bookingStmt.executeUpdate();
 
                 ResultSet generatedKeys = bookingStmt.getGeneratedKeys();
