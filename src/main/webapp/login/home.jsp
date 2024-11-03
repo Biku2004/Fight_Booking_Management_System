@@ -481,6 +481,7 @@
       <div class="dropdown-content">
         <a href="<%= request.getContextPath() %>/editProfile?email=<%= session.getAttribute("email") %>">Edit Profile</a>
         <a href="login.jsp">Logout</a>
+        <a href="${pageContext.request.contextPath}/bookFlight/ViewBookingsServlet">View All Bookings</a>
       </div>
     </div>
   </nav>
