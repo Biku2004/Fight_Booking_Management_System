@@ -25,36 +25,55 @@ public class FlightSearchCloneServlet extends HttpServlet {
     private static final String DB_PASSWORD = "root@localhost";
     private static final String JSON_FILE_PATH = "D:/Study/Java1/Maven/5_project/Flight_Booking_Management_System/src/main/resources/JsonData/file.json";
 
+    static {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
         String from = request.getParameter("from");
         String to = request.getParameter("to");
         String departure = request.getParameter("departure");
         String returnDate = request.getParameter("return");
         String tripType = request.getParameter("trip");
 
+        System.out.println("Trip Type: " + tripType);
         HttpSession session = request.getSession();
-
-        if (isFlightDataPresent(from, to, departure, returnDate, tripType)) {
-            fetchFlightData(from, to, departure, returnDate, tripType, session);
-            response.sendRedirect("bookFlight/dataFromdb.jsp");
-        } else {
-            performSearchAndSave(request, response, session, from, to, departure, returnDate, tripType);
+        try{
+            if (isFlightDataPresent(from, to, departure,session)) {
+                redirectToFetchDataToTable(request, response);
+            }
+            else {
+                // Perform the search and save operation
+                performSearchAndSave(request, response, session, from, to, departure,returnDate, tripType);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
         }
+
     }
 
-    private boolean isFlightDataPresent(String from, String to, String departure, String returnDate, String tripType) {
+    private boolean isFlightDataPresent(String from, String to, String departure, HttpSession session) {
         try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String query = "SELECT COUNT(*) FROM flights1 WHERE departure_id = ? AND arrival_id = ? AND departure_time = ? AND return_time = ? AND trip_type = ?";
+            String query = "SELECT COUNT(*) FROM flights1 WHERE departure_id = ? AND arrival_id = ? AND DATE(departure_time) = ?";
             try (PreparedStatement stmt = connection.prepareStatement(query)) {
                 stmt.setString(1, from);
                 stmt.setString(2, to);
                 stmt.setString(3, departure);
-                stmt.setString(4, returnDate);
-                stmt.setString(5, tripType);
+//                stmt.setString(4, tripType);
+
+                System.out.println("Executing query: " + stmt);
 
                 try (ResultSet rs = stmt.executeQuery()) {
                     if (rs.next()) {
-                        return rs.getInt(1) > 0;
+                        int count = rs.getInt(1);
+                        System.out.println("Flight data count: " + count);
+                        return count > 0;
                     }
                 }
             }
@@ -64,39 +83,39 @@ public class FlightSearchCloneServlet extends HttpServlet {
         return false;
     }
 
-    private void fetchFlightData(String from, String to, String departure, String returnDate, String tripType, HttpSession session) {
-        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            String query = "SELECT * FROM flights1 WHERE departure_id = ? AND arrival_id = ? AND departure_time = ? AND return_time = ? AND trip_type = ?";
-            try (PreparedStatement stmt = connection.prepareStatement(query)) {
-                stmt.setString(1, from);
-                stmt.setString(2, to);
-                stmt.setString(3, departure);
-                stmt.setString(4, returnDate);
-                stmt.setString(5, tripType);
-
-                try (ResultSet rs = stmt.executeQuery()) {
-                    if (rs.next()) {
-                        session.setAttribute("flightNumber", rs.getString("flight_number"));
-                        session.setAttribute("airline", rs.getString("airline"));
-                        session.setAttribute("departure", rs.getString("departure"));
-                        session.setAttribute("arrival", rs.getString("arrival"));
-                        session.setAttribute("departureTime", rs.getString("departure_time"));
-                        session.setAttribute("arrivalTime", rs.getString("arrival_time"));
-                        session.setAttribute("airplane", rs.getString("airplane"));
-                        session.setAttribute("legroom", rs.getString("legroom"));
-                        session.setAttribute("extensions", rs.getString("extensions"));
-                        session.setAttribute("travelClass", rs.getString("travel_class"));
-                        session.setAttribute("duration", rs.getString("duration"));
-                        session.setAttribute("layovers", rs.getString("layovers"));
-                        session.setAttribute("price", rs.getString("price"));
-                        session.setAttribute("carbonEmissions", rs.getString("carbon_emissions"));
-                    }
-                }
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
+//    private void fetchFlightData(String from, String to, String departure, HttpSession session) {
+//        try (Connection connection = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
+//            String query = "SELECT * FROM flights1 WHERE departure_id = ? AND arrival_id = ? AND DATE(departure_time) = ?";
+//            try (PreparedStatement stmt = connection.prepareStatement(query)) {
+//                stmt.setString(1, from);
+//                stmt.setString(2, to);
+//                stmt.setString(3, departure);
+////                stmt.setString(4, returnDate);
+////                stmt.setString(4, tripType);
+//
+//                try (ResultSet rs = stmt.executeQuery()) {
+//                    if (rs.next()) {
+//                        session.setAttribute("flightNumber", rs.getString("flight_number"));
+//                        session.setAttribute("airline", rs.getString("airline"));
+//                        session.setAttribute("departure", rs.getString("departure"));
+//                        session.setAttribute("arrival", rs.getString("arrival"));
+//                        session.setAttribute("departureTime", rs.getString("departure_time"));
+//                        session.setAttribute("arrivalTime", rs.getString("arrival_time"));
+//                        session.setAttribute("airplane", rs.getString("airplane"));
+//                        session.setAttribute("legroom", rs.getString("legroom"));
+//                        session.setAttribute("extensions", rs.getString("extensions"));
+//                        session.setAttribute("travelClass", rs.getString("travel_class"));
+//                        session.setAttribute("duration", rs.getString("duration"));
+//                        session.setAttribute("layovers", rs.getString("layovers"));
+//                        session.setAttribute("price", rs.getString("price"));
+//                        session.setAttribute("carbonEmissions", rs.getString("carbon_emissions"));
+//                    }
+//                }
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     private void performSearchAndSave(HttpServletRequest request, HttpServletResponse response, HttpSession session, String from, String to, String departure, String returnDate, String tripType) throws IOException {
         String apiUrl;
@@ -108,6 +127,7 @@ public class FlightSearchCloneServlet extends HttpServlet {
                     "&outbound_date=" + departure +
                     "&return_date=" + returnDate +
                     "&currency=USD&hl=en&api_key=0ed4bbbf6e1c9f2ac7ccf7aa01284fe6000075d9f7f0a63f0e6aff0e33c7b653";
+
         } else {
             // One-way flight search
             apiUrl = "https://serpapi.com/search?engine=google_flights&departure_id=" + from +
@@ -116,7 +136,7 @@ public class FlightSearchCloneServlet extends HttpServlet {
                     "&type=2&currency=INR&hl=en&api_key=0ed4bbbf6e1c9f2ac7ccf7aa01284fe6000075d9f7f0a63f0e6aff0e33c7b653";
         }
 
-
+        // Fetch flight data from the API
         URL url = new URL(apiUrl);
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
@@ -130,6 +150,7 @@ public class FlightSearchCloneServlet extends HttpServlet {
         }
         in.close();
 
+        // Convert the response to JSON
         String jsonResponse = responseBuilder.toString();
 
         // Print the JSON response
