@@ -40,10 +40,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 <label for="passengerAge${passengerCount}">Age:</label>
                 <input type="number" id="passengerAge${passengerCount}" name="passengerAge" required>
             </div>
+            
             <div class="form-group">
                 <label for="passengerSeat${passengerCount}">Seat:</label>
                 <input type="text" id="passengerSeat${passengerCount}" name="passengerSeat" required>
             </div>
+            
+            <div class="form-group">
+                <label for="passengerSeat${passengerCount}">Seat:</label>
+                <input type="text" id="passengerSeat${passengerCount}" name="passengerSeat" required>
+                <button type="button" onclick="openSeatSelection(${passengerCount})">Select Seat</button>
+            </div>
+        </div>
             <button type="button" class="remove-passenger" onclick="removePassenger(this)">Remove Passenger</button>
         `;
         passengerList.appendChild(passengerDiv);

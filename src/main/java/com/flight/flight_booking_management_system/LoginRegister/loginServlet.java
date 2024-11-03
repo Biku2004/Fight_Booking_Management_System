@@ -52,14 +52,14 @@ public class loginServlet extends HttpServlet {
                     resp.sendRedirect("login/home.jsp");  // Redirect to user home page
                 }
             } else {
-                RequestDispatcher rd = req.getRequestDispatcher("/error.jsp");
+                RequestDispatcher rd = req.getRequestDispatcher("login/error.jsp");
                 rd.include(req, resp);
             }
 
         } catch (Exception e) {
             e.printStackTrace();
             resp.getWriter().print("<h1 style='color:red'>Exception Occurred: " + e.getMessage() + "</h1>");
-            RequestDispatcher rd = req.getRequestDispatcher("/login.jsp");
+            RequestDispatcher rd = req.getRequestDispatcher("login/login.jsp");
             rd.include(req, resp);
         }
     }
