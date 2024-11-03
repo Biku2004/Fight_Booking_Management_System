@@ -80,10 +80,10 @@ public class AddFlightDAO {
             preparedStatement.setString(1, flight.getAirline());
             preparedStatement.setString(2, flight.getDepartureName()); // Assuming this is the departure name
             preparedStatement.setString(3, flight.getArrivalName()); // Assuming this is the arrival name
-            preparedStatement.setTimestamp(4, Timestamp.valueOf(flight.getDepartureTime())); // Adjusted for Timestamp
+            preparedStatement.setTimestamp(4, Timestamp.valueOf(flight.getDeparture_time())); // Adjusted for Timestamp
             preparedStatement.setTimestamp(5, Timestamp.valueOf(flight.getArrivalTime())); // Adjusted for Timestamp
             preparedStatement.setDouble(6, flight.getPrice());
-            preparedStatement.setString(7, flight.getFlightNumber());
+            preparedStatement.setString(7, flight.getFlight_number());
 
             int rowsUpdated = preparedStatement.executeUpdate();
             return rowsUpdated > 0;
