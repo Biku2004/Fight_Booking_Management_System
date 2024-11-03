@@ -121,7 +121,7 @@
 
         <% for (ModifyFlight flight : flights) { %>
         <tr>
-            <td><%= flight.getFlightNumber() %></td>
+            <td><%= flight.getFlight_number() %></td>
             <td><%= flight.getAirline() %></td>
             <td><%= flight.getDepartureName() %></td>
             <td><%= flight.getArrivalName() %></td>
@@ -129,7 +129,7 @@
             <td>
                 <!-- Form to send the flight number -->
                 <form action="${pageContext.request.contextPath}/ModifyFlightServlet" method="post">
-                    <input type="hidden" name="flight_number" value="<%= flight.getFlightNumber() %>">
+                    <input type="hidden" name="flight_number" value="<%= flight.getFlight_number() %>">
                     <input type="hidden" name="action" value="search">
                     <button type="submit">Modify</button>
                 </form>
