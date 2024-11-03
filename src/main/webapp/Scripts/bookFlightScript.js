@@ -55,6 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <button type="button" class="remove-passenger" onclick="removePassenger(this)">Remove Passenger</button>
         `;
         passengerList.appendChild(passengerDiv);
+
+        updateTotalPrice();
     });
 });
 
@@ -67,4 +69,18 @@ function removePassenger(button) {
     passengerContainers.forEach((header, index) => {
         header.textContent = `Passenger ${index + 1}`;
     });
+
+    updateTotalPrice();
+}
+
+function updateTotalPrice() {
+    const basePrice = parseFloat(document.getElementById('basePrice').textContent);
+    const passengerCount = document.getElementById('passengerList').children.length + 1; // Including the main passenger
+    const totalPrice = basePrice * passengerCount;
+    document.getElementById('totalPrice').value = totalPrice;
+
+    const priceElement = Array.from(document.querySelectorAll('tr td strong'))
+        .find(el => el.textContent.includes('Price:'))
+        .nextElementSibling;
+    priceElement.textContent = `₹${totalPrice}`;
 }

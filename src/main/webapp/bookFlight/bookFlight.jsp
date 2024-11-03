@@ -71,7 +71,7 @@
         <input type="hidden" name="travel_class" value="<%= request.getAttribute("travelClass") %>">
         <input type="hidden" name="duration" value="<%= request.getAttribute("duration") %>">
         <input type="hidden" name="layovers" value="<%= request.getAttribute("layovers") %>">
-        <input type="hidden" name="price" value="<%= request.getAttribute("price") %>">
+        <input type="hidden" name="price" id="totalPrice" value="<%= request.getAttribute("price") %>">
         <input type="hidden" name="carbon_emissions" value="<%= request.getAttribute("carbonEmissions")%>">
         <input type="hidden" name="selectedSeat" value="<%= request.getParameter("selectedSeat") %>">
 

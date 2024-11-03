@@ -149,10 +149,9 @@ public class ConfirmBookingServlet extends HttpServlet {
             String dbUser = "Java-Project";
             String dbPassword = "root@localhost";
 
-            Connection connection = null;
-            PreparedStatement checkSeatStmt = null;
-            PreparedStatement bookingStmt = null;
-            PreparedStatement passengerStmt = null;
+        Connection connection = null;
+        PreparedStatement bookingStmt = null;
+        PreparedStatement passengerStmt = null;
 
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -187,33 +186,24 @@ public class ConfirmBookingServlet extends HttpServlet {
                     String passengerSQL = "INSERT INTO passengers (booking_id, passenger_name, passenger_age, seat) VALUES (?, ?, ?, ?)";
                     passengerStmt = connection.prepareStatement(passengerSQL);
 
-                    for (int i = 0; i < passengerNames.length; i++) {
-                        String passengerName = passengerNames[i];
-                        String passengerAge = passengerAges[i];
-                        String passengerSeat = passengerSeats[i];
+                    if (passengerNames != null) {
+                        for (int i = 0; i < passengerNames.length; i++) {
+                            String passengerName = passengerNames[i];
+                            String passengerAge = passengerAges[i];
+                            String passengerSeat = passengerSeats[i];
 
-//                    String checkSeatQuery = "SELECT * FROM passengers WHERE flight_number = ? AND seat = ?";
-//                    checkSeatStmt = connection.prepareStatement(checkSeatQuery);
-//                    checkSeatStmt.setString(1, flightNumber);
-//                    checkSeatStmt.setString(2, passengerSeat);
-//                    ResultSet seatResultSet = checkSeatStmt.executeQuery();
-
-//                    if (seatResultSet.next()) {
-//                        HttpSession session = request.getSession();
-//                        session.setAttribute("errorMessage", "The selected seat " + passengerSeat + " is already booked. Please choose another seat.");
-//                        response.sendRedirect(request.getContextPath() + "/bookFlight/BookingError.jsp");
-//                        return;
-//                    }
-
-                        passengerStmt.setLong(1, bookingId);
-                        passengerStmt.setString(2, passengerName);
-                        passengerStmt.setString(3, passengerAge);
-                        passengerStmt.setString(4, passengerSeat);
-                        passengerStmt.addBatch();
-
-//                    checkSeatStmt.close(); // Close the statement after each iteration
+                            passengerStmt.setLong(1, bookingId);
+                            if (passengerName != null && !passengerName.isEmpty()) {
+                                passengerStmt.setString(2, passengerName);
+                            } else {
+                                passengerStmt.setNull(2, java.sql.Types.VARCHAR);
+                            }
+                            passengerStmt.setString(3, passengerAge);
+                            passengerStmt.setString(4, passengerSeat);
+                            passengerStmt.addBatch();
+                        }
+                        passengerStmt.executeBatch();
                     }
-                    passengerStmt.executeBatch();
                 }
 
                 response.sendRedirect("bookFlight/bookingConfirmation.jsp");
