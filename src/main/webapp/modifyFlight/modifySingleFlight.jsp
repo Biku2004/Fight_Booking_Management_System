@@ -110,7 +110,7 @@
   <h2>Modify Flight Details</h2>
 
   <form action="${pageContext.request.contextPath}/ModifyFlightServlet" method="post">
-    <input type="hidden" name="flightNumber" value="<%= flight.getFlightNumber() %>">
+    <input type="hidden" name="flight_number" value="<%= flight.getFlightNumber() %>">
     <input type="hidden" name="action" value="modify">
 
     <label for="airline">Airline:</label>
@@ -122,8 +122,8 @@
     <label for="arrivalCity">Arrival Name:</label>
     <input type="text" id="arrivalCity" name="arrivalCity" value="<%= flight.getArrivalName() %>" required>
 
-    <label for="departureTime">Departure Time:</label>
-    <input type="datetime-local" id="departureTime" name="departureTime"
+    <label for="departure_time">Departure Time:</label>
+    <input type="datetime-local" id="departure_time" name="departure_time"
            value="<%= flight.getDepartureTime().replace(" ", "T") %>" required>
 
     <label for="arrivalTime">Arrival Time:</label>

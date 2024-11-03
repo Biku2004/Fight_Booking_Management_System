@@ -528,12 +528,12 @@
             <div class="sub-content">
                 <span class="watermark"><%= session.getAttribute("airline") %></span>
                 <span class="name">PASSENGER NAME<br><span><%= session.getAttribute("fullName") %></span></span>
-                <span class="flight">FLIGHT<br><span><%= session.getAttribute("flightNumber") %></span></span>
+                <span class="flight">FLIGHT<br><span><%= session.getAttribute("flight_number") %></span></span>
                 <span class="gate">GATE<br><span>22C</span></span>
                 <span class="seat">SEAT<br><span><%= ((String[]) session.getAttribute("passengerSeats"))[0] %></span></span>
-                <span class="boardingtime">BOARDING TIME<br><span><%= session.getAttribute("departureTime") %></span></span>
+                <span class="boardingtime">BOARDING TIME<br><span><%= session.getAttribute("departure_time") %></span></span>
 
-                <span class="flight flightslip">FLIGHT N<br><span><%= session.getAttribute("flightNumber") %></span></span>
+                <span class="flight flightslip">FLIGHT N<br><span><%= session.getAttribute("flight_number") %></span></span>
                 <span class="seat seatslip">SEAT<br><span><%= ((String[]) session.getAttribute("passengerSeats"))[0] %></span></span>
                 <span class="name nameslip">PASSENGER NAME<br><span><%= session.getAttribute("fullName") %></span></span>
             </div>

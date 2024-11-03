@@ -21,7 +21,7 @@
 <h1>Add a Flight to SkyWay</h1>
 
 <div class="form-container">
-    <form action="..//AddFlightServlet" method="POST" enctype="multipart/form-data">
+    <form action="${pageContext.request.contextPath}/AddFlightServlet" method="post">
         <div class="form-row">
             <div>
                 <label for="departure_name">Departure Name</label>

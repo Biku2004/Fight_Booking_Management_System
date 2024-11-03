@@ -98,11 +98,11 @@
   <form action="${pageContext.request.contextPath}/ModifyFlightServlet" method="post">
     <input type="hidden" name="action" value="search">
 
-    <label for="flightNumber">Flight Number:</label>
-    <input type="text" id="flightNumber" name="flightNumber" required>
+    <label for="flight_number">Flight Number:</label>
+    <input type="text" id="flight_number" name="flight_number" required>
 
-    <label for="departureTime">Departure Time:</label>
-    <input type="datetime-local" id="departureTime" name="departureTime">
+    <label for="departure_time">Departure Time:</label>
+    <input type="datetime-local" id="departure_time" name="departure_time">
 
     <input type="submit" value="Search Flight">
   </form>
@@ -237,8 +237,8 @@
 
 <%--    <table>--%>
 <%--      <tr>--%>
-<%--        <th><label for="flightNumber">Flight Number:</label></th>--%>
-<%--        <td><input type="text" id="flightNumber" name="flightNumber" value="${flight.flightNumber}" required></td>--%>
+<%--        <th><label for="flight_number">Flight Number:</label></th>--%>
+<%--        <td><input type="text" id="flight_number" name="flight_number" value="${flight.flight_number}" required></td>--%>
 <%--      </tr>--%>
 <%--      <tr>--%>
 <%--        <th><label for="airline">Airline:</label></th>--%>
@@ -253,8 +253,8 @@
 <%--        <td><input type="text" id="arrivalCity" name="arrivalCity" value="${flight.arrivalCity}" required></td>--%>
 <%--      </tr>--%>
 <%--      <tr>--%>
-<%--        <th><label for="departureTime">Departure Time:</label></th>--%>
-<%--        <td><input type="datetime-local" id="departureTime" name="departureTime" value="${flight.departureTime}" required></td>--%>
+<%--        <th><label for="departure_time">Departure Time:</label></th>--%>
+<%--        <td><input type="datetime-local" id="departure_time" name="departure_time" value="${flight.departure_time}" required></td>--%>
 <%--      </tr>--%>
 <%--      <tr>--%>
 <%--        <th><label for="arrivalTime">Arrival Time:</label></th>--%>
@@ -306,8 +306,8 @@
 <%--  <!-- Hidden field to pass flight ID -->--%>
 <%--  <input type="hidden" name="flightId" value="${flight.flightId}">--%>
 
-<%--  <label for="flightNumber">Flight Number:</label>--%>
-<%--  <input type="text" id="flightNumber" name="flightNumber" value="${flight.flightNumber}" required>--%>
+<%--  <label for="flight_number">Flight Number:</label>--%>
+<%--  <input type="text" id="flight_number" name="flight_number" value="${flight.flight_number}" required>--%>
 <%--  <br>--%>
 
 <%--  <label for="airline">Airline:</label>--%>
@@ -322,8 +322,8 @@
 <%--  <input type="text" id="arrivalCity" name="arrivalCity" value="${flight.arrivalCity}" required>--%>
 <%--  <br>--%>
 
-<%--  <label for="departureTime">Departure Time:</label>--%>
-<%--  <input type="datetime-local" id="departureTime" name="departureTime" value="${flight.departureTime}" required>--%>
+<%--  <label for="departure_time">Departure Time:</label>--%>
+<%--  <input type="datetime-local" id="departure_time" name="departure_time" value="${flight.departure_time}" required>--%>
 <%--  <br>--%>
 
 <%--  <label for="arrivalTime">Arrival Time:</label>--%>

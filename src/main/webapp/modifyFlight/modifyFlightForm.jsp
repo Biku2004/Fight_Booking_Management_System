@@ -40,8 +40,8 @@
         <input type="hidden" name="flightId" value="<%= flight.getId() %>">
 
         <!-- Display fields with existing data -->
-        <label for="flightNumber">Flight Number:</label>
-        <input type="text" id="flightNumber" name="flightNumber" value="<%= flight.getFlightNumber() %>" required>
+        <label for="flight_number">Flight Number:</label>
+        <input type="text" id="flight_number" name="flight_number" value="<%= flight.getFlightNumber() %>" required>
 
         <!-- Add other fields similarly -->
         <!-- Example fields -->

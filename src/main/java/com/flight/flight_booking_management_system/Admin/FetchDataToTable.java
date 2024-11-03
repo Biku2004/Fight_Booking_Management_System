@@ -80,7 +80,7 @@
 //                        while (rs.next()) {
 //                            Flight flight = new Flight();
 //                            flight.setId(rs.getInt("id"));
-//                            flight.setFlightNumber(rs.getString("flight_number"));
+//                            flight.setFlight_number(rs.getString("flight_number"));
 //                            flight.setAirline(rs.getString("airline"));
 //                            flight.setDepartureAirport(rs.getString("departure_airport"));
 //                            flight.setArrivalAirport(rs.getString("arrival_airport"));

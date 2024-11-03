@@ -127,8 +127,8 @@
   <div class="form-container">
     <h2>Search Booking by Flight Number</h2>
     <form action="<%=request.getContextPath()%>/ViewPassenger/BookingServlet" method="get">
-      <label for="flightNumber">Flight Number:</label>
-      <input type="text" name="flightNumber" id="flightNumber" required>
+      <label for="flight_number">Flight Number:</label>
+      <input type="text" name="flight_number" id="flight_number" required>
       <input type="submit" value="Search">
     </form>
   </div>

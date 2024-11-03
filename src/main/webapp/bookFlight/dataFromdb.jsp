@@ -96,7 +96,7 @@
 <%--%>--%>
 <%--<div class="flight-card">--%>
 <%--  <div class="flight-info">--%>
-<%--    <h3><%= flight.getAirline() %> | Flight No: <%= flight.getFlightNumber() %></h3>--%>
+<%--    <h3><%= flight.getAirline() %> | Flight No: <%= flight.getFlight_number() %></h3>--%>
 <%--    <p>From: <%= flight.getDepartureAirport() %></p>--%>
 <%--    <p>To: <%= flight.getArrivalAirport() %></p>--%>
 <%--    <p>Airplane: <%= flight.getAirplane() %></p>--%>
@@ -109,7 +109,7 @@
 <%--    <span>Created on: <%= flight.getCreatedAt() %></span>--%>
 
 <%--    <form action="bookFlight/bookFlight.jsp" method="POST">--%>
-<%--      <input type="hidden" name="flightNumber" value="<%= flight.getFlightNumber() %>">--%>
+<%--      <input type="hidden" name="flight_number" value="<%= flight.getFlight_number() %>">--%>
 <%--      <input type="hidden" name="airline" value="<%= flight.getAirline() %>">--%>
 <%--      <input type="hidden" name="departure" value="<%= flight.getDepartureAirport() %>">--%>
 <%--      <input type="hidden" name="arrival" value="<%= flight.getArrivalAirport() %>">--%>
@@ -255,11 +255,11 @@
 
     <form action="${pageContext.request.contextPath}/bookFlight1" method="POST">
 
-      <input type="hidden" name="flightNumber" value="<%= flight.getFlightNumber() %>">
+      <input type="hidden" name="flight_number" value="<%= flight.getFlightNumber() %>">
 <%--      <input type="hidden" name="airline" value="<%= flight.getAirline() %>">--%>
 <%--      <input type="hidden" name="departure" value="<%= flight.getDepartureName() %>">--%>
 <%--      <input type="hidden" name="arrival" value="<%= flight.getArrivalName() %>">--%>
-<%--      <input type="hidden" name="departureTime" value="<%= flight.getDepartureTime() %>">--%>
+<%--      <input type="hidden" name="departure_time" value="<%= flight.getDeparture_time() %>">--%>
 <%--      <input type="hidden" name="arrivalTime" value="<%= flight.getArrivalTime() %>">--%>
 <%--      <input type="hidden" name="airplane" value="<%= flight.getAirplane() %>">--%>
 <%--      <input type="hidden" name="legroom" value="<%= flight.getLegroom() %>">--%>

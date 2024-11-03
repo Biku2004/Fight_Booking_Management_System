@@ -129,7 +129,7 @@
             <td>
                 <!-- Form to send the flight number -->
                 <form action="${pageContext.request.contextPath}/ModifyFlightServlet" method="post">
-                    <input type="hidden" name="flightNumber" value="<%= flight.getFlightNumber() %>">
+                    <input type="hidden" name="flight_number" value="<%= flight.getFlightNumber() %>">
                     <input type="hidden" name="action" value="search">
                     <button type="submit">Modify</button>
                 </form>

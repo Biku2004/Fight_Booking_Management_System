@@ -36,7 +36,7 @@
   </style>
 </head>
 <body>
-<h2>Booking Results for Flight Number: <%= request.getAttribute("flightNumber") %></h2>
+<h2>Booking Results for Flight Number: <%= request.getAttribute("flight_number") %></h2>
 
 <%
   List<Booking> bookings = (List<Booking>) request.getAttribute("bookings");

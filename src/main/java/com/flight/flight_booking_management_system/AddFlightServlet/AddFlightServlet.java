@@ -7,6 +7,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @WebServlet("/AddFlightServlet")
 public class AddFlightServlet extends HttpServlet {
@@ -20,15 +22,34 @@ public class AddFlightServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String flightNumber = request.getParameter("flightNumber");
+        String flightNumber = request.getParameter("flight_number");
         String airline = request.getParameter("airline");
         String airlineLogo = request.getParameter("airline_logo");
         String departureName = request.getParameter("departure_name");
         String departureId = request.getParameter("departure_id");
         String arrivalName = request.getParameter("arrival_name");
         String arrivalId = request.getParameter("arrival_id");
-        String departureTime = request.getParameter("departureTime");
-        String arrivalTime = request.getParameter("arrivalTime");
+        String departureTime = request.getParameter("departure_time");
+        String arrivalTime = request.getParameter("arrival_time");
+
+        System.out.println("Departure Time: " + departureTime);
+        System.out.println("Arrival Time: " + arrivalTime);
+
+        if (departureTime == null || departureTime.isEmpty() || arrivalTime == null || arrivalTime.isEmpty()) {
+            System.out.println("Error: Departure or Arrival time is missing");
+            response.sendRedirect(request.getContextPath() + "/addFlight/addFlightError.jsp");
+            return;
+        }
+
+        DateTimeFormatter inputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
+        DateTimeFormatter outputFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        String formattedDepartureTime = LocalDateTime.parse(departureTime, inputFormatter).format(outputFormatter);
+        String formattedArrivalTime = LocalDateTime.parse(arrivalTime, inputFormatter).format(outputFormatter);
+
+        System.out.println("Formatted Departure Time: " + formattedDepartureTime);
+        System.out.println("Formatted Arrival Time: " + formattedArrivalTime);
+
         String durationStr = request.getParameter("duration");
         String airplane = request.getParameter("airplane");
         String legroom = request.getParameter("legroom");
@@ -60,15 +81,15 @@ public class AddFlightServlet extends HttpServlet {
         }
 
         AddFlight flight = new AddFlight();
-        flight.setFlightNumber(flightNumber);
+        flight.setFlight_number(flightNumber);
         flight.setAirline(airline);
         flight.setAirlineLogo(airlineLogo);
         flight.setDepartureName(departureName);
         flight.setDepartureId(departureId);
         flight.setArrivalName(arrivalName);
         flight.setArrivalId(arrivalId);
-        flight.setDepartureTime(departureTime);
-        flight.setArrivalTime(arrivalTime);
+        flight.setDeparture_time(formattedDepartureTime);
+        flight.setArrivalTime(formattedArrivalTime);
         flight.setDuration(duration);
         flight.setAirplane(airplane);
         flight.setLegroom(legroom);
