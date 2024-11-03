@@ -154,17 +154,17 @@
 </main>
 
 <script>
-    function bookFlight( airlineLogo, airline, flightNumber, departureAirport,
-                         arrivalAirport,departureTime, arrivalTime,airplaneType,travelClass,
+    function bookFlight( airlineLogo, airline, flight_number, departureAirport,
+                         arrivalAirport,departure_time, arrivalTime,airplaneType,travelClass,
                          duration,extensions,LayoversName, price, legroom, carbonEmissions ) {
         // Construct the query parameters explicitly
         const queryParams = new URLSearchParams({
             'airline_logo' : airlineLogo,
             'airline': airline,
-            'flight_number': flightNumber,
+            'flight_number': flight_number,
             'departure_airport.name': departureAirport,
             'arrival_airport.name': arrivalAirport,
-            'departure_airport.time': departureTime,
+            'departure_airport.time': departure_time,
             'arrival_airport.time': arrivalTime,
             'airplane': airplaneType,
             'travel_class': travelClass,

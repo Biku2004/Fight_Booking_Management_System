@@ -49,6 +49,8 @@
       padding: 30px;
       box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
+      margin: auto;
+      margin-top: 50px;
     }
     h1 {
       font-size: 24px;

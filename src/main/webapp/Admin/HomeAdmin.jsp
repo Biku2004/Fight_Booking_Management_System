@@ -154,7 +154,7 @@
         <i class="fas fa-chair"></i>
         <h2>Seat Info</h2>
         <p>View the current status of seats</p>
-        <button class="btn"><a href="../Admin/seatInfo.jsp">Seat Info</a></button>
+        <button class="btn"><a href="#">Seat Info</a></button>
     </div>
     <div class="grid-item">
         <i class="fa-solid fa-person"></i>

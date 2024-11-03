@@ -35,21 +35,30 @@ public class AddFlightDAO {
             // Set values for the prepared statement
             preparedStatement.setString(1, flight.getDepartureName());
             preparedStatement.setString(2, flight.getDepartureId());
-            preparedStatement.setString(3, flight.getDepartureTime()); // Adjusted for Timestamp
+            //null check
+            if (flight.getDeparture_time() == null || flight.getDeparture_time().isEmpty()) {
+                throw new IllegalArgumentException("Departure time cannot be null or empty");
+            }
+            preparedStatement.setTimestamp(3, Timestamp.valueOf(flight.getDeparture_time()));// Adjusted for Timestamp
             preparedStatement.setString(4, flight.getArrivalName());
             preparedStatement.setString(5, flight.getArrivalId());
-            preparedStatement.setString(6, flight.getArrivalTime()); // Adjusted for Timestamp
+
+            // Ensure arrival time is not null or empty
+            if (flight.getArrivalTime() == null || flight.getArrivalTime().isEmpty()) {
+                throw new IllegalArgumentException("Arrival time cannot be null or empty");
+            }
+            preparedStatement.setTimestamp(6, Timestamp.valueOf(flight.getArrivalTime())); // Adjusted for Timestamp
             preparedStatement.setInt(7, flight.getDuration());
             preparedStatement.setString(8, flight.getAirplane());
             preparedStatement.setString(9, flight.getAirline());
             preparedStatement.setString(10, flight.getAirlineLogo());
             preparedStatement.setString(11, flight.getTravelClass());
-            preparedStatement.setString(12, flight.getFlightNumber());
+            preparedStatement.setString(12, flight.getFlight_number());
             preparedStatement.setString(13, flight.getLegroom());
             preparedStatement.setString(14, flight.getExtensions());
             preparedStatement.setInt(15, flight.getTotalDuration());
             preparedStatement.setFloat(16, (float) flight.getCarbonEmissions()); // Adjusted for float
-            preparedStatement.setDouble(17, flight.getPrice());
+            preparedStatement.setInt(17, (int)flight.getPrice());
             preparedStatement.setString(18, flight.getType());
             preparedStatement.setString(19, flight.getBookingToken());
             preparedStatement.setString(20, flight.getLayovers());

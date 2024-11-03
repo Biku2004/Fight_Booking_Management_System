@@ -29,12 +29,8 @@ public class BookingServlet extends HttpServlet {
             return; // Exit the method early
         }
 
-        // Query to fetch booking and passenger details
-        String query = "SELECT b.flight_number, b.airline, b.departure, b.arrival, b.full_name, b.email, b.phone, b.booking_time, b.seat, " +
-                "p.passenger_name, p.passenger_age, p.seat AS passenger_seat " +
-                "FROM bookings b " +
-                "JOIN passengers p ON b.booking_id = p.booking_id " +
-                "WHERE b.flight_number = ?";
+        // Query to fetch booking details
+        String query = "SELECT * FROM bookings WHERE flight_number = ?";
 
         try (Connection con = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
              PreparedStatement stmt = con.prepareStatement(query)) {
@@ -54,11 +50,7 @@ public class BookingServlet extends HttpServlet {
                         rs.getString("full_name"),
                         rs.getString("email"),
                         rs.getString("phone"),
-                        rs.getTimestamp("booking_time"),
-                        rs.getString("passenger_name"),
-                        rs.getInt("passenger_age"),
-                        rs.getString("passenger_seat"),
-                        rs.getString("seat") // Add seat information
+                        rs.getTimestamp("booking_time")
                 );
                 bookings.add(booking);
             }

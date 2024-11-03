@@ -40,7 +40,7 @@
 <div class="container">
     <h1>Email ID and Password Mismatch</h1>
     <p>It seems that the email ID or password you entered is incorrect. Please check your credentials and try again.</p>
-    <p><a href="${pageContext.request.contextPath}/login.jsp">Back to Login</a></p>
+    <p><a href="login.jsp">Back to Login</a></p>
 </div>
 </body>
 </html>

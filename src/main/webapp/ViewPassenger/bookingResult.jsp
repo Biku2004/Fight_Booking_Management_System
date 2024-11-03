@@ -25,7 +25,6 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-bottom: 20px;
     }
     th, td {
       border: 1px solid #ddd;
@@ -37,7 +36,7 @@
   </style>
 </head>
 <body>
-<h2>Booking Results for Flight Number: <%= request.getAttribute("flightNumber") %></h2>
+<h2>Booking Results for Flight Number: <%= request.getAttribute("flight_number") %></h2>
 
 <%
   List<Booking> bookings = (List<Booking>) request.getAttribute("bookings");
@@ -53,7 +52,6 @@
     <th>Email</th>
     <th>Phone</th>
     <th>Booking Time</th>
-    <th>Seat</th>
   </tr>
   <%
     for (Booking booking : bookings) {
@@ -67,27 +65,6 @@
     <td><%= booking.getEmail() %></td>
     <td><%= booking.getPhone() %></td>
     <td><%= booking.getBookingTime() %></td>
-    <td><%= booking.getSeat() %></td>
-  </tr>
-  <%
-    }
-  %>
-</table>
-
-<h3>Passenger Details</h3>
-<table>
-  <tr>
-    <th>Passenger Name</th>
-    <th>Passenger Age</th>
-    <th>Passenger Seat</th>
-  </tr>
-  <%
-    for (Booking booking : bookings) {
-  %>
-  <tr>
-    <td><%= booking.getPassengerName() %></td>
-    <td><%= booking.getPassengerAge() %></td>
-    <td><%= booking.getPassengerSeat() %></td>
   </tr>
   <%
     }

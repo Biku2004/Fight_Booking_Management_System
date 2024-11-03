@@ -23,11 +23,11 @@
 //        this.id = id;
 //    }
 //
-//    public String getFlightNumber() {
+//    public String getFlight_number() {
 //        return flightNumber;
 //    }
 //
-//    public void setFlightNumber(String flightNumber) {
+//    public void setFlight_number(String flightNumber) {
 //        this.flightNumber = flightNumber;
 //    }
 //
@@ -128,7 +128,7 @@
 //    public void setDepartureId(String departureId) {
 //    }
 //
-//    public void setDepartureTime(Timestamp departureTime) {
+//    public void setDeparture_time(Timestamp departureTime) {
 //    }
 //
 //    public void setArrivalName(String arrivalName) {

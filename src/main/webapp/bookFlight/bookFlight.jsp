@@ -16,11 +16,11 @@
         <h3>Flight Information</h3>
         <table class="flight-info-table">
             <tbody>
-            <tr><td><strong>Flight Number:</strong></td><td><%= request.getAttribute("flightNumber") %></td></tr>
+            <tr><td><strong>Flight Number:</strong></td><td><%= request.getAttribute("flight_number") %></td></tr>
             <tr><td><strong>Airline:</strong></td><td><%= request.getAttribute("airline") %></td></tr>
             <tr><td><strong>Departure:</strong></td><td><%= request.getAttribute("departure") %></td></tr>
             <tr><td><strong>Arrival:</strong></td><td><%= request.getAttribute("arrival") %></td></tr>
-            <tr><td><strong>Departure Time:</strong></td><td><%= request.getAttribute("departureTime") %></td></tr>
+            <tr><td><strong>Departure Time:</strong></td><td><%= request.getAttribute("departure_time") %></td></tr>
             <tr><td><strong>Arrival Time:</strong></td><td><%= request.getAttribute("arrivalTime") %></td></tr>
             <tr><td><strong>Airplane:</strong></td><td><%= request.getAttribute("airplane") %></td></tr>
             <tr><td><strong>Legroom:</strong></td><td><%= request.getAttribute("legroom") %></td></tr>
@@ -59,11 +59,11 @@
         <button type="button" class="add-passenger-btn" id="addPassengerBtn">+ Add Passenger</button>
 
         <!-- Hidden fields for flight data -->
-        <input type="hidden" name="flightNumber" value="<%= request.getAttribute("flightNumber") %>">
+        <input type="hidden" name="flight_number" value="<%= request.getAttribute("flight_number") %>">
         <input type="hidden" name="airline" value="<%= request.getAttribute("airline") %>">
         <input type="hidden" name="departure" value="<%= request.getAttribute("departure") %>">
         <input type="hidden" name="arrival" value="<%= request.getAttribute("arrival") %>">
-        <input type="hidden" name="departureTime" value="<%= request.getAttribute("departureTime") %>">
+        <input type="hidden" name="departure_time" value="<%= request.getAttribute("departure_time") %>">
         <input type="hidden" name="arrivalTime" value="<%= request.getAttribute("arrivalTime") %>">
         <input type="hidden" name="airplane" value="<%= request.getAttribute("airplane") %>">
         <input type="hidden" name="legroom" value="<%= request.getAttribute("legroom") %>">
@@ -71,7 +71,7 @@
         <input type="hidden" name="travel_class" value="<%= request.getAttribute("travelClass") %>">
         <input type="hidden" name="duration" value="<%= request.getAttribute("duration") %>">
         <input type="hidden" name="layovers" value="<%= request.getAttribute("layovers") %>">
-        <input type="hidden" name="price" id="totalPrice" value="<%= request.getAttribute("price") %>">
+        <input type="hidden" name="price" value="<%= request.getAttribute("price") %>">
         <input type="hidden" name="carbon_emissions" value="<%= request.getAttribute("carbonEmissions")%>">
         <input type="hidden" name="selectedSeat" value="<%= request.getParameter("selectedSeat") %>">
 

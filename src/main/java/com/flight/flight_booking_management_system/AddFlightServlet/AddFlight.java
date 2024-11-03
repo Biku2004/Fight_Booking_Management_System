@@ -4,7 +4,7 @@ public class AddFlight {
     private int id;
     private String departureName;
     private String departureId;
-    private String departureTime;
+    private String departure_time;
     private String arrivalName;
     private String arrivalId;
     private String arrivalTime;
@@ -13,7 +13,7 @@ public class AddFlight {
     private String airline;
     private String airlineLogo;
     private String travelClass;
-    private String flightNumber;
+    private String flight_number;
     private String legroom;
     private String extensions;
     private int totalDuration;
@@ -48,12 +48,12 @@ public class AddFlight {
         this.departureId = departureId;
     }
 
-    public String getDepartureTime() {
-        return departureTime;
+    public String getDeparture_time() {
+        return departure_time;
     }
 
-    public void setDepartureTime(String departureTime) {
-        this.departureTime = departureTime;
+    public void setDeparture_time(String departure_time) {
+        this.departure_time = departure_time;
     }
 
     public String getArrivalName() {
@@ -120,12 +120,12 @@ public class AddFlight {
         this.travelClass = travelClass;
     }
 
-    public String getFlightNumber() {
-        return flightNumber;
+    public String getFlight_number() {
+        return flight_number;
     }
 
-    public void setFlightNumber(String flightNumber) {
-        this.flightNumber = flightNumber;
+    public void setFlight_number(String flight_number) {
+        this.flight_number = flight_number;
     }
 
     public String getLegroom() {
