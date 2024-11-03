@@ -28,7 +28,7 @@ public class ModifyFlightServlet extends HttpServlet {
             throws ServletException, IOException {
 
         // Retrieve parameters from the request for searching
-        String flightNumber = request.getParameter("flightNumber");
+        String flightNumber = request.getParameter("flight_number");
 
         // Check if we are searching for a flight or modifying an existing one
         if (request.getParameter("action") != null && request.getParameter("action").equals("search")) {
@@ -74,10 +74,10 @@ public class ModifyFlightServlet extends HttpServlet {
         Timestamp departureTime;
         Timestamp arrivalTime;
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
 
         try {
-            departureTime = new Timestamp(dateFormat.parse(request.getParameter("departureTime")).getTime());
+            departureTime = new Timestamp(dateFormat.parse(request.getParameter("departure_time")).getTime());
             arrivalTime = new Timestamp(dateFormat.parse(arrivalTimeStr).getTime());
         } catch (ParseException e) {
             e.printStackTrace();
@@ -95,7 +95,7 @@ public class ModifyFlightServlet extends HttpServlet {
         // Handle the result of the modification operation
         if (isModified) {
             // If modification is successful, redirect to success page
-            response.sendRedirect(request.getContextPath() + "/modifyFlightSuccess.jsp");
+            response.sendRedirect(request.getContextPath() + "/modifyFlight/modifyFlightSuccess.jsp");
         } else {
             // If modification fails, show error message on the modify page
             request.setAttribute("errorMessage", "Failed to modify flight details. Please try again.");
