@@ -91,13 +91,17 @@ public class ConfirmBookingServlet extends HttpServlet {
         System.out.println("Debug: Flight Number: " + flightNumber);
         System.out.println("Debug: Price: " + price);
 
+        double totalPrice = Double.parseDouble(price);
+        if (passengerNames != null) {
+            totalPrice *= (passengerNames.length + 1); // +1 for the main passenger
+        }
 
         if (session.getAttribute("paymentId") == null) {
             try {
                 RazorpayClient razorpay = new RazorpayClient(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET);
 
                 JSONObject orderRequest = new JSONObject();
-                orderRequest.put("amount", (int) (Double.parseDouble(price) * 100)); // amount in the smallest currency unit
+                orderRequest.put("amount", (int) (totalPrice) * 100); // amount in the smallest currency unit
                 orderRequest.put("currency", "INR");
                 orderRequest.put("receipt", "order_rcptid_11");
 

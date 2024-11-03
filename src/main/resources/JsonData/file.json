@@ -1,79 +1,7 @@
 {
     "best_flights": [
         {
-            "booking_token": "WyJDalJJYjA5Sk5YQnBVMDF0TVZsQlIyaDVPRUZDUnkwdExTMHRMUzB0TFMxd1ptVjZOMEZCUVVGQlIyTnVVelZKUTNOWllVOUJFZ3REV0RZeU5IeERXRE16TWhvTENLMzlBUkFBR2dOSlRsSTRISENSclFJPSIsW1siQkxSIiwiMjAyNC0xMS0wNiIsIkhLRyIsbnVsbCwiQ1giLCI2MjQiXSxbIkhLRyIsIjIwMjQtMTEtMDYiLCJQRUsiLG51bGwsIkNYIiwiMzMyIl1dXQ==",
-            "layovers": [{
-                "duration": 150,
-                "name": "Hong Kong International Airport",
-                "id": "HKG"
-            }],
-            "total_duration": 695,
-            "price": 32429,
-            "flights": [
-                {
-                    "duration": 335,
-                    "overnight": true,
-                    "legroom": "32 in",
-                    "extensions": [
-                        "Above average legroom (32 in)",
-                        "Wi-Fi for a fee",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 362 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-11-06 01:25"
-                    },
-                    "flight_number": "CX 624",
-                    "airplane": "Boeing 777",
-                    "arrival_airport": {
-                        "name": "Hong Kong International Airport",
-                        "id": "HKG",
-                        "time": "2024-11-06 09:30"
-                    },
-                    "airline": "Cathay Pacific",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 210,
-                    "legroom": "30 in",
-                    "extensions": [
-                        "Average legroom (30 in)",
-                        "Wi-Fi for a fee",
-                        "In-seat USB outlet",
-                        "On-demand video",
-                        "Carbon emissions estimate: 149 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Hong Kong International Airport",
-                        "id": "HKG",
-                        "time": "2024-11-06 12:00"
-                    },
-                    "flight_number": "CX 332",
-                    "airplane": "Airbus A321neo",
-                    "arrival_airport": {
-                        "name": "Beijing Capital International Airport",
-                        "id": "PEK",
-                        "time": "2024-11-06 15:30"
-                    },
-                    "airline": "Cathay Pacific",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {
-                "this_flight": 512000,
-                "typical_for_this_route": 557000,
-                "difference_percent": -8
-            },
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png"
-        },
-        {
-            "booking_token": "WyJDalJJYjA5Sk5YQnBVMDF0TVZsQlIyaDVPRUZDUnkwdExTMHRMUzB0TFMxd1ptVjZOMEZCUVVGQlIyTnVVelZKUTNOWllVOUJFZ3RVUnpNeU5ueFVSell4TkJvTENLbWpBaEFBR2dOSlRsSTRISENoMmdJPSIsW1siQkxSIiwiMjAyNC0xMS0wNiIsIkJLSyIsbnVsbCwiVEciLCIzMjYiXSxbIkJLSyIsIjIwMjQtMTEtMDYiLCJQRUsiLG51bGwsIlRHIiwiNjE0Il1dXQ==",
+            "booking_token": "WyJDalJJVmtwd1RtSXROMjVKVTBsQlMwRldiM2RDUnkwdExTMHRMUzB0TFMxMmQzSjBPRUZCUVVGQlIyTnVkblJuUmpGcVYxVkJFZ3RVUnpNeU5ueFVSell4TkJvTENLbWpBaEFBR2dOSlRsSTRISENoMmdJPSIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkJLSyIsbnVsbCwiVEciLCIzMjYiXSxbIkJLSyIsIjIwMjQtMTEtMDciLCJQRUsiLG51bGwsIlRHIiwiNjE0Il1dXQ==",
             "layovers": [{
                 "duration": 235,
                 "name": "Suvarnabhumi Airport",
@@ -90,19 +18,19 @@
                         "Above average legroom (32 in)",
                         "In-seat power & USB outlets",
                         "On-demand video",
-                        "Carbon emissions estimate: 186 kg"
+                        "Carbon emissions estimate: 214 kg"
                     ],
                     "departure_airport": {
                         "name": "Kempegowda International Airport Bengaluru",
                         "id": "BLR",
-                        "time": "2024-11-06 01:00"
+                        "time": "2024-11-07 01:00"
                     },
                     "flight_number": "TG 326",
-                    "airplane": "Airbus A350",
+                    "airplane": "Airbus A330",
                     "arrival_airport": {
                         "name": "Suvarnabhumi Airport",
                         "id": "BKK",
-                        "time": "2024-11-06 06:15"
+                        "time": "2024-11-07 06:15"
                     },
                     "airline": "THAI",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
@@ -120,14 +48,14 @@
                     "departure_airport": {
                         "name": "Suvarnabhumi Airport",
                         "id": "BKK",
-                        "time": "2024-11-06 10:10"
+                        "time": "2024-11-07 10:10"
                     },
                     "flight_number": "TG 614",
                     "airplane": "Airbus A350",
                     "arrival_airport": {
                         "name": "Beijing Capital International Airport",
                         "id": "PEK",
-                        "time": "2024-11-06 15:50"
+                        "time": "2024-11-07 15:50"
                     },
                     "airline": "THAI",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
@@ -135,149 +63,120 @@
                 }
             ],
             "carbon_emissions": {
-                "this_flight": 416000,
+                "this_flight": 444000,
                 "typical_for_this_route": 557000,
-                "difference_percent": -25
+                "difference_percent": -20
             },
             "type": "One way",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png"
-        }
-    ],
-    "search_metadata": {
-        "raw_html_file": "https://serpapi.com/searches/9c7e18c69a047fb1/67274b9117a2e2568fa948c3.html",
-        "created_at": "2024-11-03 10:08:17 UTC",
-        "processed_at": "2024-11-03 10:08:17 UTC",
-        "id": "67274b9117a2e2568fa948c3",
-        "prettify_html_file": "https://serpapi.com/searches/9c7e18c69a047fb1/67274b9117a2e2568fa948c3.prettify",
-        "total_time_taken": 1.35,
-        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=INR&tfs=CBwQAhoeEgoyMDI0LTExLTA2agcIARIDQkxScgcIARIDUEVLQgEBSAFwAZgBAg==",
-        "json_endpoint": "https://serpapi.com/searches/9c7e18c69a047fb1/67274b9117a2e2568fa948c3.json",
-        "status": "Success"
-    },
-    "other_flights": [
+        },
         {
-            "booking_token": "WyJDalJJYjA5Sk5YQnBVMDF0TVZsQlIyaDVPRUZDUnkwdExTMHRMUzB0TFMxd1ptVjZOMEZCUVVGQlIyTnVVelZKUTNOWllVOUJFaEJOU0RFd05YeE5TRGM0ZkVOWU16ZzJHZ3NJaXBFQ0VBQWFBMGxPVWpnY2NNckVBZz09IixbWyJCTFIiLCIyMDI0LTExLTA2IiwiS1VMIixudWxsLCJNSCIsIjEwNSJdLFsiS1VMIiwiMjAyNC0xMS0wNiIsIkhLRyIsbnVsbCwiTUgiLCI3OCJdLFsiSEtHIiwiMjAyNC0xMS0wNyIsIlBFSyIsbnVsbCwiQ1giLCIzODYiXV1d",
-            "layovers": [
-                {
-                    "duration": 60,
-                    "name": "Kuala Lumpur International Airport",
-                    "id": "KUL"
-                },
-                {
-                    "duration": 550,
-                    "overnight": true,
-                    "name": "Hong Kong International Airport",
-                    "id": "HKG"
-                }
-            ],
-            "total_duration": 1320,
-            "price": 34954,
+            "booking_token": "WyJDalJJVmtwd1RtSXROMjVKVTBsQlMwRldiM2RDUnkwdExTMHRMUzB0TFMxMmQzSjBPRUZCUVVGQlIyTnVkblJuUmpGcVYxVkJFZ3RUVVRVeE1YeFRVVGd3TWhvTENKS1FBeEFBR2dOSlRsSTRISEROMndNPSIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIlNJTiIsbnVsbCwiU1EiLCI1MTEiXSxbIlNJTiIsIjIwMjQtMTEtMDgiLCJQRUsiLG51bGwsIlNRIiwiODAyIl1dXQ==",
+            "layovers": [{
+                "duration": 155,
+                "name": "Singapore Changi Airport",
+                "id": "SIN"
+            }],
+            "total_duration": 790,
+            "price": 51218,
             "flights": [
                 {
-                    "duration": 260,
-                    "legroom": "30 in",
+                    "duration": 270,
+                    "overnight": true,
+                    "legroom": "32 in",
                     "extensions": [
-                        "Average legroom (30 in)",
-                        "In-seat USB outlet",
-                        "Stream media to your device",
-                        "Carbon emissions estimate: 228 kg"
+                        "Above average legroom (32 in)",
+                        "Free Wi-Fi",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 210 kg"
                     ],
                     "departure_airport": {
                         "name": "Kempegowda International Airport Bengaluru",
                         "id": "BLR",
-                        "time": "2024-11-06 12:00"
+                        "time": "2024-11-07 23:10"
                     },
-                    "flight_number": "MH 105",
-                    "airplane": "Boeing 737",
+                    "flight_number": "SQ 511",
+                    "airplane": "Airbus A350",
                     "arrival_airport": {
-                        "name": "Kuala Lumpur International Airport",
-                        "id": "KUL",
-                        "time": "2024-11-06 18:50"
+                        "name": "Singapore Changi Airport",
+                        "id": "SIN",
+                        "time": "2024-11-08 06:10"
                     },
-                    "airline": "Malaysia Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
+                    "airline": "Singapore Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
                     "travel_class": "Economy"
                 },
                 {
-                    "duration": 240,
+                    "duration": 365,
                     "legroom": "32 in",
                     "extensions": [
                         "Above average legroom (32 in)",
+                        "Free Wi-Fi",
                         "In-seat power & USB outlets",
                         "On-demand video",
-                        "Carbon emissions estimate: 214 kg"
+                        "Carbon emissions estimate: 458 kg"
                     ],
                     "departure_airport": {
-                        "name": "Kuala Lumpur International Airport",
-                        "id": "KUL",
-                        "time": "2024-11-06 19:50"
+                        "name": "Singapore Changi Airport",
+                        "id": "SIN",
+                        "time": "2024-11-08 08:45"
                     },
-                    "flight_number": "MH 78",
-                    "airplane": "Airbus A330",
-                    "arrival_airport": {
-                        "name": "Hong Kong International Airport",
-                        "id": "HKG",
-                        "time": "2024-11-06 23:50"
-                    },
-                    "airline": "Malaysia Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 210,
-                    "legroom": "32 in",
-                    "extensions": [
-                        "Above average legroom (32 in)",
-                        "Wi-Fi for a fee",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 202 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Hong Kong International Airport",
-                        "id": "HKG",
-                        "time": "2024-11-07 09:00"
-                    },
-                    "flight_number": "CX 386",
+                    "flight_number": "SQ 802",
                     "airplane": "Boeing 777",
                     "arrival_airport": {
                         "name": "Beijing Capital International Airport",
                         "id": "PEK",
-                        "time": "2024-11-07 12:30"
+                        "time": "2024-11-08 14:50"
                     },
-                    "airline": "Cathay Pacific",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+                    "airline": "Singapore Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
                     "travel_class": "Economy"
                 }
             ],
             "carbon_emissions": {
-                "this_flight": 646000,
+                "this_flight": 669000,
                 "typical_for_this_route": 557000,
-                "difference_percent": 16
+                "difference_percent": 20
             },
             "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
-        },
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png"
+        }
+    ],
+    "search_metadata": {
+        "raw_html_file": "https://serpapi.com/searches/9c7e18c69a047fb1/6727bed79fd30925e8968f97.html",
+        "created_at": "2024-11-03 18:20:07 UTC",
+        "processed_at": "2024-11-03 18:20:07 UTC",
+        "id": "6727bed79fd30925e8968f97",
+        "prettify_html_file": "https://serpapi.com/searches/9c7e18c69a047fb1/6727bed79fd30925e8968f97.prettify",
+        "total_time_taken": 1.71,
+        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=INR&tfs=CBwQAhoeEgoyMDI0LTExLTA3agcIARIDQkxScgcIARIDUEVLQgEBSAFwAZgBAg==",
+        "json_endpoint": "https://serpapi.com/searches/9c7e18c69a047fb1/6727bed79fd30925e8968f97.json",
+        "status": "Success"
+    },
+    "other_flights": [
         {
-            "booking_token": "WyJDalJJYjA5Sk5YQnBVMDF0TVZsQlIyaDVPRUZDUnkwdExTMHRMUzB0TFMxd1ptVjZOMEZCUVVGQlIyTnVVelZKUTNOWllVOUJFaEJOU0RFd05YeE5TRGM0ZkVOWU16TTBHZ3NJcnA4Q0VBQWFBMGxPVWpnY2NNYlZBZz09IixbWyJCTFIiLCIyMDI0LTExLTA2IiwiS1VMIixudWxsLCJNSCIsIjEwNSJdLFsiS1VMIiwiMjAyNC0xMS0wNiIsIkhLRyIsbnVsbCwiTUgiLCI3OCJdLFsiSEtHIiwiMjAyNC0xMS0wNyIsIlBFSyIsbnVsbCwiQ1giLCIzMzQiXV1d",
+            "booking_token": "WyJDalJJVmtwd1RtSXROMjVKVTBsQlMwRldiM2RDUnkwdExTMHRMUzB0TFMxMmQzSjBPRUZCUVVGQlIyTnVkblJuUmpGcVYxVkJFaEJOU0RFNU0zeE5TRGN5ZkVOWU16TTBHZ3NJaCtrQ0VBQWFBMGxPVWpnY2NKS3RBdz09IixbWyJCTFIiLCIyMDI0LTExLTA3IiwiS1VMIixudWxsLCJNSCIsIjE5MyJdLFsiS1VMIiwiMjAyNC0xMS0wNyIsIkhLRyIsbnVsbCwiTUgiLCI3MiJdLFsiSEtHIiwiMjAyNC0xMS0wOCIsIlBFSyIsbnVsbCwiQ1giLCIzMzQiXV1d",
             "layovers": [
                 {
-                    "duration": 60,
+                    "duration": 105,
                     "name": "Kuala Lumpur International Airport",
                     "id": "KUL"
                 },
                 {
-                    "duration": 460,
+                    "duration": 1115,
                     "overnight": true,
                     "name": "Hong Kong International Airport",
                     "id": "HKG"
                 }
             ],
-            "total_duration": 1215,
-            "price": 36782,
+            "total_duration": 1915,
+            "price": 46215,
             "flights": [
                 {
                     "duration": 260,
+                    "overnight": true,
+                    "often_delayed_by_over_30_min": true,
                     "legroom": "30 in",
                     "extensions": [
                         "Average legroom (30 in)",
@@ -288,14 +187,14 @@
                     "departure_airport": {
                         "name": "Kempegowda International Airport Bengaluru",
                         "id": "BLR",
-                        "time": "2024-11-06 12:00"
+                        "time": "2024-11-07 00:20"
                     },
-                    "flight_number": "MH 105",
+                    "flight_number": "MH 193",
                     "airplane": "Boeing 737",
                     "arrival_airport": {
                         "name": "Kuala Lumpur International Airport",
                         "id": "KUL",
-                        "time": "2024-11-06 18:50"
+                        "time": "2024-11-07 07:10"
                     },
                     "airline": "Malaysia Airlines",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
@@ -303,24 +202,24 @@
                 },
                 {
                     "duration": 240,
-                    "legroom": "32 in",
+                    "legroom": "30 in",
                     "extensions": [
-                        "Above average legroom (32 in)",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 214 kg"
+                        "Average legroom (30 in)",
+                        "In-seat USB outlet",
+                        "Stream media to your device",
+                        "Carbon emissions estimate: 177 kg"
                     ],
                     "departure_airport": {
                         "name": "Kuala Lumpur International Airport",
                         "id": "KUL",
-                        "time": "2024-11-06 19:50"
+                        "time": "2024-11-07 08:55"
                     },
-                    "flight_number": "MH 78",
-                    "airplane": "Airbus A330",
+                    "flight_number": "MH 72",
+                    "airplane": "Boeing 737MAX 8 Passenger",
                     "arrival_airport": {
                         "name": "Hong Kong International Airport",
                         "id": "HKG",
-                        "time": "2024-11-06 23:50"
+                        "time": "2024-11-07 12:55"
                     },
                     "airline": "Malaysia Airlines",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
@@ -339,14 +238,14 @@
                     "departure_airport": {
                         "name": "Hong Kong International Airport",
                         "id": "HKG",
-                        "time": "2024-11-07 07:30"
+                        "time": "2024-11-08 07:30"
                     },
                     "flight_number": "CX 334",
                     "airplane": "Airbus A321neo",
                     "arrival_airport": {
                         "name": "Beijing Capital International Airport",
                         "id": "PEK",
-                        "time": "2024-11-07 10:45"
+                        "time": "2024-11-08 10:45"
                     },
                     "airline": "Cathay Pacific",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
@@ -354,117 +253,44 @@
                 }
             ],
             "carbon_emissions": {
-                "this_flight": 593000,
+                "this_flight": 555000,
                 "typical_for_this_route": 557000,
-                "difference_percent": 6
+                "difference_percent": 0
             },
             "type": "One way",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
         },
         {
-            "booking_token": "WyJDalJJYjA5Sk5YQnBVMDF0TVZsQlIyaDVPRUZDUnkwdExTMHRMUzB0TFMxd1ptVjZOMEZCUVVGQlIyTnVVelZKUTNOWllVOUJFZ3RUVVRVd09YeFRVVGd3TmhvTENKNnBBaEFBR2dOSlRsSTRISENsNFFJPSIsW1siQkxSIiwiMjAyNC0xMS0wNiIsIlNJTiIsbnVsbCwiU1EiLCI1MDkiXSxbIlNJTiIsIjIwMjQtMTEtMDciLCJQRUsiLG51bGwsIlNRIiwiODA2Il1dXQ==",
+            "booking_token": "WyJDalJJVmtwd1RtSXROMjVKVTBsQlMwRldiM2RDUnkwdExTMHRMUzB0TFMxMmQzSjBPRUZCUVVGQlIyTnVkblJuUmpGcVYxVkJFZ3RUVVRVd09YeFRVVGd3TUJvTENJdlNCQkFBR2dOSlRsSTRISENQd2dVPSIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIlNJTiIsbnVsbCwiU1EiLCI1MDkiXSxbIlNJTiIsIjIwMjQtMTEtMDgiLCJQRUsiLG51bGwsIlNRIiwiODAwIl1dXQ==",
             "layovers": [{
-                "duration": 1310,
-                "overnight": true,
+                "duration": 345,
                 "name": "Singapore Changi Airport",
                 "id": "SIN"
             }],
-            "total_duration": 1955,
-            "price": 38046,
+            "total_duration": 1000,
+            "price": 76043,
             "flights": [
                 {
-                    "duration": 280,
-                    "legroom": "32 in",
+                    "duration": 290,
+                    "legroom": "30 in",
                     "extensions": [
-                        "Above average legroom (32 in)",
+                        "Average legroom (30 in)",
                         "Free Wi-Fi",
-                        "In-seat power & USB outlets",
+                        "In-seat USB outlet",
                         "On-demand video",
-                        "Carbon emissions estimate: 210 kg"
+                        "Carbon emissions estimate: 240 kg"
                     ],
                     "departure_airport": {
                         "name": "Kempegowda International Airport Bengaluru",
                         "id": "BLR",
-                        "time": "2024-11-06 11:55"
+                        "time": "2024-11-07 12:05"
                     },
                     "flight_number": "SQ 509",
-                    "airplane": "Airbus A350",
+                    "airplane": "Boeing 737MAX 8 Passenger",
                     "arrival_airport": {
                         "name": "Singapore Changi Airport",
                         "id": "SIN",
-                        "time": "2024-11-06 19:05"
-                    },
-                    "airline": "Singapore Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 365,
-                    "legroom": "32 in",
-                    "extensions": [
-                        "Above average legroom (32 in)",
-                        "Free Wi-Fi",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 269 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Singapore Changi Airport",
-                        "id": "SIN",
-                        "time": "2024-11-07 16:55"
-                    },
-                    "flight_number": "SQ 806",
-                    "airplane": "Boeing 787",
-                    "arrival_airport": {
-                        "name": "Beijing Capital International Airport",
-                        "id": "PEK",
-                        "time": "2024-11-07 23:00"
-                    },
-                    "airline": "Singapore Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {
-                "this_flight": 480000,
-                "typical_for_this_route": 557000,
-                "difference_percent": -14
-            },
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png"
-        },
-        {
-            "booking_token": "WyJDalJJYjA5Sk5YQnBVMDF0TVZsQlIyaDVPRUZDUnkwdExTMHRMUzB0TFMxd1ptVjZOMEZCUVVGQlIyTnVVelZKUTNOWllVOUJFZ3RUVVRVeE1YeFRVVGd3TUJvTENKNnBBaEFBR2dOSlRsSTRISENsNFFJPSIsW1siQkxSIiwiMjAyNC0xMS0wNiIsIlNJTiIsbnVsbCwiU1EiLCI1MTEiXSxbIlNJTiIsIjIwMjQtMTEtMDgiLCJQRUsiLG51bGwsIlNRIiwiODAwIl1dXQ==",
-            "layovers": [{
-                "duration": 1140,
-                "name": "Singapore Changi Airport",
-                "id": "SIN"
-            }],
-            "total_duration": 1775,
-            "price": 38046,
-            "flights": [
-                {
-                    "duration": 270,
-                    "overnight": true,
-                    "legroom": "32 in",
-                    "extensions": [
-                        "Above average legroom (32 in)",
-                        "Free Wi-Fi",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 210 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-11-06 23:10"
-                    },
-                    "flight_number": "SQ 511",
-                    "airplane": "Airbus A350",
-                    "arrival_airport": {
-                        "name": "Singapore Changi Airport",
-                        "id": "SIN",
-                        "time": "2024-11-07 06:10"
+                        "time": "2024-11-07 19:25"
                     },
                     "airline": "Singapore Airlines",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
@@ -499,170 +325,26 @@
                 }
             ],
             "carbon_emissions": {
-                "this_flight": 494000,
+                "this_flight": 525000,
                 "typical_for_this_route": 557000,
-                "difference_percent": -11
+                "difference_percent": -6
             },
             "type": "One way",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png"
         },
         {
-            "booking_token": "WyJDalJJYjA5Sk5YQnBVMDF0TVZsQlIyaDVPRUZDUnkwdExTMHRMUzB0TFMxd1ptVjZOMEZCUVVGQlIyTnVVelZKUTNOWllVOUJFZ3RUVVRVd09YeFRVVGd3TUJvTENOU2VBeEFBR2dOSlRsSTRISER0N0FNPSIsW1siQkxSIiwiMjAyNC0xMS0wNiIsIlNJTiIsbnVsbCwiU1EiLCI1MDkiXSxbIlNJTiIsIjIwMjQtMTEtMDciLCJQRUsiLG51bGwsIlNRIiwiODAwIl1dXQ==",
+            "booking_token": "WyJDalJJVmtwd1RtSXROMjVKVTBsQlMwRldiM2RDUnkwdExTMHRMUzB0TFMxMmQzSjBPRUZCUVVGQlIyTnVkblJuUmpGcVYxVkJFZ3RGU3pVMk4zeEZTek13TmhvTENNemtCUkFBR2dOSlRsSTRISENoOEFZPSIsW1siQkxSIiwiMjAyNC0xMS0wNyIsIkRYQiIsbnVsbCwiRUsiLCI1NjciXSxbIkRYQiIsIjIwMjQtMTEtMDgiLCJQRUsiLG51bGwsIkVLIiwiMzA2Il1dXQ==",
             "layovers": [{
-                "duration": 365,
-                "name": "Singapore Changi Airport",
-                "id": "SIN"
-            }],
-            "total_duration": 1010,
-            "price": 53076,
-            "flights": [
-                {
-                    "duration": 280,
-                    "legroom": "32 in",
-                    "extensions": [
-                        "Above average legroom (32 in)",
-                        "Free Wi-Fi",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 210 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-11-06 11:55"
-                    },
-                    "flight_number": "SQ 509",
-                    "airplane": "Airbus A350",
-                    "arrival_airport": {
-                        "name": "Singapore Changi Airport",
-                        "id": "SIN",
-                        "time": "2024-11-06 19:05"
-                    },
-                    "airline": "Singapore Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 365,
-                    "overnight": true,
-                    "legroom": "32 in",
-                    "extensions": [
-                        "Above average legroom (32 in)",
-                        "Free Wi-Fi",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 284 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Singapore Changi Airport",
-                        "id": "SIN",
-                        "time": "2024-11-07 01:10"
-                    },
-                    "flight_number": "SQ 800",
-                    "airplane": "Airbus A350",
-                    "arrival_airport": {
-                        "name": "Beijing Capital International Airport",
-                        "id": "PEK",
-                        "time": "2024-11-07 07:15"
-                    },
-                    "airline": "Singapore Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {
-                "this_flight": 494000,
-                "typical_for_this_route": 557000,
-                "difference_percent": -11
-            },
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png"
-        },
-        {
-            "booking_token": "WyJDalJJYjA5Sk5YQnBVMDF0TVZsQlIyaDVPRUZDUnkwdExTMHRMUzB0TFMxd1ptVjZOMEZCUVVGQlIyTnVVelZKUTNOWllVOUJFZ3RUVVRVeE1YeFRVVGd3TWhvTENKejZBeEFBR2dOSlRsSTRISERYMlFRPSIsW1siQkxSIiwiMjAyNC0xMS0wNiIsIlNJTiIsbnVsbCwiU1EiLCI1MTEiXSxbIlNJTiIsIjIwMjQtMTEtMDciLCJQRUsiLG51bGwsIlNRIiwiODAyIl1dXQ==",
-            "layovers": [{
-                "duration": 155,
-                "name": "Singapore Changi Airport",
-                "id": "SIN"
-            }],
-            "total_duration": 790,
-            "price": 64796,
-            "flights": [
-                {
-                    "duration": 270,
-                    "overnight": true,
-                    "legroom": "32 in",
-                    "extensions": [
-                        "Above average legroom (32 in)",
-                        "Free Wi-Fi",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 210 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Kempegowda International Airport Bengaluru",
-                        "id": "BLR",
-                        "time": "2024-11-06 23:10"
-                    },
-                    "flight_number": "SQ 511",
-                    "airplane": "Airbus A350",
-                    "arrival_airport": {
-                        "name": "Singapore Changi Airport",
-                        "id": "SIN",
-                        "time": "2024-11-07 06:10"
-                    },
-                    "airline": "Singapore Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
-                    "travel_class": "Economy"
-                },
-                {
-                    "duration": 365,
-                    "legroom": "32 in",
-                    "extensions": [
-                        "Above average legroom (32 in)",
-                        "Free Wi-Fi",
-                        "In-seat power & USB outlets",
-                        "On-demand video",
-                        "Carbon emissions estimate: 458 kg"
-                    ],
-                    "departure_airport": {
-                        "name": "Singapore Changi Airport",
-                        "id": "SIN",
-                        "time": "2024-11-07 08:45"
-                    },
-                    "flight_number": "SQ 802",
-                    "airplane": "Boeing 777",
-                    "arrival_airport": {
-                        "name": "Beijing Capital International Airport",
-                        "id": "PEK",
-                        "time": "2024-11-07 14:50"
-                    },
-                    "airline": "Singapore Airlines",
-                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png",
-                    "travel_class": "Economy"
-                }
-            ],
-            "carbon_emissions": {
-                "this_flight": 669000,
-                "typical_for_this_route": 557000,
-                "difference_percent": 20
-            },
-            "type": "One way",
-            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SQ.png"
-        },
-        {
-            "booking_token": "WyJDalJJYjA5Sk5YQnBVMDF0TVZsQlIyaDVPRUZDUnkwdExTMHRMUzB0TFMxd1ptVjZOMEZCUVVGQlIyTnVVelZKUTNOWllVOUJFZ3RGU3pVMk9YeEZTek13T0JvTENPWHhCQkFBR2dOSlRsSTRISERuNXdVPSIsW1siQkxSIiwiMjAyNC0xMS0wNiIsIkRYQiIsbnVsbCwiRUsiLCI1NjkiXSxbIkRYQiIsIjIwMjQtMTEtMDYiLCJQRUsiLG51bGwsIkVLIiwiMzA4Il1dXQ==",
-            "layovers": [{
-                "duration": 230,
+                "duration": 260,
+                "overnight": true,
                 "name": "Dubai International Airport",
                 "id": "DXB"
             }],
-            "total_duration": 930,
-            "price": 80101,
+            "total_duration": 955,
+            "price": 94796,
             "flights": [
                 {
                     "duration": 250,
-                    "overnight": true,
                     "legroom": "32 in",
                     "extensions": [
                         "Above average legroom (32 in)",
@@ -674,40 +356,41 @@
                     "departure_airport": {
                         "name": "Kempegowda International Airport Bengaluru",
                         "id": "BLR",
-                        "time": "2024-11-06 04:30"
+                        "time": "2024-11-07 20:20"
                     },
-                    "flight_number": "EK 569",
-                    "airplane": "Airbus A380",
+                    "flight_number": "EK 567",
+                    "airplane": "Boeing 777",
                     "arrival_airport": {
                         "name": "Dubai International Airport",
                         "id": "DXB",
-                        "time": "2024-11-06 07:10"
+                        "time": "2024-11-07 23:00"
                     },
                     "airline": "Emirates",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
                     "travel_class": "Economy"
                 },
                 {
-                    "duration": 450,
+                    "duration": 445,
+                    "overnight": true,
                     "legroom": "32 in",
                     "extensions": [
                         "Above average legroom (32 in)",
                         "Wi-Fi for a fee",
                         "In-seat power & USB outlets",
                         "On-demand video",
-                        "Carbon emissions estimate: 495 kg"
+                        "Carbon emissions estimate: 489 kg"
                     ],
                     "departure_airport": {
                         "name": "Dubai International Airport",
                         "id": "DXB",
-                        "time": "2024-11-06 11:00"
+                        "time": "2024-11-08 03:20"
                     },
-                    "flight_number": "EK 308",
+                    "flight_number": "EK 306",
                     "airplane": "Boeing 777",
                     "arrival_airport": {
                         "name": "Beijing Capital International Airport",
                         "id": "PEK",
-                        "time": "2024-11-06 22:30"
+                        "time": "2024-11-08 14:45"
                     },
                     "airline": "Emirates",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
@@ -715,15 +398,15 @@
                 }
             ],
             "carbon_emissions": {
-                "this_flight": 739000,
+                "this_flight": 734000,
                 "typical_for_this_route": 557000,
-                "difference_percent": 33
+                "difference_percent": 32
             },
             "type": "One way",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png"
         },
         {
-            "booking_token": "WyJDalJJYjA5Sk5YQnBVMDF0TVZsQlIyaDVPRUZDUnkwdExTMHRMUzB0TFMxd1ptVjZOMEZCUVVGQlIyTnVVelZKUTNOWllVOUJFaEZVUnpNeU5ueERXRGN3TUh4RFdETTVNaG9MQ0xlbkNSQUFHZ05KVGxJNEhIQ09pQXM9IixbWyJCTFIiLCIyMDI0LTExLTA2IiwiQktLIixudWxsLCJURyIsIjMyNiJdLFsiQktLIiwiMjAyNC0xMS0wNiIsIkhLRyIsbnVsbCwiQ1giLCI3MDAiXSxbIkhLRyIsIjIwMjQtMTEtMDYiLCJQRUsiLG51bGwsIkNYIiwiMzkyIl1dXQ==",
+            "booking_token": "WyJDalJJVmtwd1RtSXROMjVKVTBsQlMwRldiM2RDUnkwdExTMHRMUzB0TFMxMmQzSjBPRUZCUVVGQlIyTnVkblJuUmpGcVYxVkJFaEZVUnpNeU5ueERXRGN3TUh4RFdETTVNaG9MQ0xlbkNSQUFHZ05KVGxJNEhIQ09pQXM9IixbWyJCTFIiLCIyMDI0LTExLTA3IiwiQktLIixudWxsLCJURyIsIjMyNiJdLFsiQktLIiwiMjAyNC0xMS0wNyIsIkhLRyIsbnVsbCwiQ1giLCI3MDAiXSxbIkhLRyIsIjIwMjQtMTEtMDciLCJQRUsiLG51bGwsIkNYIiwiMzkyIl1dXQ==",
             "layovers": [
                 {
                     "duration": 125,
@@ -747,19 +430,19 @@
                         "Above average legroom (32 in)",
                         "In-seat power & USB outlets",
                         "On-demand video",
-                        "Carbon emissions estimate: 186 kg"
+                        "Carbon emissions estimate: 214 kg"
                     ],
                     "departure_airport": {
                         "name": "Kempegowda International Airport Bengaluru",
                         "id": "BLR",
-                        "time": "2024-11-06 01:00"
+                        "time": "2024-11-07 01:00"
                     },
                     "flight_number": "TG 326",
-                    "airplane": "Airbus A350",
+                    "airplane": "Airbus A330",
                     "arrival_airport": {
                         "name": "Suvarnabhumi Airport",
                         "id": "BKK",
-                        "time": "2024-11-06 06:15"
+                        "time": "2024-11-07 06:15"
                     },
                     "airline": "THAI",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TG.png",
@@ -777,14 +460,14 @@
                     "departure_airport": {
                         "name": "Suvarnabhumi Airport",
                         "id": "BKK",
-                        "time": "2024-11-06 08:20"
+                        "time": "2024-11-07 08:20"
                     },
                     "flight_number": "CX 700",
                     "airplane": "Airbus A330",
                     "arrival_airport": {
                         "name": "Hong Kong International Airport",
                         "id": "HKG",
-                        "time": "2024-11-06 12:10"
+                        "time": "2024-11-07 12:10"
                     },
                     "airline": "Cathay Pacific",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
@@ -802,14 +485,14 @@
                     "departure_airport": {
                         "name": "Hong Kong International Airport",
                         "id": "HKG",
-                        "time": "2024-11-06 13:50"
+                        "time": "2024-11-07 13:50"
                     },
                     "flight_number": "CX 392",
                     "airplane": "Airbus A330",
                     "arrival_airport": {
                         "name": "Beijing Capital International Airport",
                         "id": "PEK",
-                        "time": "2024-11-06 17:20"
+                        "time": "2024-11-07 17:20"
                     },
                     "airline": "Cathay Pacific",
                     "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
@@ -817,17 +500,17 @@
                 }
             ],
             "carbon_emissions": {
-                "this_flight": 519000,
+                "this_flight": 548000,
                 "typical_for_this_route": 557000,
-                "difference_percent": -7
+                "difference_percent": -2
             },
             "type": "One way",
             "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png"
         }
     ],
     "price_insights": {
-        "price_level": "typical",
-        "lowest_price": 32429,
+        "price_level": "high",
+        "lowest_price": 37289,
         "typical_price_range": [
             32000,
             35500
@@ -835,247 +518,247 @@
         "price_history": [
             [
                 1725388200,
-                32402
+                35250
             ],
             [
                 1725474600,
-                32407
+                35258
             ],
             [
                 1725561000,
-                32409
+                35263
             ],
             [
                 1725647400,
-                32411
+                35267
             ],
             [
                 1725733800,
-                32411
+                35267
             ],
             [
                 1725820200,
-                32411
+                35267
             ],
             [
                 1725906600,
-                32411
+                35267
             ],
             [
                 1725993000,
-                32407
+                35261
             ],
             [
                 1726079400,
-                32409
+                35264
             ],
             [
                 1726165800,
-                32409
+                35265
             ],
             [
                 1726252200,
-                32405
+                35262
             ],
             [
                 1726338600,
-                32405
+                35262
             ],
             [
                 1726425000,
-                32405
+                35262
             ],
             [
                 1726511400,
-                32399
+                35251
             ],
             [
                 1726597800,
-                32400
+                35250
             ],
             [
                 1726684200,
-                32394
+                35238
             ],
             [
                 1726770600,
-                32384
+                35225
             ],
             [
                 1726857000,
-                32380
+                35215
             ],
             [
                 1726943400,
-                32380
+                35215
             ],
             [
                 1727029800,
-                32380
+                35215
             ],
             [
                 1727116200,
-                32363
+                35185
             ],
             [
                 1727202600,
-                32369
+                35197
             ],
             [
                 1727289000,
-                32378
+                35210
             ],
             [
                 1727375400,
-                32376
+                35207
             ],
             [
                 1727461800,
-                32383
+                35217
             ],
             [
                 1727548200,
-                32383
+                35217
             ],
             [
                 1727634600,
-                32383
+                35217
             ],
             [
                 1727721000,
-                32395
+                35335
             ],
             [
                 1727807400,
-                32402
+                35336
             ],
             [
                 1727893800,
-                32408
+                35337
             ],
             [
                 1727980200,
-                32418
+                35339
             ],
             [
                 1728066600,
-                32421
+                35338
             ],
             [
                 1728153000,
-                32421
+                35338
             ],
             [
                 1728239400,
-                32421
+                35338
             ],
             [
                 1728325800,
-                32427
+                35337
             ],
             [
                 1728412200,
-                32423
+                35335
             ],
             [
                 1728498600,
-                32418
+                35334
             ],
             [
                 1728585000,
-                32417
+                37267
             ],
             [
                 1728671400,
-                32418
+                37268
             ],
             [
                 1728757800,
-                32418
+                37268
             ],
             [
                 1728844200,
-                32418
+                37268
             ],
             [
                 1728930600,
-                32432
+                37292
             ],
             [
                 1729017000,
-                32432
+                37287
             ],
             [
                 1729103400,
-                32430
+                37285
             ],
             [
                 1729189800,
-                32428
+                37283
             ],
             [
                 1729276200,
-                32427
+                37284
             ],
             [
                 1729362600,
-                32427
+                37284
             ],
             [
                 1729449000,
-                32427
+                37284
             ],
             [
                 1729535400,
-                32431
+                37288
             ],
             [
                 1729621800,
-                32429
+                37287
             ],
             [
                 1729708200,
-                32429
+                37288
             ],
             [
                 1729794600,
-                32431
+                37286
             ],
             [
                 1729881000,
-                32431
+                37286
             ],
             [
                 1729967400,
-                32431
+                37286
             ],
             [
                 1730053800,
-                32431
+                37286
             ],
             [
                 1730140200,
-                32432
+                37289
             ],
             [
                 1730226600,
-                32430
+                37286
             ],
             [
                 1730313000,
-                32430
+                37286
             ],
             [
                 1730399400,
-                32431
+                37289
             ],
             [
                 1730485800,
-                32429
+                37289
             ],
             [
                 1730572200,
-                32429
+                37289
             ]
         ]
     },
@@ -1087,7 +770,7 @@
         "arrival_id": "PEK",
         "currency": "INR",
         "type": "2",
-        "outbound_date": "2024-11-06"
+        "outbound_date": "2024-11-07"
     },
     "airports": [{
         "arrival": [{
