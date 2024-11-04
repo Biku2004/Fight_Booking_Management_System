@@ -49,7 +49,7 @@
 
     h2 {
       text-align: center;
-      color: #333333; /* Heading color */
+      color: #333333;
     }
 
     label {

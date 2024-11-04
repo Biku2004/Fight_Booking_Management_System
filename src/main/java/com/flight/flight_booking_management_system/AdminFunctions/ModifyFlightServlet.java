@@ -86,7 +86,6 @@ public class ModifyFlightServlet extends HttpServlet {
             return;
         }
 
-        // Create a ModifyFlight object to encapsulate the updated flight details
         ModifyFlight flight = new ModifyFlight(flightNumber, airline, departureCity, arrivalCity, departureTime.toString(), arrivalTime.toString(), price);
 
         // Call the DAO method to modify the flight details in the database

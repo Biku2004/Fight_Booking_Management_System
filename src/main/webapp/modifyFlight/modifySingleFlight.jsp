@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Atkum
-  Date: 02-11-2024
-  Time: 10:24
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page import="com.flight.flight_booking_management_system.AdminFunctions.ModifyFlight" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>

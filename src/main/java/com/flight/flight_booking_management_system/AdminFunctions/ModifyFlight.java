@@ -3,7 +3,7 @@ package com.flight.flight_booking_management_system.AdminFunctions;
 public class ModifyFlight {
     private String flight_number;
     private String airline;
-    private String departureName;  // Changed from departureCity to departureName
+    private String departureName;
     private String arrivalName;     // Changed from arrivalCity to arrivalName
     private String departure_time;   // Keep as is for datetime handling
     private String arrivalTime;      // Keep as is for datetime handling

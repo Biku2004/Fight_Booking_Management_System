@@ -14,7 +14,7 @@ public class AddFlightDAO {
     private static final String DB_PASSWORD = "root@localhost";
 
     // Method to establish a database connection
-    protected Connection getConnection() {
+    protected static Connection getConnection() {
         Connection connection = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -124,7 +124,7 @@ public class AddFlightDAO {
     }
 
 
-    public List<DeleteFlight> getFlightsByFlightNumber(String flightNumber) {
+    public static List<DeleteFlight> getFlightsByFlightNumber(String flightNumber) {
         List<DeleteFlight> flights = new ArrayList<>();
         String sql = "SELECT flight_number, departure_time, arrival_time FROM flights1 WHERE flight_number = ?";
         try (Connection connection = getConnection();
@@ -132,6 +132,7 @@ public class AddFlightDAO {
             preparedStatement.setString(1, flightNumber);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
+//                String flightNumber = resultSet.getString("flight_number");
                 String departureDateTime = resultSet.getString("departure_time");
                 String arrivalDateTime = resultSet.getString("arrival_time");
                 flights.add(new DeleteFlight(flightNumber, departureDateTime, arrivalDateTime));
