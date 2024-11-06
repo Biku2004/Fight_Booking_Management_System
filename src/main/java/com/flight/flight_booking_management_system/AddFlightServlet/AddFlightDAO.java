@@ -123,8 +123,7 @@ public class AddFlightDAO {
         return flights;
     }
 
-
-    public static List<DeleteFlight> getFlightsByFlightNumber(String flightNumber) {
+    public List<DeleteFlight> getFlightsByFlightNumber(String flightNumber) {
         List<DeleteFlight> flights = new ArrayList<>();
         String sql = "SELECT flight_number, departure_time, arrival_time FROM flights1 WHERE flight_number = ?";
         try (Connection connection = getConnection();
@@ -132,7 +131,6 @@ public class AddFlightDAO {
             preparedStatement.setString(1, flightNumber);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-//                String flightNumber = resultSet.getString("flight_number");
                 String departureDateTime = resultSet.getString("departure_time");
                 String arrivalDateTime = resultSet.getString("arrival_time");
                 flights.add(new DeleteFlight(flightNumber, departureDateTime, arrivalDateTime));

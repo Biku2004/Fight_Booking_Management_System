@@ -1,4 +1,4 @@
-//package com.flight.flight_booking_management_system.Admin;
+//package com.flight.com.flight.flight_booking_management_system.Admin;
 //
 //import java.io.IOException;
 //import java.sql.Connection;
@@ -80,7 +80,7 @@
 //                        while (rs.next()) {
 //                            Flight flight = new Flight();
 //                            flight.setId(rs.getInt("id"));
-//                            flight.setFlight_number(rs.getString("flight_number"));
+//                            flight.setFlightNumber(rs.getString("flight_number"));
 //                            flight.setAirline(rs.getString("airline"));
 //                            flight.setDepartureAirport(rs.getString("departure_airport"));
 //                            flight.setArrivalAirport(rs.getString("arrival_airport"));

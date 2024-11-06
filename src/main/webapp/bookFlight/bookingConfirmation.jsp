@@ -66,7 +66,7 @@
     <p>Thank you,
         <strong><%= session.getAttribute("fullName") %></strong>
         ! Your booking for flight number
-        <strong><%= session.getAttribute("flight_number") %></strong> has been confirmed.
+        <strong><%= session.getAttribute("flightNumber") %></strong> has been confirmed.
     </p>
 
     <h3>Passenger Details:</h3>

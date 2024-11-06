@@ -58,6 +58,7 @@ public class ConfirmBookingServlet extends HttpServlet {
         String fullName = request.getParameter("fullName");
         String email = request.getParameter("email");
         String phone = request.getParameter("phone");
+        String seat = request.getParameter("Seats");
 
         String[] passengerNames = request.getParameterValues("passengerName");
         String[] passengerAges = request.getParameterValues("passengerAge");
@@ -81,6 +82,7 @@ public class ConfirmBookingServlet extends HttpServlet {
         session.setAttribute("fullName", fullName);
         session.setAttribute("email", email);
         session.setAttribute("phone", phone);
+        session.setAttribute("seat", seat);
         session.setAttribute("passengerNames", passengerNames);
         session.setAttribute("passengerAges", passengerAges);
         session.setAttribute("passengerSeats", passengerSeats);
@@ -89,13 +91,17 @@ public class ConfirmBookingServlet extends HttpServlet {
         System.out.println("Debug: Flight Number: " + flightNumber);
         System.out.println("Debug: Price: " + price);
 
+        double totalPrice = Double.parseDouble(price);
+        if (passengerNames != null) {
+            totalPrice *= (passengerNames.length + 1); // +1 for the main passenger
+        }
 
         if (session.getAttribute("paymentId") == null) {
             try {
                 RazorpayClient razorpay = new RazorpayClient(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET);
 
                 JSONObject orderRequest = new JSONObject();
-                orderRequest.put("amount", (int) (Double.parseDouble(price) * 100)); // amount in the smallest currency unit
+                orderRequest.put("amount", (int) (totalPrice) * 100); // amount in the smallest currency unit
                 orderRequest.put("currency", "INR");
                 orderRequest.put("receipt", "order_rcptid_11");
 
@@ -136,99 +142,97 @@ public class ConfirmBookingServlet extends HttpServlet {
         String fullName = (String) session.getAttribute("fullName");
         String email = (String) session.getAttribute("email");
         String phone = (String) session.getAttribute("phone");
+        String seat = (String) session.getAttribute("seat");
 
         String[] passengerNames = (String[]) session.getAttribute("passengerNames");
         String[] passengerAges = (String[]) session.getAttribute("passengerAges");
         String[] passengerSeats = (String[]) session.getAttribute("passengerSeats");
 
 //        if(session.getAttribute("paymentId") != null) {
-            String jdbcURL = "jdbc:mysql://localhost:3306/flightregd";
-            String dbUser = "Java-Project";
-            String dbPassword = "root@localhost";
+        String jdbcURL = "jdbc:mysql://localhost:3306/flightregd";
+        String dbUser = "Java-Project";
+        String dbPassword = "root@localhost";
 
-            Connection connection = null;
-            PreparedStatement checkSeatStmt = null;
-            PreparedStatement bookingStmt = null;
-            PreparedStatement passengerStmt = null;
+        Connection connection = null;
+        PreparedStatement bookingStmt = null;
+        PreparedStatement passengerStmt = null;
 
-            try {
-                Class.forName("com.mysql.cj.jdbc.Driver");
-                connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(jdbcURL, dbUser, dbPassword);
 
-                String bookingQuery = "INSERT INTO bookings (flight_number, airline, departure, arrival, departure_time, arrival_time, airplane, legroom, extensions, travel_class, duration, layovers, price, carbon_emissions, full_name, email, phone, booking_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
-                bookingStmt = connection.prepareStatement(bookingQuery, PreparedStatement.RETURN_GENERATED_KEYS);
-                bookingStmt.setString(1, flightNumber);
-                bookingStmt.setString(2, airline);
-                bookingStmt.setString(3, departure);
-                bookingStmt.setString(4, arrival);
-                bookingStmt.setString(5, departureTime);
-                bookingStmt.setString(6, arrivalTime);
-                bookingStmt.setString(7, airplane);
-                bookingStmt.setString(8, legroom);
-                bookingStmt.setString(9, extensions);
-                bookingStmt.setString(10, travelClass);
-                bookingStmt.setString(11, duration);
-                bookingStmt.setString(12, layovers);
-                bookingStmt.setString(13, price);
-                bookingStmt.setString(14, carbonEmissions);
-                bookingStmt.setString(15, fullName);
-                bookingStmt.setString(16, email);
-                bookingStmt.setString(17, phone);
-                bookingStmt.executeUpdate();
+            String bookingQuery = "INSERT INTO bookings (flight_number, airline, departure, arrival, departure_time, arrival_time, airplane, legroom, extensions, travel_class, duration, layovers, price, carbon_emissions, full_name, email, phone, seat, booking_time) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+            bookingStmt = connection.prepareStatement(bookingQuery, PreparedStatement.RETURN_GENERATED_KEYS);
+            bookingStmt.setString(1, flightNumber);
+            bookingStmt.setString(2, airline);
+            bookingStmt.setString(3, departure);
+            bookingStmt.setString(4, arrival);
+            bookingStmt.setString(5, departureTime);
+            bookingStmt.setString(6, arrivalTime);
+            bookingStmt.setString(7, airplane);
+            bookingStmt.setString(8, legroom);
+            bookingStmt.setString(9, extensions);
+            bookingStmt.setString(10, travelClass);
+            bookingStmt.setString(11, duration);
+            bookingStmt.setString(12, layovers);
+            bookingStmt.setString(13, price);
+            bookingStmt.setString(14, carbonEmissions);
+            bookingStmt.setString(15, fullName);
+            bookingStmt.setString(16, email);
+            bookingStmt.setString(17, phone);
+            bookingStmt.setString(18, seat);
+            bookingStmt.executeUpdate();
 
-                ResultSet generatedKeys = bookingStmt.getGeneratedKeys();
-                if (generatedKeys.next()) {
-                    long bookingId = generatedKeys.getLong(1);
+            ResultSet generatedKeys = bookingStmt.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                long bookingId = generatedKeys.getLong(1);
 
-                    String passengerSQL = "INSERT INTO passengers (booking_id, passenger_name, passenger_age, seat) VALUES (?, ?, ?, ?)";
-                    passengerStmt = connection.prepareStatement(passengerSQL);
+                String passengerSQL = "INSERT INTO passengers (booking_id, passenger_name, passenger_age, seat) VALUES (?, ?, ?, ?)";
+                passengerStmt = connection.prepareStatement(passengerSQL);
 
+                if (passengerNames != null) {
                     for (int i = 0; i < passengerNames.length; i++) {
                         String passengerName = passengerNames[i];
                         String passengerAge = passengerAges[i];
                         String passengerSeat = passengerSeats[i];
 
-//                    String checkSeatQuery = "SELECT * FROM passengers WHERE flight_number = ? AND seat = ?";
-//                    checkSeatStmt = connection.prepareStatement(checkSeatQuery);
-//                    checkSeatStmt.setString(1, flightNumber);
-//                    checkSeatStmt.setString(2, passengerSeat);
-//                    ResultSet seatResultSet = checkSeatStmt.executeQuery();
-
-//                    if (seatResultSet.next()) {
-//                        HttpSession session = request.getSession();
-//                        session.setAttribute("errorMessage", "The selected seat " + passengerSeat + " is already booked. Please choose another seat.");
-//                        response.sendRedirect(request.getContextPath() + "/bookFlight/BookingError.jsp");
-//                        return;
-//                    }
-
                         passengerStmt.setLong(1, bookingId);
-                        passengerStmt.setString(2, passengerName);
+                        if (passengerName != null && !passengerName.isEmpty()) {
+                            passengerStmt.setString(2, passengerName);
+                        } else {
+                            passengerStmt.setNull(2, java.sql.Types.VARCHAR);
+                        }
                         passengerStmt.setString(3, passengerAge);
                         passengerStmt.setString(4, passengerSeat);
                         passengerStmt.addBatch();
-
-//                    checkSeatStmt.close(); // Close the statement after each iteration
                     }
                     passengerStmt.executeBatch();
                 }
-
-                response.sendRedirect("bookFlight/bookingConfirmation.jsp");
-
-            } catch (SQLException | ClassNotFoundException e) {
-//            HttpSession session = request.getSession();
-                session.setAttribute("errorMessage", "Booking failed due to a server error. Please try again later.");
-                response.sendRedirect("bookFlight/BookingError.jsp");
-                e.printStackTrace();
-            } finally {
-                try {
-//                if (checkSeatStmt != null) checkSeatStmt.close();
-                    if (bookingStmt != null) bookingStmt.close();
-                    if (passengerStmt != null) passengerStmt.close();
-                    if (connection != null) connection.close();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                }
             }
+
+            response.sendRedirect("bookFlight/bookingConfirmation.jsp");
+
+//            session.removeAttribute("flightNumber");
+//            session.removeAttribute("price");
+//            session.removeAttribute("passengerNames");
+            session.removeAttribute("paymentId");
+
+        } catch (SQLException | ClassNotFoundException e) {
+//            HttpSession session = request.getSession();
+            session.setAttribute("errorMessage", "Booking failed due to a server error. Please try again later.");
+            response.sendRedirect("bookFlight/BookingError.jsp");
+            e.printStackTrace();
+        } finally {
+            try {
+//                if (checkSeatStmt != null) checkSeatStmt.close();
+                if (bookingStmt != null) bookingStmt.close();
+                if (passengerStmt != null) passengerStmt.close();
+                if (connection != null) connection.close();
+
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+        }
 
     }
 }

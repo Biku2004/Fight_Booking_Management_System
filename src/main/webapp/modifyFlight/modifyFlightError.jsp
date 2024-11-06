@@ -105,8 +105,8 @@
     <p><strong><%= request.getAttribute("errorMessage") %></strong></p>
     <% } %>
 
-    <a class="button" href="modifyFlight.jsp">Try Again</a>
-    <a class="button" href="../Admin/HomeAdmin.jsp">Return to Dashboard</a>
+    <a class="button" href="${pageContext.request.contextPath}/modifyFlight/modifyFlight.jsp">Try Again</a>
+    <a class="button" href="${pageContext.request.contextPath}/Admin/HomeAdmin.jsp">Return to Dashboard</a>
 </div>
 
 </body>

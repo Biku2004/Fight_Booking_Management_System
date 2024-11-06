@@ -35,7 +35,6 @@
             margin: 0 auto;
             max-width: 1200px;
         }
-
         .grid-item {
             background-color: #ffffff;
             border: 1px solid #e0e0e0;
@@ -47,38 +46,32 @@
             position: relative;
             overflow: hidden;
         }
-
         .grid-item:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
             background-color: #f0f0f0;
         }
-
         .grid-item h2 {
             font-size: 1.6em;
             margin-bottom: 12px;
             color: #333;
         }
-
         .grid-item i {
             font-size: 2em;
             margin-bottom: 12px;
             color: #007bff;
             margin-right: 8px;
         }
-
         .grid-item p {
             font-size: 1.05em;
             color: #555;
             line-height: 1.5;
             margin-bottom: 20px;
         }
-
         .grid-item a {
             text-decoration: none;
             color: inherit;
         }
-
         .grid-item .btn {
             background-color: #007bff;
             color: white;
@@ -91,17 +84,14 @@
             text-transform: uppercase;
             font-weight: bold;
         }
-
         .grid-item .btn:hover {
             background-color: #0056b3;
             transform: scale(1.08);
         }
-
         .grid-item .btn:active {
             background-color: #004080;
             transform: scale(1);
         }
-
         @media (max-width: 768px) {
             .grid-item i {
                 font-size: 1.6em;
@@ -154,7 +144,7 @@
         <i class="fas fa-chair"></i>
         <h2>Seat Info</h2>
         <p>View the current status of seats</p>
-        <button class="btn"><a href="#">Seat Info</a></button>
+        <button class="btn"><a href="../Admin/SeatInfo.jsp">Seat Info</a></button>
     </div>
     <div class="grid-item">
         <i class="fa-solid fa-person"></i>

@@ -42,7 +42,7 @@
 
         .container {
             width: 80%; /* Increased width for larger screens */
-            max-width: 600px; /* Set maximum width */
+            max-width: 800px; /* Set maximum width */
             margin: auto; /* Center the container */
             background-color: #fff; /* White background for container */
             border-radius: 10px; /* Rounded corners */
@@ -83,6 +83,24 @@
         a.modify-button:hover {
             background-color: #005f5f; /* Darker shade on hover for button */
         }
+
+        .no-flights {
+            text-align: center;
+            color: #ff0000; /* Red color for no flights message */
+            font-weight: bold;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #008cba;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -99,9 +117,7 @@
 
 <div class="container">
     <h2>Available Flights</h2>
-
     <% List<ModifyFlight> flights = (List<ModifyFlight>) request.getAttribute("flights"); %>
-
     <% if (flights != null && !flights.isEmpty()) { %>
     <table>
         <tr>
@@ -109,36 +125,35 @@
             <th>Airline</th>
             <th>Departure Name</th>
             <th>Arrival Name</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
             <th>Price</th>
             <th>Action</th>
         </tr>
-
         <% for (ModifyFlight flight : flights) { %>
         <tr>
             <td><%= flight.getFlight_number() %></td>
             <td><%= flight.getAirline() %></td>
             <td><%= flight.getDepartureName() %></td>
             <td><%= flight.getArrivalName() %></td>
+            <td><%= flight.getDeparture_time() %></td>
+            <td><%= flight.getArrivalTime() %></td>
             <td><%= flight.getPrice() %></td>
             <td>
-                <!-- Form to send the flight number -->
                 <form action="${pageContext.request.contextPath}/ModifyFlightServlet" method="post">
                     <input type="hidden" name="flight_number" value="<%= flight.getFlight_number() %>">
-                    <input type="hidden" name="action" value="search">
+                    <input type="hidden" name="departure_time" value="<%= flight.getDeparture_time() %>">
+                    <input type="hidden" name="action" value="modify">
                     <button type="submit">Modify</button>
                 </form>
             </td>
         </tr>
         <% } %>
-
     </table>
-
     <% } else { %>
-    <p>No flights available to modify.</p>
+    <p class="no-flights">No flights available to modify.</p>
     <% } %>
-
-    <!-- Back link -->
-    <a href="${pageContext.request.contextPath}/modifyFlight.jsp">Back to Search</a>
+    <a href="${pageContext.request.contextPath}/modifyFlight/modifyFlight.jsp" class="back-link">Back to Search</a>
 </div>
 
 </body>

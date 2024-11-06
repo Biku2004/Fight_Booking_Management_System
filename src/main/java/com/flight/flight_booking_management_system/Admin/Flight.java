@@ -1,4 +1,4 @@
-//package com.flight.flight_booking_management_system.Admin;
+//package com.flight.com.flight.flight_booking_management_system.Admin;
 //
 //import java.sql.Timestamp;
 //
@@ -23,11 +23,11 @@
 //        this.id = id;
 //    }
 //
-//    public String getFlight_number() {
+//    public String getFlightNumber() {
 //        return flightNumber;
 //    }
 //
-//    public void setFlight_number(String flightNumber) {
+//    public void setFlightNumber(String flightNumber) {
 //        this.flightNumber = flightNumber;
 //    }
 //
@@ -128,7 +128,7 @@
 //    public void setDepartureId(String departureId) {
 //    }
 //
-//    public void setDeparture_time(Timestamp departureTime) {
+//    public void setDepartureTime(Timestamp departureTime) {
 //    }
 //
 //    public void setArrivalName(String arrivalName) {

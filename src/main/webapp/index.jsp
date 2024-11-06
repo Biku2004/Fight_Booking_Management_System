@@ -24,12 +24,12 @@
         <button class="enter-button">
             <a href="registration/Registration.jsp">Sign up</a>
         </button>
-        <button class="enter-button">
-            <a href="login/home.jsp">Home</a>
-        </button>
-        <button class="enter-button">
-            <a href="Admin/HomeAdmin.jsp">Admin Home</a>
-        </button>
+<%--        <button class="enter-button">--%>
+<%--            <a href="login/home.jsp">Home</a>--%>
+<%--        </button>--%>
+<%--        <button class="enter-button">--%>
+<%--            <a href="Admin/HomeAdmin.jsp">Admin Home</a>--%>
+<%--        </button>--%>
     </div>
 </div>
 </body>

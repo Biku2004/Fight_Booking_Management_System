@@ -1,4 +1,4 @@
-package com.flight.flight_booking_management_system;
+package com.flight.flight_booking_management_system.ViewPassenger;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

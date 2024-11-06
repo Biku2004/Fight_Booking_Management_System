@@ -3,16 +3,18 @@ function openSeatSelection() {
     const seatWindow = window.open('bookFlight/seats.jsp', 'Select Seat', 'width=800,height=600');
 
     seatWindow.onload = function() {
-        const previousSeatElement = seatWindow.document.getElementById('previouslySelectedSeat');
-        if (previousSeatElement) {
-            previousSeatElement.value = selectedSeat;
-        }
+        setTimeout(() => {
+            const previousSeatElement = seatWindow.document.getElementById('previouslySelectedSeat');
+            if (previousSeatElement) {
+                previousSeatElement.value = selectedSeat;
+            }
 
-        seatWindow.document.getElementById('confirmSeatSelection').addEventListener('click', function() {
-            const selectedSeatId = seatWindow.document.getElementById('selectedSeat').value;
-            updateSelectedSeat(selectedSeatId);
-            seatWindow.close();
-        });
+            seatWindow.document.getElementById('confirmSeatSelection').addEventListener('click', function() {
+                const selectedSeatId = seatWindow.document.getElementById('selectedSeat').value;
+                updateSelectedSeat(selectedSeatId);
+                seatWindow.close();
+            });
+        }, 100); // Adjust the delay as needed
     };
 }
 
@@ -40,13 +42,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 <label for="passengerAge${passengerCount}">Age:</label>
                 <input type="number" id="passengerAge${passengerCount}" name="passengerAge" required>
             </div>
+            
             <div class="form-group">
                 <label for="passengerSeat${passengerCount}">Seat:</label>
                 <input type="text" id="passengerSeat${passengerCount}" name="passengerSeat" required>
             </div>
+            
+            <div class="form-group">
+                <label for="passengerSeat${passengerCount}">Seat:</label>
+                <input type="text" id="passengerSeat${passengerCount}" name="passengerSeat" required>
+                <button type="button" onclick="openSeatSelection(${passengerCount})">Select Seat</button>
+            </div>
+        </div>
             <button type="button" class="remove-passenger" onclick="removePassenger(this)">Remove Passenger</button>
         `;
         passengerList.appendChild(passengerDiv);
+        updateTotalPrice();
     });
 });
 
@@ -59,4 +70,15 @@ function removePassenger(button) {
     passengerContainers.forEach((header, index) => {
         header.textContent = `Passenger ${index + 1}`;
     });
+    updateTotalPrice();
+}
+function updateTotalPrice() {
+    const basePrice = parseFloat(document.getElementById('basePrice').textContent);
+    const passengerCount = document.getElementById('passengerList').children.length + 1; // Including the main passenger
+    const totalPrice = basePrice * passengerCount;
+    document.getElementById('totalPrice').value = totalPrice;
+    const priceElement = Array.from(document.querySelectorAll('tr td strong'))
+        .find(el => el.textContent.includes('Price:'))
+        .nextElementSibling;
+    priceElement.textContent = `₹${totalPrice}`;
 }

@@ -100,8 +100,8 @@
 <div class="container">
     <h1>Flight Modification Successful!</h1>
     <p>The flight details have been successfully updated in the database.</p>
-    <a class="button" href="../Admin/HomeAdmin.jsp">Return to Dashboard</a>
-    <a class="button" href="modifyFlight.jsp">Modify Another Flight</a>
+    <a class="button" href="${pageContext.request.contextPath}/Admin/HomeAdmin.jsp">Return to Dashboard</a>
+    <a class="button" href="${pageContext.request.contextPath}/modifyFlight/modifyFlight.jsp">Modify Another Flight</a>
 </div>
 
 </body>

@@ -20,12 +20,12 @@
 <%--        <h1>Delete Flight</h1>--%>
 <%--        <form action="<%= request.getContextPath() %>/deleteFlight1" method="post">--%>
 <%--            <div class="form-group">--%>
-<%--                <label for="flight_number">Flight Number:</label>--%>
-<%--                <input type="text" id="flight_number" name="flight_number" required>--%>
+<%--                <label for="flightNumber">Flight Number:</label>--%>
+<%--                <input type="text" id="flightNumber" name="flightNumber" required>--%>
 <%--            </div>--%>
 <%--            <div class="form-group">--%>
-<%--                <label for="departure_time">Departure Date and Time:</label>--%>
-<%--                <input type="datetime-local" id="departure_time" name="departure_time" required>--%>
+<%--                <label for="departureTime">Departure Date and Time:</label>--%>
+<%--                <input type="datetime-local" id="departureTime" name="departureTime" required>--%>
 <%--            </div>--%>
 <%--            <div class="form-group">--%>
 <%--                <label for="arrivalTime">Arrival Date and Time:</label>--%>
@@ -66,8 +66,8 @@
 <div class="container">
     <form id="searchForm" action="<%= request.getContextPath() %>/deleteFlight1" method="get">
         <div class="form-group">
-            <label for="flight_number">Flight Number:</label>
-            <input type="text" id="flight_number" name="flight_number" required>
+            <label for="flightNumber">Flight Number:</label>
+            <input type="text" id="flightNumber" name="flightNumber" required>
             <button type="submit" class="btn">Search</button>
         </div>
     </form>
@@ -94,8 +94,8 @@
                 <td><%= flight.getArrivalTime() %></td>
                 <td>
                     <form action="<%= request.getContextPath() %>/deleteFlight1" method="post">
-                        <input type="hidden" name="flight_number" value="<%= flight.getFlightNumber() %>">
-                        <input type="hidden" name="departure_time" value="<%= flight.getDepartureTime() %>">
+                        <input type="hidden" name="flightNumber" value="<%= flight.getFlightNumber() %>">
+                        <input type="hidden" name="departureTime" value="<%= flight.getDepartureTime() %>">
                         <input type="hidden" name="arrivalTime" value="<%= flight.getArrivalTime() %>">
                         <button type="submit" class="btn">Delete</button>
                     </form>
@@ -109,7 +109,7 @@
         </table>
     </div>
 
-    <a href="../index.jsp">Back to Home</a>
+    <a href="../Admin/HomeAdmin.jsp">Back to Home</a>
 </div>
 </body>
 </html>

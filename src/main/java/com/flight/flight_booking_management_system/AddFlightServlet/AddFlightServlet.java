@@ -122,4 +122,3 @@ public class AddFlightServlet extends HttpServlet {
         response.sendRedirect("/addFlight/addFlight.jsp");
     }
 }
-
